@@ -233,9 +233,8 @@ const SuccessStories = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
               <Button 
-                variant="secondary" 
                 size="lg" 
-                className="bg-white text-whatsapp-green hover:bg-gray-100 transition-all duration-300 px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-semibold shadow-xl hover:shadow-2xl hover:scale-105"
+                className="bg-white text-whatsapp-green hover:bg-white/90 hover:text-whatsapp-dark border-2 border-white transition-all duration-300 px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold shadow-xl hover:shadow-2xl hover:scale-105"
                 onClick={() => window.open('tel:03404634191', '_self')}
               >
                 <Phone className="mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5" />
@@ -244,7 +243,7 @@ const SuccessStories = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-2 border-white text-white hover:bg-white hover:text-whatsapp-green transition-all duration-300 px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-semibold hover:scale-105"
+                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-whatsapp-green transition-all duration-300 px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold hover:scale-105 backdrop-blur-sm"
                 onClick={() => window.open('https://calendly.com/thechatflow', '_blank')}
               >
                 Watch Live Demo

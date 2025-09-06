@@ -59,8 +59,16 @@ const MegaMenu = () => {
               Contact Us
             </Link>
 
-            <Button variant="hero" size="sm" asChild>
-              <Link to="/#pricing">Get Started</Link>
+            <Button variant="hero" size="sm" onClick={() => {
+              window.location.href = '/#pricing';
+              setTimeout(() => {
+                const pricingSection = document.getElementById('pricing');
+                if (pricingSection) {
+                  pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }, 100);
+            }}>
+              Get Started
             </Button>
           </div>
 
@@ -109,8 +117,17 @@ const MegaMenu = () => {
                 Contact Us
               </Link>
 
-              <Button variant="hero" size="sm" className="w-full mt-4" asChild>
-                <Link to="/#pricing" onClick={closeAllDropdowns}>Get Started</Link>
+              <Button variant="hero" size="sm" className="w-full mt-4" onClick={() => {
+                closeAllDropdowns();
+                window.location.href = '/#pricing';
+                setTimeout(() => {
+                  const pricingSection = document.getElementById('pricing');
+                  if (pricingSection) {
+                    pricingSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }, 100);
+              }}>
+                Get Started
               </Button>
             </div>
           </div>
