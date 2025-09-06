@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import SuccessStories from "./pages/SuccessStories";
 import ContactUs from "./pages/ContactUs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
 import SolarAutomation from "./pages/blog/SolarAutomation";
 import VisaConsultancy from "./pages/blog/VisaConsultancy";
 import ChatbotGuideSmallBusiness from "./pages/blog/ChatbotGuideSmallBusiness";
@@ -29,6 +32,9 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/blog/chatbot-automation-guide-pakistan" element={<ChatbotAutomationGuide />} />
           <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<SolarAutomation />} />
           <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<VisaConsultancy />} />

@@ -16,21 +16,21 @@ const Index = () => {
       <MegaMenu />
       <main className="min-h-screen pt-16">
         <HeroSection />
-        <div className="py-8"></div>
+        <div className="py-6"></div>
         <ProblemSection />
-        <div className="py-8"></div>
+        <div className="py-6"></div>
         <SolutionSection />
-        <div className="py-12"></div>
-        <IndustrySolutionsSection />
-        <div className="py-12"></div>
-        <AutomationPlatformsSection />
-        <div className="py-12"></div>
-        <ComparisonSection />
-        <div className="py-12"></div>
-        <PricingSection />
-        <div className="py-12"></div>
-        <TestimonialSection />
         <div className="py-8"></div>
+        <IndustrySolutionsSection />
+        <div className="py-8"></div>
+        <AutomationPlatformsSection />
+        <div className="py-8"></div>
+        <ComparisonSection />
+        <div className="py-8"></div>
+        <PricingSection />
+        <div className="py-8"></div>
+        <TestimonialSection />
+        <div className="py-6"></div>
         <FAQSection />
         <Footer />
       </main>
