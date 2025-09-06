@@ -8,21 +8,25 @@ import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
+import MegaMenu from "@/components/MegaMenu";
 
 const Index = () => {
   return (
-    <main className="min-h-screen">
-      <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <IndustrySolutionsSection />
-      <ROICalculatorSection />
-      <PricingSection />
-      <TestimonialSection />
-      <FAQSection />
-      <FinalCTASection />
-      <Footer />
-    </main>
+    <>
+      <MegaMenu />
+      <main className="min-h-screen pt-16">
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <IndustrySolutionsSection />
+        <ROICalculatorSection />
+        <PricingSection />
+        <TestimonialSection />
+        <FAQSection />
+        <FinalCTASection />
+        <Footer />
+      </main>
+    </>
   );
 };
 

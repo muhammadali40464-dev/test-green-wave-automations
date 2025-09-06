@@ -2,12 +2,14 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
+import MegaMenu from "@/components/MegaMenu";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle, Users, Zap, Calculator, Phone, ArrowRight, ExternalLink } from "lucide-react";
 
 const WhatsAppAPIGuide = () => {
   return (
     <>
+      <MegaMenu />
       <Helmet>
         <title>Complete Guide to WhatsApp Business API in Pakistan 2025 | TheChatFlow Blog</title>
         <meta name="description" content="Master WhatsApp Business API in Pakistan. Complete setup guide, pricing, features & benefits for Pakistani businesses. Start automating today!" />
@@ -61,9 +63,9 @@ const WhatsAppAPIGuide = () => {
         </script>
       </Helmet>
 
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-16">
         {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur sticky top-0 z-50">
+        <header className="border-b bg-background/95 backdrop-blur">
           <div className="container-width">
             <div className="flex items-center justify-between h-16">
               <Link to="/" className="flex items-center gap-2 font-bold text-xl">

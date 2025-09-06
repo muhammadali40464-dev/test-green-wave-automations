@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Footer from "@/components/Footer";
+import MegaMenu from "@/components/MegaMenu";
 import { Link } from "react-router-dom";
 import { BookOpen, Calendar, ArrowRight, Users, Zap, GraduationCap, Mail } from "lucide-react";
 
 const Blog = () => {
   return (
     <>
+      <MegaMenu />
       <Helmet>
         <title>TheChatFlow Blog - Master WhatsApp Automation for Pakistani Businesses</title>
         <meta name="description" content="Learn WhatsApp automation strategies, Pakistani business case studies, and AI integration tips. Master business automation with TheChatFlow expert guides." />
@@ -35,9 +37,9 @@ const Blog = () => {
         </script>
       </Helmet>
 
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-16">
         {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur sticky top-0 z-50">
+        <header className="border-b bg-background/95 backdrop-blur">
           <div className="container-width">
             <div className="flex items-center justify-between h-16">
               <Link to="/" className="flex items-center gap-2 font-bold text-xl">

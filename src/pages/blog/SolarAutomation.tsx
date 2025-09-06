@@ -2,12 +2,14 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
+import MegaMenu from "@/components/MegaMenu";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Zap, TrendingUp, Calculator, Phone, ArrowRight, CheckCircle, Users } from "lucide-react";
 
 const SolarAutomation = () => {
   return (
     <>
+      <MegaMenu />
       <Helmet>
         <title>How Solar Companies in Pakistan Can Generate 300% More Leads with WhatsApp Automation | TheChatFlow</title>
         <meta name="description" content="Solar companies in Pakistan: Automate lead generation, customer support & sales with WhatsApp. See real case studies & implementation guide." />
@@ -61,9 +63,9 @@ const SolarAutomation = () => {
         </script>
       </Helmet>
 
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-16">
         {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur sticky top-0 z-50">
+        <header className="border-b bg-background/95 backdrop-blur">
           <div className="container-width">
             <div className="flex items-center justify-between h-16">
               <Link to="/" className="flex items-center gap-2 font-bold text-xl">

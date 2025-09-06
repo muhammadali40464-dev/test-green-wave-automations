@@ -2,12 +2,14 @@ import { Helmet } from "react-helmet";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
+import MegaMenu from "@/components/MegaMenu";
 import { Link } from "react-router-dom";
 import { ArrowLeft, GraduationCap, Globe, Clock, Phone, ArrowRight, CheckCircle, Users, MessageCircle } from "lucide-react";
 
 const VisaConsultancy = () => {
   return (
     <>
+      <MegaMenu />
       <Helmet>
         <title>Visa Consultancy Success: How to Handle 500+ Daily Inquiries with WhatsApp Automation | TheChatFlow</title>
         <meta name="description" content="Visa consultants: Automate customer support in Urdu/English. Handle student visa, work permit & immigration queries 24/7. Pakistani case study included." />
@@ -61,9 +63,9 @@ const VisaConsultancy = () => {
         </script>
       </Helmet>
 
-      <main className="min-h-screen">
+      <main className="min-h-screen pt-16">
         {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur sticky top-0 z-50">
+        <header className="border-b bg-background/95 backdrop-blur">
           <div className="container-width">
             <div className="flex items-center justify-between h-16">
               <Link to="/" className="flex items-center gap-2 font-bold text-xl">
