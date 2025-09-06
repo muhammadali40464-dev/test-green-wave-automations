@@ -245,3 +245,51 @@
     transform: translateY(0);
   }
 }
+
+/* WhatsApp Interface Specific Styles */
+.whatsapp-interface {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.whatsapp-interface .message-bubble {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.whatsapp-interface .typing-dots {
+  animation: typing-pulse 1.4s infinite;
+}
+
+@keyframes typing-pulse {
+  0%, 60%, 100% { opacity: 0.3; }
+  30% { opacity: 1; }
+}
+
+.whatsapp-interface .message-enter {
+  animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Enhanced hover effects for Meta badge */
+.meta-badge {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.meta-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(37, 211, 102, 0.3);
+}
+
+/* Conversation indicator animation */
+.conversation-indicator {
+  animation: fadeInUp 0.5s ease-out;
+}
