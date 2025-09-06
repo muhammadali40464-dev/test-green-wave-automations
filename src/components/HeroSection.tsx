@@ -201,17 +201,21 @@ const HeroSection = () => {
                 className="bg-whatsapp-green hover:bg-whatsapp-dark text-white shadow-hero group hover-lift px-8 py-4 text-lg font-semibold"
                 asChild
               >
-                <Link to="/#pricing">
-                  <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Book Free Demo
+                <Link to="/contact">
+                  <CheckCircle className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Sign up today
                 </Link>
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-4 text-lg font-semibold hover-lift"
+                asChild
               >
-                Book Free Demo
+                <Link to="/#pricing">
+                  <Play className="mr-3 h-5 w-5" />
+                  Watch Demo
+                </Link>
               </Button>
               </div>
 

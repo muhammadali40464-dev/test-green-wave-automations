@@ -70,7 +70,7 @@ const ContactUs = () => {
     {
       icon: Zap,
       title: "Rapid Response",
-      description: "Average response time under 2 hours"
+      description: "Reply in minutes"
     },
     {
       icon: Star,
@@ -218,88 +218,88 @@ const ContactUs = () => {
             </div>
 
             <Card className="border-0 shadow-2xl">
-              <CardContent className="p-12">
-                <form className="space-y-8">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Full Name *</label>
+              <CardContent className="p-16">
+                <form className="space-y-10">
+                  <div className="grid md:grid-cols-2 gap-10">
+                    <div className="space-y-3">
+                      <label className="text-base font-semibold text-foreground">Full Name *</label>
                       <Input 
                         placeholder="Your full name" 
-                        className="h-12 text-lg"
+                        className="h-14 text-lg"
                       />
                     </div>
                     
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Business Name</label>
+                    <div className="space-y-3">
+                      <label className="text-base font-semibold text-foreground">Business Name</label>
                       <Input 
                         placeholder="Your business/company name" 
-                        className="h-12 text-lg"
+                        className="h-14 text-lg"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Email Address *</label>
+                  <div className="grid md:grid-cols-2 gap-10">
+                    <div className="space-y-3">
+                      <label className="text-base font-semibold text-foreground">Email Address *</label>
                       <Input 
                         type="email"
                         placeholder="your.email@example.com" 
-                        className="h-12 text-lg"
+                        className="h-14 text-lg"
                       />
                     </div>
                     
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">WhatsApp Number *</label>
+                    <div className="space-y-3">
+                      <label className="text-base font-semibold text-foreground">WhatsApp Number *</label>
                       <Input 
                         placeholder="+92 3XX XXXXXXX" 
-                        className="h-12 text-lg"
+                        className="h-14 text-lg"
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Industry/Business Type</label>
+                  <div className="space-y-3">
+                    <label className="text-base font-semibold text-foreground">Industry/Business Type</label>
                     <Input 
                       placeholder="e.g., E-commerce, Solar, Real Estate, Education" 
-                      className="h-12 text-lg"
+                      className="h-14 text-lg"
                     />
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">How can we help you? *</label>
+                  <div className="space-y-3">
+                    <label className="text-base font-semibold text-foreground">How can we help you? *</label>
                     <Textarea 
                       placeholder="Tell us about your business challenges and automation needs..."
                       rows={6}
-                      className="text-lg resize-none"
+                      className="text-lg resize-none min-h-[140px]"
                     />
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Monthly WhatsApp Volume</label>
+                  <div className="grid md:grid-cols-2 gap-10">
+                    <div className="space-y-3">
+                      <label className="text-base font-semibold text-foreground">Monthly WhatsApp Volume</label>
                       <Input 
                         placeholder="e.g., 500-1000 messages/month" 
-                        className="h-12 text-lg"
+                        className="h-14 text-lg"
                       />
                     </div>
                     
-                    <div className="space-y-2">
-                      <label className="text-sm font-semibold text-foreground">Preferred Meeting Time</label>
+                    <div className="space-y-3">
+                      <label className="text-base font-semibold text-foreground">Preferred Meeting Time</label>
                       <Input 
                         placeholder="e.g., Weekdays 2-5 PM" 
-                        className="h-12 text-lg"
+                        className="h-14 text-lg"
                       />
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="flex flex-col sm:flex-row gap-8">
                     <Button 
                       type="submit"
                       variant="default" 
                       size="lg" 
-                      className="flex-1 bg-whatsapp-green hover:bg-whatsapp-dark text-white px-8 py-4 text-lg font-semibold shadow-xl hover-lift"
+                      className="flex-1 bg-whatsapp-green hover:bg-whatsapp-dark text-white px-10 py-5 text-xl font-semibold shadow-xl hover-lift"
                     >
-                      <Send className="mr-3 h-5 w-5" />
+                      <Send className="mr-3 h-6 w-6" />
                       Send Message
                     </Button>
                     
@@ -307,9 +307,9 @@ const ContactUs = () => {
                       type="button"
                       variant="outline" 
                       size="lg"
-                      className="flex-1 border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-4 text-lg font-semibold hover-lift"
+                      className="flex-1 border-2 border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-10 py-5 text-xl font-semibold hover-lift"
                     >
-                      <Calendar className="mr-3 h-5 w-5" />
+                      <Calendar className="mr-3 h-6 w-6" />
                       Book Demo Call
                     </Button>
                   </div>
