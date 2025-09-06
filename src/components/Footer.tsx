@@ -71,11 +71,11 @@ const Footer = () => {
                 </div>
               </div>
               
-              <div className="bg-white/5 rounded-lg p-4 space-y-2">
-                <p className="font-medium text-sm">Need Help?</p>
-                <p className="text-sm text-white/80">Our support team replies in minutes</p>
+              <div className="bg-whatsapp-green/10 rounded-2xl p-6 space-y-4">
+                <h4 className="font-bold text-xl text-foreground">Need Help?</h4>
+                <p className="text-lg text-muted-foreground font-medium">Our support team replies in minutes</p>
                 <Link to="/contact">
-                  <button className="bg-whatsapp-green hover:bg-whatsapp-dark text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                  <button className="bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 py-3 rounded-lg text-base font-bold transition-colors w-full">
                     Get Started
                   </button>
                 </Link>
@@ -106,10 +106,10 @@ const Footer = () => {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className="absolute -top-6 right-8 w-12 h-12 bg-whatsapp-green hover:bg-whatsapp-dark text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+        className="absolute -top-8 right-6 w-16 h-16 bg-whatsapp-green hover:bg-whatsapp-dark text-white rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:shadow-3xl hover:-translate-y-2 hover:scale-110 border-4 border-white"
         aria-label="Back to top"
       >
-        <ArrowUp className="h-5 w-5" />
+        <ArrowUp className="h-7 w-7" />
       </button>
     </footer>
   );
