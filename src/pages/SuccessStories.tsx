@@ -235,7 +235,7 @@ const SuccessStories = () => {
               <Button 
                 size="lg" 
                 className="bg-white text-whatsapp-green hover:bg-white/90 hover:text-whatsapp-dark border-2 border-white transition-all duration-300 px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold shadow-xl hover:shadow-2xl hover:scale-105"
-                onClick={() => window.open('tel:+9203404634191', '_self')}
+                onClick={() => window.location.href = '/contact'}
               >
                 <Phone className="mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5" />
                 Book Free Consultation
