@@ -1,9 +1,16 @@
-import { MessageCircle, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
-    <footer className="bg-foreground text-white">
+    <footer className="bg-foreground text-white relative">
       {/* Main Footer */}
       <div className="section-padding">
         <div className="container-width">
@@ -95,6 +102,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="absolute -top-6 right-8 w-12 h-12 bg-whatsapp-green hover:bg-whatsapp-dark text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+        aria-label="Back to top"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
     </footer>
   );
 };

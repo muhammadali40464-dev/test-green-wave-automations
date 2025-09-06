@@ -130,34 +130,67 @@ const TermsOfService = () => {
               </div>
             </div>
 
-            {/* Billing and Payments */}
+            {/* Implementation and Billing */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-green-500/10 rounded-2xl">
                   <FileText className="h-6 w-6 text-green-500" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground mb-0">Billing & Payments</h2>
+                <h2 className="text-3xl font-bold text-foreground mb-0">Implementation & Billing</h2>
               </div>
               
-              <div className="space-y-4 text-muted-foreground">
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">Subscription Fees</h3>
-                  <ul className="space-y-2 ml-4">
-                    <li>• Monthly subscription: Rs. 9,999 per month</li>
-                    <li>• One-time setup fee: Rs. 49,999 (includes training and configuration)</li>
-                    <li>• Enterprise plans: Custom pricing based on requirements</li>
-                    <li>• All fees are exclusive of applicable taxes</li>
+              <div className="space-y-6 text-muted-foreground">
+                <div className="bg-red-50 rounded-2xl p-6 border border-red-200">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">1. Implementation Charges</h3>
+                  <p className="font-medium text-red-700">
+                    All implementation/setup fees are non-refundable.
+                  </p>
+                </div>
+
+                <div className="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">2. Annual Plan Refund Policy</h3>
+                  <ul className="space-y-3 ml-4">
+                    <li>• <strong>Cancel within 1 month:</strong> 50% of total plan amount charged, remaining 50% refunded</li>
+                    <li>• <strong>Cancel after 1 month:</strong> 50% of total plan amount charged as standard, plus Rs. 10,000 per month for each month of service used. Remaining balance refunded</li>
                   </ul>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">Payment Terms</h3>
+                <div className="bg-orange-50 rounded-2xl p-6 border border-orange-200">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">3. Post-Live Changes</h3>
+                  <p>
+                    Once the bot is live and changes have been implemented as per the agreed scope, any additional modifications will incur separate charges.
+                  </p>
+                </div>
+
+                <div className="bg-purple-50 rounded-2xl p-6 border border-purple-200">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">4. Subscription Fee Adjustments</h3>
+                  <p>
+                    For monthly subscription plans, TheChatFlow reserves the right to revise subscription fees with a minimum notice period of 30 days.
+                  </p>
+                </div>
+
+                <div className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">5. Out-of-Scope Requests</h3>
+                  <p>
+                    Any requirements or requests outside the originally agreed scope of work will be billed separately.
+                  </p>
+                </div>
+
+                <div className="bg-yellow-50 rounded-2xl p-6 border border-yellow-200">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">6. Terms Modification</h3>
+                  <p className="font-medium text-yellow-800">
+                    Terms & Conditions can be changed without notice.
+                  </p>
+                </div>
+
+                <div className="bg-red-50 rounded-2xl p-6 border border-red-200">
+                  <h3 className="text-xl font-semibold text-foreground mb-3">7. Account Blocking Disclaimer</h3>
+                  <p className="mb-3">
+                    In the event that your WhatsApp, Instagram, or Facebook account is blocked or restricted by Meta for any reason, TheChatFlow shall not be held responsible.
+                  </p>
                   <ul className="space-y-2 ml-4">
-                    <li>• Fees are billed monthly in advance</li>
-                    <li>• Setup fees are due before service activation</li>
-                    <li>• Late payments may result in service suspension</li>
-                    <li>• No refunds for partial months or early termination</li>
-                    <li>• Price changes require 30 days advance notice</li>
+                    <li>• <strong>Annual plan subscribers:</strong> 50% of the total plan amount will be refunded</li>
+                    <li>• <strong>Monthly package users:</strong> Setup charges are non-refundable</li>
                   </ul>
                 </div>
               </div>
