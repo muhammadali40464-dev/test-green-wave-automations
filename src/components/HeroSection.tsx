@@ -166,9 +166,9 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
           
           {/* Left Content - Enhanced Typography */}
-          <div className="space-y-10 lg:pr-12">
-            <div className="space-y-8">
-              <div className="space-y-6">
+          <div className="space-y-8 lg:space-y-10 lg:pr-12">
+            <div className="space-y-6 lg:space-y-8">
+              <div className="space-y-4 lg:space-y-6">
                 <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-2 rounded-full text-sm font-medium">
                   <CheckCircle className="h-4 w-4 text-whatsapp-green" />
                   Official Meta Business Partner
@@ -182,7 +182,7 @@ const HeroSection = () => {
                 </h1>
                 
                 <div className="space-y-4">
-                  <h2 className="text-2xl md:text-3xl font-semibold text-whatsapp-green">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-whatsapp-green">
                     With AI Automation
                   </h2>
                   
@@ -220,14 +220,14 @@ const HeroSection = () => {
               </div>
 
               {/* Enhanced Trust Indicators */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 pt-8 lg:pt-12">
                 <div className="text-center group">
                   <div className="flex items-center justify-center mb-3">
                     <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
                       <Users className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-2xl text-foreground">500+</div>
+                  <div className="font-bold text-xl lg:text-2xl text-foreground">500+</div>
                   <p className="text-sm text-muted-foreground font-medium">Pakistani Businesses</p>
                 </div>
                 
@@ -237,7 +237,7 @@ const HeroSection = () => {
                       <MessageCircle className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-2xl text-foreground">10M+</div>
+                  <div className="font-bold text-xl lg:text-2xl text-foreground">10M+</div>
                   <p className="text-sm text-muted-foreground font-medium">Messages Automated</p>
                 </div>
                 
@@ -247,7 +247,7 @@ const HeroSection = () => {
                       <Star className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-2xl text-foreground">95%</div>
+                  <div className="font-bold text-xl lg:text-2xl text-foreground">95%</div>
                   <p className="text-sm text-muted-foreground font-medium">Customer Satisfaction</p>
                 </div>
                 
@@ -257,7 +257,7 @@ const HeroSection = () => {
                       <CheckCircle className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-2xl text-foreground">Meta</div>
+                  <div className="font-bold text-xl lg:text-2xl text-foreground">Meta</div>
                   <p className="text-sm text-muted-foreground font-medium">Official Partner</p>
                 </div>
               </div>
@@ -265,42 +265,42 @@ const HeroSection = () => {
           </div>
 
           {/* Right Side - Enhanced WhatsApp Interface */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-[400px] h-[680px] overflow-hidden relative border border-gray-200 hover-lift">
+          <div className="flex justify-center lg:justify-end mt-12 lg:mt-0">
+            <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-full max-w-[400px] h-[600px] md:h-[680px] overflow-hidden relative border border-gray-200 hover-lift">
               
               {/* Authentic WhatsApp Header */}
               <div className="bg-[#075E54] text-white p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <div className="w-11 h-11 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-10 h-10 md:w-11 md:h-11 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-base md:text-lg">
                       TC
                     </div>
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-[#075E54]"></div>
+                    <div className="absolute -bottom-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-green-400 rounded-full border-2 border-[#075E54]"></div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-[17px]">TheChatFlow</h3>
-                      <CheckCircle className="h-4 w-4 text-blue-400" />
+                      <h3 className="font-semibold text-base md:text-[17px]">TheChatFlow</h3>
+                      <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-blue-400" />
                     </div>
-                    <p className="text-[13px] text-green-100">Online</p>
+                    <p className="text-xs md:text-[13px] text-green-100">Online</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 md:gap-2">
                   <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                    <Video className="w-5 h-5" />
+                    <Video className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
                   <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                    <Phone className="w-5 h-5" />
+                    <Phone className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
                   <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                    <MoreVertical className="w-5 h-5" />
+                    <MoreVertical className="w-4 h-4 md:w-5 md:h-5" />
                   </button>
                 </div>
               </div>
 
               {/* Chat Messages */}
-              <div className="flex-1 p-4 space-y-4 h-[560px] overflow-y-auto" id="chat-messages">
+              <div className="flex-1 p-3 md:p-4 space-y-3 md:space-y-4 h-[480px] md:h-[560px] overflow-y-auto" id="chat-messages">
                 {conversations[currentConversation].messages.map((message) => (
                   <div
                     key={message.id}
@@ -311,29 +311,29 @@ const HeroSection = () => {
                     }`}
                   >
                     {message.type === 'incoming' ? (
-                      <div className="flex items-start gap-2 mb-4">
-                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
+                      <div className="flex items-start gap-2 mb-3 md:mb-4">
+                        <div className="w-7 h-7 md:w-8 md:h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
                           {message.avatar}
                         </div>
                         <div className="flex-1">
-                          <div className="bg-white rounded-2xl rounded-tl-md p-4 shadow-sm max-w-[280px] message-bubble">
-                            <p className="text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                          <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
+                            <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
                             <div className="flex items-center justify-between mt-2">
-                              <p className="text-[11px] text-gray-500">{message.time}</p>
+                              <p className="text-[10px] md:text-[11px] text-gray-500">{message.time}</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="flex justify-end mb-4">
-                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-4 shadow-sm max-w-[280px] message-bubble">
+                      <div className="flex justify-end mb-3 md:mb-4">
+                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
+                            <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
                             {message.verified && <CheckCircle className="h-3 w-3 text-blue-500" />}
                           </div>
-                          <p className="text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                          <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
                           <div className="flex items-center justify-end gap-1 mt-2">
-                            <p className="text-[11px] text-gray-600">{message.time}</p>
+                            <p className="text-[10px] md:text-[11px] text-gray-600">{message.time}</p>
                             <div className="flex ml-2">
                               <CheckCircle className="h-3 w-3 text-blue-500" />
                               <CheckCircle className="h-3 w-3 text-blue-500 -ml-1" />
@@ -348,12 +348,12 @@ const HeroSection = () => {
                 {/* Enhanced Typing Indicator */}
                 {isTyping && (
                   <div className="flex items-start gap-2 animate-fade-in-up">
-                    <div className="w-8 h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
                       TC
                     </div>
-                    <div className="bg-white rounded-2xl rounded-tl-md p-4 shadow-sm message-bubble">
+                    <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm message-bubble">
                       <div className="flex items-center gap-3">
-                        <span className="text-[13px] text-gray-600 font-medium">TheChatFlow is typing</span>
+                        <span className="text-xs md:text-[13px] text-gray-600 font-medium">TheChatFlow is typing</span>
                         <div className="flex gap-1">
                           <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots"></div>
                           <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots" style={{ animationDelay: '0.2s' }}></div>
@@ -366,8 +366,8 @@ const HeroSection = () => {
               </div>
 
               {/* Enhanced Conversation Indicator */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-sm conversation-indicator">
+              <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-3 md:px-4 py-2 shadow-sm conversation-indicator">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <div 

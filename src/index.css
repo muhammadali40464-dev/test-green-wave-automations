@@ -102,39 +102,47 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
   
-  /* Typography system */
+  /* Typography system - Enhanced for better readability */
   .font-hero {
-    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight;
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight;
   }
   
   .font-h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
   }
   
   .font-h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug;
+    @apply text-3xl md:text-4xl lg:text-5xl font-semibold leading-snug;
   }
   
   .font-h3 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-medium leading-snug;
+  }
+  
+  .font-h4 {
     @apply text-xl md:text-2xl font-medium leading-snug;
   }
   
   .font-body-lg {
-    @apply text-lg md:text-xl leading-relaxed;
+    @apply text-xl md:text-2xl leading-relaxed;
   }
   
   .font-body {
-    @apply text-base leading-relaxed;
+    @apply text-lg md:text-xl leading-relaxed;
   }
   
   .font-small {
-    @apply text-sm leading-normal;
+    @apply text-base md:text-lg leading-normal;
   }
 }
 
 @layer utilities {
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-16 lg:py-20;
+    @apply px-4 sm:px-6 lg:px-8 py-20 lg:py-24;
+  }
+  
+  .section-content-gap {
+    @apply space-y-8 md:space-y-12;
   }
   
   .container-width {

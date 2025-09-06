@@ -89,22 +89,22 @@ const AutomationPlatformsSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
           {platforms.map((platform, index) => {
             const IconComponent = platform.icon;
             
             return (
               <div 
                 key={index} 
-                className={`${platform.bgColor} rounded-3xl p-8 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white/50`}
+                className={`${platform.bgColor} rounded-3xl p-6 lg:p-8 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border border-white/50`}
               >
                 <div className="text-center space-y-6">
                   {/* Icon and Title */}
                   <div className="space-y-4">
-                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${platform.color} flex items-center justify-center mx-auto shadow-lg`}>
-                      <IconComponent className="h-10 w-10 text-white" />
+                    <div className={`w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br ${platform.color} flex items-center justify-center mx-auto shadow-lg`}>
+                      <IconComponent className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
                     </div>
-                    <h3 className="font-h2 text-gray-800">{platform.name}</h3>
+                    <h3 className="font-h3 lg:font-h2 text-gray-800">{platform.name}</h3>
                   </div>
 
                   {/* Features List */}
@@ -112,7 +112,7 @@ const AutomationPlatformsSection = () => {
                     {platform.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-gradient-to-r from-whatsapp-green to-green-600 mt-2 flex-shrink-0"></div>
-                        <span className="font-body text-gray-700 text-sm leading-relaxed">{feature}</span>
+                        <span className="font-body text-gray-700 text-sm lg:text-base leading-relaxed">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -123,12 +123,12 @@ const AutomationPlatformsSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center space-y-8">
-          <div className="space-y-4">
-            <h3 className="font-h2 text-foreground">
+        <div className="text-center section-content-gap">
+          <div className="space-y-4 lg:space-y-6 mb-12">
+            <h3 className="font-h3 lg:font-h2 text-foreground">
               Ready to Automate All Your Social Platforms?
             </h3>
-            <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="font-body lg:font-body-lg text-muted-foreground max-w-2xl mx-auto">
               Start with one platform or get them all. Our expert team will set up your automation 
               flows across WhatsApp, Instagram, and Facebook in just 24-48 hours.
             </p>
@@ -136,7 +136,7 @@ const AutomationPlatformsSection = () => {
           
           <a href="/contact">
             <Button variant="hero" size="xl" className="animate-pulse-custom shadow-hero">
-              <Zap className="mr-3 h-6 w-6" />
+              <Zap className="mr-3 h-5 w-5 lg:h-6 lg:w-6" />
               Get All Platforms Setup
             </Button>
           </a>

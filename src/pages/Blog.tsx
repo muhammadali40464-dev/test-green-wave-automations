@@ -316,9 +316,9 @@ const Blog = () => {
                         placeholder="Enter your email"
                         className="bg-white/20 border-white/30 text-white placeholder:text-white/60"
                       />
-                      <Button variant="secondary" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm border-0">
-                        Book Free Demo
-                      </Button>
+              <Button variant="secondary" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm border-0">
+                <Link to="/contact">Book Free Demo</Link>
+              </Button>
                     </div>
                     
                     <p className="text-xs text-white/60 mt-3">

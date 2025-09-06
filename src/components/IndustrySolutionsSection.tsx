@@ -97,44 +97,44 @@ const IndustrySolutionsSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4 mb-16">
           {industries.map((industry, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`flex flex-col items-center gap-3 p-4 rounded-2xl font-medium transition-all hover-lift ${
+              className={`flex flex-col items-center gap-2 lg:gap-3 p-3 lg:p-4 rounded-2xl font-medium transition-all hover-lift ${
                 activeTab === index
                   ? 'bg-whatsapp-green text-white shadow-hero'
                   : 'bg-white text-gray-600 hover:bg-whatsapp-green/10 hover:text-whatsapp-green shadow-md'
               }`}
             >
-              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+              <div className={`w-10 h-10 lg:w-12 lg:h-12 rounded-xl flex items-center justify-center ${
                 activeTab === index 
                   ? 'bg-white/20' 
                   : 'bg-whatsapp-green/10'
               }`}>
-                <industry.icon className="h-6 w-6" />
+                <industry.icon className="h-5 w-5 lg:h-6 lg:w-6" />
               </div>
-              <span className="text-sm text-center">{industry.name}</span>
+              <span className="text-xs lg:text-sm text-center">{industry.name}</span>
             </button>
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mb-16">
           <div className={`bg-gradient-to-r ${industries[activeTab].color} rounded-3xl p-1 shadow-2xl`}>
-            <div className="bg-white rounded-3xl p-8">
-              <h3 className="font-h2 text-center mb-8">{industries[activeTab].title}</h3>
+            <div className="bg-white rounded-3xl p-6 lg:p-8">
+              <h3 className="font-h3 lg:font-h2 text-center mb-8">{industries[activeTab].title}</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 {industries[activeTab].scenario.map((step, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-whatsapp-green rounded-full flex items-center justify-center flex-shrink-0">
+                  <div key={index} className="flex items-start gap-3 lg:gap-4">
+                    <div className="w-7 h-7 lg:w-8 lg:h-8 bg-whatsapp-green rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">
                         {step.type === 'bot' ? 'AI' : '👤'}
                       </span>
                     </div>
-                    <div className="flex-1 p-4 rounded-2xl bg-whatsapp-green/10 border border-whatsapp-green/20">
-                      <p className="font-medium text-whatsapp-green">{step.text}</p>
+                    <div className="flex-1 p-3 lg:p-4 rounded-2xl bg-whatsapp-green/10 border border-whatsapp-green/20">
+                      <p className="font-body text-whatsapp-green text-sm lg:text-base">{step.text}</p>
                     </div>
                   </div>
                 ))}
