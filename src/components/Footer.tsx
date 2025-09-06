@@ -71,11 +71,11 @@ const Footer = () => {
                 </div>
               </div>
               
-              <div className="bg-whatsapp-green/10 rounded-2xl p-6 space-y-4">
-                <h4 className="font-bold text-xl text-foreground">Need Help?</h4>
-                <p className="text-lg text-muted-foreground font-medium">Our support team replies in minutes</p>
+              <div className="bg-white/15 border border-white/20 rounded-2xl p-6 space-y-4">
+                <h4 className="font-bold text-xl text-white">Need Help?</h4>
+                <p className="text-lg text-white/90 font-medium">Our support team replies in minutes</p>
                 <Link to="/contact">
-                  <button className="bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 py-3 rounded-lg text-base font-bold transition-colors w-full">
+                  <button className="bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 py-3 rounded-xl text-base font-bold transition-colors w-full shadow-lg hover:shadow-xl">
                     Get Started
                   </button>
                 </Link>
