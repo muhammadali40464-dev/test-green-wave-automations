@@ -12,3 +12,23 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Disallow admin and private pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /api/
+
+# Allow important pages for better SEO
+Allow: /blog/
+Allow: /success-stories/
+Allow: /contact/
+Allow: /privacy-policy/
+Allow: /terms-of-service/
+Allow: /cookie-policy/
+
+# Sitemaps
+Sitemap: https://thechatflow.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

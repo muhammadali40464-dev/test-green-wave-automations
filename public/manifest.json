@@ -1,0 +1,28 @@
+{
+  "name": "TheChatFlow - WhatsApp Business Automation",
+  "short_name": "TheChatFlow",
+  "description": "Pakistan's #1 WhatsApp business automation platform. Transform customer conversations into sales with AI-powered chatbots.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#25D366",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity", "communication"],
+  "lang": "en-PK",
+  "scope": "/",
+  "prefer_related_applications": false
+}

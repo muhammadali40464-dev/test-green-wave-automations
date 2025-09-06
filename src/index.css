@@ -100,6 +100,31 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    /* Performance optimizations */
+    font-display: swap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  /* Performance: Optimize images globally */
+  img {
+    loading: lazy;
+    decoding: async;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  /* Performance: Reduce animations for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
   
   /* Typography system - Enhanced for better readability */
@@ -185,29 +210,47 @@
     transition: var(--transition-bounce);
   }
   
-  /* Animation utilities */
+  /* Animation utilities - Performance optimized */
   .animate-float {
     animation: float 3s ease-in-out infinite;
+    will-change: transform;
   }
   
   .animate-pulse-custom {
     animation: pulse-custom 2s ease-in-out infinite;
+    will-change: transform, opacity;
   }
   
   .animate-slide-up {
     animation: slide-up 0.6s ease-out forwards;
+    will-change: transform, opacity;
   }
   
   .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
+    will-change: transform, opacity;
   }
   
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
+    will-change: transform;
   }
   
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated;
+    will-change: transform, box-shadow;
+  }
+  
+  /* Performance: Force hardware acceleration for smooth animations */
+  .gpu-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  /* Performance: Optimize button interactions */
+  button, .button {
+    touch-action: manipulation;
   }
 }
 
