@@ -83,7 +83,7 @@ const PricingSection = () => {
               <a href="/contact">
                 <Button variant="hero" size="lg" className="w-full animate-pulse-custom">
                   <Zap className="mr-2 h-5 w-5" />
-                  Book Free Demo
+                  Get Started
                 </Button>
               </a>
             </div>
@@ -133,7 +133,7 @@ const PricingSection = () => {
 
               <a href="/contact">
                 <Button variant="secondary" size="lg" className="w-full">
-                  Book Free Demo
+                  Sign Up
                 </Button>
               </a>
             </div>
