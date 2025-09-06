@@ -30,6 +30,58 @@ const IndustrySolutionsSection = () => {
         { type: "result", text: "Qualified lead + Survey booked" }
       ],
       color: "from-yellow-500 to-orange-500"
+    },
+    {
+      icon: GraduationCap,
+      name: "Visa Consultancy",
+      title: "Lead Qualification & Appointments",
+      scenario: [
+        { type: "trigger", text: "Visa inquiry → Qualification starts" },
+        { type: "bot", text: "Konsa country? Education level? Budget kitna hai?" },
+        { type: "customer", text: "Canada, Bachelor's, 30 lakh budget" },
+        { type: "bot", text: "Perfect match! Free consultation book karein? 🎓" },
+        { type: "result", text: "Qualified lead + Appointment scheduled" }
+      ],
+      color: "from-blue-500 to-indigo-600"
+    },
+    {
+      icon: Home,
+      name: "Real Estate",
+      title: "Property Leads & Tours",
+      scenario: [
+        { type: "trigger", text: "Property inquiry → Lead capture" },
+        { type: "bot", text: "Budget range? Location preference? Family size?" },
+        { type: "customer", text: "1-2 crore, DHA, 4 members" },
+        { type: "bot", text: "5 perfect options! Site visit book karein? 🏠" },
+        { type: "result", text: "Hot lead + Site visit booked" }
+      ],
+      color: "from-green-500 to-emerald-600"
+    },
+    {
+      icon: Heart,
+      name: "Healthcare",
+      title: "Appointment Booking",
+      scenario: [
+        { type: "trigger", text: "Health query → Symptom assessment" },
+        { type: "bot", text: "Problem kya hai? Kab se? Emergency hai?" },
+        { type: "customer", text: "Chest pain, 2 days, urgent" },
+        { type: "bot", text: "Today 3 PM slot available. Confirm? 🏥" },
+        { type: "result", text: "Appointment booked + Medical history saved" }
+      ],
+      color: "from-red-500 to-pink-600"
+    },
+    {
+      icon: Store,
+      name: "Retail Stores",
+      title: "Product Inquiries & Sales",
+      scenario: [
+        { type: "trigger", text: "Product interest → Sales process" },
+        { type: "bot", text: "Size? Color preference? Budget range?" },
+        { type: "customer", text: "Medium, black, 5000 tak" },
+        { type: "bot", text: "Perfect match! Home delivery? COD available 📦" },
+        { type: "result", text: "Sale confirmed + Order processed" }
+      ],
+      color: "from-orange-500 to-red-500"
     }
   ];
 
@@ -45,19 +97,25 @@ const IndustrySolutionsSection = () => {
           </h2>
         </div>
 
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
           {industries.map((industry, index) => (
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
+              className={`flex flex-col items-center gap-3 p-4 rounded-2xl font-medium transition-all hover-lift ${
                 activeTab === index
                   ? 'bg-whatsapp-green text-white shadow-hero'
-                  : 'bg-gray-100 text-gray-600 hover:bg-whatsapp-green/10 hover:text-whatsapp-green'
+                  : 'bg-white text-gray-600 hover:bg-whatsapp-green/10 hover:text-whatsapp-green shadow-md'
               }`}
             >
-              <industry.icon className="h-5 w-5" />
-              {industry.name}
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                activeTab === index 
+                  ? 'bg-white/20' 
+                  : 'bg-whatsapp-green/10'
+              }`}>
+                <industry.icon className="h-6 w-6" />
+              </div>
+              <span className="text-sm text-center">{industry.name}</span>
             </button>
           ))}
         </div>

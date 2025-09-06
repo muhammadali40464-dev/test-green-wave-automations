@@ -80,10 +80,12 @@ const PricingSection = () => {
                 ))}
               </div>
 
-              <Button variant="hero" size="lg" className="w-full animate-pulse-custom">
-                <Zap className="mr-2 h-5 w-5" />
-                Get Started
-              </Button>
+              <a href="/contact">
+                <Button variant="hero" size="lg" className="w-full animate-pulse-custom">
+                  <Zap className="mr-2 h-5 w-5" />
+                  Book Free Demo
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -129,35 +131,30 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <Button variant="secondary" size="lg" className="w-full">
-                Contact Sales
-              </Button>
+              <a href="/contact">
+                <Button variant="secondary" size="lg" className="w-full">
+                  Book Free Demo
+                </Button>
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Mandatory Implementation Section */}
-        <div className="bg-gradient-to-r from-orange-50 to-red-50 border-l-4 border-orange-400 rounded-2xl p-8 mb-12">
-          <div className="flex items-start gap-4">
-            <AlertCircle className="h-8 w-8 text-orange-500 flex-shrink-0 mt-1" />
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-h3 text-orange-800 mb-2">📋 MANDATORY FOR ALL CUSTOMERS</h3>
-                <p className="text-orange-700 font-medium text-lg">Implementation & Setup: Rs. 49,999 (One-time)</p>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-4">
-                {implementationFeatures.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-whatsapp-green flex-shrink-0" />
-                    <span className="text-orange-800 text-sm">{feature}</span>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="bg-white/50 rounded-lg p-4 border border-orange-200">
-                <p className="text-orange-800 font-semibold">💡 <strong>Total to start:</strong> Rs. 59,998 (Rs. 9,999 monthly + Rs. 49,999 setup)</p>
-              </div>
+        {/* One Time Setup Cost Section */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl p-8 mb-12">
+          <div className="text-center space-y-6">
+            <div className="space-y-2">
+              <h3 className="font-h2 text-blue-800">⚙️ One Time Setup Cost</h3>
+              <p className="text-blue-700 font-medium text-xl">Rs. 49,999 (One-time payment)</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {implementationFeatures.map((feature, index) => (
+                <div key={index} className="flex items-center gap-3 bg-white/70 p-3 rounded-xl">
+                  <Check className="h-5 w-5 text-whatsapp-green flex-shrink-0" />
+                  <span className="text-blue-800 font-medium">{feature}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -173,16 +170,12 @@ const PricingSection = () => {
             </p>
           </div>
           
-          <div className="flex items-center justify-center gap-4 text-lg">
-            <span className="font-medium text-white/80 line-through">Rs. 119,996</span>
-            <span className="font-bold text-white text-2xl">Rs. 59,998</span>
-            <Badge className="bg-red-500 text-white">Save Setup Costs</Badge>
-          </div>
-          
-          <Button variant="hero" size="xl" className="mx-auto bg-white text-whatsapp-green hover:bg-white/90 shadow-2xl">
-            <Zap className="mr-2 h-6 w-6" />
-            Start Your Automation Journey
-          </Button>
+          <a href="/contact">
+            <Button variant="hero" size="xl" className="mx-auto bg-white text-whatsapp-green hover:bg-white/90 shadow-2xl">
+              <Zap className="mr-2 h-6 w-6" />
+              Book Free Demo
+            </Button>
+          </a>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white/90 text-sm">
             <div className="flex items-center gap-2">

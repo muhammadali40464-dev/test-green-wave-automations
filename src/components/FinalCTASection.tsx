@@ -23,22 +23,26 @@ const FinalCTASection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              variant="hero" 
-              size="xl" 
-              className="bg-white text-whatsapp-green hover:bg-white/90 hover:scale-105 shadow-2xl"
-            >
-              <Zap className="mr-3 h-6 w-6" />
-              Start Your Free Trial Now
-            </Button>
+            <a href="/contact">
+              <Button 
+                variant="hero" 
+                size="xl" 
+                className="bg-white text-whatsapp-green hover:bg-white/90 hover:scale-105 shadow-2xl"
+              >
+                <Zap className="mr-3 h-6 w-6" />
+                Book Free Demo
+              </Button>
+            </a>
             
-            <Button 
-              variant="secondary" 
-              size="xl"
-              className="border-white text-white hover:bg-white hover:text-whatsapp-green"
-            >
-              Book a Demo Call
-            </Button>
+            <a href="/contact">
+              <Button 
+                variant="secondary" 
+                size="xl"
+                className="border-white text-white hover:bg-white hover:text-whatsapp-green"
+              >
+                Schedule Consultation
+              </Button>
+            </a>
           </div>
 
           {/* Trust Indicators */}

@@ -64,37 +64,6 @@ const SolutionSection = () => {
             </div>
           ))}
         </div>
-
-        {/* Integration Visual */}
-        <div className="mt-16 relative">
-          <div className="bg-gradient-to-r from-whatsapp-green/5 to-whatsapp-dark/5 rounded-3xl p-12">
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              <div className="text-center space-y-4">
-                <div className="w-12 h-12 bg-whatsapp-green rounded-xl flex items-center justify-center mx-auto">
-                  <MessageCircle className="h-6 w-6 text-white" />
-                </div>
-                <h4 className="font-medium">WhatsApp Business</h4>
-                <p className="text-sm text-muted-foreground">Official API Integration</p>
-              </div>
-              
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-whatsapp-green to-whatsapp-dark rounded-2xl flex items-center justify-center mx-auto border-4 border-white shadow-lg">
-                  <Zap className="h-8 w-8 text-white" />
-                </div>
-                <h4 className="font-medium text-lg">WhatBot Platform</h4>
-                <p className="text-sm text-whatsapp-green font-medium">AI-Powered Automation</p>
-              </div>
-              
-              <div className="text-center space-y-4">
-                <div className="w-12 h-12 bg-whatsapp-dark rounded-xl flex items-center justify-center mx-auto">
-                  <Brain className="h-6 w-6 text-white" />
-                </div>
-                <h4 className="font-medium">ChatGPT AI</h4>
-                <p className="text-sm text-muted-foreground">Smart Responses</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
