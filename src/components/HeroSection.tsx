@@ -1,35 +1,116 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Play, MessageCircle, Users, TrendingUp, CheckCircle, Star } from "lucide-react";
+import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical } from "lucide-react";
 
 const HeroSection = () => {
-  const [currentStep, setCurrentStep] = useState(0);
   const [isTyping, setIsTyping] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
 
-  // Conversation scenarios
+  // More human-like conversation scenarios with minimal emojis
   const conversations = [
     {
       id: 'visa',
       title: 'Visa Consultancy',
+      color: '#FF6B6B',
       messages: [
-        { id: 1, type: 'incoming', sender: 'Hassan', time: '2:14 PM', text: 'Assalam o alaikum, Canada study visa ke liye kya process hai?', avatar: '👨‍💼' },
-        { id: 2, type: 'outgoing', sender: 'TheChatFlow', time: '2:14 PM', text: 'Walaikum salam Hassan bhai!\nCanada study visa ke liye ye documents chahiye:\n📚 IELTS 6.5+\n💰 15 lakh bank statement\n🎓 University admission letter\n🆓 Free consultation book karein?', verified: true },
-        { id: 3, type: 'incoming', sender: 'Hassan', time: '2:15 PM', text: 'Haan bhai, appointment book karo', avatar: '👨‍💼' },
-        { id: 4, type: 'outgoing', sender: 'TheChatFlow', time: '2:15 PM', text: '✅ Perfect! Available slots:\n📅 Tomorrow 2 PM - Office visit\n📞 Today 6 PM - Video call\nKaunsa prefer karenge?', verified: true },
-        { id: 5, type: 'incoming', sender: 'Hassan', time: '2:15 PM', text: 'Video call today', avatar: '👨‍💼' },
-        { id: 6, type: 'outgoing', sender: 'TheChatFlow', time: '2:15 PM', text: '✅ Confirmed!\n📹 Zoom link: bit.ly/consultation123\n⏰ 6 PM sharp\n📋 Document checklist WhatsApp kar diya\n💬 Any questions, just ask!', verified: true }
+        { 
+          id: 1, 
+          type: 'incoming', 
+          sender: 'Hassan Ahmed', 
+          time: '2:14 PM', 
+          text: 'Assalam o alaikum, Canada study visa ke liye kya documents chahiye?',
+          avatar: 'H',
+          status: 'delivered'
+        },
+        { 
+          id: 2, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '2:14 PM', 
+          text: 'Walaikum salam Hassan!\n\nCanada study visa ke liye ye main documents hain:\n\n• IELTS 6.5 overall\n• Bank statement 15 lakh minimum\n• University admission letter\n• Academic transcripts\n\nFree consultation book karna chahenge?',
+          verified: true,
+          status: 'read'
+        },
+        { 
+          id: 3, 
+          type: 'incoming', 
+          sender: 'Hassan Ahmed', 
+          time: '2:15 PM', 
+          text: 'Haan bilkul, appointment book kar dein',
+          avatar: 'H',
+          status: 'delivered'
+        },
+        { 
+          id: 4, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '2:15 PM', 
+          text: 'Perfect Hassan!\n\nAvailable time slots:\n\n• Tomorrow 2:00 PM - Office visit\n• Today 6:00 PM - Video call\n\nKonsa prefer karenge?',
+          verified: true,
+          status: 'read'
+        },
+        { 
+          id: 5, 
+          type: 'incoming', 
+          sender: 'Hassan Ahmed', 
+          time: '2:16 PM', 
+          text: 'Video call today please',
+          avatar: 'H',
+          status: 'delivered'
+        },
+        { 
+          id: 6, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '2:16 PM', 
+          text: 'Confirmed!\n\nVideo call today at 6:00 PM\nZoom link: bit.ly/tcf-consultation\n\nDocument checklist aur meeting details WhatsApp kar diye hain. Any questions?',
+          verified: true,
+          status: 'read'
+        }
       ]
     },
     {
       id: 'solar',
       title: 'Solar Business',
+      color: '#4ECDC4',
       messages: [
-        { id: 1, type: 'incoming', sender: 'Ayesha', time: '3:22 PM', text: 'Bhai solar system ka rate kya hai? Bijli ka bill 30K ata hai', avatar: '👩‍💼' },
-        { id: 2, type: 'outgoing', sender: 'TheChatFlow', time: '3:22 PM', text: 'Salam Ayesha! 30K bill ke liye 12KW system perfect:\n⚡ System price: 14 lakh\n💰 Monthly saving: 25K+\n🏠 Free site survey + quote\n📞 Book karein?', verified: true },
-        { id: 3, type: 'incoming', sender: 'Ayesha', time: '3:23 PM', text: 'Survey book karo, DHA Phase 6 mein hun', avatar: '👩‍💼' },
-        { id: 4, type: 'outgoing', sender: 'TheChatFlow', time: '3:23 PM', text: '✅ Survey booked!\n👷 Engineer: Ahmed Khan\n📅 Tomorrow 11 AM\n📍 DHA Phase 6 confirmed\n📞 Contact: +92-XXX-XXXXXXX\n💡 Installation guide PDF send kar diya!', verified: true }
+        { 
+          id: 1, 
+          type: 'incoming', 
+          sender: 'Ayesha Khan', 
+          time: '3:22 PM', 
+          text: 'Solar system ka quote chahiye. Bijli ka bill monthly 25-30k ata hai',
+          avatar: 'A',
+          status: 'delivered'
+        },
+        { 
+          id: 2, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '3:22 PM', 
+          text: 'Salam Ayesha!\n\n25-30K bill ke liye 10KW system perfect rahega:\n\n• System cost: 12-14 lakh\n• Monthly saving: 20-25K\n• Payback period: 2.5-3 years\n\nFree site survey book karein?',
+          verified: true,
+          status: 'read'
+        },
+        { 
+          id: 3, 
+          type: 'incoming', 
+          sender: 'Ayesha Khan', 
+          time: '3:23 PM', 
+          text: 'Yes please. DHA Phase 6 mein hai location',
+          avatar: 'A',
+          status: 'delivered'
+        },
+        { 
+          id: 4, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '3:23 PM', 
+          text: 'Site survey scheduled!\n\nEngineer: Ahmed Khan\nDate: Tomorrow 11:00 AM\nLocation: DHA Phase 6\n\nContact details aur preparation guide send kar diya hai.',
+          verified: true,
+          status: 'read'
+        }
       ]
     }
   ];
@@ -51,162 +132,204 @@ const HeroSection = () => {
             setIsTyping(false);
             setVisibleMessages(prev => [...prev, message.id]);
             messageIndex++;
-            setTimeout(showNextMessage, 1500);
-          }, 2000);
+            setTimeout(showNextMessage, 2000);
+          }, 2500);
         } else {
           setVisibleMessages(prev => [...prev, message.id]);
           messageIndex++;
-          setTimeout(showNextMessage, 1000);
+          setTimeout(showNextMessage, 1500);
         }
       } else {
-        // Switch to next conversation after delay
         setTimeout(() => {
           setCurrentConversation(prev => (prev + 1) % conversations.length);
-        }, 3000);
+        }, 4000);
       }
     };
 
-    setTimeout(showNextMessage, 1000);
+    setTimeout(showNextMessage, 1500);
   }, [currentConversation]);
 
   return (
-    <section className="relative min-h-screen flex items-center gradient-background overflow-hidden">
-      {/* Meta Business Partner Badge */}
-      <div className="absolute top-24 right-8 z-10 hidden lg:block">
-        <Card className="p-4 bg-white/95 backdrop-blur-sm shadow-lg border-0 hover:shadow-xl transition-all duration-300">
-          <div className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/fad311d9-4d57-4024-ae73-23c50c0b157a.png" 
-              alt="Meta Business Partner" 
-              className="h-12 w-auto"
-            />
-          </div>
-          <p className="text-xs text-muted-foreground mt-1 text-center font-medium">Official Partner</p>
-        </Card>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-whatsapp-green/5">
+      
+      {/* Enhanced Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-whatsapp-green/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-whatsapp-dark/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
-      <div className="container-width relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="container-width relative z-10 section-padding">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[85vh]">
           
-          {/* Left Content */}
-          <div className="space-y-8 lg:pr-8">
-            <div className="space-y-6">
-              <h1 className="font-h1 text-foreground leading-tight">
-                Transform Every Chat Into 
-                <span className="block bg-gradient-to-r from-whatsapp-green to-whatsapp-dark bg-clip-text text-transparent">
-                  Revenue
-                </span>
-                <span className="block text-whatsapp-green font-medium text-3xl md:text-4xl">
-                  With AI Automation
-                </span>
-              </h1>
-              
-              <p className="font-body-lg text-muted-foreground max-w-lg">
-                Watch conversations flow automatically across WhatsApp, Instagram & Facebook
-              </p>
-            </div>
+          {/* Left Content - Enhanced Typography */}
+          <div className="space-y-10 lg:pr-12">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-2 rounded-full text-sm font-medium">
+                  <CheckCircle className="h-4 w-4 text-whatsapp-green" />
+                  Official Meta Business Partner
+                </div>
+                
+                <h1 className="font-hero text-foreground leading-[0.95] tracking-tight">
+                  Transform Every Chat Into
+                  <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent animate-fade-in-up">
+                    Revenue
+                  </span>
+                </h1>
+                
+                <div className="space-y-4">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-whatsapp-green">
+                    With AI Automation
+                  </h2>
+                  
+                  <p className="font-body-lg text-muted-foreground max-w-xl leading-relaxed">
+                    Watch authentic conversations flow automatically across WhatsApp, Instagram & Facebook. 
+                    Trusted by 500+ Pakistani businesses.
+                  </p>
+                </div>
+              </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="shadow-hero group">
-                <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Watch Live Demo
-              </Button>
-              <Button variant="secondary" size="lg">
-                Start Free Trial
-              </Button>
-            </div>
+              {/* Enhanced CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  variant="default" 
+                  size="lg" 
+                  className="bg-whatsapp-green hover:bg-whatsapp-dark text-white shadow-hero group hover-lift px-8 py-4 text-lg font-semibold"
+                >
+                  <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Watch Live Demo
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-4 text-lg font-semibold hover-lift"
+                >
+                  Start Free Trial
+                </Button>
+              </div>
 
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2">
-                  <Users className="h-5 w-5 text-whatsapp-green mr-2" />
-                  <span className="font-bold text-foreground">500+</span>
+              {/* Enhanced Trust Indicators */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
+                <div className="text-center group">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <Users className="h-6 w-6 text-whatsapp-green" />
+                    </div>
+                  </div>
+                  <div className="font-bold text-2xl text-foreground">500+</div>
+                  <p className="text-sm text-muted-foreground font-medium">Pakistani Businesses</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Pakistani Businesses</p>
-              </div>
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2">
-                  <MessageCircle className="h-5 w-5 text-whatsapp-green mr-2" />
-                  <span className="font-bold text-foreground">10M+</span>
+                
+                <div className="text-center group">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <MessageCircle className="h-6 w-6 text-whatsapp-green" />
+                    </div>
+                  </div>
+                  <div className="font-bold text-2xl text-foreground">10M+</div>
+                  <p className="text-sm text-muted-foreground font-medium">Messages Automated</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Messages</p>
-              </div>
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2">
-                  <Star className="h-5 w-5 text-whatsapp-green mr-2" />
-                  <span className="font-bold text-foreground">95%</span>
+                
+                <div className="text-center group">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <Star className="h-6 w-6 text-whatsapp-green" />
+                    </div>
+                  </div>
+                  <div className="font-bold text-2xl text-foreground">95%</div>
+                  <p className="text-sm text-muted-foreground font-medium">Customer Satisfaction</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Satisfaction</p>
-              </div>
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-2">
-                  <CheckCircle className="h-5 w-5 text-whatsapp-green mr-2" />
-                  <span className="font-bold text-foreground">Meta</span>
+                
+                <div className="text-center group">
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <CheckCircle className="h-6 w-6 text-whatsapp-green" />
+                    </div>
+                  </div>
+                  <div className="font-bold text-2xl text-foreground">Meta</div>
+                  <p className="text-sm text-muted-foreground font-medium">Official Partner</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Partner</p>
               </div>
             </div>
           </div>
 
-          {/* Right Side - WhatsApp Interface */}
+          {/* Right Side - Enhanced WhatsApp Interface */}
           <div className="flex justify-center lg:justify-end">
-            <div className="whatsapp-interface bg-[#E5DDD5] rounded-2xl shadow-2xl w-[380px] h-[600px] overflow-hidden relative">
+            <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-[400px] h-[680px] overflow-hidden relative border border-gray-200 hover-lift">
               
-              {/* WhatsApp Header */}
-              <div className="bg-[#075E54] text-white p-4 flex items-center gap-3">
-                <div className="w-10 h-10 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold">
-                  TC
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-semibold">TheChatFlow</h3>
-                    <CheckCircle className="h-4 w-4 text-green-400" />
+              {/* Authentic WhatsApp Header */}
+              <div className="bg-[#075E54] text-white p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <div className="relative">
+                    <div className="w-11 h-11 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-lg">
+                      TC
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-[#075E54]"></div>
                   </div>
-                  <p className="text-xs text-green-100">🟢 Online • Last seen just now</p>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-[17px]">TheChatFlow</h3>
+                      <CheckCircle className="h-4 w-4 text-blue-400" />
+                      <img 
+                        src="/lovable-uploads/fad311d9-4d57-4024-ae73-23c50c0b157a.png" 
+                        alt="Meta Business Partner" 
+                        className="h-4 w-auto ml-1"
+                      />
+                    </div>
+                    <p className="text-[13px] text-green-100">Online</p>
+                  </div>
                 </div>
-                <div className="flex gap-2">
+                
+                <div className="flex items-center gap-2">
                   <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
+                    <Video className="w-5 h-5" />
+                  </button>
+                  <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <Phone className="w-5 h-5" />
+                  </button>
+                  <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
+                    <MoreVertical className="w-5 h-5" />
                   </button>
                 </div>
               </div>
 
               {/* Chat Messages */}
-              <div className="flex-1 p-4 space-y-3 h-[520px] overflow-y-auto">
+              <div className="flex-1 p-4 space-y-4 h-[560px] overflow-y-auto">
                 {conversations[currentConversation].messages.map((message) => (
                   <div
                     key={message.id}
-                    className={`transition-all duration-500 ${
+                    className={`transition-all duration-700 message-enter ${
                       visibleMessages.includes(message.id) 
                         ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-4'
+                        : 'opacity-0 translate-y-6'
                     }`}
                   >
                     {message.type === 'incoming' ? (
                       <div className="flex items-start gap-2 mb-4">
-                        <div className="text-2xl">{message.avatar}</div>
-                        <div>
-                          <div className="bg-white rounded-2xl rounded-tl-md p-3 shadow-sm max-w-[250px]">
-                            <p className="text-sm text-gray-800 whitespace-pre-wrap">{message.text}</p>
-                            <p className="text-xs text-gray-500 mt-1">{message.time}</p>
+                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
+                          {message.avatar}
+                        </div>
+                        <div className="flex-1">
+                          <div className="bg-white rounded-2xl rounded-tl-md p-4 shadow-sm max-w-[280px] message-bubble">
+                            <p className="text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                            <div className="flex items-center justify-between mt-2">
+                              <p className="text-[11px] text-gray-500">{message.time}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
                     ) : (
                       <div className="flex justify-end mb-4">
-                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 shadow-sm max-w-[250px]">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-sm font-medium text-[#075E54]">{message.sender}</span>
+                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-4 shadow-sm max-w-[280px] message-bubble">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
                             {message.verified && <CheckCircle className="h-3 w-3 text-blue-500" />}
                           </div>
-                          <p className="text-sm text-gray-800 whitespace-pre-wrap">{message.text}</p>
-                          <div className="flex items-center justify-end gap-1 mt-1">
-                            <p className="text-xs text-gray-600">{message.time}</p>
-                            <div className="flex">
+                          <p className="text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                          <div className="flex items-center justify-end gap-1 mt-2">
+                            <p className="text-[11px] text-gray-600">{message.time}</p>
+                            <div className="flex ml-2">
                               <CheckCircle className="h-3 w-3 text-blue-500" />
                               <CheckCircle className="h-3 w-3 text-blue-500 -ml-1" />
                             </div>
@@ -217,17 +340,19 @@ const HeroSection = () => {
                   </div>
                 ))}
 
-                {/* Typing Indicator */}
+                {/* Enhanced Typing Indicator */}
                 {isTyping && (
-                  <div className="flex items-start gap-2">
-                    <div className="text-2xl">🤖</div>
-                    <div className="bg-white rounded-2xl rounded-tl-md p-3 shadow-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-600">TheChatFlow is typing</span>
+                  <div className="flex items-start gap-2 animate-fade-in-up">
+                    <div className="w-8 h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
+                      TC
+                    </div>
+                    <div className="bg-white rounded-2xl rounded-tl-md p-4 shadow-sm message-bubble">
+                      <div className="flex items-center gap-3">
+                        <span className="text-[13px] text-gray-600 font-medium">TheChatFlow is typing</span>
                         <div className="flex gap-1">
-                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
-                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-                          <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots"></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots" style={{ animationDelay: '0.2s' }}></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots" style={{ animationDelay: '0.4s' }}></div>
                         </div>
                       </div>
                     </div>
@@ -235,21 +360,26 @@ const HeroSection = () => {
                 )}
               </div>
 
-              {/* Conversation Indicator */}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                <p className="text-xs font-medium text-gray-700">
-                  {conversations[currentConversation].title} Demo
-                </p>
+              {/* Enhanced Conversation Indicator */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-sm conversation-indicator">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div 
+                        className="w-3 h-3 rounded-full" 
+                        style={{ backgroundColor: conversations[currentConversation].color }}
+                      ></div>
+                      <p className="text-xs font-semibold text-gray-700">
+                        {conversations[currentConversation].title}
+                      </p>
+                    </div>
+                    <p className="text-xs text-gray-500">Live Demo</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-whatsapp-green/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-whatsapp-dark/5 rounded-full blur-3xl"></div>
       </div>
     </section>
   );
