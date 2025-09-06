@@ -517,18 +517,18 @@ const WhatsAppAPIGuide = () => {
                 <div className="space-y-4">
                   <div className="bg-white p-4 rounded border-l-4 border-green-500">
                     <p className="font-semibold text-green-800">Order Confirmation (Roman Urdu)</p>
-                    <p className="text-sm text-green-700">
-                      "Salam {{customer_name}}! Aapka order {{order_id}} confirm ho gaya hai. 
-                      Total amount: Rs {{amount}}. Delivery 2-3 din mein hogi. JazakAllah! 🚚"
-                    </p>
+                     <p className="text-sm text-green-700">
+                       "Salam [Customer Name]! Aapka order [Order ID] confirm ho gaya hai. 
+                       Total amount: Rs [Amount]. Delivery 2-3 din mein hogi. JazakAllah! 🚚"
+                     </p>
                   </div>
                   
                   <div className="bg-white p-4 rounded border-l-4 border-blue-500">
                     <p className="font-semibold text-blue-800">Appointment Reminder (English + Urdu)</p>
-                    <p className="text-sm text-blue-700">
-                      "Appointment reminder: Aapka consultation kal {{time}} par hai. 
-                      Location: {{address}}. Confirm karne ke liye 'YES' reply karein. 📅"
-                    </p>
+                     <p className="text-sm text-blue-700">
+                       "Appointment reminder: Aapka consultation kal [Time] par hai. 
+                       Location: [Address]. Confirm karne ke liye 'YES' reply karein. 📅"
+                     </p>
                   </div>
                 </div>
               </Card>

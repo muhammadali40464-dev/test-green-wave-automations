@@ -541,18 +541,18 @@ const SolarAutomation = () => {
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="bg-white p-4 rounded">
                     <p className="font-semibold text-orange-800 mb-2">Load Calculation Template</p>
-                    <p className="text-sm text-orange-700">
-                      "Aapka monthly unit consumption {{units}} hai. {{system_size}} system recommend hai. 
-                      Monthly saving: ₨{{savings}}. Site survey book karein?"
-                    </p>
+                     <p className="text-sm text-orange-700">
+                       "Aapka monthly unit consumption [X] units hai. [Y]KW system recommend hai. 
+                       Monthly saving: ₨[Z],000. Site survey book karein?"
+                     </p>
                   </div>
                   
                   <div className="bg-white p-4 rounded">
                     <p className="font-semibold text-orange-800 mb-2">Financing Options Template</p>
-                    <p className="text-sm text-orange-700">
-                      "Solar financing available! ₨{{amount}} down payment, ₨{{monthly}} monthly installment 
-                      for {{months}} months. Apply karein?"
-                    </p>
+                     <p className="text-sm text-orange-700">
+                       "Solar financing available! ₨[X] lakh down payment, ₨[Y],000 monthly installment 
+                       for [Z] months. Apply karein?"
+                     </p>
                   </div>
                 </div>
               </Card>

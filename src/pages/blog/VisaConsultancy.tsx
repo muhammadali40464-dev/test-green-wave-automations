@@ -540,10 +540,10 @@ const VisaConsultancy = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-blue-50 p-4 rounded-lg">
                       <p className="text-sm font-semibold mb-2 text-blue-800">Roman Urdu Response:</p>
-                      <p className="text-sm text-blue-700">
-                        "{{country}} student visa ke liye complete requirements:<br/>
-                        📚 IELTS: {{ielts_score}}<br/>
-                        💰 Bank statement: {{financial_proof}}<br/>
+                       <p className="text-sm text-blue-700">
+                         "[Country] student visa ke liye complete requirements:<br/>
+                         📚 IELTS: [Score]<br/>
+                         💰 Bank statement: [Amount]<br/>
                         🎓 Educational documents<br/>
                         📄 Passport (6 months validity)<br/>
                         📋 SOP & recommendation letters<br/>
@@ -553,10 +553,10 @@ const VisaConsultancy = () => {
                     
                     <div className="bg-blue-50 p-4 rounded-lg">
                       <p className="text-sm font-semibold mb-2 text-blue-800">English Response:</p>
-                      <p className="text-sm text-blue-700">
-                        "For {{country}} student visa, you need:<br/>
-                        📚 IELTS: {{ielts_score}} minimum<br/>
-                        💰 Financial proof: {{amount}}<br/>
+                       <p className="text-sm text-blue-700">
+                         "For [Country] student visa, you need:<br/>
+                         📚 IELTS: [Score] minimum<br/>
+                         💰 Financial proof: [Amount]<br/>
                         🎓 Academic transcripts & certificates<br/>
                         📄 Valid passport<br/>
                         📋 Statement of Purpose<br/>
@@ -634,8 +634,8 @@ const VisaConsultancy = () => {
                 <Card className="p-6">
                   <h3 className="font-h4 text-foreground mb-4">Family Consultation Template</h3>
                   <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                    <p className="text-sm font-mono">
-                      "AssalamuAlaikum {{family_name}} sahib! Aapke bete/beti ka student visa case discuss karne ke liye 
+                     <p className="text-sm font-mono">
+                       "AssalamuAlaikum [Family Name] sahib! Aapke bete/beti ka student visa case discuss karne ke liye
                       family consultation arrange kar sakte hain. Parents ko visa process ke bare mein complete briefing 
                       denge including financial requirements, timeline, aur success chances. 
                       Best time kya hai aapke liye? 
@@ -649,11 +649,11 @@ const VisaConsultancy = () => {
                 <Card className="p-6">
                   <h3 className="font-h4 text-foreground mb-4">Financial Guidance Template</h3>
                   <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                    <p className="text-sm font-mono">
-                      "{{country}} ke liye financial requirement clear karta hun:<br/>
-                      💰 Tuition fee: {{tuition}}<br/>
-                      🏠 Living expenses: {{living_cost}}<br/>
-                      📊 Total show money: {{total_amount}}<br/>
+                     <p className="text-sm font-mono">
+                       "[Country] ke liye financial requirement clear karta hun:<br/>
+                       💰 Tuition fee: [Amount]<br/>
+                       🏠 Living expenses: [Amount]<br/>
+                       📊 Total show money: [Total Amount]<br/>
                       💳 6-month bank statement chahiye<br/>
                       👨‍💼 Sponsor documents (agar parents sponsor kar rahe hain)<br/>
                       Education loan bhi option hai. Detailed discussion ke liye appointment book kariye!"
