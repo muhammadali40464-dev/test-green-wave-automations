@@ -7,6 +7,14 @@ const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
 
+  // Auto-scroll function
+  const scrollToBottom = () => {
+    const chatContainer = document.getElementById('chat-messages');
+    if (chatContainer) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  };
+
   // More human-like conversation scenarios with minimal emojis
   const conversations = [
     {
@@ -128,14 +136,17 @@ const HeroSection = () => {
         
         if (message.type === 'outgoing') {
           setIsTyping(true);
+          setTimeout(scrollToBottom, 100);
           setTimeout(() => {
             setIsTyping(false);
             setVisibleMessages(prev => [...prev, message.id]);
+            setTimeout(scrollToBottom, 100);
             messageIndex++;
             setTimeout(showNextMessage, 2000);
           }, 2500);
         } else {
           setVisibleMessages(prev => [...prev, message.id]);
+          setTimeout(scrollToBottom, 100);
           messageIndex++;
           setTimeout(showNextMessage, 1500);
         }
@@ -271,11 +282,6 @@ const HeroSection = () => {
                     <div className="flex items-center gap-2">
                       <h3 className="font-semibold text-[17px]">TheChatFlow</h3>
                       <CheckCircle className="h-4 w-4 text-blue-400" />
-                      <img 
-                        src="/lovable-uploads/fad311d9-4d57-4024-ae73-23c50c0b157a.png" 
-                        alt="Meta Business Partner" 
-                        className="h-4 w-auto ml-1"
-                      />
                     </div>
                     <p className="text-[13px] text-green-100">Online</p>
                   </div>
@@ -295,7 +301,7 @@ const HeroSection = () => {
               </div>
 
               {/* Chat Messages */}
-              <div className="flex-1 p-4 space-y-4 h-[560px] overflow-y-auto">
+              <div className="flex-1 p-4 space-y-4 h-[560px] overflow-y-auto" id="chat-messages">
                 {conversations[currentConversation].messages.map((message) => (
                   <div
                     key={message.id}
