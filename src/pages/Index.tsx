@@ -1,8 +1,9 @@
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
-import FeaturesSection from "@/components/FeaturesSection";
+import IndustrySolutionsSection from "@/components/IndustrySolutionsSection";
 import PricingSection from "@/components/PricingSection";
+import ROICalculatorSection from "@/components/ROICalculatorSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
@@ -14,7 +15,8 @@ const Index = () => {
       <HeroSection />
       <ProblemSection />
       <SolutionSection />
-      <FeaturesSection />
+      <IndustrySolutionsSection />
+      <ROICalculatorSection />
       <PricingSection />
       <TestimonialSection />
       <FAQSection />

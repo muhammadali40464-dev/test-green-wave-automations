@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* WhatBot Pakistan Design System - Apple-inspired minimalism with WhatsApp green */
+/* TheChatFlow Design System - Engaging WhatsApp automation platform */
 
 @layer base {
   :root {
@@ -14,8 +14,10 @@
     --whatsapp-green: 142 70% 49%;
     --whatsapp-dark: 174 76% 30%;
     --whatsapp-teal: 174 84% 20%;
+    --success-green: 133 65% 45%;
+    --soft-green: 132 30% 96%;
     
-    /* Neutrals */
+    /* Enhanced color palette */
     --clean-white: 0 0% 100%;
     --light-gray: 210 17% 98%;
     --subtle-gray: 215 16% 47%;
@@ -45,12 +47,17 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Design system tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--whatsapp-green)), hsl(var(--whatsapp-teal)));
+    /* Design system tokens with enhanced gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--whatsapp-green)) 0%, hsl(var(--whatsapp-dark)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--clean-white)) 0%, hsl(var(--soft-green)) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--whatsapp-green)) 0%, hsl(var(--success-green)) 50%, hsl(var(--whatsapp-dark)) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(var(--clean-white)) 0%, hsl(var(--soft-green)) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(var(--clean-white)), hsl(var(--light-gray)));
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
     --shadow-hero: 0 10px 40px hsl(var(--whatsapp-green) / 0.2);
+    --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --radius: 0.5rem;
 
@@ -138,6 +145,18 @@
     background: var(--gradient-hero);
   }
   
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+  
+  .gradient-background {
+    background: var(--gradient-background);
+  }
+  
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
@@ -146,7 +165,83 @@
     box-shadow: var(--shadow-hero);
   }
   
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-custom {
+    animation: pulse-custom 2s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-elevated;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-custom {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
