@@ -7,12 +7,14 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import SuccessStories from "./pages/SuccessStories";
 import ContactUs from "./pages/ContactUs";
-import ChatbotAutomationGuide from "./pages/blog/ChatbotAutomationGuide";
 import SolarAutomation from "./pages/blog/SolarAutomation";
 import VisaConsultancy from "./pages/blog/VisaConsultancy";
 import ChatbotGuideSmallBusiness from "./pages/blog/ChatbotGuideSmallBusiness";
 import WhatsAppAPIvsRegular from "./pages/blog/WhatsAppAPIvsRegular";
 import NotFound from "./pages/NotFound";
+
+// Import the ChatbotAutomationGuide component
+import ChatbotAutomationGuide from "./pages/blog/ChatbotAutomationGuide";
 
 const queryClient = new QueryClient();
 
