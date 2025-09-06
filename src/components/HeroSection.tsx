@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical } from "lucide-react";
@@ -6,7 +6,6 @@ import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertic
 const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
-  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   // More human-like conversation scenarios with minimal emojis
   const conversations = [
@@ -133,29 +132,11 @@ const HeroSection = () => {
             setIsTyping(false);
             setVisibleMessages(prev => [...prev, message.id]);
             messageIndex++;
-            // Auto-scroll to bottom when new message appears
-            setTimeout(() => {
-              if (chatContainerRef.current) {
-                chatContainerRef.current.scrollTo({
-                  top: chatContainerRef.current.scrollHeight,
-                  behavior: 'smooth'
-                });
-              }
-            }, 100);
             setTimeout(showNextMessage, 2000);
           }, 2500);
         } else {
           setVisibleMessages(prev => [...prev, message.id]);
           messageIndex++;
-          // Auto-scroll to bottom when new message appears
-          setTimeout(() => {
-            if (chatContainerRef.current) {
-              chatContainerRef.current.scrollTo({
-                top: chatContainerRef.current.scrollHeight,
-                behavior: 'smooth'
-              });
-            }
-          }, 100);
           setTimeout(showNextMessage, 1500);
         }
       } else {
@@ -171,21 +152,6 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-whatsapp-green/5">
       
-      {/* Meta Business Partner Badge - Fixed Position */}
-      <div className="absolute top-24 right-8 z-20 hidden lg:block">
-        <Card className="p-6 bg-white/95 backdrop-blur-sm shadow-xl border border-whatsapp-green/20 hover:shadow-2xl transition-all duration-300 meta-badge">
-          <div className="text-center">
-            <img 
-              src="/lovable-uploads/d3dd85a4-4076-429d-a9be-28db9f1117a7.png" 
-              alt="Meta Business Partner" 
-              className="h-16 w-auto mx-auto mb-3"
-            />
-            <p className="text-sm font-bold text-foreground">Official Partner</p>
-            <p className="text-xs text-muted-foreground">Verified by Meta</p>
-          </div>
-        </Card>
-      </div>
-      
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-whatsapp-green/10 rounded-full blur-3xl animate-float"></div>
@@ -199,25 +165,25 @@ const HeroSection = () => {
           {/* Left Content - Enhanced Typography */}
           <div className="space-y-10 lg:pr-12">
             <div className="space-y-8">
-              <div className="space-y-8">
-                <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-6 py-3 rounded-full text-base font-semibold">
-                  <CheckCircle className="h-5 w-5 text-whatsapp-green" />
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-2 rounded-full text-sm font-medium">
+                  <CheckCircle className="h-4 w-4 text-whatsapp-green" />
                   Official Meta Business Partner
                 </div>
                 
-                <h1 className="font-hero text-foreground leading-[0.9] tracking-tight">
+                <h1 className="font-hero text-foreground leading-[0.95] tracking-tight">
                   Transform Every Chat Into
                   <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent animate-fade-in-up">
                     Revenue
                   </span>
                 </h1>
                 
-                <div className="space-y-6">
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-whatsapp-green">
+                <div className="space-y-4">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-whatsapp-green">
                     With AI Automation
                   </h2>
                   
-                  <p className="text-xl md:text-2xl text-muted-foreground max-w-xl leading-relaxed">
+                  <p className="font-body-lg text-muted-foreground max-w-xl leading-relaxed">
                     Watch authentic conversations flow automatically across WhatsApp, Instagram & Facebook. 
                     Trusted by 500+ Pakistani businesses.
                   </p>
@@ -225,19 +191,19 @@ const HeroSection = () => {
               </div>
 
               {/* Enhanced CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   variant="default" 
                   size="lg" 
-                  className="bg-whatsapp-green hover:bg-whatsapp-dark text-white shadow-hero group hover-lift px-10 py-5 text-xl font-bold"
+                  className="bg-whatsapp-green hover:bg-whatsapp-dark text-white shadow-hero group hover-lift px-8 py-4 text-lg font-semibold"
                 >
-                  <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
+                  <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
                   Watch Live Demo
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-10 py-5 text-xl font-bold hover-lift"
+                  className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-4 text-lg font-semibold hover-lift"
                 >
                   Start Free Trial
                 </Button>
@@ -246,43 +212,43 @@ const HeroSection = () => {
               {/* Enhanced Trust Indicators */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12">
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="p-4 bg-whatsapp-green/10 rounded-3xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <Users className="h-8 w-8 text-whatsapp-green" />
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <Users className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-3xl md:text-4xl text-foreground">500+</div>
-                  <p className="text-base text-muted-foreground font-semibold">Pakistani Businesses</p>
+                  <div className="font-bold text-2xl text-foreground">500+</div>
+                  <p className="text-sm text-muted-foreground font-medium">Pakistani Businesses</p>
                 </div>
                 
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="p-4 bg-whatsapp-green/10 rounded-3xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <MessageCircle className="h-8 w-8 text-whatsapp-green" />
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <MessageCircle className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-3xl md:text-4xl text-foreground">10M+</div>
-                  <p className="text-base text-muted-foreground font-semibold">Messages Automated</p>
+                  <div className="font-bold text-2xl text-foreground">10M+</div>
+                  <p className="text-sm text-muted-foreground font-medium">Messages Automated</p>
                 </div>
                 
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="p-4 bg-whatsapp-green/10 rounded-3xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <Star className="h-8 w-8 text-whatsapp-green" />
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <Star className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-3xl md:text-4xl text-foreground">95%</div>
-                  <p className="text-base text-muted-foreground font-semibold">Customer Satisfaction</p>
+                  <div className="font-bold text-2xl text-foreground">95%</div>
+                  <p className="text-sm text-muted-foreground font-medium">Customer Satisfaction</p>
                 </div>
                 
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-4">
-                    <div className="p-4 bg-whatsapp-green/10 rounded-3xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <CheckCircle className="h-8 w-8 text-whatsapp-green" />
+                  <div className="flex items-center justify-center mb-3">
+                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
+                      <CheckCircle className="h-6 w-6 text-whatsapp-green" />
                     </div>
                   </div>
-                  <div className="font-bold text-3xl md:text-4xl text-foreground">Meta</div>
-                  <p className="text-base text-muted-foreground font-semibold">Official Partner</p>
+                  <div className="font-bold text-2xl text-foreground">Meta</div>
+                  <p className="text-sm text-muted-foreground font-medium">Official Partner</p>
                 </div>
               </div>
             </div>
@@ -290,44 +256,46 @@ const HeroSection = () => {
 
           {/* Right Side - Enhanced WhatsApp Interface */}
           <div className="flex justify-center lg:justify-end">
-            <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-[420px] h-[720px] overflow-hidden relative border border-gray-200 hover-lift">
+            <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-[400px] h-[680px] overflow-hidden relative border border-gray-200 hover-lift">
               
               {/* Authentic WhatsApp Header */}
-              <div className="bg-[#075E54] text-white p-5 flex items-center justify-between">
-                <div className="flex items-center gap-4">
+              <div className="bg-[#075E54] text-white p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
                   <div className="relative">
-                    <div className="w-12 h-12 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-11 h-11 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-lg">
                       TC
                     </div>
                     <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-[#075E54]"></div>
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center gap-3">
-                      <h3 className="font-semibold text-lg">TheChatFlow</h3>
-                      <CheckCircle className="h-5 w-5 text-blue-400" />
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-semibold text-[17px]">TheChatFlow</h3>
+                      <CheckCircle className="h-4 w-4 text-blue-400" />
+                      <img 
+                        src="/lovable-uploads/fad311d9-4d57-4024-ae73-23c50c0b157a.png" 
+                        alt="Meta Business Partner" 
+                        className="h-4 w-auto ml-1"
+                      />
                     </div>
-                    <p className="text-sm text-green-100">Online</p>
+                    <p className="text-[13px] text-green-100">Online</p>
                   </div>
                 </div>
                 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2">
                   <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                    <Video className="w-6 h-6" />
+                    <Video className="w-5 h-5" />
                   </button>
                   <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                    <Phone className="w-6 h-6" />
+                    <Phone className="w-5 h-5" />
                   </button>
                   <button className="p-2 hover:bg-white/10 rounded-full transition-colors">
-                    <MoreVertical className="w-6 h-6" />
+                    <MoreVertical className="w-5 h-5" />
                   </button>
                 </div>
               </div>
 
-              {/* Chat Messages with Auto-scroll */}
-              <div 
-                ref={chatContainerRef}
-                className="flex-1 p-5 space-y-4 h-[600px] overflow-y-auto scroll-smooth"
-              >
+              {/* Chat Messages */}
+              <div className="flex-1 p-4 space-y-4 h-[560px] overflow-y-auto">
                 {conversations[currentConversation].messages.map((message) => (
                   <div
                     key={message.id}
@@ -338,32 +306,32 @@ const HeroSection = () => {
                     }`}
                   >
                     {message.type === 'incoming' ? (
-                      <div className="flex items-start gap-3 mb-5">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center text-sm font-bold text-gray-700">
+                      <div className="flex items-start gap-2 mb-4">
+                        <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
                           {message.avatar}
                         </div>
                         <div className="flex-1">
-                          <div className="bg-white rounded-2xl rounded-tl-md p-5 shadow-sm max-w-[300px] message-bubble">
-                            <p className="text-base text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                            <div className="flex items-center justify-between mt-3">
-                              <p className="text-xs text-gray-500">{message.time}</p>
+                          <div className="bg-white rounded-2xl rounded-tl-md p-4 shadow-sm max-w-[280px] message-bubble">
+                            <p className="text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                            <div className="flex items-center justify-between mt-2">
+                              <p className="text-[11px] text-gray-500">{message.time}</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     ) : (
-                      <div className="flex justify-end mb-5">
-                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-5 shadow-sm max-w-[300px] message-bubble">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-sm font-bold text-[#075E54]">{message.sender}</span>
-                            {message.verified && <CheckCircle className="h-4 w-4 text-blue-500" />}
+                      <div className="flex justify-end mb-4">
+                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-4 shadow-sm max-w-[280px] message-bubble">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
+                            {message.verified && <CheckCircle className="h-3 w-3 text-blue-500" />}
                           </div>
-                          <p className="text-base text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                          <div className="flex items-center justify-end gap-2 mt-3">
-                            <p className="text-xs text-gray-600">{message.time}</p>
+                          <p className="text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                          <div className="flex items-center justify-end gap-1 mt-2">
+                            <p className="text-[11px] text-gray-600">{message.time}</p>
                             <div className="flex ml-2">
-                              <CheckCircle className="h-4 w-4 text-blue-500" />
-                              <CheckCircle className="h-4 w-4 text-blue-500 -ml-1" />
+                              <CheckCircle className="h-3 w-3 text-blue-500" />
+                              <CheckCircle className="h-3 w-3 text-blue-500 -ml-1" />
                             </div>
                           </div>
                         </div>
@@ -374,17 +342,17 @@ const HeroSection = () => {
 
                 {/* Enhanced Typing Indicator */}
                 {isTyping && (
-                  <div className="flex items-start gap-3 animate-fade-in-up">
-                    <div className="w-10 h-10 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-sm">
+                  <div className="flex items-start gap-2 animate-fade-in-up">
+                    <div className="w-8 h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
                       TC
                     </div>
-                    <div className="bg-white rounded-2xl rounded-tl-md p-5 shadow-sm message-bubble">
-                      <div className="flex items-center gap-4">
-                        <span className="text-sm text-gray-600 font-semibold">TheChatFlow is typing</span>
+                    <div className="bg-white rounded-2xl rounded-tl-md p-4 shadow-sm message-bubble">
+                      <div className="flex items-center gap-3">
+                        <span className="text-[13px] text-gray-600 font-medium">TheChatFlow is typing</span>
                         <div className="flex gap-1">
-                          <div className="w-3 h-3 bg-gray-400 rounded-full typing-dots"></div>
-                          <div className="w-3 h-3 bg-gray-400 rounded-full typing-dots" style={{ animationDelay: '0.2s' }}></div>
-                          <div className="w-3 h-3 bg-gray-400 rounded-full typing-dots" style={{ animationDelay: '0.4s' }}></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots"></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots" style={{ animationDelay: '0.2s' }}></div>
+                          <div className="w-2 h-2 bg-gray-400 rounded-full typing-dots" style={{ animationDelay: '0.4s' }}></div>
                         </div>
                       </div>
                     </div>
@@ -393,19 +361,19 @@ const HeroSection = () => {
               </div>
 
               {/* Enhanced Conversation Indicator */}
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-5 py-3 shadow-lg conversation-indicator">
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-sm conversation-indicator">
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
                       <div 
-                        className="w-4 h-4 rounded-full" 
+                        className="w-3 h-3 rounded-full" 
                         style={{ backgroundColor: conversations[currentConversation].color }}
                       ></div>
-                      <p className="text-sm font-bold text-gray-700">
+                      <p className="text-xs font-semibold text-gray-700">
                         {conversations[currentConversation].title}
                       </p>
                     </div>
-                    <p className="text-xs text-gray-500 font-medium">Live Demo</p>
+                    <p className="text-xs text-gray-500">Live Demo</p>
                   </div>
                 </div>
               </div>
