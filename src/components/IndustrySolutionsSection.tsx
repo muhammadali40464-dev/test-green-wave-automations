@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { ShoppingBag, Zap, GraduationCap, Home, Heart, Store } from "lucide-react";
+import { ShoppingCart, Zap, GraduationCap, Building, HeartPulse, Store } from "lucide-react";
 
 const IndustrySolutionsSection = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const industries = [
     {
-      icon: ShoppingBag,
+      icon: ShoppingCart,
       name: "E-Commerce",
       title: "Recover Abandoned Carts",
       scenario: [
@@ -45,7 +45,7 @@ const IndustrySolutionsSection = () => {
       color: "from-blue-500 to-indigo-600"
     },
     {
-      icon: Home,
+      icon: Building,
       name: "Real Estate",
       title: "Property Leads & Tours",
       scenario: [
@@ -58,7 +58,7 @@ const IndustrySolutionsSection = () => {
       color: "from-green-500 to-emerald-600"
     },
     {
-      icon: Heart,
+      icon: HeartPulse,
       name: "Healthcare",
       title: "Appointment Booking",
       scenario: [
