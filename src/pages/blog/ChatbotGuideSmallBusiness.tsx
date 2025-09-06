@@ -144,9 +144,9 @@ const ChatbotGuideSmallBusiness = () => {
               <p className="text-white/80 mb-6">
                 Join 500+ Pakistani businesses using TheChatFlow chatbots to increase sales and save time
               </p>
-              <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90" asChild>
+              <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm" asChild>
                 <Link to="/#pricing">
-                  Start Free 7-Day Trial <ArrowRight className="ml-2 h-4 w-4" />
+                  Book Free Demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </Card>

@@ -1,26 +1,14 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical } from "lucide-react";
 
 const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
 
-  // Auto-scroll functions
-  const scrollToBottom = () => {
-    const chatContainer = document.getElementById('chat-messages');
-    if (chatContainer) {
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
-  };
-
-  const scrollToTop = () => {
-    const chatContainer = document.getElementById('chat-messages');
-    if (chatContainer) {
-      chatContainer.scrollTop = 0;
-    }
-  };
+  // Removed auto-scroll functionality as requested
 
   // More human-like conversation scenarios with minimal emojis
   const conversations = [
@@ -137,26 +125,20 @@ const HeroSection = () => {
     let messageIndex = 0;
     setVisibleMessages([]);
     
-    // Scroll to top when conversation changes
-    setTimeout(scrollToTop, 300);
-
     const showNextMessage = () => {
       if (messageIndex < conversation.messages.length) {
         const message = conversation.messages[messageIndex];
         
         if (message.type === 'outgoing') {
           setIsTyping(true);
-          setTimeout(scrollToBottom, 100);
           setTimeout(() => {
             setIsTyping(false);
             setVisibleMessages(prev => [...prev, message.id]);
-            setTimeout(scrollToBottom, 100);
             messageIndex++;
             setTimeout(showNextMessage, 2000);
           }, 2500);
         } else {
           setVisibleMessages(prev => [...prev, message.id]);
-          setTimeout(scrollToBottom, 100);
           messageIndex++;
           setTimeout(showNextMessage, 1500);
         }
@@ -213,21 +195,24 @@ const HeroSection = () => {
 
               {/* Enhanced CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button 
-                  variant="default" 
-                  size="lg" 
-                  className="bg-whatsapp-green hover:bg-whatsapp-dark text-white shadow-hero group hover-lift px-8 py-4 text-lg font-semibold"
-                >
+              <Button 
+                variant="default" 
+                size="lg" 
+                className="bg-whatsapp-green hover:bg-whatsapp-dark text-white shadow-hero group hover-lift px-8 py-4 text-lg font-semibold"
+                asChild
+              >
+                <Link to="/#pricing">
                   <Play className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Watch Live Demo
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-4 text-lg font-semibold hover-lift"
-                >
-                  Start Free Trial
-                </Button>
+                  Book Free Demo
+                </Link>
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-4 text-lg font-semibold hover-lift"
+              >
+                Book Free Demo
+              </Button>
               </div>
 
               {/* Enhanced Trust Indicators */}

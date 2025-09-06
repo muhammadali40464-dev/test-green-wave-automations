@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import SuccessStories from "./pages/SuccessStories";
 import ContactUs from "./pages/ContactUs";
-import WhatsAppAPIGuide from "./pages/blog/WhatsAppAPIGuide";
+import ChatbotAutomationGuide from "./pages/blog/ChatbotAutomationGuide";
 import SolarAutomation from "./pages/blog/SolarAutomation";
 import VisaConsultancy from "./pages/blog/VisaConsultancy";
 import ChatbotGuideSmallBusiness from "./pages/blog/ChatbotGuideSmallBusiness";
@@ -27,7 +27,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/blog/whatsapp-business-api-pakistan-guide-2025" element={<WhatsAppAPIGuide />} />
+          <Route path="/blog/chatbot-automation-guide-pakistan" element={<ChatbotAutomationGuide />} />
           <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<SolarAutomation />} />
           <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<VisaConsultancy />} />
           <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<ChatbotGuideSmallBusiness />} />

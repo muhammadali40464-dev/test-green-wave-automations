@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
 import { Link } from "react-router-dom";
-import { BookOpen, Calendar, ArrowRight, Users, Zap, GraduationCap, Mail, MessageCircle } from "lucide-react";
+import { BookOpen, Calendar, ArrowRight, Users, Zap, GraduationCap, Mail, MessageCircle, Bot } from "lucide-react";
 
 const Blog = () => {
   return (
@@ -38,27 +38,7 @@ const Blog = () => {
       </Helmet>
 
       <main className="min-h-screen pt-16">
-        {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur">
-          <div className="container-width">
-            <div className="flex items-center justify-between h-16">
-              <Link to="/" className="flex items-center gap-2 font-bold text-xl">
-                <div className="w-8 h-8 bg-whatsapp-green rounded-lg flex items-center justify-center">
-                  <span className="text-white text-sm">TC</span>
-                </div>
-                TheChatFlow
-              </Link>
-              
-              <nav className="hidden md:flex items-center gap-6">
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-                <Link to="/blog" className="text-foreground font-medium">Blog</Link>
-                <Button variant="hero" size="sm" asChild>
-                  <Link to="/#pricing">Get Started</Link>
-                </Button>
-              </nav>
-            </div>
-          </div>
-        </header>
+        {/* Removed duplicate header - using MegaMenu instead */}
 
         {/* Hero Section */}
         <section className="section-padding gradient-background">
@@ -95,28 +75,27 @@ const Blog = () => {
                       January 15, 2025
                     </div>
                     <CardTitle className="font-h3 mb-2">
-                      Complete Guide to WhatsApp Business API in Pakistan 2025
+                      How Chatbots Work for Small Businesses in Pakistan 2025
                     </CardTitle>
                     <CardDescription className="font-body-base">
-                      Master WhatsApp Business API setup, pricing, and implementation for Pakistani businesses. 
-                      Complete step-by-step guide with real examples and cost comparisons.
+                      Transform your Pakistani small business with AI chatbots. Complete setup guide, benefits, costs, and real success stories from local businesses.
                     </CardDescription>
                   </CardHeader>
                   
                   <CardContent className="p-0 mb-6">
                     <p className="text-muted-foreground">
-                      With 180M+ WhatsApp users in Pakistan, businesses are transforming customer communication 
-                      through official Business API. Learn requirements, verification process, pricing structures, 
-                      and how TheChatFlow makes implementation seamless...
+                      With 180M+ WhatsApp users in Pakistan, small businesses are discovering the power of AI chatbots 
+                      to automate customer service, generate leads, and increase sales 24/7. Learn how chatbots work, 
+                      implementation benefits, and real success stories from Pakistani businesses...
                     </p>
                   </CardContent>
                   
                   <CardFooter className="p-0">
-                    <Button variant="hero" asChild>
-                      <Link to="/blog/whatsapp-business-api-pakistan-guide-2025">
-                        Read Complete Guide <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                  <Button variant="hero" asChild>
+                    <Link to="/blog/how-chatbots-work-small-businesses-pakistan">
+                      Read Complete Guide <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
                   </CardFooter>
                 </div>
                 
@@ -141,6 +120,36 @@ const Blog = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               
+              {/* Featured Article - Chatbot Automation Guide */}
+              <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-whatsapp-green/20 to-whatsapp-dark/20 p-6">
+                  <div className="w-16 h-16 bg-whatsapp-green rounded-2xl flex items-center justify-center mb-4">
+                    <Bot className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                
+                <CardHeader>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                    <Calendar className="h-4 w-4" />
+                    January 15, 2025
+                  </div>
+                  <CardTitle className="font-h4 group-hover:text-whatsapp-green transition-colors">
+                    Ultimate Chatbot Automation Guide for Pakistani Businesses
+                  </CardTitle>
+                  <CardDescription>
+                    Complete guide to automating customer service, lead generation, and sales with AI chatbots across WhatsApp, Facebook, and Instagram.
+                  </CardDescription>
+                </CardHeader>
+                
+                <CardFooter>
+                  <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
+                    <Link to="/blog/chatbot-automation-guide-pakistan">
+                      Read Complete Guide <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
               {/* Business Automation Education */}
               <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
                 <div className="bg-gradient-to-br from-blue-100 to-indigo-100 p-6">
@@ -163,7 +172,7 @@ const Blog = () => {
                 </CardHeader>
                 
                 <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
+                  <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
                     <Link to="/blog/how-chatbots-work-small-businesses-pakistan">
                       Read Complete Guide <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -193,7 +202,7 @@ const Blog = () => {
                 </CardHeader>
                 
                 <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
+                  <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
                     <Link to="/blog/whatsapp-business-api-vs-regular-whatsapp">
                       Compare Now <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -222,7 +231,7 @@ const Blog = () => {
                 </CardHeader>
                 
                 <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
+                  <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
                     <Link to="/blog/solar-companies-whatsapp-automation-pakistan">
                       Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -252,7 +261,7 @@ const Blog = () => {
                 </CardHeader>
                 
                 <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
+                  <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
                     <Link to="/blog/visa-consultancy-whatsapp-automation-urdu">
                       Read Success Story <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -282,7 +291,7 @@ const Blog = () => {
                 </CardHeader>
                 
                 <CardFooter>
-                  <Button variant="outline" className="w-full" asChild>
+                  <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
                     <Link to="/blog/ecommerce-whatsapp-marketing-pakistan">
                       Read Case Studies <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -297,22 +306,22 @@ const Blog = () => {
         <section className="section-padding">
           <div className="container-width">
             <div className="grid lg:grid-cols-3 gap-12">
-              {/* Categories */}
+              {/* Categories - Removed non-functional section */}
               <div className="lg:col-span-1">
-                <h3 className="font-h3 mb-6">Categories</h3>
+                <h3 className="font-h3 mb-6">Popular Topics</h3>
                 <div className="space-y-3">
-                  {[
-                    "WhatsApp Marketing",
-                    "Business Automation", 
-                    "Pakistani Case Studies",
-                    "AI Integration",
-                    "Industry Solutions"
-                  ].map((category) => (
-                    <div key={category} className="flex items-center justify-between p-3 rounded-lg border hover:bg-gray-50 transition-colors cursor-pointer">
-                      <span className="font-medium">{category}</span>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                    </div>
-                  ))}
+                  <Link to="/blog/how-chatbots-work-small-businesses-pakistan" className="flex items-center justify-between p-3 rounded-lg border hover:bg-gray-50 transition-colors">
+                    <span className="font-medium">Chatbot Automation</span>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                  </Link>
+                  <Link to="/blog/whatsapp-business-api-vs-regular-whatsapp" className="flex items-center justify-between p-3 rounded-lg border hover:bg-gray-50 transition-colors">
+                    <span className="font-medium">WhatsApp Solutions</span>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                  </Link>
+                  <Link to="/blog/solar-companies-whatsapp-automation-pakistan" className="flex items-center justify-between p-3 rounded-lg border hover:bg-gray-50 transition-colors">
+                    <span className="font-medium">Industry Case Studies</span>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                  </Link>
                 </div>
               </div>
 
@@ -336,8 +345,8 @@ const Blog = () => {
                         placeholder="Enter your email"
                         className="bg-white/20 border-white/30 text-white placeholder:text-white/60"
                       />
-                      <Button variant="secondary" className="bg-white text-whatsapp-green hover:bg-white/90">
-                        Subscribe
+                      <Button variant="secondary" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm border-0">
+                        Book Free Demo
                       </Button>
                     </div>
                     
