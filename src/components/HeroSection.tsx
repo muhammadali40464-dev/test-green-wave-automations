@@ -7,11 +7,18 @@ const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
 
-  // Auto-scroll function
+  // Auto-scroll functions
   const scrollToBottom = () => {
     const chatContainer = document.getElementById('chat-messages');
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  };
+
+  const scrollToTop = () => {
+    const chatContainer = document.getElementById('chat-messages');
+    if (chatContainer) {
+      chatContainer.scrollTop = 0;
     }
   };
 
@@ -129,6 +136,9 @@ const HeroSection = () => {
     const conversation = conversations[currentConversation];
     let messageIndex = 0;
     setVisibleMessages([]);
+    
+    // Scroll to top when conversation changes
+    setTimeout(scrollToTop, 300);
 
     const showNextMessage = () => {
       if (messageIndex < conversation.messages.length) {

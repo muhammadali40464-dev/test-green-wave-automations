@@ -10,6 +10,8 @@ import ContactUs from "./pages/ContactUs";
 import WhatsAppAPIGuide from "./pages/blog/WhatsAppAPIGuide";
 import SolarAutomation from "./pages/blog/SolarAutomation";
 import VisaConsultancy from "./pages/blog/VisaConsultancy";
+import ChatbotGuideSmallBusiness from "./pages/blog/ChatbotGuideSmallBusiness";
+import WhatsAppAPIvsRegular from "./pages/blog/WhatsAppAPIvsRegular";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="/blog/whatsapp-business-api-pakistan-guide-2025" element={<WhatsAppAPIGuide />} />
           <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<SolarAutomation />} />
           <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<VisaConsultancy />} />
+          <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<ChatbotGuideSmallBusiness />} />
+          <Route path="/blog/whatsapp-business-api-vs-regular-whatsapp" element={<WhatsAppAPIvsRegular />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

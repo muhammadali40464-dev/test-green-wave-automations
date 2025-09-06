@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
 import { Link } from "react-router-dom";
-import { BookOpen, Calendar, ArrowRight, Users, Zap, GraduationCap, Mail } from "lucide-react";
+import { BookOpen, Calendar, ArrowRight, Users, Zap, GraduationCap, Mail, MessageCircle } from "lucide-react";
 
 const Blog = () => {
   return (
@@ -140,6 +140,66 @@ const Blog = () => {
             <h2 className="font-h2 text-center mb-12">Recent Articles</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              
+              {/* Business Automation Education */}
+              <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-blue-100 to-indigo-100 p-6">
+                  <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-4">
+                    <BookOpen className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                
+                <CardHeader>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                    <Calendar className="h-4 w-4" />
+                    January 15, 2025
+                  </div>
+                  <CardTitle className="font-h4 group-hover:text-whatsapp-green transition-colors">
+                    How Chatbots Work for Small Businesses in Pakistan
+                  </CardTitle>
+                  <CardDescription>
+                    Complete guide to understanding chatbots for Pakistani small businesses. Setup, benefits, costs, and real success stories.
+                  </CardDescription>
+                </CardHeader>
+                
+                <CardFooter>
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/blog/how-chatbots-work-small-businesses-pakistan">
+                      Read Complete Guide <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
+              {/* WhatsApp Comparison */}
+              <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-green-100 to-emerald-100 p-6">
+                  <div className="w-16 h-16 bg-whatsapp-green rounded-2xl flex items-center justify-center mb-4">
+                    <MessageCircle className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+                
+                <CardHeader>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                    <Calendar className="h-4 w-4" />
+                    January 14, 2025
+                  </div>
+                  <CardTitle className="font-h4 group-hover:text-whatsapp-green transition-colors">
+                    WhatsApp Business API vs Regular WhatsApp: Key Differences
+                  </CardTitle>
+                  <CardDescription>
+                    Detailed comparison to help Pakistani businesses choose the right WhatsApp solution. Features, pricing, and setup guide.
+                  </CardDescription>
+                </CardHeader>
+                
+                <CardFooter>
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link to="/blog/whatsapp-business-api-vs-regular-whatsapp">
+                      Compare Now <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
               {/* Solar Article */}
               <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
                 <div className="bg-gradient-to-br from-orange-100 to-yellow-100 p-6">
