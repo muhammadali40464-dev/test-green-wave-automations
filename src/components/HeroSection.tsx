@@ -165,7 +165,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[90vh]">
           
           {/* Left Content - Mobile Optimized */}
-          <div className="order-2 lg:order-1 space-y-8 lg:space-y-10">
+          <div className="order-1 lg:order-1 space-y-8 lg:space-y-10">
             <div className="space-y-6 lg:space-y-8">
               <div className="space-y-6 lg:space-y-8">
                 <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-3 rounded-full text-sm sm:text-base font-medium">
@@ -254,7 +254,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Side - Enhanced WhatsApp Interface */}
-          <div className="order-1 lg:order-2 flex justify-center">
+          <div className="order-2 lg:order-2 flex justify-center">
             <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-full max-w-[380px] sm:max-w-[420px] h-[500px] sm:h-[600px] lg:h-[680px] overflow-hidden relative border border-gray-200 hover-lift">
               
               {/* Authentic WhatsApp Header */}
