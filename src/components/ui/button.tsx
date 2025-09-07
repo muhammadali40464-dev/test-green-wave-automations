@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm",
-        hero: "bg-whatsapp-green text-white font-semibold hover:bg-whatsapp-dark shadow-hero hover:shadow-lg hover:scale-105 rounded-3xl",
+        hero: "bg-whatsapp-green text-white font-semibold hover:bg-whatsapp-dark shadow-hero transition-all duration-200 rounded-3xl",
         secondary: "bg-transparent border-2 border-whatsapp-green text-whatsapp-green font-semibold hover:bg-whatsapp-green hover:text-white rounded-3xl",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         ghost: "hover:bg-accent hover:text-accent-foreground",

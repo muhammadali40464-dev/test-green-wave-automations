@@ -20,7 +20,7 @@ const BlogCTASection = () => {
             <Button 
               variant="secondary" 
               size="lg" 
-              className="bg-white text-whatsapp-green hover:bg-white/90 font-semibold px-8"
+              className="bg-white text-whatsapp-green hover:bg-white/90 font-semibold px-8 transition-colors"
               asChild
             >
               <Link to="/#pricing">
@@ -32,7 +32,7 @@ const BlogCTASection = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="border-white text-white hover:bg-white hover:text-whatsapp-green font-semibold px-8"
+              className="border-white text-white hover:bg-white hover:text-whatsapp-green font-semibold px-8 transition-colors"
               asChild
             >
               <Link to="/#contact">
