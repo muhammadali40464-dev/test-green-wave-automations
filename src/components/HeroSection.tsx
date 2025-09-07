@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical } from "lucide-react";
 
 const HeroSection = () => {
-  const navigate = useNavigate();
   const [isTyping, setIsTyping] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
 
@@ -153,114 +152,109 @@ const HeroSection = () => {
   }, [currentConversation]);
 
   return (
-    <>
-      {/* Main Hero Section - Transform Every Chat */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-soft-green via-card to-background">
-        <div className="container-width relative z-10">
-          <div className="text-center space-y-8 lg:space-y-12 max-w-5xl mx-auto">
-            {/* Hero Badge */}
-            <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-green px-6 py-3 rounded-full font-medium text-base sm:text-lg animate-fade-in-up">
-              <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6" />
-              Official Meta Business Partner
-            </div>
-            
-            {/* Hero Headline */}
-            <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
-              <h1 className="font-hero text-foreground leading-[0.95] tracking-tight">
-                Transform Every Chat Into
-                <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent mt-2">
-                  Revenue
-                </span>
-              </h1>
-              
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-whatsapp-green leading-tight">
-                With AI Automation
-              </h2>
-              
-              <p className="font-body-lg text-muted-foreground mx-auto max-w-3xl leading-relaxed">
-                Watch authentic conversations flow automatically across WhatsApp, Instagram & Facebook. 
-                Trusted by 500+ Pakistani businesses to convert every message into a sales opportunity.
-              </p>
-            </div>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-whatsapp-green/5">
+      
+      {/* Enhanced Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-whatsapp-green/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-whatsapp-dark/8 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+      </div>
 
-            {/* Enhanced CTA Buttons - Mobile Optimized */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center animate-fade-in-up">
+      <div className="container-width relative z-10 section-padding">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[90vh]">
+          
+          {/* Left Content - Mobile Optimized */}
+          <div className="order-2 lg:order-1 space-y-8 lg:space-y-10">
+            <div className="space-y-6 lg:space-y-8">
+              <div className="space-y-6 lg:space-y-8">
+                <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-3 rounded-full text-sm sm:text-base font-medium">
+                  <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-whatsapp-green" />
+                  Official Meta Business Partner
+                </div>
+                
+                <h1 className="font-hero text-foreground">
+                  Transform Every Chat Into
+                  <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent mt-2">
+                    Revenue
+                  </span>
+                </h1>
+                
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-whatsapp-green leading-tight">
+                  With AI Automation
+                </h2>
+                
+                <p className="font-body-lg text-muted-foreground leading-relaxed">
+                  Watch authentic conversations flow automatically across WhatsApp, Instagram & Facebook. 
+                  Trusted by 500+ Pakistani businesses.
+                </p>
+              </div>
+
+              {/* Enhanced CTA Buttons - Mobile Optimized */}
+              <div className="flex flex-col sm:flex-row gap-4 w-full">
               <Button 
                 variant="default" 
                 size="lg" 
                 className="bg-whatsapp-green hover:bg-whatsapp-dark text-white shadow-hero group hover-lift px-8 py-6 text-lg sm:text-xl font-semibold w-full sm:w-auto"
-                onClick={() => navigate('/contact')}
+                asChild
               >
-                <CheckCircle className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Get Started Free
+                <Link to="/contact">
+                  <CheckCircle className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
+                  Get Started Free
+                </Link>
               </Button>
-              
               <Button 
                 variant="outline" 
                 size="lg"
                 className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-6 text-lg sm:text-xl font-semibold hover-lift w-full sm:w-auto"
+                asChild
               >
-                <Play className="mr-3 h-5 w-5" />
-                Watch Demo
+                <Link to="/#pricing">
+                  <Play className="mr-3 h-5 w-5" />
+                  Watch Demo
+                </Link>
               </Button>
-            </div>
+              </div>
 
-            {/* Enhanced Trust Indicators - Mobile Optimized */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pt-8 lg:pt-12 animate-fade-in-up">
-              <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
-                <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
-                  <Users className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+              {/* Enhanced Trust Indicators - Mobile Optimized */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pt-8 lg:pt-12">
+                <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <Users className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+                  </div>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">500+</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Pakistani Businesses</p>
                 </div>
-                <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">500+</div>
-                <p className="text-sm sm:text-base text-muted-foreground font-medium">Pakistani Businesses</p>
-              </div>
-              
-              <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
-                <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
-                  <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+                
+                <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+                  </div>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">10M+</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Messages Automated</p>
                 </div>
-                <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">10M+</div>
-                <p className="text-sm sm:text-base text-muted-foreground font-medium">Messages Automated</p>
-              </div>
-              
-              <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
-                <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
-                  <Star className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+                
+                <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <Star className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+                  </div>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">95%</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Customer Satisfaction</p>
                 </div>
-                <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">95%</div>
-                <p className="text-sm sm:text-base text-muted-foreground font-medium">Customer Satisfaction</p>
-              </div>
-              
-              <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
-                <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
-                  <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+                
+                <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
+                  </div>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">Meta</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Official Partner</p>
                 </div>
-                <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">Meta</div>
-                <p className="text-sm sm:text-base text-muted-foreground font-medium">Official Partner</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* WhatsApp Demo Interface Section */}
-      <section className="section-padding bg-gradient-to-br from-background via-soft-green to-card relative overflow-hidden">
-        <div className="container-width relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="font-h2 text-foreground mb-6">
-              See It In Action
-              <span className="block bg-gradient-to-r from-whatsapp-green to-whatsapp-dark bg-clip-text text-transparent">
-                Live Demo
-              </span>
-            </h2>
-            <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto">
-              Watch real conversations being handled automatically. No scripts, no delays - just natural, 
-              intelligent responses that convert leads into customers.
-            </p>
-          </div>
-
-          {/* WhatsApp Interface */}
-          <div className="flex justify-center">
+          {/* Right Side - Enhanced WhatsApp Interface */}
+          <div className="order-1 lg:order-2 flex justify-center">
             <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-full max-w-[380px] sm:max-w-[420px] h-[500px] sm:h-[600px] lg:h-[680px] overflow-hidden relative border border-gray-200 hover-lift">
               
               {/* Authentic WhatsApp Header */}
@@ -384,8 +378,8 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

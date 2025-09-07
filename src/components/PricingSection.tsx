@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useNavigate } from "react-router-dom";
-import { Check, Star, Zap, AlertCircle, Users } from "lucide-react";
+import { Check, Star, Zap, AlertCircle } from "lucide-react";
 
 const PricingSection = () => {
-  const navigate = useNavigate();
   const monthlyFeatures = [
     "WhatsApp Business API",
     "Instagram & Facebook integration",
@@ -83,15 +81,12 @@ const PricingSection = () => {
               </div>
 
               <div className="pt-4">
-                <Button 
-                  variant="hero" 
-                  size="lg" 
-                  className="w-full animate-pulse-custom"
-                  onClick={() => navigate('/contact')}
-                >
-                  <Users className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
-                  Get Started
-                </Button>
+                <a href="/contact">
+                  <Button variant="hero" size="lg" className="w-full animate-pulse-custom">
+                    <Zap className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
+                    Get Started
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -139,14 +134,11 @@ const PricingSection = () => {
               </div>
 
               <div className="pt-4">
-                <Button 
-                  variant="secondary" 
-                  size="lg" 
-                  className="w-full"
-                  onClick={() => navigate('/contact')}
-                >
-                  Sign Up
-                </Button>
+                <a href="/contact">
+                  <Button variant="secondary" size="lg" className="w-full">
+                    Sign Up
+                  </Button>
+                </a>
               </div>
             </div>
           </div>

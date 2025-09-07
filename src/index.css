@@ -125,10 +125,9 @@
 }
 
 @layer utilities {
-  /* Container and layout utilities - Mobile First with proper center alignment */
+  /* Container and layout utilities - Mobile First */
   .container-width {
     @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:max-w-7xl;
-    max-width: 100%;
   }
 
   .section-padding {
@@ -137,42 +136,6 @@
   
   .section-content-gap {
     @apply space-y-12 md:space-y-16 lg:space-y-20;
-  }
-
-  /* Ensure all sections are properly centered */
-  section {
-    @apply w-full max-w-none;
-  }
-
-  /* Fix any potential alignment issues */
-  .text-center {
-    text-align: center;
-  }
-
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Responsive grid system with proper centering */
-  .grid {
-    display: grid;
-    justify-items: center;
-    width: 100%;
-  }
-
-  /* Flexbox utilities with proper centering */
-  .flex {
-    display: flex;
-    width: 100%;
-  }
-
-  .items-center {
-    align-items: center;
-  }
-
-  .justify-center {
-    justify-content: center;
   }
   
   .gradient-hero {
