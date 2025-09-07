@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import WebsiteLoader from "@/components/WebsiteLoader";
+import PageTransitionLoader from "@/components/PageTransitionLoader";
 
 // Scroll to top component
 const ScrollToTop = () => {
@@ -61,20 +62,20 @@ const App = () => {
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><Blog /></Suspense>} />
-            <Route path="/success-stories" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><SuccessStories /></Suspense>} />
-            <Route path="/contact" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><ContactUs /></Suspense>} />
-            <Route path="/privacy-policy" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><PrivacyPolicy /></Suspense>} />
-            <Route path="/terms-of-service" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><TermsOfService /></Suspense>} />
-            <Route path="/cookie-policy" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><CookiePolicy /></Suspense>} />
-            <Route path="/blog/chatbot-automation-guide-pakistan" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><ChatbotAutomationGuide /></Suspense>} />
-            <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><SolarAutomation /></Suspense>} />
-            <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><VisaConsultancy /></Suspense>} />
-            <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><ChatbotGuideSmallBusiness /></Suspense>} />
-            <Route path="/blog/whatsapp-business-api-pakistan-guide-2025" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><WhatsAppAPIGuide /></Suspense>} />
-            <Route path="/blog/whatsapp-api-vs-regular-whatsapp-business" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><WhatsAppAPIvsRegular /></Suspense>} />
+            <Route path="/blog" element={<Suspense fallback={<PageTransitionLoader route="/blog" />}><Blog /></Suspense>} />
+            <Route path="/success-stories" element={<Suspense fallback={<PageTransitionLoader route="/success-stories" />}><SuccessStories /></Suspense>} />
+            <Route path="/contact" element={<Suspense fallback={<PageTransitionLoader route="/contact" />}><ContactUs /></Suspense>} />
+            <Route path="/privacy-policy" element={<Suspense fallback={<PageTransitionLoader route="/privacy-policy" />}><PrivacyPolicy /></Suspense>} />
+            <Route path="/terms-of-service" element={<Suspense fallback={<PageTransitionLoader route="/terms-of-service" />}><TermsOfService /></Suspense>} />
+            <Route path="/cookie-policy" element={<Suspense fallback={<PageTransitionLoader route="/cookie-policy" />}><CookiePolicy /></Suspense>} />
+            <Route path="/blog/chatbot-automation-guide-pakistan" element={<Suspense fallback={<PageTransitionLoader route="/blog/chatbot-automation-guide-pakistan" />}><ChatbotAutomationGuide /></Suspense>} />
+            <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<Suspense fallback={<PageTransitionLoader route="/blog/solar-companies-whatsapp-automation-pakistan" />}><SolarAutomation /></Suspense>} />
+            <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<Suspense fallback={<PageTransitionLoader route="/blog/visa-consultancy-whatsapp-automation-urdu" />}><VisaConsultancy /></Suspense>} />
+            <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<Suspense fallback={<PageTransitionLoader route="/blog/how-chatbots-work-small-businesses-pakistan" />}><ChatbotGuideSmallBusiness /></Suspense>} />
+            <Route path="/blog/whatsapp-business-api-pakistan-guide-2025" element={<Suspense fallback={<PageTransitionLoader route="/blog/whatsapp-business-api-pakistan-guide-2025" />}><WhatsAppAPIGuide /></Suspense>} />
+            <Route path="/blog/whatsapp-api-vs-regular-whatsapp-business" element={<Suspense fallback={<PageTransitionLoader route="/blog/whatsapp-api-vs-regular-whatsapp-business" />}><WhatsAppAPIvsRegular /></Suspense>} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><NotFound /></Suspense>} />
+            <Route path="*" element={<Suspense fallback={<PageTransitionLoader route="/404" />}><NotFound /></Suspense>} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
