@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { 
   Menu, 
   X, 
@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 const MegaMenu = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -67,9 +68,7 @@ const MegaMenu = () => {
               Contact Us
             </Link>
 
-            <Button variant="hero" size="sm" onClick={() => {
-              window.location.href = '/contact';
-            }}>
+            <Button variant="hero" size="sm" onClick={() => navigate('/contact')}>
               Get Started
             </Button>
           </div>
@@ -121,7 +120,7 @@ const MegaMenu = () => {
 
               <Button variant="hero" size="sm" className="w-full mt-4" onClick={() => {
                 closeAllDropdowns();
-                window.location.href = '/contact';
+                navigate('/contact');
               }}>
                 Get Started
               </Button>

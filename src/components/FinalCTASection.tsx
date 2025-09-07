@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { Zap, CheckCircle, Clock, Shield } from "lucide-react";
 
 const FinalCTASection = () => {
+  const navigate = useNavigate();
   return (
     <section className="section-padding bg-gradient-to-b from-whatsapp-green to-whatsapp-dark text-white">
       <div className="container-width">
@@ -23,26 +25,24 @@ const FinalCTASection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a href="/contact">
-              <Button 
-                variant="hero" 
-                size="xl" 
-                className="bg-white text-whatsapp-green hover:bg-white/90 hover:scale-105 shadow-2xl"
-              >
-                <Zap className="mr-3 h-6 w-6" />
-                Book Free Demo
-              </Button>
-            </a>
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="bg-white text-whatsapp-green hover:bg-white/90 hover:scale-105 shadow-2xl"
+              onClick={() => navigate('/contact')}
+            >
+              <Zap className="mr-3 h-6 w-6" />
+              Book Free Demo
+            </Button>
             
-            <a href="/contact">
-              <Button 
-                variant="secondary" 
-                size="xl"
-                className="border-white text-white hover:bg-white hover:text-whatsapp-green"
-              >
-                Schedule Consultation
-              </Button>
-            </a>
+            <Button 
+              variant="secondary" 
+              size="xl"
+              className="border-white text-white hover:bg-white hover:text-whatsapp-green"
+              onClick={() => navigate('/contact')}
+            >
+              Schedule Consultation
+            </Button>
           </div>
 
           {/* Trust Indicators */}

@@ -1,7 +1,10 @@
 import { Check, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const ComparisonSection = () => {
+  const navigate = useNavigate();
   const features = [
     "Implementation Support",
     "Unlimited Chats", 
@@ -66,11 +69,14 @@ const ComparisonSection = () => {
 
           {/* Bottom CTA */}
           <div className="text-center mt-16">
-            <a href="/contact">
-              <button className="gradient-cta text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-transform shadow-hero">
-                Experience The Difference - Get Started Today
-              </button>
-            </a>
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="bg-gradient-to-r from-whatsapp-green to-whatsapp-dark text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:scale-105 transition-transform shadow-hero border-0"
+              onClick={() => navigate('/contact')}
+            >
+              Experience The Difference - Get Started Today
+            </Button>
           </div>
         </div>
       </div>

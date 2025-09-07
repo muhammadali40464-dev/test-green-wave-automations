@@ -16,7 +16,7 @@ const Index = () => {
   return (
     <>
       <MegaMenu />
-      <main className="min-h-screen pt-16">
+      <main className="min-h-screen">
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
