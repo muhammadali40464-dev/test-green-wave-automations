@@ -13,13 +13,20 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://thechatflow.com" />
     
-    <!-- Performance Optimizations -->
+    <!-- Performance Optimizations - Enhanced for critical request chain -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     
-    <!-- Preload critical font -->
+    <!-- Preload critical resources to break dependency chain -->
+    <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="modulepreload" href="/src/App.tsx">
+    <link rel="modulepreload" href="/src/pages/Index.tsx">
+    <link rel="modulepreload" href="/src/components/HeroSection.tsx">
+    <link rel="modulepreload" href="/src/components/MegaMenu.tsx">
+    
+    <!-- Preload critical font to reduce chain length -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"></noscript>
     
@@ -162,10 +169,29 @@
     }
     </script>
     
-    <!-- Performance optimizations -->
+    <!-- Performance optimizations - Break dependency chains -->
     <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
-    <link rel="modulepreload" href="/src/main.tsx">
+    
+    <!-- Aggressive resource preloading to parallelize requests -->
+    <script>
+      // Preload critical resources immediately to break dependency chain
+      const preloadResources = [
+        { href: '/src/index.css', as: 'style' },
+        { href: '/src/main.tsx', as: 'script' }
+      ];
+      
+      preloadResources.forEach(resource => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = resource.href;
+        link.as = resource.as;
+        if (resource.as === 'script') {
+          link.rel = 'modulepreload';
+        }
+        document.head.appendChild(link);
+      });
+    </script>
     
     <!-- Favicon and icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
