@@ -168,23 +168,17 @@ const HeroSection = () => {
           <div className="space-y-8 lg:space-y-10 lg:pr-12">
             <div className="space-y-6 lg:space-y-8">
               <div className="space-y-4 lg:space-y-6">
-                <div className="inline-flex items-center gap-3 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-2 rounded-full text-sm font-medium">
-                  <img src="/lovable-uploads/465b2222-f206-4838-86f2-7433587f756a.png" alt="TheChatFlow Logo" className="w-6 h-6" />
+                <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-2 rounded-full text-sm font-medium">
                   <CheckCircle className="h-4 w-4 text-whatsapp-green" />
                   Official Meta Business Partner
                 </div>
                 
-                <div className="flex items-center gap-4 mb-6">
-                  <img src="/lovable-uploads/465b2222-f206-4838-86f2-7433587f756a.png" alt="TheChatFlow" className="w-16 h-16 md:w-20 md:h-20" />
-                  <div>
-                    <h1 className="font-hero text-foreground leading-[0.95] tracking-tight">
-                      Transform Every Chat Into
-                      <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent">
-                        Revenue
-                      </span>
-                    </h1>
-                  </div>
-                </div>
+                <h1 className="font-hero text-foreground leading-[0.95] tracking-tight">
+                  Transform Every Chat Into
+                  <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent">
+                    Revenue
+                  </span>
+                </h1>
                 
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-whatsapp-green">
                   With AI Automation
@@ -267,7 +261,9 @@ const HeroSection = () => {
               <div className="bg-[#075E54] text-white p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="relative">
-                    <img src="/lovable-uploads/465b2222-f206-4838-86f2-7433587f756a.png" alt="TheChatFlow" className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white p-1" />
+                    <div className="w-10 h-10 md:w-11 md:h-11 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-base md:text-lg">
+                      TC
+                    </div>
                     <div className="absolute -bottom-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-green-400 rounded-full border-2 border-[#075E54]"></div>
                   </div>
                   <div className="flex-1">
@@ -341,8 +337,8 @@ const HeroSection = () => {
                 {/* Enhanced Typing Indicator */}
                 {isTyping && (
                   <div className="flex items-start gap-2 animate-fade-in-up">
-                    <div className="w-7 h-7 md:w-8 md:h-8 bg-white rounded-full p-1 flex items-center justify-center shadow-sm">
-                      <img src="/lovable-uploads/465b2222-f206-4838-86f2-7433587f756a.png" alt="TheChatFlow" className="w-full h-full" />
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
+                      TC
                     </div>
                     <div className="bg-[#DCF8C6] rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm message-bubble">
                       <div className="flex items-center gap-2 mb-1">
