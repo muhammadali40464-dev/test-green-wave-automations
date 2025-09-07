@@ -192,9 +192,13 @@ const ContactUs = () => {
         referenceId: submissionData.submissionId?.slice(-8) || "N/A"
       });
       
+      // Wait for loader to complete, then show success
       setTimeout(() => {
-        setShowSuccess(true);
-      }, 1500); // Show success after loader completes
+        setIsSubmitting(false); // Hide loader first
+        setTimeout(() => {
+          setShowSuccess(true); // Then show success
+        }, 300); // Small delay for smooth transition
+      }, 2500); // Wait for loader to complete (progress + animation)
 
       // Reset form
       form.reset();
@@ -207,7 +211,8 @@ const ContactUs = () => {
         description: "Please try again or contact us directly on WhatsApp for immediate assistance.",
         variant: "destructive",
       });
-    } finally {
+      
+      // Only set to false on error, success handling manages this above
       setIsSubmitting(false);
     }
   };
