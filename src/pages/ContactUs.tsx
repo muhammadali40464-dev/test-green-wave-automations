@@ -19,7 +19,6 @@ import {
   Users,
   Zap,
   CheckCircle,
-  Send,
   Calendar,
   Globe,
   Star,
@@ -49,7 +48,8 @@ interface SubmissionData extends ContactFormData {
   userAgent: string;
   sourceUrl: string;
   referrer: string;
-  ipAddress?: string;
+      // Remove slow IP detection API call and simplify data collection
+      ipAddress?: string;
   utmSource?: string;
   utmMedium?: string;
   utmCampaign?: string;
@@ -83,27 +83,16 @@ const ContactUs = () => {
     },
   });
 
-  // Enhanced data collection function
-  const collectEnhancedData = async (): Promise<Omit<SubmissionData, keyof ContactFormData>> => {
+  // Simplified data collection function - fast and efficient
+  const collectEnhancedData = (): Omit<SubmissionData, keyof ContactFormData> => {
     const urlParams = new URLSearchParams(window.location.search);
-    let ipAddress = "";
-
-    try {
-      // Get IP address
-      const ipResponse = await fetch("https://ipapi.co/json/");
-      const ipData = await ipResponse.json();
-      ipAddress = ipData.ip;
-    } catch (error) {
-      console.log("IP detection failed:", error);
-    }
-
+    
     return {
       timestamp: new Date().toISOString(),
       submissionId: crypto.randomUUID(),
       userAgent: navigator.userAgent,
       sourceUrl: window.location.href,
       referrer: document.referrer || "Direct",
-      ipAddress,
       utmSource: urlParams.get("utm_source") || undefined,
       utmMedium: urlParams.get("utm_medium") || undefined,
       utmCampaign: urlParams.get("utm_campaign") || undefined,
@@ -126,48 +115,39 @@ const ContactUs = () => {
     return true;
   };
 
-  // Form submission with retry logic
-  const submitWithRetry = async (data: SubmissionData, maxRetries = 3): Promise<boolean> => {
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-      try {
-        const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbxQy3n0F7-gQtusrMRRalyqI1xlZ4eJNYGAGk9Xh8HucMeB9efcbpE6CJUuvEVaQ4fwFg/exec",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            mode: "no-cors",
-            body: JSON.stringify(data),
-          }
-        );
-
-        // Track successful submission in analytics
-        if (typeof window.gtag !== "undefined") {
-          window.gtag("event", "form_submit", {
-            event_category: "contact",
-            event_label: "contact_form",
-            value: 1,
-          });
+  // Fast form submission - optimized for speed
+  const submitToGoogleSheets = async (data: SubmissionData): Promise<boolean> => {
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxQy3n0F7-gQtusrMRRalyqI1xlZ4eJNYGAGk9Xh8HucMeB9efcbpE6CJUuvEVaQ4fwFg/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: JSON.stringify(data),
         }
+      );
 
-        if (typeof window.clarity !== "undefined") {
-          window.clarity("set", "contact_form_submitted", "true");
-        }
-
-        return true;
-      } catch (error) {
-        console.error(`Submission attempt ${attempt} failed:`, error);
-        
-        if (attempt === maxRetries) {
-          throw error;
-        }
-        
-        // Wait before retry (exponential backoff)
-        await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+      // Track successful submission in analytics
+      if (typeof window.gtag !== "undefined") {
+        window.gtag("event", "demo_booking", {
+          event_category: "conversion",
+          event_label: "contact_form",
+          value: 1,
+        });
       }
+
+      if (typeof window.clarity !== "undefined") {
+        window.clarity("set", "demo_booked", "true");
+      }
+
+      return true;
+    } catch (error) {
+      console.error("Form submission failed:", error);
+      throw error;
     }
-    return false;
   };
 
   // Form submission handler
@@ -186,22 +166,22 @@ const ContactUs = () => {
     setIsSubmitting(true);
 
     try {
-      // Collect enhanced data
-      const enhancedData = await collectEnhancedData();
+      // Collect enhanced data (fast, no API calls)
+      const enhancedData = collectEnhancedData();
       const submissionData: SubmissionData = {
         ...data,
         ...enhancedData,
       };
 
-      // Submit to Google Sheets
-      await submitWithRetry(submissionData);
+      // Submit to Google Sheets (fast submission)
+      await submitToGoogleSheets(submissionData);
 
       // Success handling
       setLastSubmissionTime(Date.now());
       
       toast({
-        title: "Message sent successfully!",
-        description: `Thank you ${data.fullName}! We'll respond within 2 hours. Reference ID: ${submissionData.submissionId?.slice(-8)}`,
+        title: "Demo booking confirmed!",
+        description: `Thank you ${data.fullName}! We'll contact you within 2 hours to schedule your demo. Reference: ${submissionData.submissionId?.slice(-8)}`,
       });
 
       // Reset form
@@ -211,8 +191,8 @@ const ContactUs = () => {
       console.error("Form submission error:", error);
       
       toast({
-        title: "Submission failed",
-        description: "Please try again or contact us directly on WhatsApp. We apologize for the inconvenience.",
+        title: "Demo booking failed",
+        description: "Please try again or contact us directly on WhatsApp for immediate assistance.",
         variant: "destructive",
       });
     } finally {
@@ -410,9 +390,9 @@ const ContactUs = () => {
         <div className="container-width">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12 lg:mb-16">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Send Us a Message</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Book Your Free Demo</h2>
               <p className="text-lg lg:text-xl text-muted-foreground">
-                Tell us about your business needs and we'll create a custom automation solution for you.
+                Get a personalized demo of our WhatsApp automation solutions tailored to your business needs.
               </p>
             </div>
 
@@ -528,37 +508,30 @@ const ContactUs = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-4">
+                   <div className="text-center pt-4">
                     <Button 
-                      type="submit"
-                      variant="default" 
-                      size="lg" 
-                      className="flex-1 bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-xl hover-lift"
-                      disabled={isSubmitting}
+                     type="submit"
+                     variant="default" 
+                     size="lg" 
+                     className="w-full md:w-auto min-w-[200px] bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-xl hover-lift"
+                     disabled={isSubmitting}
                     >
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6 animate-spin" />
-                          Sending...
+                          Booking Demo...
                         </>
                       ) : (
                         <>
-                          <Send className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
-                          Send Message
+                          <Calendar className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
+                          Book Demo Call
                         </>
                       )}
                     </Button>
                     
-                    <Button 
-                      type="button"
-                      variant="outline" 
-                      size="lg"
-                      className="flex-1 border-2 border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold hover-lift"
-                      disabled={isSubmitting}
-                    >
-                      <Calendar className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
-                      Book Demo Call
-                    </Button>
+                    <p className="text-sm text-muted-foreground mt-3 text-center">
+                      Free 30-minute consultation • No commitment required
+                    </p>
                   </div>
 
                   {/* Form validation summary */}
