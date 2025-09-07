@@ -1,127 +1,155 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical, Send, Smile } from "lucide-react";
+import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical } from "lucide-react";
 
 const HeroSection = () => {
-  // Define message types
-  type BaseMessage = {
-    id: number;
-    sender: string;
-    time: string;
-    text: string;
-    status: 'delivered' | 'read';
-  };
-
-  type IncomingMessage = BaseMessage & {
-    type: 'incoming';
-    avatar: string;
-  };
-
-  type OutgoingMessage = BaseMessage & {
-    type: 'outgoing';
-    verified?: boolean;
-  };
-
-  type Message = IncomingMessage | OutgoingMessage;
-
-  const [messages, setMessages] = useState<Message[]>([
-    { 
-      id: 1, 
-      type: 'outgoing', 
-      sender: 'TheChatFlow', 
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }), 
-      text: 'Welcome! I\'m your AI assistant. Ask me anything about our services - visa consultancy, solar solutions, business automation, or any other questions!',
-      verified: true,
-      status: 'read'
-    }
-  ]);
   const [isTyping, setIsTyping] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-  const chatContainerRef = useRef<HTMLDivElement>(null);
+  const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
 
-  // Auto-responses for different topics
-  const responses = {
-    visa: "Great question about visa services!\n\nFor Canada study visa:\n• IELTS score: 6.5+ overall\n• Bank statement: 15+ lakh\n• University acceptance letter\n• Academic transcripts\n\nWould you like me to schedule a free consultation?",
-    solar: "Excellent choice considering solar energy!\n\nFor a 25-30K monthly bill:\n• Recommended: 10KW system\n• Investment: 12-14 lakh\n• Monthly savings: 20-25K\n• Payback: 2.5-3 years\n\nShall I arrange a free site survey?",
-    business: "Smart thinking about business automation!\n\nOur WhatsApp automation can:\n• Handle 80% of customer queries\n• Generate leads 24/7\n• Increase conversion by 300%\n• Save 15+ hours weekly\n\nWant to see a live demo?",
-    pricing: "Our flexible pricing suits every business:\n\n• Starter: PKR 15,000/month\n• Professional: PKR 35,000/month\n• Enterprise: Custom pricing\n\nAll plans include setup, training & support. Ready to transform your business?",
-    default: "Thank you for your question!\n\nI can help you with:\n• Visa & immigration services\n• Solar energy solutions\n• Business automation\n• WhatsApp marketing\n\nWhat specific area interests you most?"
-  };
-
-  const getResponse = (message: string) => {
-    const lowerMessage = message.toLowerCase();
-    if (lowerMessage.includes('visa') || lowerMessage.includes('immigration') || lowerMessage.includes('canada') || lowerMessage.includes('study')) {
-      return responses.visa;
-    } else if (lowerMessage.includes('solar') || lowerMessage.includes('energy') || lowerMessage.includes('electricity') || lowerMessage.includes('bill')) {
-      return responses.solar;
-    } else if (lowerMessage.includes('business') || lowerMessage.includes('automation') || lowerMessage.includes('whatsapp') || lowerMessage.includes('marketing')) {
-      return responses.business;
-    } else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('package')) {
-      return responses.pricing;
-    } else {
-      return responses.default;
+  // More human-like conversation scenarios with minimal emojis
+  const conversations = [
+    {
+      id: 'visa',
+      title: 'Visa Consultancy',
+      color: '#FF6B6B',
+      messages: [
+        { 
+          id: 1, 
+          type: 'incoming', 
+          sender: 'Hassan Ahmed', 
+          time: '2:14 PM', 
+          text: 'Assalam o alaikum, Canada study visa ke liye kya documents chahiye?',
+          avatar: 'H',
+          status: 'delivered'
+        },
+        { 
+          id: 2, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '2:14 PM', 
+          text: 'Walaikum salam Hassan!\n\nCanada study visa ke liye ye main documents hain:\n\n• IELTS 6.5 overall\n• Bank statement 15 lakh minimum\n• University admission letter\n• Academic transcripts\n\nFree consultation book karna chahenge?',
+          verified: true,
+          status: 'read'
+        },
+        { 
+          id: 3, 
+          type: 'incoming', 
+          sender: 'Hassan Ahmed', 
+          time: '2:15 PM', 
+          text: 'Haan bilkul, appointment book kar dein',
+          avatar: 'H',
+          status: 'delivered'
+        },
+        { 
+          id: 4, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '2:15 PM', 
+          text: 'Perfect Hassan!\n\nAvailable time slots:\n\n• Tomorrow 2:00 PM - Office visit\n• Today 6:00 PM - Video call\n\nKonsa prefer karenge?',
+          verified: true,
+          status: 'read'
+        },
+        { 
+          id: 5, 
+          type: 'incoming', 
+          sender: 'Hassan Ahmed', 
+          time: '2:16 PM', 
+          text: 'Video call today please',
+          avatar: 'H',
+          status: 'delivered'
+        },
+        { 
+          id: 6, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '2:16 PM', 
+          text: 'Confirmed!\n\nVideo call today at 6:00 PM\nZoom link: bit.ly/tcf-consultation\n\nDocument checklist aur meeting details WhatsApp kar diye hain. Any questions?',
+          verified: true,
+          status: 'read'
+        }
+      ]
+    },
+    {
+      id: 'solar',
+      title: 'Solar Business',
+      color: '#4ECDC4',
+      messages: [
+        { 
+          id: 1, 
+          type: 'incoming', 
+          sender: 'Ayesha Khan', 
+          time: '3:22 PM', 
+          text: 'Solar system ka quote chahiye. Bijli ka bill monthly 25-30k ata hai',
+          avatar: 'A',
+          status: 'delivered'
+        },
+        { 
+          id: 2, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '3:22 PM', 
+          text: 'Salam Ayesha!\n\n25-30K bill ke liye 10KW system perfect rahega:\n\n• System cost: 12-14 lakh\n• Monthly saving: 20-25K\n• Payback period: 2.5-3 years\n\nFree site survey book karein?',
+          verified: true,
+          status: 'read'
+        },
+        { 
+          id: 3, 
+          type: 'incoming', 
+          sender: 'Ayesha Khan', 
+          time: '3:23 PM', 
+          text: 'Yes please. DHA Phase 6 mein hai location',
+          avatar: 'A',
+          status: 'delivered'
+        },
+        { 
+          id: 4, 
+          type: 'outgoing', 
+          sender: 'TheChatFlow', 
+          time: '3:23 PM', 
+          text: 'Site survey scheduled!\n\nEngineer: Ahmed Khan\nDate: Tomorrow 11:00 AM\nLocation: DHA Phase 6\n\nContact details aur preparation guide send kar diya hai.',
+          verified: true,
+          status: 'read'
+        }
+      ]
     }
-  };
+  ];
 
-  const scrollToBottom = () => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [currentConversation, setCurrentConversation] = useState(0);
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages, isTyping]);
-
-  const handleSendMessage = async () => {
-    if (!inputValue.trim()) return;
-
-    const userMessage: IncomingMessage = {
-      id: Date.now(),
-      type: 'incoming',
-      sender: 'You',
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      text: inputValue,
-      avatar: 'Y',
-      status: 'delivered'
+    const conversation = conversations[currentConversation];
+    let messageIndex = 0;
+    setVisibleMessages([]);
+    
+    const showNextMessage = () => {
+      if (messageIndex < conversation.messages.length) {
+        const message = conversation.messages[messageIndex];
+        
+        if (message.type === 'outgoing') {
+          // Show typing indicator before TheChatFlow response
+          setIsTyping(true);
+          setTimeout(() => {
+            setIsTyping(false);
+            setVisibleMessages(prev => [...prev, message.id]);
+            messageIndex++;
+            setTimeout(showNextMessage, 2000);
+          }, 2500);
+        } else {
+          setVisibleMessages(prev => [...prev, message.id]);
+          messageIndex++;
+          setTimeout(showNextMessage, 1500);
+        }
+      } else {
+        setTimeout(() => {
+          setCurrentConversation(prev => (prev + 1) % conversations.length);
+        }, 4000);
+      }
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setInputValue('');
-
-    // Show typing indicator
-    setIsTyping(true);
-
-    // Simulate response time (2-3 seconds)
-    setTimeout(() => {
-      setIsTyping(false);
-      
-      const botResponse: OutgoingMessage = {
-        id: Date.now() + 1,
-        type: 'outgoing',
-        sender: 'TheChatFlow',
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        text: getResponse(userMessage.text),
-        verified: true,
-        status: 'read'
-      };
-
-      setTimeout(() => {
-        setMessages(prev => [...prev, botResponse]);
-      }, 300);
-    }, Math.random() * 1000 + 2000); // 2-3 seconds
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSendMessage();
-    }
-  };
+    setTimeout(showNextMessage, 1500);
+  }, [currentConversation]);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-whatsapp-green/5">
@@ -261,54 +289,54 @@ const HeroSection = () => {
               </div>
 
               {/* Chat Messages */}
-              <div 
-                ref={chatContainerRef}
-                className="flex-1 p-3 md:p-4 space-y-3 md:space-y-4 h-[420px] md:h-[480px] overflow-y-auto scroll-smooth" 
-                id="chat-messages"
-              >
-                {messages.map((message) => (
+              <div className="flex-1 p-3 md:p-4 space-y-3 md:space-y-4 h-[480px] md:h-[560px] overflow-y-auto" id="chat-messages">
+                {conversations[currentConversation].messages.map((message) => (
                   <div
                     key={message.id}
-                    className="transition-all duration-500 animate-fade-in-up"
+                    className={`transition-all duration-700 message-enter ${
+                      visibleMessages.includes(message.id) 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-6'
+                    }`}
                   >
-                     {message.type === 'incoming' ? (
-                       <div className="flex items-start gap-2 mb-3 md:mb-4">
-                         <div className="w-7 h-7 md:w-8 md:h-8 bg-whatsapp-green/20 rounded-full flex items-center justify-center text-xs font-semibold text-whatsapp-dark">
-                           {(message as IncomingMessage).avatar}
-                         </div>
-                         <div className="flex-1">
-                           <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
-                             <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                             <div className="flex items-center justify-between mt-2">
-                               <p className="text-[10px] md:text-[11px] text-gray-500">{message.time}</p>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     ) : (
-                       <div className="flex justify-end mb-3 md:mb-4">
-                         <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
-                           <div className="flex items-center gap-2 mb-2">
-                             <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
-                             {(message as OutgoingMessage).verified && <CheckCircle className="h-3 w-3 text-blue-500" />}
-                           </div>
-                           <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                           <div className="flex items-center justify-end gap-1 mt-2">
-                             <p className="text-[10px] md:text-[11px] text-gray-600">{message.time}</p>
-                             <div className="flex ml-2">
-                               <CheckCircle className="h-3 w-3 text-blue-500" />
-                               <CheckCircle className="h-3 w-3 text-blue-500 -ml-1" />
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     )}
+                    {message.type === 'incoming' ? (
+                      <div className="flex items-start gap-2 mb-3 md:mb-4">
+                        <div className="w-7 h-7 md:w-8 md:h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
+                          {message.avatar}
+                        </div>
+                        <div className="flex-1">
+                          <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
+                            <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                            <div className="flex items-center justify-between mt-2">
+                              <p className="text-[10px] md:text-[11px] text-gray-500">{message.time}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex justify-end mb-3 md:mb-4">
+                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
+                            {message.verified && <CheckCircle className="h-3 w-3 text-blue-500" />}
+                          </div>
+                          <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                          <div className="flex items-center justify-end gap-1 mt-2">
+                            <p className="text-[10px] md:text-[11px] text-gray-600">{message.time}</p>
+                            <div className="flex ml-2">
+                              <CheckCircle className="h-3 w-3 text-blue-500" />
+                              <CheckCircle className="h-3 w-3 text-blue-500 -ml-1" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
 
                 {/* Enhanced Typing Indicator */}
                 {isTyping && (
-                  <div className="flex items-start gap-2 animate-fade-in-up typing-indicator">
+                  <div className="flex items-start gap-2 animate-fade-in-up">
                     <div className="w-7 h-7 md:w-8 md:h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
                       TC
                     </div>
@@ -328,46 +356,22 @@ const HeroSection = () => {
                     </div>
                   </div>
                 )}
-                
-                <div ref={messagesEndRef} />
               </div>
 
-              {/* Interactive Input Section */}
-              <div className="bg-[#F0F0F0] p-3 md:p-4 flex items-center gap-2 md:gap-3">
-                <button className="p-2 hover:bg-gray-200 rounded-full transition-colors">
-                  <Smile className="w-5 h-5 text-gray-600" />
-                </button>
-                
-                <div className="flex-1 relative">
-                  <Input
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    placeholder="Type a message..."
-                    className="bg-white border-none rounded-2xl pl-4 pr-12 py-2 text-sm focus:ring-2 focus:ring-whatsapp-green focus:border-transparent"
-                    disabled={isTyping}
-                  />
-                </div>
-                
-                <Button
-                  onClick={handleSendMessage}
-                  disabled={!inputValue.trim() || isTyping}
-                  className="bg-whatsapp-green hover:bg-whatsapp-dark text-white rounded-full p-2 w-10 h-10 flex items-center justify-center transition-colors disabled:opacity-50"
-                >
-                  <Send className="w-4 h-4" />
-                </Button>
-              </div>
-
-              {/* Live Demo Indicator */}
-              <div className="absolute top-16 left-3 md:left-4 right-3 md:right-4">
-                <div className="bg-whatsapp-green/90 backdrop-blur-sm rounded-xl px-3 md:px-4 py-2 shadow-sm">
-                  <div className="flex items-center justify-center">
+              {/* Enhanced Conversation Indicator */}
+              <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-3 md:px-4 py-2 shadow-sm conversation-indicator">
+                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
-                      <p className="text-xs font-semibold text-white">
-                        Interactive Demo - Try asking about our services!
+                      <div 
+                        className="w-3 h-3 rounded-full" 
+                        style={{ backgroundColor: conversations[currentConversation].color }}
+                      ></div>
+                      <p className="text-xs font-semibold text-gray-700">
+                        {conversations[currentConversation].title}
                       </p>
                     </div>
+                    <p className="text-xs text-gray-500">Live Demo</p>
                   </div>
                 </div>
               </div>
