@@ -27,13 +27,13 @@ const ProblemSection = () => {
   return (
     <section className="section-padding bg-muted/30">
       <div className="container-width">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left Column - Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
+          <div className="space-y-8 lg:space-y-12">
+            <div className="space-y-6">
               <h2 className="font-h1 text-foreground">
                 Still Losing Customers to
-                <span className="block text-red-600">
+                <span className="block text-red-600 mt-2">
                   Slow Response Times?
                 </span>
               </h2>
@@ -43,13 +43,13 @@ const ProblemSection = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-6 lg:space-y-8">
               {problems.map((problem, index) => (
-                <div key={index} className="flex gap-4 items-start group">
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200 transition-colors">
-                    <problem.icon className="h-6 w-6 text-red-600" />
+                <div key={index} className="flex gap-4 sm:gap-6 items-start group p-4 sm:p-6 bg-card rounded-2xl hover:shadow-lg transition-all">
+                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200 transition-colors">
+                    <problem.icon className="h-6 w-6 sm:h-7 sm:w-7 text-red-600" />
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <h3 className="font-h3 text-foreground">
                       {problem.title}
                     </h3>
@@ -63,34 +63,34 @@ const ProblemSection = () => {
           </div>
 
           {/* Right Column - Visual */}
-          <div className="relative">
-            <div className="bg-white shadow-card rounded-2xl p-8 space-y-6">
+          <div className="relative mt-8 lg:mt-0">
+            <div className="bg-white shadow-card rounded-2xl p-6 sm:p-8 space-y-6 sm:space-y-8">
               <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto">
-                  <TrendingDown className="h-8 w-8 text-red-600" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                  <TrendingDown className="h-8 w-8 sm:h-10 sm:w-10 text-red-600" />
                 </div>
                 <h3 className="font-h3 text-red-600">Customer Loss Rate</h3>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-4 bg-red-50 rounded-lg">
-                  <span className="font-medium">Response Time &gt; 1 hour</span>
-                  <span className="font-bold text-red-600">-40% conversion</span>
+              <div className="space-y-4 sm:space-y-6">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 p-4 sm:p-6 bg-red-50 rounded-lg">
+                  <span className="font-medium text-sm sm:text-base">Response Time &gt; 1 hour</span>
+                  <span className="font-bold text-red-600 text-lg sm:text-xl">-40% conversion</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-red-50 rounded-lg">
-                  <span className="font-medium">No after-hours support</span>
-                  <span className="font-bold text-red-600">-60% night leads</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 p-4 sm:p-6 bg-red-50 rounded-lg">
+                  <span className="font-medium text-sm sm:text-base">No after-hours support</span>
+                  <span className="font-bold text-red-600 text-lg sm:text-xl">-60% night leads</span>
                 </div>
-                <div className="flex justify-between items-center p-4 bg-red-50 rounded-lg">
-                  <span className="font-medium">Manual social media</span>
-                  <span className="font-bold text-red-600">-80% social leads</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 p-4 sm:p-6 bg-red-50 rounded-lg">
+                  <span className="font-medium text-sm sm:text-base">Manual social media</span>
+                  <span className="font-bold text-red-600 text-lg sm:text-xl">-80% social leads</span>
                 </div>
               </div>
               
               <div className="pt-4 border-t text-center">
                 <p className="font-small text-muted-foreground">
                   Average business loses 
-                  <span className="font-bold text-red-600"> 2-3 customers daily</span> 
+                  <span className="font-bold text-red-600 text-lg sm:text-xl"> 2-3 customers daily</span> 
                   due to slow responses
                 </p>
               </div>

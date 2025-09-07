@@ -1,10 +1,12 @@
 import HeroSection from "@/components/HeroSection";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
+import FeaturesSection from "@/components/FeaturesSection";
 import IndustrySolutionsSection from "@/components/IndustrySolutionsSection";
 import AutomationPlatformsSection from "@/components/AutomationPlatformsSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import PricingSection from "@/components/PricingSection";
+import ROICalculatorSection from "@/components/ROICalculatorSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -14,17 +16,17 @@ const Index = () => {
   return (
     <>
       <MegaMenu />
-      <main className="min-h-screen pt-16 space-y-8">
+      <main className="min-h-screen pt-16">
         <HeroSection />
         <ProblemSection />
         <SolutionSection />
-        <div className="space-y-10">
-          <IndustrySolutionsSection />
-          <AutomationPlatformsSection />
-          <ComparisonSection />
-          <PricingSection />
-          <TestimonialSection />
-        </div>
+        <FeaturesSection />
+        <IndustrySolutionsSection />
+        <AutomationPlatformsSection />
+        <ComparisonSection />
+        <ROICalculatorSection />
+        <PricingSection />
+        <TestimonialSection />
         <FAQSection />
         <Footer />
       </main>

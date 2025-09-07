@@ -35,38 +35,38 @@ const FeaturesSection = () => {
   return (
     <section className="section-padding bg-background">
       <div className="container-width">
-        <div className="text-center space-y-4 mb-16">
+        <div className="text-center space-y-6 mb-16 lg:mb-20">
           <h2 className="font-h1 text-foreground">
             Powerful Features That 
-            <span className="block text-whatsapp-green">
+            <span className="block text-whatsapp-green mt-2">
               Drive Real Results
             </span>
           </h2>
           
-          <p className="font-body-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="font-body-lg text-muted-foreground mx-auto">
             Everything you need to transform your customer communication and boost sales
           </p>
         </div>
 
-        <div className="space-y-24">
+        <div className="space-y-16 lg:space-y-24">
           {features.map((feature, index) => (
             <div 
               key={index}
-              className={`grid lg:grid-cols-2 gap-12 items-center ${
+              className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
                 index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
               }`}
             >
               {/* Content */}
-              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-whatsapp-green to-whatsapp-dark rounded-2xl flex items-center justify-center">
-                    <feature.icon className="h-7 w-7 text-white" />
+              <div className={`space-y-6 lg:space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <div className="flex items-start sm:items-center gap-4 sm:gap-6">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-18 lg:h-18 bg-gradient-to-br from-whatsapp-green to-whatsapp-dark rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="h-7 w-7 sm:h-8 sm:w-8 lg:h-9 lg:w-9 text-white" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="font-h2 text-foreground">
                       {feature.title}
                     </h3>
-                    <p className="font-body text-whatsapp-green font-medium">
+                    <p className="font-body text-whatsapp-green font-medium mt-2">
                       {feature.description}
                     </p>
                   </div>
@@ -76,16 +76,16 @@ const FeaturesSection = () => {
                   {feature.details}
                 </p>
                 
-                <div className="flex flex-wrap gap-3">
-                  <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-green px-4 py-2 rounded-full font-medium">
+                <div className="flex flex-wrap gap-3 sm:gap-4">
+                  <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-green px-4 py-3 rounded-full font-medium text-sm sm:text-base">
                     <div className="w-2 h-2 bg-whatsapp-green rounded-full"></div>
                     Easy Setup
                   </div>
-                  <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-green px-4 py-2 rounded-full font-medium">
+                  <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-green px-4 py-3 rounded-full font-medium text-sm sm:text-base">
                     <div className="w-2 h-2 bg-whatsapp-green rounded-full"></div>
                     24/7 Support
                   </div>
-                  <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-green px-4 py-2 rounded-full font-medium">
+                  <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-green px-4 py-3 rounded-full font-medium text-sm sm:text-base">
                     <div className="w-2 h-2 bg-whatsapp-green rounded-full"></div>
                     No Coding
                   </div>
@@ -93,25 +93,25 @@ const FeaturesSection = () => {
               </div>
 
               {/* Visual */}
-              <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <div className="bg-gradient-to-br from-whatsapp-green/5 to-whatsapp-dark/5 rounded-3xl p-12 text-center">
-                  <div className="text-8xl mb-6">{feature.image}</div>
+              <div className={`relative mt-8 lg:mt-0 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                <div className="bg-gradient-to-br from-whatsapp-green/5 to-whatsapp-dark/5 rounded-3xl p-8 sm:p-12 text-center">
+                  <div className="text-6xl sm:text-7xl lg:text-8xl mb-6">{feature.image}</div>
                   <div className="space-y-4">
-                    <div className="bg-white shadow-card rounded-2xl p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 bg-whatsapp-green rounded-full flex items-center justify-center">
-                          <feature.icon className="h-5 w-5 text-white" />
+                    <div className="bg-white shadow-card rounded-2xl p-6 sm:p-8">
+                      <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-whatsapp-green rounded-full flex items-center justify-center">
+                          <feature.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                         </div>
-                        <div className="text-left">
-                          <h4 className="font-medium text-foreground">{feature.title}</h4>
-                          <p className="text-sm text-muted-foreground">Active</p>
+                        <div className="text-left flex-1">
+                          <h4 className="font-medium text-foreground text-base sm:text-lg">{feature.title}</h4>
+                          <p className="text-sm sm:text-base text-muted-foreground">Active</p>
                         </div>
                       </div>
-                      <div className="text-left space-y-2">
-                        <div className="h-2 bg-whatsapp-green/20 rounded-full">
-                          <div className={`h-2 bg-whatsapp-green rounded-full`} style={{width: `${85 + index * 5}%`}}></div>
+                      <div className="text-left space-y-3">
+                        <div className="h-3 bg-whatsapp-green/20 rounded-full">
+                          <div className={`h-3 bg-whatsapp-green rounded-full transition-all duration-1000`} style={{width: `${85 + index * 5}%`}}></div>
                         </div>
-                        <p className="text-sm text-muted-foreground">Performance: {85 + index * 5}%</p>
+                        <p className="text-sm sm:text-base text-muted-foreground">Performance: {85 + index * 5}%</p>
                       </div>
                     </div>
                   </div>
