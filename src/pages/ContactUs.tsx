@@ -1,7 +1,13 @@
+import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
 import { 
@@ -16,10 +22,203 @@ import {
   Send,
   Calendar,
   Globe,
-  Star
+  Star,
+  Loader2
 } from "lucide-react";
 
+// Form validation schema
+const contactFormSchema = z.object({
+  fullName: z.string().min(2, "Full name must be at least 2 characters"),
+  businessName: z.string().optional(),
+  email: z.string().email("Please enter a valid email address"),
+  whatsappNumber: z.string().min(10, "Please enter a valid WhatsApp number"),
+  industry: z.string().optional(),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+  monthlyVolume: z.string().optional(),
+  preferredMeetingTime: z.string().optional(),
+  // Honeypot field for spam protection
+  website: z.string().optional(),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
+
+// Enhanced data collection interface
+interface SubmissionData extends ContactFormData {
+  timestamp: string;
+  submissionId: string;
+  userAgent: string;
+  sourceUrl: string;
+  referrer: string;
+  ipAddress?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+}
+
+// Type declarations for analytics
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+    clarity?: (...args: any[]) => void;
+  }
+}
+
 const ContactUs = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0);
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      fullName: "",
+      businessName: "",
+      email: "",
+      whatsappNumber: "",
+      industry: "",
+      message: "",
+      monthlyVolume: "",
+      preferredMeetingTime: "",
+      website: "", // Honeypot field
+    },
+  });
+
+  // Enhanced data collection function
+  const collectEnhancedData = async (): Promise<Omit<SubmissionData, keyof ContactFormData>> => {
+    const urlParams = new URLSearchParams(window.location.search);
+    let ipAddress = "";
+
+    try {
+      // Get IP address
+      const ipResponse = await fetch("https://ipapi.co/json/");
+      const ipData = await ipResponse.json();
+      ipAddress = ipData.ip;
+    } catch (error) {
+      console.log("IP detection failed:", error);
+    }
+
+    return {
+      timestamp: new Date().toISOString(),
+      submissionId: crypto.randomUUID(),
+      userAgent: navigator.userAgent,
+      sourceUrl: window.location.href,
+      referrer: document.referrer || "Direct",
+      ipAddress,
+      utmSource: urlParams.get("utm_source") || undefined,
+      utmMedium: urlParams.get("utm_medium") || undefined,
+      utmCampaign: urlParams.get("utm_campaign") || undefined,
+    };
+  };
+
+  // Rate limiting check
+  const checkRateLimit = (): boolean => {
+    const now = Date.now();
+    const oneMinute = 60 * 1000;
+    
+    if (now - lastSubmissionTime < oneMinute) {
+      toast({
+        title: "Please wait",
+        description: "You can only submit one form per minute. Please try again later.",
+        variant: "destructive",
+      });
+      return false;
+    }
+    return true;
+  };
+
+  // Form submission with retry logic
+  const submitWithRetry = async (data: SubmissionData, maxRetries = 3): Promise<boolean> => {
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbxQy3n0F7-gQtusrMRRalyqI1xlZ4eJNYGAGk9Xh8HucMeB9efcbpE6CJUuvEVaQ4fwFg/exec",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            mode: "no-cors",
+            body: JSON.stringify(data),
+          }
+        );
+
+        // Track successful submission in analytics
+        if (typeof window.gtag !== "undefined") {
+          window.gtag("event", "form_submit", {
+            event_category: "contact",
+            event_label: "contact_form",
+            value: 1,
+          });
+        }
+
+        if (typeof window.clarity !== "undefined") {
+          window.clarity("set", "contact_form_submitted", "true");
+        }
+
+        return true;
+      } catch (error) {
+        console.error(`Submission attempt ${attempt} failed:`, error);
+        
+        if (attempt === maxRetries) {
+          throw error;
+        }
+        
+        // Wait before retry (exponential backoff)
+        await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+      }
+    }
+    return false;
+  };
+
+  // Form submission handler
+  const onSubmit = async (data: ContactFormData) => {
+    // Check honeypot field
+    if (data.website) {
+      console.log("Spam detected - honeypot filled");
+      return;
+    }
+
+    // Rate limiting
+    if (!checkRateLimit()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Collect enhanced data
+      const enhancedData = await collectEnhancedData();
+      const submissionData: SubmissionData = {
+        ...data,
+        ...enhancedData,
+      };
+
+      // Submit to Google Sheets
+      await submitWithRetry(submissionData);
+
+      // Success handling
+      setLastSubmissionTime(Date.now());
+      
+      toast({
+        title: "Message sent successfully!",
+        description: `Thank you ${data.fullName}! We'll respond within 2 hours. Reference ID: ${submissionData.submissionId?.slice(-8)}`,
+      });
+
+      // Reset form
+      form.reset();
+
+    } catch (error) {
+      console.error("Form submission error:", error);
+      
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly on WhatsApp. We apologize for the inconvenience.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const contactMethods = [
     {
       icon: Phone,
@@ -219,75 +418,112 @@ const ContactUs = () => {
 
             <Card className="border-0 shadow-2xl">
               <CardContent className="p-8 lg:p-12">
-                <form className="space-y-6 lg:space-y-8">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 lg:space-y-8">
+                  {/* Honeypot field - hidden from users */}
+                  <Input
+                    {...form.register("website")}
+                    type="text"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm lg:text-base font-semibold text-foreground">Full Name *</label>
+                      <Label className="text-sm lg:text-base font-semibold text-foreground">Full Name *</Label>
                       <Input 
+                        {...form.register("fullName")}
                         placeholder="Your full name" 
                         className="h-12 lg:h-14 text-base lg:text-lg"
+                        disabled={isSubmitting}
                       />
+                      {form.formState.errors.fullName && (
+                        <p className="text-sm text-red-500">{form.formState.errors.fullName.message}</p>
+                      )}
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm lg:text-base font-semibold text-foreground">Business Name</label>
+                      <Label className="text-sm lg:text-base font-semibold text-foreground">Business Name</Label>
                       <Input 
+                        {...form.register("businessName")}
                         placeholder="Your business/company name" 
                         className="h-12 lg:h-14 text-base lg:text-lg"
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm lg:text-base font-semibold text-foreground">Email Address *</label>
+                      <Label className="text-sm lg:text-base font-semibold text-foreground">Email Address *</Label>
                       <Input 
+                        {...form.register("email")}
                         type="email"
                         placeholder="your.email@example.com" 
                         className="h-12 lg:h-14 text-base lg:text-lg"
+                        disabled={isSubmitting}
                       />
+                      {form.formState.errors.email && (
+                        <p className="text-sm text-red-500">{form.formState.errors.email.message}</p>
+                      )}
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm lg:text-base font-semibold text-foreground">WhatsApp Number *</label>
+                      <Label className="text-sm lg:text-base font-semibold text-foreground">WhatsApp Number *</Label>
                       <Input 
+                        {...form.register("whatsappNumber")}
                         placeholder="+92 3XX XXXXXXX" 
                         className="h-12 lg:h-14 text-base lg:text-lg"
+                        disabled={isSubmitting}
                       />
+                      {form.formState.errors.whatsappNumber && (
+                        <p className="text-sm text-red-500">{form.formState.errors.whatsappNumber.message}</p>
+                      )}
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm lg:text-base font-semibold text-foreground">Industry/Business Type</label>
+                    <Label className="text-sm lg:text-base font-semibold text-foreground">Industry/Business Type</Label>
                     <Input 
+                      {...form.register("industry")}
                       placeholder="e.g., E-commerce, Solar, Real Estate, Education" 
                       className="h-12 lg:h-14 text-base lg:text-lg"
+                      disabled={isSubmitting}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm lg:text-base font-semibold text-foreground">How can we help you? *</label>
+                    <Label className="text-sm lg:text-base font-semibold text-foreground">How can we help you? *</Label>
                     <Textarea 
+                      {...form.register("message")}
                       placeholder="Tell us about your business challenges and automation needs..."
                       rows={4}
                       className="text-base lg:text-lg resize-none min-h-[120px]"
+                      disabled={isSubmitting}
                     />
+                    {form.formState.errors.message && (
+                      <p className="text-sm text-red-500">{form.formState.errors.message.message}</p>
+                    )}
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm lg:text-base font-semibold text-foreground">Monthly WhatsApp Volume</label>
+                      <Label className="text-sm lg:text-base font-semibold text-foreground">Monthly WhatsApp Volume</Label>
                       <Input 
+                        {...form.register("monthlyVolume")}
                         placeholder="e.g., 500-1000 messages/month" 
                         className="h-12 lg:h-14 text-base lg:text-lg"
+                        disabled={isSubmitting}
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-sm lg:text-base font-semibold text-foreground">Preferred Meeting Time</label>
+                      <Label className="text-sm lg:text-base font-semibold text-foreground">Preferred Meeting Time</Label>
                       <Input 
+                        {...form.register("preferredMeetingTime")}
                         placeholder="e.g., Weekdays 2-5 PM" 
                         className="h-12 lg:h-14 text-base lg:text-lg"
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -298,9 +534,19 @@ const ContactUs = () => {
                       variant="default" 
                       size="lg" 
                       className="flex-1 bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-xl hover-lift"
+                      disabled={isSubmitting}
                     >
-                      <Send className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
-                      Send Message
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
+                          Send Message
+                        </>
+                      )}
                     </Button>
                     
                     <Button 
@@ -308,11 +554,26 @@ const ContactUs = () => {
                       variant="outline" 
                       size="lg"
                       className="flex-1 border-2 border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold hover-lift"
+                      disabled={isSubmitting}
                     >
                       <Calendar className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
                       Book Demo Call
                     </Button>
                   </div>
+
+                  {/* Form validation summary */}
+                  {Object.keys(form.formState.errors).length > 0 && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                      <p className="text-red-700 text-sm font-medium">
+                        Please fix the following errors:
+                      </p>
+                      <ul className="text-red-600 text-sm mt-2 space-y-1">
+                        {Object.entries(form.formState.errors).map(([field, error]) => (
+                          <li key={field}>• {error?.message}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </form>
               </CardContent>
             </Card>
