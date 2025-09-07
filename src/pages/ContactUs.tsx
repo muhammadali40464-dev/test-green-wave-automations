@@ -25,7 +25,7 @@ import {
   Loader2
 } from "lucide-react";
 
-// Form validation schema
+// Form validation schema - Updated for demo booking
 const contactFormSchema = z.object({
   fullName: z.string().min(2, "Full name must be at least 2 characters"),
   businessName: z.string().optional(),
