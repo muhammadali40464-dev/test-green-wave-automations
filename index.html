@@ -169,29 +169,50 @@
     }
     </script>
     
-    <!-- Performance optimizations - Break dependency chains -->
-    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
-    
-    <!-- Aggressive resource preloading to parallelize requests -->
+    <!-- Performance optimizations - Eliminate render blocking CSS -->
     <script>
-      // Preload critical resources immediately to break dependency chain
-      const preloadResources = [
-        { href: '/src/index.css', as: 'style' },
-        { href: '/src/main.tsx', as: 'script' }
-      ];
-      
-      preloadResources.forEach(resource => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.href = resource.href;
-        link.as = resource.as;
-        if (resource.as === 'script') {
-          link.rel = 'modulepreload';
+      // Load CSS asynchronously to prevent render blocking
+      const loadCSS = (href, before, media, callback) => {
+        const doc = window.document;
+        const ss = doc.createElement('link');
+        let ref;
+        if (before) {
+          ref = before;
+        } else {
+          const refs = (doc.body || doc.getElementsByTagName('head')[0]).childNodes;
+          ref = refs[refs.length - 1];
         }
-        document.head.appendChild(link);
-      });
+        const sheets = doc.styleSheets;
+        ss.rel = 'stylesheet';
+        ss.href = href;
+        ss.media = 'only x';
+        if (callback) {
+          ss.addEventListener('load', callback);
+        }
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+        const toggleMedia = () => {
+          let defined;
+          for (let i = 0; i < sheets.length; i++) {
+            if (sheets[i].href && sheets[i].href.indexOf(href) > -1) {
+              defined = true;
+            }
+          }
+          if (defined) {
+            ss.media = media || 'all';
+          } else {
+            setTimeout(toggleMedia);
+          }
+        };
+        toggleMedia();
+        return ss;
+      };
+
+      // Load main stylesheet after critical path
+      loadCSS('/src/index.css');
     </script>
+    
+    <!-- Fallback for no-JS users -->
+    <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
     
     <!-- Favicon and icons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
