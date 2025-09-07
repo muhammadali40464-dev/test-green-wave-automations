@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { useLocation } from "react-router-dom";
 
 // Scroll to top component
@@ -16,21 +16,23 @@ const ScrollToTop = () => {
 
   return null;
 };
-import Index from "./pages/Index";
-import Blog from "./pages/Blog";
-import SuccessStories from "./pages/SuccessStories";
-import ContactUs from "./pages/ContactUs";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import CookiePolicy from "./pages/CookiePolicy";
-import SolarAutomation from "./pages/blog/SolarAutomation";
-import VisaConsultancy from "./pages/blog/VisaConsultancy";
-import ChatbotGuideSmallBusiness from "./pages/blog/ChatbotGuideSmallBusiness";
-import WhatsAppAPIvsRegular from "./pages/blog/WhatsAppAPIvsRegular";
-import NotFound from "./pages/NotFound";
 
-// Import the ChatbotAutomationGuide component
-import ChatbotAutomationGuide from "./pages/blog/ChatbotAutomationGuide";
+// Keep homepage as regular import for immediate loading
+import Index from "./pages/Index";
+
+// Lazy load all other route components
+const Blog = lazy(() => import("./pages/Blog"));
+const SuccessStories = lazy(() => import("./pages/SuccessStories"));
+const ContactUs = lazy(() => import("./pages/ContactUs"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
+const SolarAutomation = lazy(() => import("./pages/blog/SolarAutomation"));
+const VisaConsultancy = lazy(() => import("./pages/blog/VisaConsultancy"));
+const ChatbotGuideSmallBusiness = lazy(() => import("./pages/blog/ChatbotGuideSmallBusiness"));
+const WhatsAppAPIvsRegular = lazy(() => import("./pages/blog/WhatsAppAPIvsRegular"));
+const ChatbotAutomationGuide = lazy(() => import("./pages/blog/ChatbotAutomationGuide"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -43,19 +45,19 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/success-stories" element={<SuccessStories />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-service" element={<TermsOfService />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/blog/chatbot-automation-guide-pakistan" element={<ChatbotAutomationGuide />} />
-          <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<SolarAutomation />} />
-          <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<VisaConsultancy />} />
-          <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<ChatbotGuideSmallBusiness />} />
-          <Route path="/blog/whatsapp-business-api-vs-regular-whatsapp" element={<WhatsAppAPIvsRegular />} />
+          <Route path="/blog" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><Blog /></Suspense>} />
+          <Route path="/success-stories" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><SuccessStories /></Suspense>} />
+          <Route path="/contact" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><ContactUs /></Suspense>} />
+          <Route path="/privacy-policy" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><PrivacyPolicy /></Suspense>} />
+          <Route path="/terms-of-service" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><TermsOfService /></Suspense>} />
+          <Route path="/cookie-policy" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><CookiePolicy /></Suspense>} />
+          <Route path="/blog/chatbot-automation-guide-pakistan" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><ChatbotAutomationGuide /></Suspense>} />
+          <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><SolarAutomation /></Suspense>} />
+          <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><VisaConsultancy /></Suspense>} />
+          <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><ChatbotGuideSmallBusiness /></Suspense>} />
+          <Route path="/blog/whatsapp-business-api-vs-regular-whatsapp" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><WhatsAppAPIvsRegular /></Suspense>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}><NotFound /></Suspense>} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
