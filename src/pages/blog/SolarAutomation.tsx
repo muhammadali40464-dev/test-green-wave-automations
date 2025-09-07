@@ -64,27 +64,6 @@ const SolarAutomation = () => {
       </Helmet>
 
       <main className="min-h-screen pt-16">
-        {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur">
-          <div className="container-width">
-            <div className="flex items-center justify-between h-16">
-              <Link to="/" className="flex items-center gap-2 font-bold text-xl">
-                <div className="w-8 h-8 bg-whatsapp-green rounded-lg flex items-center justify-center">
-                  <span className="text-white text-sm">TC</span>
-                </div>
-                TheChatFlow
-              </Link>
-              
-              <nav className="hidden md:flex items-center gap-6">
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-                <Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link>
-                <Button variant="hero" size="sm" asChild>
-                  <Link to="/#pricing">Get Started</Link>
-                </Button>
-              </nav>
-            </div>
-          </div>
-        </header>
 
         {/* Breadcrumb */}
         <nav className="py-4 border-b">
