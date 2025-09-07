@@ -2,94 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TheChatFlow Design System - Engaging WhatsApp automation platform */
-
+/* Reduced CSS variables - only keeping actively used ones */
 @layer base {
   :root {
-    /* Core colors */
+    /* Core colors - only used ones */
     --background: 0 0% 100%;
     --foreground: 210 22% 22%;
     
-    /* WhatsApp brand colors */
+    /* WhatsApp brand colors - actively used */
     --whatsapp-green: 142 70% 49%;
     --whatsapp-dark: 174 76% 30%;
     --whatsapp-teal: 174 84% 20%;
     --success-green: 133 65% 45%;
     --soft-green: 132 30% 96%;
     
-    /* Enhanced color palette */
-    --clean-white: 0 0% 100%;
-    --light-gray: 210 17% 98%;
-    --subtle-gray: 215 16% 47%;
-    --dark-gray: 210 22% 22%;
-    
-    /* Component colors using WhatsApp palette */
+    /* Essential component colors */
     --primary: 142 70% 49%;
     --primary-foreground: 0 0% 100%;
     --primary-hover: 174 76% 30%;
-    
     --secondary: 210 17% 98%;
     --secondary-foreground: 210 22% 22%;
-    
     --card: 0 0% 100%;
     --card-foreground: 210 22% 22%;
-    
     --muted: 210 17% 98%;
     --muted-foreground: 215 16% 47%;
-    
     --accent: 174 84% 20%;
     --accent-foreground: 0 0% 100%;
-    
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 142 70% 49%;
-    
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Design system tokens with enhanced gradients */
+    /* Essential design tokens */
     --gradient-hero: linear-gradient(135deg, hsl(var(--whatsapp-green)) 0%, hsl(var(--whatsapp-dark)) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--clean-white)) 0%, hsl(var(--soft-green)) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(var(--whatsapp-green)) 0%, hsl(var(--success-green)) 50%, hsl(var(--whatsapp-dark)) 100%);
-    --gradient-background: linear-gradient(180deg, hsl(var(--clean-white)) 0%, hsl(var(--soft-green)) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--clean-white)), hsl(var(--light-gray)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--soft-green)) 100%);
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
     --shadow-hero: 0 10px 40px hsl(var(--whatsapp-green) / 0.2);
     --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 210 22% 22%;
-    --foreground: 0 0% 100%;
-    --primary: 142 70% 49%;
-    --primary-foreground: 0 0% 100%;
-    --card: 210 22% 22%;
-    --card-foreground: 0 0% 100%;
-    --muted: 215 16% 47%;
-    --muted-foreground: 210 17% 98%;
-    --border: 215 16% 47%;
-    --input: 215 16% 47%;
-    --ring: 142 70% 49%;
   }
 }
 
