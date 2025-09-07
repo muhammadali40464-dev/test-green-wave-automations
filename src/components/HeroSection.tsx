@@ -213,41 +213,43 @@ const HeroSection = () => {
       if (messageIndex < conversation.messages.length) {
         const message = conversation.messages[messageIndex];
         const messageLength = message.text.length;
-        const typingDuration = Math.max(800, Math.min(2000, messageLength * 15)); // Dynamic typing based on message length
+        const typingDuration = Math.max(2000, Math.min(4500, messageLength * 30)); // Slower typing for readability
         
         if (message.type === 'outgoing') {
-          // Show typing indicator before TheChatFlow response (instant feeling)
+          // Show typing indicator before TheChatFlow response
           setIsTyping(true);
           setTimeout(() => {
             setIsTyping(false);
             setVisibleMessages(prev => [...prev, message.id]);
             messageIndex++;
-            setTimeout(showNextMessage, 1200); // Faster progression
+            // Add reading pause after message appears
+            setTimeout(showNextMessage, 2500); // Longer pause for reading
           }, typingDuration);
         } else {
-          // Show customer typing indicator briefly for incoming messages
+          // Show customer typing indicator for incoming messages
           if (messageIndex > 0) {
             setIsTyping(true);
             setTimeout(() => {
               setIsTyping(false);
               setVisibleMessages(prev => [...prev, message.id]);
               messageIndex++;
-              setTimeout(showNextMessage, 800); // Even faster for customer messages
-            }, 600); // Brief typing for customers
+              // Reading pause for customer messages too
+              setTimeout(showNextMessage, 2000);
+            }, 1000); // Longer typing for customers
           } else {
             setVisibleMessages(prev => [...prev, message.id]);
             messageIndex++;
-            setTimeout(showNextMessage, 800);
+            setTimeout(showNextMessage, 2000);
           }
         }
       } else {
         setTimeout(() => {
           setCurrentConversation(prev => (prev + 1) % conversations.length);
-        }, 3000); // Faster conversation switching
+        }, 6000); // Much longer conversation switching for better UX
       }
     };
 
-    setTimeout(showNextMessage, 1000); // Start faster
+    setTimeout(showNextMessage, 1500); // Slower start
   }, [currentConversation]);
 
   return (
@@ -354,10 +356,33 @@ const HeroSection = () => {
 
           {/* Right Side - Enhanced WhatsApp Interface */}
           <div className="order-2 lg:order-2 flex justify-center">
-            <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-elevated w-full max-w-[380px] sm:max-w-[420px] h-[500px] sm:h-[600px] lg:h-[680px] overflow-hidden relative border border-gray-200 hover-lift">
+            <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-2xl w-full max-w-[380px] sm:max-w-[420px] h-[500px] sm:h-[600px] lg:h-[680px] overflow-hidden relative border-2 border-gray-300 hover-lift">
+              
+              {/* Enhanced Live Demo Indicator */}
+              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-50">
+                <div className="bg-black/80 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-medium">
+                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                    <span>LIVE DEMO: {conversations[currentConversation].title}</span>
+                    <div className="text-xs opacity-75">
+                      ({currentConversation + 1}/4)
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Status Bar */}
+              <div className="bg-black text-white px-4 py-1 text-xs flex justify-between items-center">
+                <span>9:41 AM</span>
+                <div className="flex items-center gap-1">
+                  <span>●●●●</span>
+                  <span>📶</span>
+                  <span>🔋</span>
+                </div>
+              </div>
               
               {/* Authentic WhatsApp Header */}
-              <div className="bg-[#075E54] text-white p-4 flex items-center justify-between">
+              <div className="bg-[#075E54] text-white p-3 sm:p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="relative">
                     <div className="w-10 h-10 md:w-11 md:h-11 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-base md:text-lg">
@@ -368,7 +393,10 @@ const HeroSection = () => {
                   <div className="flex-1">
                   <div className="flex items-center gap-2">
                     <h3 className="font-semibold text-base md:text-[17px]">TheChatFlow</h3>
-                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4" style={{ color: '#4fc3f7' }} />
+                    <div className="flex">
+                      <CheckCircle className="h-3 w-3 md:h-4 md:w-4 -mr-1" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 2px rgba(79, 195, 247, 0.3))' }} />
+                      <CheckCircle className="h-3 w-3 md:h-4 md:w-4" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 2px rgba(79, 195, 247, 0.3))' }} />
+                    </div>
                   </div>
                     <p className="text-xs md:text-[13px] text-green-100">Online</p>
                   </div>
@@ -388,7 +416,7 @@ const HeroSection = () => {
               </div>
 
               {/* Chat Messages */}
-              <div className="flex-1 p-3 sm:p-4 space-y-3 sm:space-y-4 h-[380px] sm:h-[480px] lg:h-[560px] overflow-y-auto" id="chat-messages">
+              <div className="flex-1 p-3 sm:p-4 space-y-4 sm:space-y-5 h-[350px] sm:h-[450px] lg:h-[520px] overflow-y-auto custom-scrollbar" id="chat-messages">
                 {conversations[currentConversation].messages.map((message) => (
                   <div
                     key={message.id}
@@ -404,7 +432,7 @@ const HeroSection = () => {
                           {message.avatar}
                         </div>
                         <div className="flex-1">
-                          <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
+                          <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-md max-w-[240px] md:max-w-[280px] message-bubble border border-gray-100">
                             <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
                             <div className="flex items-center justify-between mt-2">
                               <p className="text-[10px] md:text-[11px] text-gray-500">{message.time}</p>
@@ -414,17 +442,22 @@ const HeroSection = () => {
                       </div>
                     ) : (
                       <div className="flex justify-end mb-3 md:mb-4">
-                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
+                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-md max-w-[240px] md:max-w-[280px] message-bubble border border-green-100">
                         <div className="flex items-center gap-2 mb-2">
                           <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
-                          {message.verified && <CheckCircle className="h-3 w-3" style={{ color: '#4fc3f7' }} />}
+                          {message.verified && (
+                            <div className="flex">
+                              <CheckCircle className="h-3 w-3 -mr-1" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' }} />
+                              <CheckCircle className="h-3 w-3" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' }} />
+                            </div>
+                          )}
                         </div>
                           <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
                           <div className="flex items-center justify-end gap-1 mt-2">
                             <p className="text-[10px] md:text-[11px] text-gray-600">{message.time}</p>
                             <div className="flex ml-2">
-                              <CheckCircle className="h-3 w-3" style={{ color: '#4fc3f7' }} />
-                              <CheckCircle className="h-3 w-3 -ml-1" style={{ color: '#4fc3f7' }} />
+                              <CheckCircle className="h-3 w-3 -mr-1" style={{ color: message.status === 'read' ? '#4FC3F7' : '#999', filter: message.status === 'read' ? 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' : 'none' }} />
+                              <CheckCircle className="h-3 w-3" style={{ color: message.status === 'read' ? '#4FC3F7' : '#999', filter: message.status === 'read' ? 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' : 'none' }} />
                             </div>
                           </div>
                         </div>
@@ -439,18 +472,14 @@ const HeroSection = () => {
                     <div className="w-7 h-7 md:w-8 md:h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
                       TC
                     </div>
-                    <div className="bg-[#DCF8C6] rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm message-bubble">
+                    <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-lg border border-gray-100">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">TheChatFlow</span>
-                        <CheckCircle className="h-3 w-3" style={{ color: '#4fc3f7' }} />
+                        <span className="text-xs md:text-[13px] font-semibold text-gray-700">TheChatFlow is typing</span>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs md:text-[13px] text-gray-600 font-medium">typing</span>
-                        <div className="flex gap-1">
-                          <div className="w-2 h-2 bg-[#075E54] rounded-full typing-dots"></div>
-                          <div className="w-2 h-2 bg-[#075E54] rounded-full typing-dots" style={{ animationDelay: '0.2s' }}></div>
-                          <div className="w-2 h-2 bg-[#075E54] rounded-full typing-dots" style={{ animationDelay: '0.4s' }}></div>
-                        </div>
+                      <div className="flex gap-1">
+                        <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce"></div>
+                        <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.15s' }}></div>
+                        <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
                       </div>
                     </div>
                   </div>
@@ -458,21 +487,31 @@ const HeroSection = () => {
               </div>
 
               {/* Enhanced Conversation Indicator */}
-              <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
-                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-3 md:px-4 py-2 shadow-sm conversation-indicator">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <div 
-                        className="w-3 h-3 rounded-full" 
-                        style={{ backgroundColor: conversations[currentConversation].color }}
-                      ></div>
-                      <p className="text-xs font-semibold text-gray-700">
-                        {conversations[currentConversation].title}
-                      </p>
-                    </div>
-                    <p className="text-xs text-gray-500">Live Demo</p>
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-black/70 backdrop-blur-sm rounded-full px-5 py-3 shadow-lg">
+                {conversations.map((conv, index) => (
+                  <div
+                    key={conv.id}
+                    className={`flex items-center gap-2 transition-all duration-500 ${
+                      index === currentConversation 
+                        ? 'scale-110' 
+                        : 'scale-90 opacity-60'
+                    }`}
+                  >
+                    <div
+                      className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                        index === currentConversation 
+                          ? 'bg-white shadow-lg animate-pulse' 
+                          : 'bg-white/40'
+                      }`}
+                      style={{ backgroundColor: index === currentConversation ? conv.color : undefined }}
+                    />
+                    {index === currentConversation && (
+                      <span className="text-white text-xs font-medium whitespace-nowrap">
+                        {conv.title}
+                      </span>
+                    )}
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
