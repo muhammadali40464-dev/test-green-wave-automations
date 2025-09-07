@@ -259,7 +259,19 @@
 }
 
 .whatsapp-interface .typing-dots {
-  animation: typing-pulse 1.4s infinite;
+  animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+
+/* Enhanced typing dots animation for smooth WhatsApp-like effect */
+@keyframes typing-bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes typing-pulse {
