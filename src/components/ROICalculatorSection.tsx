@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calculator, TrendingUp, DollarSign } from "lucide-react";
 
 const ROICalculatorSection = () => {
+  const navigate = useNavigate();
   const [dailyMessages, setDailyMessages] = useState(500);
   const [currentStaff, setCurrentStaff] = useState(3);
   const [averageSalary, setAverageSalary] = useState(40000);
@@ -168,7 +170,12 @@ const ROICalculatorSection = () => {
               <p className="text-muted-foreground font-body">
                 Join 500+ Pakistani businesses already automating their success
               </p>
-              <Button variant="hero" size="lg" className="shadow-hero w-full sm:w-auto mb-4">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="shadow-hero w-full sm:w-auto mb-4"
+                onClick={() => navigate('/contact')}
+              >
                 <Calculator className="mr-2 h-5 w-5" />
                 Book Free Demo
               </Button>
