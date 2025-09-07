@@ -191,14 +191,6 @@ const ContactUs = () => {
         customerName: data.fullName,
         referenceId: submissionData.submissionId?.slice(-8) || "N/A"
       });
-      
-      // Wait for loader to complete, then show success
-      setTimeout(() => {
-        setIsSubmitting(false); // Hide loader first
-        setTimeout(() => {
-          setShowSuccess(true); // Then show success
-        }, 300); // Small delay for smooth transition
-      }, 2500); // Wait for loader to complete (progress + animation)
 
       // Reset form
       form.reset();
@@ -212,7 +204,6 @@ const ContactUs = () => {
         variant: "destructive",
       });
       
-      // Only set to false on error, success handling manages this above
       setIsSubmitting(false);
     }
   };
@@ -624,7 +615,15 @@ const ContactUs = () => {
       <Footer />
 
       {/* Form Submission Loader */}
-      <FormSubmissionLoader isVisible={isSubmitting} />
+      <FormSubmissionLoader 
+        isVisible={isSubmitting}
+        onComplete={() => {
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setShowSuccess(true);
+          }, 100); // Small delay for smooth transition
+        }}
+      />
 
       {/* Success Confirmation */}
       <SuccessConfirmation

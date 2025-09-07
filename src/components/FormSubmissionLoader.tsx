@@ -27,18 +27,22 @@ const FormSubmissionLoader: React.FC<FormSubmissionLoaderProps> = ({
       return;
     }
 
-    // Progress animation
+    // Progress animation - complete in 1.2 seconds total
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(progressInterval);
+          // Call onComplete when animation finishes
+          setTimeout(() => {
+            onComplete?.();
+          }, 200); // Small delay to let user see 100%
           return 100;
         }
-        return prev + 2;
+        return prev + 4; // Faster increment for 1.2s completion
       });
-    }, 30);
+    }, 48); // 25 steps * 48ms ≈ 1.2 seconds
 
-    // Step animation
+    // Step animation - switch every 300ms
     const stepInterval = setInterval(() => {
       setCurrentStep((prev) => {
         if (prev >= steps.length - 1) {
@@ -47,13 +51,13 @@ const FormSubmissionLoader: React.FC<FormSubmissionLoaderProps> = ({
         }
         return prev + 1;
       });
-    }, 800);
+    }, 300);
 
     return () => {
       clearInterval(progressInterval);
       clearInterval(stepInterval);
     };
-  }, [isVisible, steps.length]);
+  }, [isVisible, steps.length, onComplete]);
 
   if (!isVisible) return null;
 

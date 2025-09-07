@@ -64,11 +64,12 @@ const getRouteConfig = (route: string = '') => {
 
 const PageTransitionLoader: React.FC<PageTransitionLoaderProps> = ({ 
   route = '', 
-  duration = 1200 
+  duration = 800 // Reduced to 800ms for faster loading
 }) => {
   const [progress, setProgress] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
   
   const config = getRouteConfig(route);
   const { icon: IconComponent, messages, title } = config;
@@ -79,11 +80,16 @@ const PageTransitionLoader: React.FC<PageTransitionLoaderProps> = ({
     const timer = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
-          setIsComplete(true);
+          // Start fade out animation instead of immediately setting complete
+          setIsFadingOut(true);
           clearInterval(timer);
+          // Complete after fade animation
+          setTimeout(() => {
+            setIsComplete(true);
+          }, 300); // 300ms fade out
           return 100;
         }
-        return prev + 3; // Faster progress increment
+        return prev + 5; // Faster progress for shorter duration
       });
     }, progressInterval);
 
@@ -107,7 +113,7 @@ const PageTransitionLoader: React.FC<PageTransitionLoaderProps> = ({
   }
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-whatsapp-green via-whatsapp-dark to-whatsapp-teal z-50 flex items-center justify-center">
+    <div className={`fixed inset-0 bg-gradient-to-br from-whatsapp-green via-whatsapp-dark to-whatsapp-teal z-50 flex items-center justify-center transition-opacity duration-300 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
       <div className="text-center space-y-6 max-w-md mx-auto px-6">
         {/* Logo/Brand */}
         <div className="relative">
