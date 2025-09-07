@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Link } from "react-router-dom";
 import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical } from "lucide-react";
 
 const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(false);
+  const [typingUser, setTypingUser] = useState<string>('');
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
+  const chatScrollRef = useRef<HTMLDivElement>(null);
 
   // Enhanced realistic conversation scenarios in Roman Urdu
   const conversations = [
@@ -204,42 +207,64 @@ const HeroSection = () => {
 
   const [currentConversation, setCurrentConversation] = useState(0);
 
+  // Auto-scroll function
+  const scrollToBottom = () => {
+    if (chatScrollRef.current) {
+      chatScrollRef.current.scrollTop = chatScrollRef.current.scrollHeight;
+    }
+  };
+
   useEffect(() => {
     const conversation = conversations[currentConversation];
     let messageIndex = 0;
     setVisibleMessages([]);
+    setIsTyping(false);
+    setTypingUser('');
     
     const showNextMessage = () => {
       if (messageIndex < conversation.messages.length) {
         const message = conversation.messages[messageIndex];
         const messageLength = message.text.length;
-        const typingDuration = Math.max(2000, Math.min(4500, messageLength * 30)); // Slower typing for readability
+        const typingDuration = Math.max(2000, Math.min(4500, messageLength * 25)); // Slower typing for readability
         
         if (message.type === 'outgoing') {
-          // Show typing indicator before TheChatFlow response
+          // Show TheChatFlow typing indicator
           setIsTyping(true);
+          setTypingUser('TheChatFlow');
           setTimeout(() => {
             setIsTyping(false);
+            setTypingUser('');
             setVisibleMessages(prev => [...prev, message.id]);
             messageIndex++;
-            // Add reading pause after message appears
-            setTimeout(showNextMessage, 2500); // Longer pause for reading
+            // Auto-scroll after message appears
+            setTimeout(() => {
+              scrollToBottom();
+              setTimeout(showNextMessage, 2500); // Longer pause for reading
+            }, 100);
           }, typingDuration);
         } else {
           // Show customer typing indicator for incoming messages
           if (messageIndex > 0) {
             setIsTyping(true);
+            setTypingUser(message.sender);
             setTimeout(() => {
               setIsTyping(false);
+              setTypingUser('');
               setVisibleMessages(prev => [...prev, message.id]);
               messageIndex++;
-              // Reading pause for customer messages too
-              setTimeout(showNextMessage, 2000);
-            }, 1000); // Longer typing for customers
+              // Auto-scroll after message appears
+              setTimeout(() => {
+                scrollToBottom();
+                setTimeout(showNextMessage, 2000);
+              }, 100);
+            }, 1500); // Longer typing for customers
           } else {
             setVisibleMessages(prev => [...prev, message.id]);
             messageIndex++;
-            setTimeout(showNextMessage, 2000);
+            setTimeout(() => {
+              scrollToBottom();
+              setTimeout(showNextMessage, 2000);
+            }, 100);
           }
         }
       } else {
@@ -251,6 +276,11 @@ const HeroSection = () => {
 
     setTimeout(showNextMessage, 1500); // Slower start
   }, [currentConversation]);
+
+  // Auto-scroll when new messages appear
+  useEffect(() => {
+    scrollToBottom();
+  }, [visibleMessages]);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-background to-whatsapp-green/5">
@@ -358,15 +388,18 @@ const HeroSection = () => {
           <div className="order-2 lg:order-2 flex justify-center">
             <div className="whatsapp-interface bg-[#E5DDD5] rounded-3xl shadow-2xl w-full max-w-[380px] sm:max-w-[420px] h-[500px] sm:h-[600px] lg:h-[680px] overflow-hidden relative border-2 border-gray-300 hover-lift">
               
-              {/* Enhanced Live Demo Indicator */}
-              <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-50">
-                <div className="bg-black/80 text-white px-4 py-2 rounded-full shadow-lg backdrop-blur-sm">
-                  <div className="flex items-center gap-2 text-xs sm:text-sm font-medium">
-                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                    <span>LIVE DEMO: {conversations[currentConversation].title}</span>
-                    <div className="text-xs opacity-75">
-                      ({currentConversation + 1}/4)
-                    </div>
+              {/* Subtle Demo Indicator */}
+              <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-30">
+                <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                  <div className="flex gap-1">
+                    {conversations.map((_, index) => (
+                      <div 
+                        key={index}
+                        className={`w-1.5 h-1.5 rounded-full transition-colors ${
+                          index === currentConversation ? 'bg-whatsapp-green' : 'bg-white/40'
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -415,76 +448,99 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Chat Messages */}
-              <div className="flex-1 p-3 sm:p-4 space-y-4 sm:space-y-5 h-[350px] sm:h-[450px] lg:h-[520px] overflow-y-auto custom-scrollbar" id="chat-messages">
-                {conversations[currentConversation].messages.map((message) => (
-                  <div
-                    key={message.id}
-                    className={`transition-all duration-700 message-enter ${
-                      visibleMessages.includes(message.id) 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-6'
-                    }`}
-                  >
-                    {message.type === 'incoming' ? (
-                      <div className="flex items-start gap-2 mb-3 md:mb-4">
-                        <div className="w-7 h-7 md:w-8 md:h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
-                          {message.avatar}
-                        </div>
-                        <div className="flex-1">
-                          <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-md max-w-[240px] md:max-w-[280px] message-bubble border border-gray-100">
-                            <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                            <div className="flex items-center justify-between mt-2">
-                              <p className="text-[10px] md:text-[11px] text-gray-500">{message.time}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className="flex justify-end mb-3 md:mb-4">
-                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-md max-w-[240px] md:max-w-[280px] message-bubble border border-green-100">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
-                          {message.verified && (
-                            <div className="flex">
-                              <CheckCircle className="h-3 w-3 -mr-1" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' }} />
-                              <CheckCircle className="h-3 w-3" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' }} />
-                            </div>
-                          )}
-                        </div>
-                          <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                          <div className="flex items-center justify-end gap-1 mt-2">
-                            <p className="text-[10px] md:text-[11px] text-gray-600">{message.time}</p>
-                            <div className="flex ml-2">
-                              <CheckCircle className="h-3 w-3 -mr-1" style={{ color: message.status === 'read' ? '#4FC3F7' : '#999', filter: message.status === 'read' ? 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' : 'none' }} />
-                              <CheckCircle className="h-3 w-3" style={{ color: message.status === 'read' ? '#4FC3F7' : '#999', filter: message.status === 'read' ? 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' : 'none' }} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ))}
+              {/* Chat Messages Container With Auto-Scroll */}
+              <ScrollArea className="flex-1 h-[350px] sm:h-[450px] lg:h-[520px]">
+                <div 
+                  ref={chatScrollRef}
+                  className="p-3 sm:p-4 space-y-3 sm:space-y-4 min-h-full"
+                >
+                  {conversations[currentConversation].messages.map((message) => {
+                    const isVisible = visibleMessages.includes(message.id);
+                    if (!isVisible) return null;
 
-                {/* Enhanced Typing Indicator */}
-                {isTyping && (
-                  <div className="flex items-start gap-2 animate-fade-in-up">
-                    <div className="w-7 h-7 md:w-8 md:h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
-                      TC
-                    </div>
-                    <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-lg border border-gray-100">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs md:text-[13px] font-semibold text-gray-700">TheChatFlow is typing</span>
+                    return (
+                      <div
+                        key={message.id}
+                        className="animate-message-in"
+                      >
+                        {message.type === 'incoming' ? (
+                          <div className="flex items-start gap-2 mb-3 md:mb-4">
+                            <div className="w-7 h-7 md:w-8 md:h-8 bg-gray-300 rounded-full flex items-center justify-center text-xs font-semibold text-gray-700">
+                              {message.avatar}
+                            </div>
+                            <div className="flex-1">
+                              <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-md max-w-[240px] md:max-w-[280px] message-bubble border border-gray-100">
+                                <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                                <div className="flex items-center justify-between mt-2">
+                                  <p className="text-[10px] md:text-[11px] text-gray-500">{message.time}</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex justify-end mb-3 md:mb-4">
+                            <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-md max-w-[240px] md:max-w-[280px] message-bubble border border-green-100">
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
+                              {message.verified && (
+                                <div className="flex">
+                                  <CheckCircle className="h-3 w-3 -mr-1" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' }} />
+                                  <CheckCircle className="h-3 w-3" style={{ color: '#4FC3F7', filter: 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' }} />
+                                </div>
+                              )}
+                            </div>
+                              <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
+                              <div className="flex items-center justify-end gap-1 mt-2">
+                                <p className="text-[10px] md:text-[11px] text-gray-600">{message.time}</p>
+                                <div className="flex ml-2">
+                                  <CheckCircle className="h-3 w-3 -mr-1" style={{ color: message.status === 'read' ? '#4FC3F7' : '#999', filter: message.status === 'read' ? 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' : 'none' }} />
+                                  <CheckCircle className="h-3 w-3" style={{ color: message.status === 'read' ? '#4FC3F7' : '#999', filter: message.status === 'read' ? 'drop-shadow(0 0 1px rgba(79, 195, 247, 0.4))' : 'none' }} />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
-                      <div className="flex gap-1">
-                        <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.15s' }}></div>
-                        <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
-                      </div>
+                    );
+                  })}
+
+                  {/* Enhanced Typing Indicator with proper user context */}
+                  {isTyping && (
+                    <div className={`animate-fade-in-up ${
+                      typingUser === 'TheChatFlow' ? 'flex items-start gap-2' : 'flex justify-end'
+                    }`}>
+                      {typingUser === 'TheChatFlow' ? (
+                        <>
+                          <div className="w-7 h-7 md:w-8 md:h-8 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-xs">
+                            TC
+                          </div>
+                          <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-lg border border-gray-100">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-xs md:text-[13px] font-semibold text-gray-700">TheChatFlow is typing</span>
+                            </div>
+                            <div className="flex gap-1">
+                              <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce"></div>
+                              <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.15s' }}></div>
+                              <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-lg border border-green-100 max-w-[240px] md:max-w-[280px]">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{typingUser} is typing</span>
+                          </div>
+                          <div className="flex gap-1">
+                            <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce"></div>
+                            <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.15s' }}></div>
+                            <div className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                )}
-              </div>
+                  )}
+                </div>
+              </ScrollArea>
 
               {/* Enhanced Conversation Indicator */}
               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center gap-3 bg-black/70 backdrop-blur-sm rounded-full px-5 py-3 shadow-lg">
