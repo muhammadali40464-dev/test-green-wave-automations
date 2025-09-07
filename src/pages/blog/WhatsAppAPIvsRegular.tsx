@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
+import BlogCTASection from "@/components/BlogCTASection";
 import { Link } from "react-router-dom";
 import { 
   ArrowRight, 
@@ -497,6 +498,8 @@ const WhatsAppAPIvsRegular = () => {
             </div>
           </div>
         </section>
+
+        <BlogCTASection />
 
         <Footer />
       </main>

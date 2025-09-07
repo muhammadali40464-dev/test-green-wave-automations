@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
 import { Link } from "react-router-dom";
+import BlogCTASection from "@/components/BlogCTASection";
 import { 
   ArrowRight, 
   MessageCircle, 
@@ -23,16 +24,20 @@ const ChatbotGuideSmallBusiness = () => {
   return (
     <>
       <Helmet>
-        <title>How Chatbots Work for Small Businesses in Pakistan: Complete Guide 2025</title>
-        <meta name="description" content="Learn how chatbots transform small Pakistani businesses. Complete guide covering setup, benefits, costs, and real success stories from local businesses." />
-        <meta name="keywords" content="how chatbots work for small businesses pakistan, chatbot benefits pakistan, small business automation, WhatsApp chatbot pakistan, business automation guide" />
+        <title>How Chatbots Work for Small Businesses in Pakistan: Complete Guide 2025 | TheChatFlow</title>
+        <meta name="description" content="Complete guide: How chatbots transform Pakistani small businesses. Real case studies, setup process, ROI calculator & step-by-step implementation. Start automating today!" />
+        <meta name="keywords" content="how chatbots work for small businesses pakistan, chatbot benefits pakistan, small business automation, WhatsApp chatbot pakistan, business automation guide, pakistani business chatbot" />
         <link rel="canonical" href="https://thechatflow.com/blog/how-chatbots-work-small-businesses-pakistan" />
         
-        <meta property="og:title" content="How Chatbots Work for Small Businesses in Pakistan" />
+        <meta property="og:title" content="How Chatbots Work for Small Businesses in Pakistan: Complete 2025 Guide" />
         <meta property="og:description" content="Transform your small business with chatbots. Learn setup, benefits, and real success stories from Pakistani businesses." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://thechatflow.com/blog/how-chatbots-work-small-businesses-pakistan" />
         <meta property="og:image" content="https://thechatflow.com/blog-images/chatbot-small-business-pakistan.jpg" />
+        
+        <meta name="author" content="TheChatFlow Team" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -41,19 +46,101 @@ const ChatbotGuideSmallBusiness = () => {
             "headline": "How Chatbots Work for Small Businesses in Pakistan: Complete Guide 2025",
             "author": {
               "@type": "Organization",
-              "name": "TheChatFlow"
+              "name": "TheChatFlow",
+              "url": "https://thechatflow.com",
+              "logo": {
+                "@type": "ImageObject", 
+                "url": "https://thechatflow.com/logo.png",
+                "width": 600,
+                "height": 60
+              }
             },
             "publisher": {
               "@type": "Organization",
               "name": "TheChatFlow",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://thechatflow.com/logo.png"
+                "url": "https://thechatflow.com/logo.png",
+                "width": 600,
+                "height": 60
               }
             },
-            "datePublished": "2025-01-15",
-            "dateModified": "2025-01-15",
-            "description": "Complete guide on how chatbots work for small businesses in Pakistan"
+            "datePublished": "2025-01-15T10:00:00+05:00",
+            "dateModified": "2025-01-15T10:00:00+05:00",
+            "description": "Complete guide on how chatbots work for small businesses in Pakistan with real case studies and implementation strategies",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://thechatflow.com/blog/how-chatbots-work-small-businesses-pakistan"
+            },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://thechatflow.com/blog-images/chatbot-small-business-pakistan.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "articleSection": "Business Automation",
+            "wordCount": 2500,
+            "inLanguage": "en-PK"
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://thechatflow.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://thechatflow.com/blog"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "How Chatbots Work for Small Businesses in Pakistan",
+                "item": "https://thechatflow.com/blog/how-chatbots-work-small-businesses-pakistan"
+              }
+            ]
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does a chatbot cost for small businesses in Pakistan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Chatbot costs in Pakistan range from ₨9,999-25,000/month depending on features. TheChatFlow offers complete chatbot solutions starting at ₨9,999/month with unlimited messages, WhatsApp Business API, and 24/7 support."
+                }
+              },
+              {
+                "@type": "Question", 
+                "name": "Can chatbots understand Urdu and Roman Urdu?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, modern chatbots like TheChatFlow support Urdu, English, and Roman Urdu. They can understand customer messages in mixed languages and respond appropriately in the customer's preferred language."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to set up a chatbot for a Pakistani business?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Professional chatbot setup takes 24-48 hours with TheChatFlow. This includes WhatsApp Business API setup, conversation flow creation, testing, and staff training."
+                }
+              }
+            ]
           })}
         </script>
       </Helmet>
@@ -440,6 +527,8 @@ const ChatbotGuideSmallBusiness = () => {
             </div>
           </div>
         </section>
+
+        <BlogCTASection />
 
         <Footer />
       </main>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
+import BlogCTASection from "@/components/BlogCTASection";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Zap, TrendingUp, Calculator, Phone, ArrowRight, CheckCircle, Users } from "lucide-react";
 
@@ -11,15 +12,19 @@ const SolarAutomation = () => {
     <>
       <MegaMenu />
       <Helmet>
-        <title>How Solar Companies in Pakistan Can Generate 300% More Leads with WhatsApp Automation | TheChatFlow</title>
-        <meta name="description" content="Solar companies in Pakistan: Automate lead generation, customer support & sales with WhatsApp. See real case studies & implementation guide." />
-        <meta name="keywords" content="solar companies Pakistan, solar lead generation, WhatsApp solar marketing, renewable energy automation, Pakistan solar business" />
+        <title>How Solar Companies in Pakistan Generate 300% More Leads with WhatsApp Automation | TheChatFlow</title>
+        <meta name="description" content="Solar companies in Pakistan: Automate lead generation, customer support & sales with WhatsApp. Real case study shows 300% lead increase. Implementation guide included." />
+        <meta name="keywords" content="solar companies Pakistan, solar lead generation, WhatsApp solar marketing, renewable energy automation, Pakistan solar business, solar automation case study" />
         <link rel="canonical" href="https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan" />
         
-        <meta property="og:title" content="How Solar Companies in Pakistan Can Generate 300% More Leads with WhatsApp Automation" />
-        <meta property="og:description" content="Real case study: Pakistani solar company increased leads by 300% using WhatsApp automation" />
+        <meta property="og:title" content="How Solar Companies in Pakistan Generate 300% More Leads with WhatsApp Automation" />
+        <meta property="og:description" content="Real case study: Pakistani solar company increased leads by 300% using WhatsApp automation. Complete implementation guide included." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan" />
+        <meta property="og:image" content="https://thechatflow.com/blog-images/solar-automation-pakistan.jpg" />
+        
+        <meta name="author" content="TheChatFlow Solar Industry Experts" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -28,11 +33,64 @@ const SolarAutomation = () => {
             "headline": "How Solar Companies in Pakistan Can Generate 300% More Leads with WhatsApp Automation",
             "author": {
               "@type": "Organization",
-              "name": "TheChatFlow"
+              "name": "TheChatFlow",
+              "url": "https://thechatflow.com"
             },
-            "datePublished": "2025-01-12",
+            "publisher": {
+              "@type": "Organization",
+              "name": "TheChatFlow",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://thechatflow.com/logo.png",
+                "width": 600,
+                "height": 60
+              }
+            },
+            "datePublished": "2025-01-12T10:00:00+05:00",
+            "dateModified": "2025-01-12T10:00:00+05:00",
             "description": "Solar companies in Pakistan: Automate lead generation, customer support & sales with WhatsApp. See real case studies & implementation guide.",
-            "mainEntityOfPage": "https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan"
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan"
+            },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://thechatflow.com/blog-images/solar-automation-pakistan.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "articleSection": "Industry Automation",
+            "wordCount": 2800,
+            "inLanguage": "en-PK",
+            "about": {
+              "@type": "Thing",
+              "name": "Solar Energy Automation in Pakistan"
+            }
+          })}
+        </script>
+
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How can WhatsApp automation help solar companies in Pakistan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "WhatsApp automation helps solar companies handle high inquiry volumes, qualify leads automatically, book site visits, and provide instant quotes. Real case studies show 300% lead increases and 50% faster sales cycles."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What's the ROI of WhatsApp automation for solar businesses?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Solar companies typically see 300-500% ROI within 6 months. Automation costs ₨9,999/month while replacing 2-3 staff members (₨90,000+ monthly cost), resulting in significant savings and increased sales."
+                }
+              }
+            ]
           })}
         </script>
 
@@ -762,6 +820,8 @@ const SolarAutomation = () => {
             </section>
           </div>
         </article>
+
+        <BlogCTASection />
 
         <Footer />
       </main>

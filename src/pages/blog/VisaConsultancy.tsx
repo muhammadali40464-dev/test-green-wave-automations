@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
+import BlogCTASection from "@/components/BlogCTASection";
 import { Link } from "react-router-dom";
 import { ArrowLeft, GraduationCap, Globe, Clock, Phone, ArrowRight, CheckCircle, Users, MessageCircle } from "lucide-react";
 
@@ -11,13 +12,58 @@ const VisaConsultancy = () => {
     <>
       <MegaMenu />
       <Helmet>
-        <title>Visa Consultancy Success: How to Handle 500+ Daily Inquiries with WhatsApp Automation | TheChatFlow</title>
-        <meta name="description" content="Visa consultants: Automate customer support in Urdu/English. Handle student visa, work permit & immigration queries 24/7. Pakistani case study included." />
-        <meta name="keywords" content="visa consultancy automation, immigration support Pakistan, student visa automation, WhatsApp consultation, Pakistan visa services" />
+        <title>Visa Consultancy Success: Handle 500+ Daily Inquiries with WhatsApp Automation in Urdu | TheChatFlow</title>
+        <meta name="description" content="Visa consultants in Pakistan: Automate customer support in Urdu/English. Handle student visa, work permit & immigration queries 24/7. Real success story included." />
+        <meta name="keywords" content="visa consultancy automation Pakistan, immigration support automation, student visa automation, WhatsApp consultation services, Pakistan visa services automation" />
         <link rel="canonical" href="https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu" />
         
         <meta property="og:title" content="Visa Consultancy Success: Handle 500+ Daily Inquiries with WhatsApp Automation" />
-        <meta property="og:description" content="Real case study: Pakistani visa consultancy increased applications by 500% using WhatsApp automation" />
+        <meta property="og:description" content="Real case study: Pakistani visa consultancy increased applications by 500% using WhatsApp automation in Urdu and English" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu" />
+        <meta property="og:image" content="https://thechatflow.com/blog-images/visa-consultancy-automation.jpg" />
+        
+        <meta name="author" content="TheChatFlow Immigration Industry Team" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org", 
+            "@type": "Article",
+            "headline": "Visa Consultancy Success: How to Handle 500+ Daily Inquiries with WhatsApp Automation",
+            "author": {
+              "@type": "Organization",
+              "name": "TheChatFlow",
+              "url": "https://thechatflow.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "TheChatFlow",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://thechatflow.com/logo.png",
+                "width": 600,
+                "height": 60
+              }
+            },
+            "datePublished": "2025-01-10T10:00:00+05:00",
+            "dateModified": "2025-01-10T10:00:00+05:00",
+            "description": "Visa consultants: Automate customer support in Urdu/English. Handle student visa, work permit & immigration queries 24/7. Pakistani case study included.",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu"
+            },
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://thechatflow.com/blog-images/visa-consultancy-automation.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "articleSection": "Service Industry Automation",
+            "wordCount": 2600,
+            "inLanguage": "en-PK"
+          })}
+        </script>
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu" />
         
@@ -964,6 +1010,8 @@ const VisaConsultancy = () => {
             </section>
           </div>
         </article>
+
+        <BlogCTASection />
 
         <Footer />
       </main>
