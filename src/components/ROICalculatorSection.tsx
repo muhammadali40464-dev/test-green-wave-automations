@@ -61,7 +61,7 @@ const ROICalculatorSection = () => {
                   step="50"
                   value={dailyMessages}
                   onChange={(e) => setDailyMessages(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb"
+                  className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-thumb"
                 />
                 <div className="flex justify-between text-xs text-muted-foreground">
                   <span>50</span>
@@ -81,7 +81,7 @@ const ROICalculatorSection = () => {
                   max="20"
                   value={currentStaff}
                   onChange={(e) => setCurrentStaff(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-muted-foreground">
                   <span>1</span>
@@ -102,7 +102,7 @@ const ROICalculatorSection = () => {
                   step="5000"
                   value={averageSalary}
                   onChange={(e) => setAverageSalary(Number(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                  className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                 />
                 <div className="flex justify-between text-xs text-muted-foreground">
                   <span>30k</span>
@@ -143,34 +143,40 @@ const ROICalculatorSection = () => {
             </div>
 
             {/* Savings Card */}
-            <div className="gradient-cta rounded-2xl p-6 sm:p-8 text-white">
+            <div className="bg-gradient-to-r from-whatsapp-green to-whatsapp-dark rounded-2xl p-6 sm:p-8 text-white shadow-hero">
               <div className="flex items-center gap-3 sm:gap-4 mb-4">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 rounded-full flex items-center justify-center">
                   <TrendingUp className="h-6 w-6 sm:h-7 sm:w-7 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-base sm:text-lg">Your Monthly Savings</h4>
-                  <p className="text-sm sm:text-base text-white/80">Pure profit increase</p>
+                  <h4 className="font-semibold text-white text-base sm:text-lg">Your Monthly Savings</h4>
+                  <p className="text-sm sm:text-base text-white/90">Pure profit increase</p>
                 </div>
               </div>
               <div className="space-y-3 sm:space-y-4">
-                <div className="text-4xl sm:text-5xl font-bold animate-pulse-custom">{formatCurrency(monthlySavings)}</div>
-                <div className="text-lg sm:text-xl">Annual Savings: <strong>{formatCurrency(annualSavings)}</strong></div>
+                <div className="text-4xl sm:text-5xl font-bold text-white">{formatCurrency(monthlySavings)}</div>
+                <div className="text-lg sm:text-xl text-white">Annual Savings: <strong className="text-white">{formatCurrency(annualSavings)}</strong></div>
                 <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-3 rounded-full">
-                  <span className="text-sm sm:text-base font-medium">ROI: {roi}%</span>
+                  <span className="text-sm sm:text-base font-medium text-white">ROI: {roi}%</span>
                 </div>
               </div>
             </div>
 
             {/* CTA */}
-            <div className="text-center pt-4">
-              <Button variant="hero" size="lg" className="shadow-hero animate-pulse-custom w-full sm:w-auto">
-                <Calculator className="mr-2 h-5 w-5" />
-                Start Saving Today
-              </Button>
-              <p className="text-sm sm:text-base text-muted-foreground mt-3">
-                Setup in 24-48 hours • 30-day money-back guarantee
+            <div className="text-center pt-6 space-y-4">
+              <h3 className="font-h3 text-foreground">Ready to 10X Your Business Growth?</h3>
+              <p className="text-muted-foreground font-body">
+                Join 500+ Pakistani businesses already automating their success
               </p>
+              <Button variant="hero" size="lg" className="shadow-hero w-full sm:w-auto mb-4">
+                <Calculator className="mr-2 h-5 w-5" />
+                Book Free Demo
+              </Button>
+              <div className="space-y-2 text-sm text-muted-foreground">
+                <p>Setup in 24-48 hours</p>
+                <p>30-day money-back guarantee</p>
+                <p>No contracts</p>
+              </div>
             </div>
           </div>
         </div>

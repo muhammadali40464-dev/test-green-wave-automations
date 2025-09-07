@@ -37,10 +37,13 @@
     /* Essential design tokens */
     --gradient-hero: linear-gradient(135deg, hsl(var(--whatsapp-green)) 0%, hsl(var(--whatsapp-dark)) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--soft-green)) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--whatsapp-green)) 0%, hsl(var(--whatsapp-dark)) 100%);
+    --gradient-background: linear-gradient(180deg, hsl(var(--soft-green)) 0%, hsl(var(--card)) 100%);
     --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.1);
     --shadow-hero: 0 10px 40px hsl(var(--whatsapp-green) / 0.2);
     --shadow-elevated: 0 20px 60px hsl(0 0% 0% / 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --radius: 0.5rem;
   }
 }
@@ -48,6 +51,12 @@
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
@@ -57,6 +66,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   
   /* Performance: Optimize images globally */
@@ -304,17 +315,83 @@
   }
 }
 
-/* Enhanced hover effects for Meta badge */
-.meta-badge {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Custom slider styles for better mobile usability */
+.slider-thumb::-webkit-slider-thumb {
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: hsl(var(--whatsapp-green));
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
 }
 
-.meta-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px -10px rgba(37, 211, 102, 0.3);
+.slider-thumb::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: hsl(var(--whatsapp-green));
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Conversation indicator animation */
-.conversation-indicator {
-  animation: fadeInUp 0.5s ease-out;
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: hsl(var(--whatsapp-green));
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: hsl(var(--whatsapp-green));
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsive utilities */
+@media screen and (max-width: 768px) {
+  .container-width {
+    @apply px-4;
+  }
+  
+  .section-padding {
+    @apply py-12;
+  }
+  
+  .font-hero {
+    @apply text-3xl;
+  }
+  
+  .font-h1 {
+    @apply text-2xl;
+  }
+  
+  .font-h2 {
+    @apply text-xl;
+  }
+  
+  .font-h3 {
+    @apply text-lg;
+  }
+}
+
+/* Prevent horizontal scroll on all screen sizes */
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+/* Ensure all containers respect viewport width */
+*, *::before, *::after {
+  max-width: 100%;
+  box-sizing: border-box;
 }
