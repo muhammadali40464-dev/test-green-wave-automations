@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Zap, AlertCircle, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Check, Star, Zap, AlertCircle, Users } from "lucide-react";
 
 const PricingSection = () => {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
-import { Check, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Check, X, Star, Award, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const ComparisonSection = () => {

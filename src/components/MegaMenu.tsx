@@ -1,11 +1,7 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
-import { 
-  Menu, 
-  X, 
-  MessageCircle
-} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Menu, X, MessageCircle } from "lucide-react";
 
 const MegaMenu = () => {
   const navigate = useNavigate();
