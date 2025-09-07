@@ -176,7 +176,7 @@ const HeroSection = () => {
                 
                 <h1 className="font-hero text-foreground leading-[0.95] tracking-tight">
                   Transform Every Chat Into
-                  <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent animate-fade-in-up">
+                  <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent">
                     Revenue
                   </span>
                 </h1>
