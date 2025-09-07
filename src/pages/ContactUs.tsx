@@ -10,6 +10,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
+import FormSubmissionLoader from "@/components/FormSubmissionLoader";
+import SuccessConfirmation from "@/components/SuccessConfirmation";
 import { 
   Phone, 
   Mail, 
@@ -67,6 +69,11 @@ const ContactUs = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [submissionDetails, setSubmissionDetails] = useState({
+    customerName: "",
+    referenceId: ""
+  });
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -179,10 +186,15 @@ const ContactUs = () => {
       // Success handling
       setLastSubmissionTime(Date.now());
       
-      toast({
-        title: "Demo booking confirmed!",
-        description: `Thank you ${data.fullName}! We'll contact you within 2 hours to schedule your demo. Reference: ${submissionData.submissionId?.slice(-8)}`,
+      // Show success confirmation instead of toast
+      setSubmissionDetails({
+        customerName: data.fullName,
+        referenceId: submissionData.submissionId?.slice(-8) || "N/A"
       });
+      
+      setTimeout(() => {
+        setShowSuccess(true);
+      }, 1500); // Show success after loader completes
 
       // Reset form
       form.reset();
@@ -199,6 +211,15 @@ const ContactUs = () => {
       setIsSubmitting(false);
     }
   };
+
+  const handleSuccessClose = () => {
+    setShowSuccess(false);
+    setSubmissionDetails({
+      customerName: "",
+      referenceId: ""
+    });
+  };
+
   const contactMethods = [
     {
       icon: Phone,
@@ -509,25 +530,16 @@ const ContactUs = () => {
                   </div>
 
                    <div className="text-center pt-4">
-                    <Button 
-                     type="submit"
-                     variant="default" 
-                     size="lg" 
-                     className="w-full md:w-auto min-w-[200px] bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-xl hover-lift"
-                     disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6 animate-spin" />
-                          Booking Demo...
-                        </>
-                      ) : (
-                        <>
-                          <Calendar className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
-                          Book Demo Call
-                        </>
-                      )}
-                    </Button>
+                     <Button 
+                      type="submit"
+                      variant="default" 
+                      size="lg" 
+                      className="w-full md:w-auto min-w-[200px] bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-xl hover-lift"
+                      disabled={isSubmitting}
+                     >
+                       <Calendar className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
+                       Book Free Demo
+                     </Button>
                     
                     <p className="text-sm text-muted-foreground mt-3 text-center">
                       Free 30-minute consultation • No commitment required
@@ -603,8 +615,19 @@ const ContactUs = () => {
           </div>
         </div>
       </section>
-
+      
       <Footer />
+
+      {/* Form Submission Loader */}
+      <FormSubmissionLoader isVisible={isSubmitting} />
+
+      {/* Success Confirmation */}
+      <SuccessConfirmation
+        isVisible={showSuccess}
+        customerName={submissionDetails.customerName}
+        referenceId={submissionDetails.referenceId}
+        onClose={handleSuccessClose}
+      />
     </>
   );
 };
