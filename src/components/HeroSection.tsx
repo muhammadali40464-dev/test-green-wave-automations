@@ -181,16 +181,14 @@ const HeroSection = () => {
                   </span>
                 </h1>
                 
-                <div className="space-y-4">
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-whatsapp-green">
-                    With AI Automation
-                  </h2>
-                  
-                  <p className="font-body-lg text-muted-foreground max-w-xl leading-relaxed">
-                    Watch authentic conversations flow automatically across WhatsApp, Instagram & Facebook. 
-                    Trusted by 500+ Pakistani businesses.
-                  </p>
-                </div>
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-whatsapp-green">
+                  With AI Automation
+                </h2>
+                
+                <p className="font-body-lg text-muted-foreground max-w-xl leading-relaxed">
+                  Watch authentic conversations flow automatically across WhatsApp, Instagram & Facebook. 
+                  Trusted by 500+ Pakistani businesses.
+                </p>
               </div>
 
               {/* Enhanced CTA Buttons */}
@@ -222,40 +220,32 @@ const HeroSection = () => {
               {/* Enhanced Trust Indicators */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 pt-8 lg:pt-12">
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-3">
-                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <Users className="h-6 w-6 text-whatsapp-green" />
-                    </div>
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <Users className="h-6 w-6 text-whatsapp-green" />
                   </div>
                   <div className="font-bold text-xl lg:text-2xl text-foreground">500+</div>
                   <p className="text-sm text-muted-foreground font-medium">Pakistani Businesses</p>
                 </div>
                 
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-3">
-                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <MessageCircle className="h-6 w-6 text-whatsapp-green" />
-                    </div>
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <MessageCircle className="h-6 w-6 text-whatsapp-green" />
                   </div>
                   <div className="font-bold text-xl lg:text-2xl text-foreground">10M+</div>
                   <p className="text-sm text-muted-foreground font-medium">Messages Automated</p>
                 </div>
                 
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-3">
-                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <Star className="h-6 w-6 text-whatsapp-green" />
-                    </div>
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <Star className="h-6 w-6 text-whatsapp-green" />
                   </div>
                   <div className="font-bold text-xl lg:text-2xl text-foreground">95%</div>
                   <p className="text-sm text-muted-foreground font-medium">Customer Satisfaction</p>
                 </div>
                 
                 <div className="text-center group">
-                  <div className="flex items-center justify-center mb-3">
-                    <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors">
-                      <CheckCircle className="h-6 w-6 text-whatsapp-green" />
-                    </div>
+                  <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
+                    <CheckCircle className="h-6 w-6 text-whatsapp-green" />
                   </div>
                   <div className="font-bold text-xl lg:text-2xl text-foreground">Meta</div>
                   <p className="text-sm text-muted-foreground font-medium">Official Partner</p>
