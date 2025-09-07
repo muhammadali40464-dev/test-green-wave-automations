@@ -165,21 +165,27 @@ const ROICalculatorSection = () => {
             </div>
 
             {/* CTA */}
-            <div className="text-center pt-6 space-y-4">
-              <h3 className="font-h3 text-foreground">Ready to 10X Your Business Growth?</h3>
-              <p className="text-muted-foreground font-body">
-                Join 500+ Pakistani businesses already automating their success
-              </p>
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="shadow-hero w-full sm:w-auto mb-4"
-                onClick={() => navigate('/contact')}
-              >
-                <Calculator className="mr-2 h-5 w-5" />
-                Book Free Demo
-              </Button>
-              <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="text-center pt-6 space-y-6">
+              <div className="max-w-md mx-auto space-y-4">
+                <h3 className="font-h3 text-foreground">Ready to 10X Your Business Growth?</h3>
+                <p className="text-muted-foreground font-body">
+                  Join 500+ Pakistani businesses already automating their success
+                </p>
+              </div>
+              
+              <div className="flex justify-center">
+                <Button 
+                  variant="hero" 
+                  size="lg" 
+                  className="shadow-hero"
+                  onClick={() => navigate('/contact')}
+                >
+                  <Calculator className="mr-2 h-5 w-5" />
+                  Book Free Demo
+                </Button>
+              </div>
+              
+              <div className="flex flex-col items-center space-y-2 text-sm text-muted-foreground">
                 <p>Setup in 24-48 hours</p>
                 <p>30-day money-back guarantee</p>
                 <p>No contracts</p>
