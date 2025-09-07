@@ -21,16 +21,41 @@ declare global {
 // Core Web Vitals monitoring hook
 export const usePerformance = () => {
   useEffect(() => {
-    // Register service worker for caching
+    // Enhanced service worker registration for better caching
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then((registration) => {
-            console.log('SW registered: ', registration);
-          })
-          .catch((registrationError) => {
-            console.log('SW registration failed: ', registrationError);
-          });
+      navigator.serviceWorker.register('/sw.js', {
+        scope: '/',
+        updateViaCache: 'imports'
+      }).then((registration) => {
+        console.log('SW registered successfully');
+        
+        // Force update check for new versions
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          if (newWorker) {
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                // New service worker available, update caches
+                newWorker.postMessage({ command: 'skipWaiting' });
+              }
+            });
+          }
+        });
+        
+        // Check for updates every 5 minutes
+        setInterval(() => {
+          registration.update();
+        }, 5 * 60 * 1000);
+        
+      }).catch((error) => {
+        console.log('SW registration failed:', error);
+      });
+      
+      // Listen for service worker messages
+      navigator.serviceWorker.addEventListener('message', (event) => {
+        if (event.data && event.data.type === 'CACHE_UPDATED') {
+          console.log('Cache updated successfully');
+        }
       });
     }
 
