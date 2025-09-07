@@ -2,14 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical, Send } from "lucide-react";
+import { Play, MessageCircle, Users, CheckCircle, Star, Video, Phone, MoreVertical } from "lucide-react";
 
 const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
-  const [userInput, setUserInput] = useState("");
-  const [interactiveMessages, setInteractiveMessages] = useState<any[]>([]);
-  const [isInteractive, setIsInteractive] = useState(false);
 
   // Removed auto-scroll functionality as requested
 
@@ -122,44 +119,6 @@ const HeroSection = () => {
   ];
 
   const [currentConversation, setCurrentConversation] = useState(0);
-
-  const handleSendMessage = async () => {
-    if (!userInput.trim()) return;
-    
-    setIsInteractive(true);
-    const userMessage = {
-      id: Date.now(),
-      type: 'incoming',
-      sender: 'You',
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      text: userInput,
-      avatar: 'Y',
-      status: 'delivered'
-    };
-    
-    setInteractiveMessages(prev => [...prev, userMessage]);
-    setUserInput("");
-    
-    // Show typing indicator
-    setTimeout(() => {
-      setIsTyping(true);
-    }, 500);
-    
-    // Show response after typing
-    setTimeout(() => {
-      setIsTyping(false);
-      const botResponse = {
-        id: Date.now() + 1,
-        type: 'outgoing',
-        sender: 'TheChatFlow',
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        text: 'Thank you for your message! Our AI automation can handle queries like this 24/7. Would you like to see how we can help your business?',
-        verified: true,
-        status: 'read'
-      };
-      setInteractiveMessages(prev => [...prev, botResponse]);
-    }, 2500);
-  };
 
   useEffect(() => {
     const conversation = conversations[currentConversation];
@@ -331,48 +290,8 @@ const HeroSection = () => {
               </div>
 
               {/* Chat Messages */}
-              <div className="flex-1 p-3 md:p-4 space-y-3 md:space-y-4 h-[420px] md:h-[500px] overflow-y-auto" id="chat-messages">
-                {/* Show interactive messages when user is interacting */}
-                {isInteractive ? (
-                  interactiveMessages.map((message) => (
-                    <div key={message.id} className="transition-all duration-700 opacity-100 translate-y-0">
-                      {message.type === 'incoming' ? (
-                        <div className="flex items-start gap-2 mb-3 md:mb-4">
-                          <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-500 rounded-full flex items-center justify-center text-xs font-semibold text-white">
-                            {message.avatar}
-                          </div>
-                          <div className="flex-1">
-                            <div className="bg-white rounded-2xl rounded-tl-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
-                              <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                              <div className="flex items-center justify-between mt-2">
-                                <p className="text-[10px] md:text-[11px] text-gray-500">{message.time}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="flex justify-end mb-3 md:mb-4">
-                          <div className="bg-[#DCF8C6] rounded-2xl rounded-tr-md p-3 md:p-4 shadow-sm max-w-[240px] md:max-w-[280px] message-bubble">
-                            <div className="flex items-center gap-2 mb-2">
-                              <span className="text-xs md:text-[13px] font-semibold text-[#075E54]">{message.sender}</span>
-                              {message.verified && <CheckCircle className="h-3 w-3 text-blue-500" />}
-                            </div>
-                            <p className="text-sm md:text-[15px] text-gray-800 whitespace-pre-wrap leading-relaxed">{message.text}</p>
-                            <div className="flex items-center justify-end gap-1 mt-2">
-                              <p className="text-[10px] md:text-[11px] text-gray-600">{message.time}</p>
-                              <div className="flex ml-2">
-                                <CheckCircle className="h-3 w-3 text-blue-500" />
-                                <CheckCircle className="h-3 w-3 text-blue-500 -ml-1" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))
-                ) : (
-                  /* Show demo conversation */
-                  conversations[currentConversation].messages.map((message) => (
+              <div className="flex-1 p-3 md:p-4 space-y-3 md:space-y-4 h-[480px] md:h-[560px] overflow-y-auto" id="chat-messages">
+                {conversations[currentConversation].messages.map((message) => (
                   <div
                     key={message.id}
                     className={`transition-all duration-700 message-enter ${
@@ -414,8 +333,7 @@ const HeroSection = () => {
                       </div>
                     )}
                   </div>
-                  ))
-                )}
+                ))}
 
                 {/* Enhanced Typing Indicator */}
                 {isTyping && (
@@ -437,45 +355,22 @@ const HeroSection = () => {
                 )}
               </div>
 
-              {/* Interactive Input Field */}
+              {/* Enhanced Conversation Indicator */}
               <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
-                <div className="bg-white rounded-xl shadow-sm border p-2 md:p-3">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="text"
-                      value={userInput}
-                      onChange={(e) => setUserInput(e.target.value)}
-                      onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                      placeholder="Type your message here..."
-                      className="flex-1 bg-transparent border-none outline-none text-sm md:text-[15px] text-gray-800 placeholder-gray-500"
-                    />
-                    <button
-                      onClick={handleSendMessage}
-                      disabled={!userInput.trim()}
-                      className="p-2 bg-whatsapp-green text-white rounded-full hover:bg-whatsapp-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      <Send className="h-4 w-4" />
-                    </button>
+                <div className="bg-white/95 backdrop-blur-sm rounded-xl px-3 md:px-4 py-2 shadow-sm conversation-indicator">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div 
+                        className="w-3 h-3 rounded-full" 
+                        style={{ backgroundColor: conversations[currentConversation].color }}
+                      ></div>
+                      <p className="text-xs font-semibold text-gray-700">
+                        {conversations[currentConversation].title}
+                      </p>
+                    </div>
+                    <p className="text-xs text-gray-500">Live Demo</p>
                   </div>
                 </div>
-                
-                {/* Demo indicator - show when not interactive */}
-                {!isInteractive && (
-                  <div className="mt-2 bg-white/95 backdrop-blur-sm rounded-xl px-3 md:px-4 py-2 shadow-sm conversation-indicator">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <div 
-                          className="w-3 h-3 rounded-full" 
-                          style={{ backgroundColor: conversations[currentConversation].color }}
-                        ></div>
-                        <p className="text-xs font-semibold text-gray-700">
-                          {conversations[currentConversation].title}
-                        </p>
-                      </div>
-                      <p className="text-xs text-gray-500">Try typing above!</p>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
