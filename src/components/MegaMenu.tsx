@@ -43,7 +43,7 @@ const MegaMenu = () => {
             <img 
               src="/lovable-uploads/656ca194-7b96-4277-91f8-6e73c293d23f.png" 
               alt="Company Logo" 
-              className="w-16 h-16 object-contain"
+              className="w-24 h-24 object-contain"
             />
             <div className="flex flex-col">
               <span className="text-lg text-whatsapp-green font-bold">All-in-One Automation</span>
