@@ -41,7 +41,7 @@ const MegaMenu = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3" onClick={closeAllDropdowns}>
             <img 
-              src="/lovable-uploads/fad311d9-4d57-4024-ae73-23c50c0b157a.png" 
+              src="/lovable-uploads/656ca194-7b96-4277-91f8-6e73c293d23f.png" 
               alt="Company Logo" 
               className="w-16 h-16 object-contain"
             />
