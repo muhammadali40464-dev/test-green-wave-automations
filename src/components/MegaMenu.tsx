@@ -41,13 +41,12 @@ const MegaMenu = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3" onClick={closeAllDropdowns}>
             <img 
-              src="/lovable-uploads/f3bdf7ae-2c19-48ad-b05b-56e38d209f6d.png" 
-              alt="ChatFlow Logo" 
-              className="w-12 h-12 object-contain"
+              src="/lovable-uploads/f1263ca2-137f-45b8-9360-a8fb1c924f6d.png" 
+              alt="Company Logo" 
+              className="w-16 h-16 object-contain"
             />
             <div className="flex flex-col">
-              <span className="font-bold text-2xl text-foreground">ChatFlow</span>
-              <span className="text-sm text-whatsapp-green font-medium">All-in-One Automation</span>
+              <span className="text-lg text-whatsapp-green font-bold">All-in-One Automation</span>
             </div>
           </Link>
 
