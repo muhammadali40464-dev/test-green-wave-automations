@@ -37,17 +37,15 @@ const MegaMenu = () => {
       isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white'
     } border-b`}>
       <div className="container-width">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3" onClick={closeAllDropdowns}>
+          <Link to="/" className="flex flex-col items-center" onClick={closeAllDropdowns}>
             <img 
               src="/lovable-uploads/656ca194-7b96-4277-91f8-6e73c293d23f.png" 
               alt="Company Logo" 
-              className="w-24 h-24 object-contain"
+              className="w-32 h-32 object-contain"
             />
-            <div className="flex flex-col">
-              <span className="text-lg text-whatsapp-green font-bold">All-in-One Automation</span>
-            </div>
+            <span className="text-xl text-whatsapp-green font-bold mt-1">All-in-One Automation</span>
           </Link>
 
           {/* Desktop Menu */}
