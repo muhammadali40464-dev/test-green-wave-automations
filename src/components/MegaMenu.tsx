@@ -38,14 +38,16 @@ const MegaMenu = () => {
     } border-b`}>
       <div className="container-width">
         <div className="flex items-center justify-between h-16">
-          {/* Logo without Robot */}
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-3" onClick={closeAllDropdowns}>
-            <div className="w-12 h-12 bg-whatsapp-green rounded-xl flex items-center justify-center">
-              <MessageCircle className="h-6 w-6 text-white" />
-            </div>
+            <img 
+              src="/lovable-uploads/f3bdf7ae-2c19-48ad-b05b-56e38d209f6d.png" 
+              alt="ChatFlow Logo" 
+              className="w-12 h-12 object-contain"
+            />
             <div className="flex flex-col">
-              <span className="font-bold text-2xl text-foreground">TheChatFlow</span>
-              <span className="text-sm text-whatsapp-green font-medium">All-in-One Chat Automation</span>
+              <span className="font-bold text-2xl text-foreground">ChatFlow</span>
+              <span className="text-sm text-whatsapp-green font-medium">All-in-One Automation</span>
             </div>
           </Link>
 
