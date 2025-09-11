@@ -4,38 +4,37 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
+import SEOHead from "@/components/SEO/SEOHead";
+import StructuredData from "@/components/SEO/StructuredData";
+import { getPageSEO } from "@/data/seoData";
 import { Link } from "react-router-dom";
 import { BookOpen, Calendar, ArrowRight, Users, Zap, GraduationCap, Mail, MessageCircle, Bot } from "lucide-react";
 
 const Blog = () => {
+  const seoData = getPageSEO("/blog");
+  
   return (
     <>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        path="/blog"
+        keywords={seoData.keywords}
+        type="website"
+      />
+      <StructuredData 
+        type="WebSite"
+        data={{
+          name: "TheChatFlow Blog",
+          description: "Master WhatsApp automation for Pakistani businesses",
+          url: "https://thechatflow.com/blog",
+          publisher: {
+            "@type": "Organization",
+            name: "TheChatFlow"
+          }
+        }}
+      />
       <MegaMenu />
-      <Helmet>
-        <title>TheChatFlow Blog - Master WhatsApp Automation for Pakistani Businesses</title>
-        <meta name="description" content="Learn WhatsApp automation strategies, Pakistani business case studies, and AI integration tips. Master business automation with TheChatFlow expert guides." />
-        <meta name="keywords" content="WhatsApp automation Pakistan, business automation blog, Pakistani case studies, AI integration, WhatsApp marketing" />
-        <link rel="canonical" href="https://thechatflow.com/blog" />
-        
-        <meta property="og:title" content="TheChatFlow Blog - WhatsApp Automation for Pakistani Businesses" />
-        <meta property="og:description" content="Master WhatsApp automation with expert guides, case studies, and strategies for Pakistani businesses" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://thechatflow.com/blog" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "name": "TheChatFlow Blog",
-            "description": "Master WhatsApp automation for Pakistani businesses",
-            "url": "https://thechatflow.com/blog",
-            "publisher": {
-              "@type": "Organization",
-              "name": "TheChatFlow"
-            }
-          })}
-        </script>
-      </Helmet>
 
       <main className="min-h-screen pt-16">
         {/* Removed duplicate header - using MegaMenu instead */}

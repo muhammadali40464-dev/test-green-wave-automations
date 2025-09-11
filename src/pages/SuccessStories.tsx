@@ -2,6 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import StructuredData from "@/components/SEO/StructuredData";
+import { getPageSEO } from "@/data/seoData";
 import { 
   Zap, 
   GraduationCap, 
@@ -16,6 +19,8 @@ import {
 } from "lucide-react";
 
 const SuccessStories = () => {
+  const seoData = getPageSEO("/success-stories");
+  
   const successStories = [
     {
       company: "SunPower Pakistan",
@@ -88,6 +93,21 @@ const SuccessStories = () => {
 
   return (
     <>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        path="/success-stories"
+        keywords={seoData.keywords}
+        type="website"
+      />
+      <StructuredData 
+        type="Organization"
+        data={{
+          name: "TheChatFlow Success Stories",
+          description: "Real success stories from Pakistani businesses using WhatsApp automation",
+          url: "https://thechatflow.com/success-stories"
+        }}
+      />
       <MegaMenu />
       
       {/* Hero Section */}

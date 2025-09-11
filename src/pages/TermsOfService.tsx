@@ -1,17 +1,22 @@
 import { Helmet } from "react-helmet";
 import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { FileText, Handshake, AlertCircle, Users, Zap, Shield } from "lucide-react";
 
 const TermsOfService = () => {
+  const seoData = getPageSEO("/terms-of-service");
+  
   return (
     <>
-      <Helmet>
-        <title>Terms of Service - TheChatFlow</title>
-        <meta name="description" content="Read TheChatFlow's terms of service for WhatsApp automation services. Understand your rights and responsibilities." />
-        <meta name="keywords" content="terms of service, TheChatFlow terms, WhatsApp automation terms, service agreement" />
-        <link rel="canonical" href="https://thechatflow.com/terms-of-service" />
-      </Helmet>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        path="/terms-of-service"
+        keywords={seoData.keywords}
+        type="website"
+      />
 
       <MegaMenu />
 

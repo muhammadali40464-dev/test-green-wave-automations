@@ -1,17 +1,22 @@
 import { Helmet } from "react-helmet";
 import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { Shield, Lock, Eye, Users, Database, Globe } from "lucide-react";
 
 const PrivacyPolicy = () => {
+  const seoData = getPageSEO("/privacy-policy");
+  
   return (
     <>
-      <Helmet>
-        <title>Privacy Policy - TheChatFlow</title>
-        <meta name="description" content="Learn how TheChatFlow protects your privacy and handles your data. Comprehensive privacy policy for WhatsApp automation services." />
-        <meta name="keywords" content="privacy policy, data protection, TheChatFlow privacy, WhatsApp automation privacy" />
-        <link rel="canonical" href="https://thechatflow.com/privacy-policy" />
-      </Helmet>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        path="/privacy-policy"
+        keywords={seoData.keywords}
+        type="website"
+      />
 
       <MegaMenu />
 

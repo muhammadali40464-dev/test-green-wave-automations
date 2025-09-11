@@ -1,0 +1,21 @@
+# Handle www to non-www redirects
+https://www.thechatflow.com/* https://thechatflow.com/:splat 301!
+http://www.thechatflow.com/* https://thechatflow.com/:splat 301!
+http://thechatflow.com/* https://thechatflow.com/:splat 301!
+
+# Handle trailing slashes
+/blog/ /blog 301
+/contact/ /contact 301
+/success-stories/ /success-stories 301
+/privacy-policy/ /privacy-policy 301
+/terms-of-service/ /terms-of-service 301
+/cookie-policy/ /cookie-policy 301
+
+# Handle common URL variations
+/Blog/* /blog/:splat 301
+/BLOG/* /blog/:splat 301
+/Contact/* /contact/:splat 301
+/Success-Stories/* /success-stories/:splat 301
+
+# SPA fallback
+/* /index.html 200

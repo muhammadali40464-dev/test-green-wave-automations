@@ -4,131 +4,52 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Footer from "@/components/Footer";
 import MegaMenu from "@/components/MegaMenu";
 import BlogCTASection from "@/components/BlogCTASection";
+import SEOHead from "@/components/SEO/SEOHead";
+import StructuredData from "@/components/SEO/StructuredData";
+import { getPageSEO } from "@/data/seoData";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CheckCircle, Users, Zap, Calculator, Phone, ArrowRight, ExternalLink } from "lucide-react";
 
 const WhatsAppAPIGuide = () => {
+  const seoData = getPageSEO("/blog/whatsapp-business-api-pakistan-guide-2025");
+  
   return (
     <>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        path="/blog/whatsapp-business-api-pakistan-guide-2025"
+        keywords={seoData.keywords}
+        type="article"
+        author={seoData.author}
+        publishedDate={seoData.publishedDate}
+        image="/lovable-uploads/c2120760-061b-4488-8c9f-b2c1416e1a7e.png"
+      />
+      <StructuredData 
+        type="BlogPosting"
+        data={{
+          headline: seoData.title,
+          description: seoData.description,
+          url: "https://thechatflow.com/blog/whatsapp-business-api-pakistan-guide-2025",
+          datePublished: seoData.publishedDate,
+          author: {
+            "@type": "Person", 
+            name: seoData.author || "TheChatFlow Team"
+          },
+          image: "https://thechatflow.com/lovable-uploads/c2120760-061b-4488-8c9f-b2c1416e1a7e.png"
+        }}
+      />
       <MegaMenu />
-      <Helmet>
-        <title>Complete Guide to WhatsApp Business API in Pakistan 2025 | TheChatFlow</title>
-        <meta name="description" content="Master WhatsApp Business API in Pakistan: Complete setup guide, pricing breakdown, real case studies & implementation strategies. Official Meta partner solutions available." />
-        <meta name="keywords" content="WhatsApp Business API Pakistan, WhatsApp automation Pakistan, business messaging Pakistan, WhatsApp API setup, Pakistan business automation, official WhatsApp partner" />
-        <link rel="canonical" href="https://thechatflow.com/blog/whatsapp-business-api-pakistan-guide-2025" />
-        
-        <meta property="og:title" content="Complete Guide to WhatsApp Business API in Pakistan 2025" />
-        <meta property="og:description" content="Master WhatsApp Business API setup, pricing, and implementation for Pakistani businesses with official Meta partner" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thechatflow.com/blog/whatsapp-business-api-pakistan-guide-2025" />
-        <meta property="og:image" content="https://thechatflow.com/blog-images/whatsapp-api-pakistan-guide.jpg" />
-        
-        <meta name="author" content="TheChatFlow API Experts" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Complete Guide to WhatsApp Business API in Pakistan 2025",
-            "author": {
-              "@type": "Organization",
-              "name": "TheChatFlow",
-              "url": "https://thechatflow.com",
-              "sameAs": [
-                "https://www.facebook.com/thechatflow",
-                "https://www.linkedin.com/company/thechatflow"
-              ]
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "TheChatFlow",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://thechatflow.com/logo.png",
-                "width": 600,
-                "height": 60
-              }
-            },
-            "datePublished": "2025-01-15T09:00:00+05:00",
-            "dateModified": "2025-01-15T09:00:00+05:00",
-            "description": "Master WhatsApp Business API in Pakistan. Complete setup guide, pricing, features & benefits for Pakistani businesses.",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://thechatflow.com/blog/whatsapp-business-api-pakistan-guide-2025"
-            },
-            "image": {
-              "@type": "ImageObject",
-              "url": "https://thechatflow.com/blog-images/whatsapp-api-pakistan-guide.jpg",
-              "width": 1200,
-              "height": 630
-            },
-            "articleSection": "WhatsApp Automation",
-            "wordCount": 3200,
-            "inLanguage": "en-PK",
-            "keywords": ["WhatsApp Business API", "Pakistan", "Business Automation", "Official API", "Meta Partner"]
-          })}
-        </script>
 
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How much does WhatsApp Business API cost in Pakistan?",
-                "acceptedAnswer": {
-                  "@type": "Answer", 
-                  "text": "WhatsApp Business API costs vary by provider. TheChatFlow offers complete setup for ₨49,999 and monthly plans starting at ₨9,999 with unlimited messages included. Direct from Meta requires complex setup and per-message billing."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is WhatsApp Business API legal in Pakistan?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, WhatsApp Business API is completely legal in Pakistan when implemented through official Meta Business Partners like TheChatFlow. Only unofficial WhatsApp automation tools violate Terms of Service."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How long does WhatsApp Business API approval take in Pakistan?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Official WhatsApp Business API approval takes 5-10 business days through Meta Business Partners. TheChatFlow handles the entire approval process and can have you live within 48 hours of approval."
-                }
-              }
-            ]
-          })}
-        </script>
-
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://thechatflow.com"
-              },
-              {
-                "@type": "ListItem", 
-                "position": 2,
-                "name": "Blog",
-                "item": "https://thechatflow.com/blog"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "WhatsApp Business API Guide Pakistan 2025"
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
+      {/* Hero Section - Back to Blog */}
+      <section className="pt-20 pb-8 bg-gradient-to-br from-background to-whatsapp-green/5">
+        <div className="container-width">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-whatsapp-green hover:text-whatsapp-dark transition-colors">
+            <ArrowLeft className="h-4 w-4" />
+            Back to Blog
+          </Link>
+        </div>
+      </section>
 
       <main className="min-h-screen pt-16">
 

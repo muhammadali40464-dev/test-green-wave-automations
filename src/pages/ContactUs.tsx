@@ -12,6 +12,9 @@ import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
 import FormSubmissionLoader from "@/components/FormSubmissionLoader";
 import SuccessConfirmation from "@/components/SuccessConfirmation";
+import SEOHead from "@/components/SEO/SEOHead";
+import StructuredData from "@/components/SEO/StructuredData";
+import { getPageSEO } from "@/data/seoData";
 import { 
   Phone, 
   Mail, 
@@ -75,6 +78,8 @@ const ContactUs = () => {
     referenceId: ""
   });
 
+  const seoData = getPageSEO("/contact");
+
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -89,6 +94,8 @@ const ContactUs = () => {
       website: "", // Honeypot field
     },
   });
+
+  // ... keep existing code (data collection, rate limiting, submission functions)
 
   // Simplified data collection function - fast and efficient
   const collectEnhancedData = (): Omit<SubmissionData, keyof ContactFormData> => {
@@ -277,6 +284,26 @@ const ContactUs = () => {
 
   return (
     <>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        path="/contact"
+        keywords={seoData.keywords}
+        type="website"
+      />
+      <StructuredData 
+        type="Organization"
+        data={{
+          name: "TheChatFlow",
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "Customer Service",
+            telephone: "+92 340 4634191",
+            email: "hello@thechatflow.com",
+            availableLanguage: ["English", "Urdu"]
+          }
+        }}
+      />
       <MegaMenu />
       
       {/* Hero Section */}

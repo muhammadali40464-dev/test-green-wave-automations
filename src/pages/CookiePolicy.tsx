@@ -1,17 +1,22 @@
 import { Helmet } from "react-helmet";
 import MegaMenu from "@/components/MegaMenu";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { Cookie, Settings, Eye, BarChart, Shield, Globe } from "lucide-react";
 
 const CookiePolicy = () => {
+  const seoData = getPageSEO("/cookie-policy");
+  
   return (
     <>
-      <Helmet>
-        <title>Cookie Policy - TheChatFlow</title>
-        <meta name="description" content="Learn about how TheChatFlow uses cookies and tracking technologies to improve your experience with our WhatsApp automation platform." />
-        <meta name="keywords" content="cookie policy, TheChatFlow cookies, tracking, web analytics, privacy" />
-        <link rel="canonical" href="https://thechatflow.com/cookie-policy" />
-      </Helmet>
+      <SEOHead 
+        title={seoData.title}
+        description={seoData.description}
+        path="/cookie-policy"
+        keywords={seoData.keywords}
+        type="website"
+      />
 
       <MegaMenu />
 
