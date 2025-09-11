@@ -37,13 +37,13 @@ const MegaMenu = () => {
       isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white'
     } border-b`}>
       <div className="container-width">
-        <div className="flex items-center justify-between h-40">
+        <div className="flex items-center justify-between h-40 pl-6 lg:pl-8">
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={closeAllDropdowns}>
             <img 
               src="/lovable-uploads/27341bea-8661-4139-a6c6-e4be46c555b4.png" 
               alt="TheChatFlow - All-in-One Chat Automation Platform" 
-              className="h-12 w-auto lg:h-16 object-contain"
+              className="h-16 w-auto lg:h-22 object-contain filter contrast-110 brightness-95"
             />
           </Link>
 
