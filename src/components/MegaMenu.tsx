@@ -41,9 +41,9 @@ const MegaMenu = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center" onClick={closeAllDropdowns}>
             <img 
-              src="/lovable-uploads/27341bea-8661-4139-a6c6-e4be46c555b4.png" 
+              src="/lovable-uploads/f3bdf7ae-2c19-48ad-b05b-56e38d209f6d.png" 
               alt="TheChatFlow - All-in-One Chat Automation Platform" 
-              className="h-16 w-auto lg:h-22 object-contain filter contrast-110 brightness-95"
+              className="h-20 w-auto lg:h-28 object-contain"
             />
           </Link>
 
