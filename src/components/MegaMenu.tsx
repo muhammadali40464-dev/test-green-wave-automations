@@ -39,13 +39,12 @@ const MegaMenu = () => {
       <div className="container-width">
         <div className="flex items-center justify-between h-40">
           {/* Logo */}
-          <Link to="/" className="flex flex-col items-center gap-2" onClick={closeAllDropdowns}>
+          <Link to="/" className="flex items-center" onClick={closeAllDropdowns}>
             <img 
-              src="/lovable-uploads/656ca194-7b96-4277-91f8-6e73c293d23f.png" 
-              alt="Company Logo" 
-              className="w-28 h-28 lg:w-32 lg:h-32 object-contain"
+              src="/lovable-uploads/27341bea-8661-4139-a6c6-e4be46c555b4.png" 
+              alt="TheChatFlow - All-in-One Chat Automation Platform" 
+              className="h-12 w-auto lg:h-16 object-contain"
             />
-            <span className="text-sm lg:text-base text-whatsapp-green font-bold">All-in-One Automation</span>
           </Link>
 
           {/* Desktop Menu */}
