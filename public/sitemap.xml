@@ -7,7 +7,7 @@
   <!-- Homepage - Highest Priority -->
   <url>
     <loc>https://thechatflow.com/</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,64 +15,86 @@
   <!-- Main Service Pages - High Priority -->
   <url>
     <loc>https://thechatflow.com/blog</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/success-stories</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/contact</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Blog Posts - High Value Content -->
+  <!-- Blog Posts - High Value Content (All 9 Posts) -->
   <url>
     <loc>https://thechatflow.com/blog/whatsapp-business-api-pakistan-guide-2025</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/blog/chatbot-automation-guide-pakistan</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/blog/whatsapp-api-vs-regular-whatsapp-business</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/blog/how-chatbots-work-small-businesses-pakistan</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Missing Blog Posts Found by Google -->
+  <url>
+    <loc>https://thechatflow.com/blog/ecommerce-whatsapp-marketing-pakistan</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://thechatflow.com/blog/ai-customer-service-benefits-local-businesses</loc>
+    <lastmod>2025-01-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://thechatflow.com/blog/chatbot-implementation-guide-pakistani-companies</loc>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -80,21 +102,21 @@
   <!-- Legal Pages - Lower Priority -->
   <url>
     <loc>https://thechatflow.com/privacy-policy</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/terms-of-service</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   
   <url>
     <loc>https://thechatflow.com/cookie-policy</loc>
-    <lastmod>2025-01-11</lastmod>
+    <lastmod>2025-01-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
