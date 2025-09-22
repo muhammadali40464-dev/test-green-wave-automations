@@ -30,10 +30,10 @@ const Footer = () => {
                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
                   <MessageCircle className="h-5 w-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
+                <a href="https://www.instagram.com/thechatflowai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
+                <a href="https://www.facebook.com/thechatflowai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
