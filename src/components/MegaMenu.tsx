@@ -43,7 +43,7 @@ const MegaMenu = () => {
             <img 
               src="/lovable-uploads/new-logo.jpg" 
               alt="TheChatFlow - All-in-One Chat Automation Platform" 
-              className="h-16 w-auto lg:h-20 object-contain rounded-full"
+              className="h-24 w-auto md:h-28 lg:h-32 xl:h-36 object-contain rounded-full"
             />
           </Link>
 
