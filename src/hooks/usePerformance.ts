@@ -53,8 +53,17 @@ export const usePerformance = () => {
       
       // Listen for service worker messages
       navigator.serviceWorker.addEventListener('message', (event) => {
-        if (event.data && event.data.type === 'CACHE_UPDATED') {
+        if (!event.data) return;
+        if (event.data.type === 'CACHE_UPDATED') {
           console.log('Cache updated successfully');
+        }
+        if (event.data.type === 'RELOAD_REQUIRED') {
+          const alreadyReloaded = sessionStorage.getItem('sw-reloaded');
+          if (!alreadyReloaded) {
+            sessionStorage.setItem('sw-reloaded', '1');
+            console.log('Service worker updated. Reloading to get fresh HTML...');
+            window.location.reload();
+          }
         }
       });
     }

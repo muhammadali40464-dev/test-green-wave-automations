@@ -125,20 +125,20 @@ self.addEventListener('fetch', (event) => {
   // Handle HTML documents with shorter caching
   else if (request.destination === 'document') {
     event.respondWith(
-      caches.open(CACHE_NAME).then((cache) => {
-        return cache.match(request).then((response) => {
-          const fetchPromise = fetch(request).then((fetchResponse) => {
-            if (fetchResponse.ok) {
-              const responseWithHeaders = addCacheHeaders(fetchResponse.clone(), 24 * 60 * 60 * 1000); // 1 day
+      fetch(request)
+        .then((fetchResponse) => {
+          if (fetchResponse && fetchResponse.ok) {
+            const responseWithHeaders = addCacheHeaders(fetchResponse.clone(), 5 * 60 * 1000); // 5 minutes
+            caches.open(CACHE_NAME).then((cache) => {
               cache.put(request, responseWithHeaders.clone());
-              return responseWithHeaders;
-            }
-            return fetchResponse;
-          });
-          
-          return response || fetchPromise;
-        });
-      })
+            });
+            return responseWithHeaders;
+          }
+          return fetchResponse;
+        })
+        .catch(() => {
+          return caches.match(request);
+        })
     );
   }
   // Default: Network first with caching fallback
@@ -176,10 +176,11 @@ self.addEventListener('activate', (event) => {
         })
       );
     }).then(() => {
-      // Notify clients that cache has been updated
+      // Notify clients that cache has been updated and a reload is recommended
       return self.clients.matchAll().then((clients) => {
         clients.forEach((client) => {
           client.postMessage({ type: 'CACHE_UPDATED' });
+          client.postMessage({ type: 'RELOAD_REQUIRED' });
         });
       });
     })
