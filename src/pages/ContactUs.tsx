@@ -228,7 +228,7 @@ const ContactUs = () => {
       icon: Phone,
       title: "WhatsApp & Call",
       subtitle: "Direct line to our team",
-      value: "+92 340 4634191",
+      value: "+92 317 1634191",
       action: "Call Now",
       color: "bg-whatsapp-green",
       description: "Get instant responses on WhatsApp or schedule a call"
@@ -298,7 +298,7 @@ const ContactUs = () => {
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "Customer Service",
-            telephone: "+92 340 4634191",
+            telephone: "+92 317 1634191",
             email: "hello@thechatflow.com",
             availableLanguage: ["English", "Urdu"]
           }

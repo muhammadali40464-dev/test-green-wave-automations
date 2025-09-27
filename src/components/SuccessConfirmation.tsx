@@ -89,7 +89,7 @@ const SuccessConfirmation: React.FC<SuccessConfirmationProps> = ({
           </Button>
           <Button 
             variant="outline" 
-            onClick={() => window.open("https://wa.me/923404634191", "_blank")}
+            onClick={() => window.open("https://wa.me/923171634191", "_blank")}
             className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white"
           >
             WhatsApp Us Now

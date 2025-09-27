@@ -293,7 +293,7 @@ const CookiePolicy = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
-                  <p className="text-orange-600 font-medium">03404634191</p>
+                  <p className="text-orange-600 font-medium">03171634191</p>
                 </div>
               </div>
             </div>
