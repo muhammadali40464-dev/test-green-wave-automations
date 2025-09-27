@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, Phone, MapPin, Facebook, Instagram, Linkedin, ArrowUp } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, Facebook, Instagram, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
                 WhatsApp automation made simple. Transform your customer communication with AI-powered chat solutions for Pakistani businesses.
               </p>
               <div className="flex items-center gap-4">
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
+                <a href="https://wa.me/923171634191" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
                   <MessageCircle className="h-5 w-5" />
                 </a>
                 <a href="https://www.instagram.com/thechatflowai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
@@ -35,9 +35,6 @@ const Footer = () => {
                 </a>
                 <a href="https://www.facebook.com/thechatflowai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
                   <Facebook className="h-5 w-5" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
-                  <Linkedin className="h-5 w-5" />
                 </a>
               </div>
             </div>
