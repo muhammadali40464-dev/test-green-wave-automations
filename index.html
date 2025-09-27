@@ -51,6 +51,38 @@
     </script>
     <!-- End Meta Pixel Code -->
     
+    <!-- Meta Pixel Health Check -->
+    <script>
+    window.__pixelHealth = { loaded: false, fallbackSent: false };
+    window.__pixelDebug = function() {
+      console.log('Meta Pixel Status:', {
+        fbq: typeof window.fbq,
+        callMethod: typeof window.fbq?.callMethod,
+        loaded: window.__pixelHealth.loaded,
+        fallbackSent: window.__pixelHealth.fallbackSent,
+        queue: window.fbq?.queue?.length || 0
+      });
+    };
+    
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        if (typeof window.fbq === 'function' && typeof window.fbq.callMethod === 'function') {
+          window.__pixelHealth.loaded = true;
+          console.log('✅ Meta Pixel loaded successfully');
+        } else {
+          console.warn('⚠️ Meta Pixel blocked or failed to load');
+          // Fallback image beacon
+          if (!window.__pixelHealth.fallbackSent) {
+            var img = new Image();
+            img.src = 'https://www.facebook.com/tr?id=804865861954697&ev=PageView&noscript=1&cd[source]=health_check';
+            window.__pixelHealth.fallbackSent = true;
+          }
+        }
+      }, 1500);
+    });
+    </script>
+    <!-- End Meta Pixel Health Check -->
+    
     <!-- Performance Optimizations - Enhanced for critical request chain -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
