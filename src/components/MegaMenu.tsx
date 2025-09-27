@@ -65,10 +65,10 @@ const MegaMenu = () => {
               Contact Us
             </Link>
 
-            <Button variant="hero" size="sm" onClick={() => {
-              window.location.href = '/contact';
-            }}>
-              Get Started
+            <Button variant="hero" size="sm" asChild>
+              <Link to="/contact">
+                Get Started
+              </Link>
             </Button>
           </div>
 
@@ -117,11 +117,10 @@ const MegaMenu = () => {
                 Contact Us
               </Link>
 
-              <Button variant="hero" size="sm" className="w-full mt-4" onClick={() => {
-                closeAllDropdowns();
-                window.location.href = '/contact';
-              }}>
-                Get Started
+              <Button variant="hero" size="sm" className="w-full mt-4" asChild>
+                <Link to="/contact" onClick={closeAllDropdowns}>
+                  Get Started
+                </Link>
               </Button>
             </div>
           </div>

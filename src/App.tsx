@@ -31,28 +31,52 @@ import NotFound from "./pages/NotFound";
 
 // Route transition management component
 const RouteTransitionManager = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
+  const { pathname, search, hash } = location;
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [previousPath, setPreviousPath] = useState(pathname);
+  const [previousPath, setPreviousPath] = useState(pathname + search + hash);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  // Meta Pixel tracking for SPA route changes
+  // Enhanced Meta Pixel tracking for SPA route changes - tracks pathname, search, and hash changes
   useEffect(() => {
+    const currentPath = pathname + search + hash;
+    const pageTitle = document.title;
+    const referrer = document.referrer;
+    
     if (typeof window.fbq === 'function') {
+      // Standard PageView event
       window.fbq('track', 'PageView');
-      console.log('📊 Meta Pixel PageView tracked:', pathname);
+      
+      // Custom SPA tracking event with additional context
+      window.fbq('trackCustom', 'VirtualPageViewSPA', {
+        path: currentPath,
+        title: pageTitle,
+        referrer: referrer || 'direct'
+      });
+      
+      console.log('📊 Meta Pixel SPA PageView sent:', { 
+        path: currentPath, 
+        title: pageTitle, 
+        referrer: referrer || 'direct' 
+      });
     } else if (window.fbq && window.fbq.queue) {
       window.fbq('track', 'PageView');
+      window.fbq('trackCustom', 'VirtualPageViewSPA', {
+        path: currentPath,
+        title: pageTitle,
+        referrer: referrer || 'direct'
+      });
     }
-  }, [pathname]);
+  }, [pathname, search, hash]);
 
   useEffect(() => {
-    if (pathname !== previousPath) {
+    const currentPath = pathname + search + hash;
+    if (currentPath !== previousPath) {
       setIsTransitioning(true);
-      setPreviousPath(pathname);
+      setPreviousPath(currentPath);
       
       // Show transition loader for smooth experience
       const timer = setTimeout(() => {
@@ -61,7 +85,7 @@ const RouteTransitionManager = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [pathname, previousPath]);
+  }, [pathname, search, hash, previousPath]);
 
   return isTransitioning ? <PageTransitionLoader route={pathname} duration={500} /> : null;
 };
