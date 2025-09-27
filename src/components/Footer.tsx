@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, Phone, MapPin, Facebook, Instagram, ArrowUp } from "lucide-react";
+import { MessageCircle, Mail, Phone, MapPin, Facebook, Instagram, Youtube, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -35,6 +35,9 @@ const Footer = () => {
                 </a>
                 <a href="https://www.facebook.com/thechatflowai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
                   <Facebook className="h-5 w-5" />
+                </a>
+                <a href="https://www.youtube.com/@TheChatFlow" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-whatsapp-green transition-colors">
+                  <Youtube className="h-5 w-5" />
                 </a>
               </div>
             </div>
