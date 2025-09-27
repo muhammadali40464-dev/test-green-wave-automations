@@ -7,6 +7,12 @@ import { useLocation } from "react-router-dom";
 import WebsiteLoader from "@/components/WebsiteLoader";
 import PageTransitionLoader from "@/components/PageTransitionLoader";
 
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
 // Direct imports - no lazy loading to prevent blank screens
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
@@ -31,6 +37,16 @@ const RouteTransitionManager = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [pathname]);
+
+  // Meta Pixel tracking for SPA route changes
+  useEffect(() => {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'PageView');
+      console.log('📊 Meta Pixel PageView tracked:', pathname);
+    } else if (window.fbq && window.fbq.queue) {
+      window.fbq('track', 'PageView');
+    }
   }, [pathname]);
 
   useEffect(() => {
