@@ -17,7 +17,7 @@ const FinalCTASection = () => {
             
             <p className="font-body-lg text-white/90 max-w-3xl mx-auto">
               Start automating WhatsApp messages today and never lose another customer to slow responses. 
-              Join 500+ Pakistani businesses already growing with WhatBot.
+              Join 500+ Pakistani businesses already growing with The ChatFlow.
             </p>
           </div>
 

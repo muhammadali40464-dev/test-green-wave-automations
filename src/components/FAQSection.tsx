@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const FAQSection = () => {
   const faqs = [
     {
-      question: "Do I need technical knowledge to use WhatBot?",
+      question: "Do I need technical knowledge to use The ChatFlow?",
       answer: "Not at all! Our drag & drop builder is designed for business owners, not developers. You can create complex chat flows with simple point-and-click actions. Plus, our setup service handles everything for you if you prefer a done-for-you approach."
     },
     {
@@ -46,7 +46,7 @@ const FAQSection = () => {
           </h2>
           
           <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Got questions? We've got answers. Here's everything you need to know about WhatBot Pakistan.
+            Got questions? We've got answers. Here's everything you need to know about The ChatFlow.
           </p>
         </div>
 
