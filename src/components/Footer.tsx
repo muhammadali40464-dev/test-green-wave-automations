@@ -90,7 +90,7 @@ const Footer = () => {
         <div className="container-width py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-wrap items-center gap-6 text-sm text-white/60">
-              <span>© 2025 TheChatFlow Pakistan. All rights reserved.</span>
+              <span>© 2025 Ali Tahir. All rights reserved.</span>
               <Link to="/privacy-policy" className="hover:text-whatsapp-green transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="hover:text-whatsapp-green transition-colors">Terms of Service</Link>
               <Link to="/cookie-policy" className="hover:text-whatsapp-green transition-colors">Cookie Policy</Link>
