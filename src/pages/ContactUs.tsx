@@ -225,16 +225,16 @@ const ContactUs = () => {
                                               <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-6 py-3 rounded-full text-lg font-semibold">
                                                             <Phone className="h-5 w-5 text-whatsapp-green" />
                                                             Get in Touch with Our Team
-                                              </div>div>
+                                              </div>
                                               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight">
                                                             Ready to Transform
                                                             <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent">
                                                                             Your Business?
-                                                            </span>span>
-                                              </h1>h1>
+                                                            </span>
+                                              </h1>
                                               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                                                             Connect with our expert team for personalized WhatsApp automation solutions. We speak your language and understand your market.
-                                              </p>p>
+                                              </p>
                                               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8 pt-8">
                                                 {teamFeatures.map((feature, index) => (
                             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all hover-lift">
@@ -242,27 +242,27 @@ const ContactUs = () => {
                                                                   <div className="flex justify-center mb-3 lg:mb-4">
                                                                                         <div className="p-2 lg:p-3 bg-whatsapp-green/10 rounded-2xl">
                                                                                                                 <feature.icon className="h-5 w-5 lg:h-6 lg:w-6 text-whatsapp-green" />
-                                                                                          </div>div>
-                                                                  </div>div>
-                                                                  <h3 className="font-semibold text-foreground mb-2 text-sm lg:text-base">{feature.title}</h3>h3>
-                                                                  <p className="text-xs lg:text-sm text-muted-foreground">{feature.description}</p>p>
-                                              </CardContent>CardContent>
-                            </Card>Card>
+                                                                                          </div>
+                                                                  </div>
+                                                                  <h3 className="font-semibold text-foreground mb-2 text-sm lg:text-base">{feature.title}</h3>
+                                                                  <p className="text-xs lg:text-sm text-muted-foreground">{feature.description}</p>
+                                              </CardContent>
+                            </Card>
                           ))}
-                                              </div>div>
-                                  </div>div>
-                        </div>div>
-                </section>section>
+                                              </div>
+                                  </div>
+                        </div>
+                </section>
           
             {/* Business Locations Section */}
                 <section className="py-16 bg-gray-50">
                         <div className="container-width">
                                   <div className="text-center mb-12">
-                                              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Our Business Locations</h2>h2>
+                                              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Our Business Locations</h2>
                                               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                                                             Chatflow is operated by Amazing Developers Pty Ltd, a company registered in Australia, with a dedicated support team in Pakistan.
-                                              </p>p>
-                                  </div>div>
+                                              </p>
+                                  </div>
                                   <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                                   
                                     {/* Australia - Registered Office */}
@@ -271,44 +271,44 @@ const ContactUs = () => {
                                                                             <div className="flex items-center gap-3 mb-6">
                                                                                               <div className="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center">
                                                                                                                   <Building2 className="h-6 w-6 text-white" />
-                                                                                                </div>div>
+                                                                                                </div>
                                                                                               <div>
-                                                                                                                  <h3 className="text-xl font-bold text-foreground">Australia</h3>h3>
+                                                                                                                  <h3 className="text-xl font-bold text-foreground">Australia</h3>
                                                                                                                   <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mt-1">
                                                                                                                                         Registered Business Office
-                                                                                                                    </span>span>
-                                                                                                </div>div>
-                                                                            </div>div>
+                                                                                                                    </span>
+                                                                                                </div>
+                                                                            </div>
                                                                             <div className="space-y-4 text-muted-foreground">
                                                                                               <div className="bg-blue-50 rounded-xl p-4">
-                                                                                                                  <p className="text-sm font-semibold text-foreground mb-1">Legal Entity</p>p>
-                                                                                                                  <p className="text-sm">Amazing Developers Pty Ltd</p>p>
-                                                                                                                  <p className="text-xs text-muted-foreground mt-1">ABN: 97 670 956 055 &nbsp;|&nbsp; ACN: 670 956 055</p>p>
-                                                                                                </div>div>
+                                                                                                                  <p className="text-sm font-semibold text-foreground mb-1">Legal Entity</p>
+                                                                                                                  <p className="text-sm">Amazing Developers Pty Ltd</p>
+                                                                                                                  <p className="text-xs text-muted-foreground mt-1">ABN: 97 670 956 055 &nbsp;|&nbsp; ACN: 670 956 055</p>
+                                                                                                </div>
                                                                                               <div className="flex items-start gap-3">
                                                                                                                   <MapPin className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
                                                                                                                   <div>
-                                                                                                                                        <p className="font-medium text-foreground text-sm">Registered Office Address</p>p>
-                                                                                                                                        <p className="text-sm">8 Juneberry Dr, Keysborough VIC 3173, Australia</p>p>
-                                                                                                                    </div>div>
-                                                                                                </div>div>
+                                                                                                                                        <p className="font-medium text-foreground text-sm">Registered Office Address</p>
+                                                                                                                                        <p className="text-sm">8 Juneberry Dr, Keysborough VIC 3173, Australia</p>
+                                                                                                                    </div>
+                                                                                                </div>
                                                                                               <div className="flex items-center gap-3">
                                                                                                                   <Phone className="h-5 w-5 text-blue-500 flex-shrink-0" />
                                                                                                                   <div>
-                                                                                                                                        <p className="font-medium text-foreground text-sm">Australian Phone</p>p>
-                                                                                                                                        <a href="tel:+61430454071" className="text-sm text-blue-600 hover:underline">+61 430 454 071</a>a>
-                                                                                                                    </div>div>
-                                                                                                </div>div>
+                                                                                                                                        <p className="font-medium text-foreground text-sm">Australian Phone</p>
+                                                                                                                                        <a href="tel:+61430454071" className="text-sm text-blue-600 hover:underline">+61 430 454 071</a>
+                                                                                                                    </div>
+                                                                                                </div>
                                                                                               <div className="flex items-center gap-3">
                                                                                                                   <Mail className="h-5 w-5 text-blue-500 flex-shrink-0" />
                                                                                                                   <div>
-                                                                                                                                        <p className="font-medium text-foreground text-sm">Email</p>p>
-                                                                                                                                        <a href="mailto:hello@thechatflow.com" className="text-sm text-blue-600 hover:underline">hello@thechatflow.com</a>a>
-                                                                                                                    </div>div>
-                                                                                                </div>div>
-                                                                            </div>div>
-                                                            </CardContent>CardContent>
-                                              </Card>Card>
+                                                                                                                                        <p className="font-medium text-foreground text-sm">Email</p>
+                                                                                                                                        <a href="mailto:hello@thechatflow.com" className="text-sm text-blue-600 hover:underline">hello@thechatflow.com</a>
+                                                                                                                    </div>
+                                                                                                </div>
+                                                                            </div>
+                                                            </CardContent>
+                                              </Card>
                                   
                                     {/* Pakistan - Support Office */}
                                               <Card className="border-2 border-whatsapp-green/30 shadow-xl hover:shadow-2xl transition-all">
@@ -316,57 +316,57 @@ const ContactUs = () => {
                                                                             <div className="flex items-center gap-3 mb-6">
                                                                                               <div className="w-12 h-12 bg-whatsapp-green rounded-2xl flex items-center justify-center">
                                                                                                                   <MessageCircle className="h-6 w-6 text-white" />
-                                                                                                </div>div>
+                                                                                                </div>
                                                                                               <div>
-                                                                                                                  <h3 className="text-xl font-bold text-foreground">Pakistan</h3>h3>
+                                                                                                                  <h3 className="text-xl font-bold text-foreground">Pakistan</h3>
                                                                                                                   <span className="inline-block bg-whatsapp-green/10 text-whatsapp-dark text-xs font-semibold px-3 py-1 rounded-full mt-1">
                                                                                                                                         Support &amp; Operations Office
-                                                                                                                    </span>span>
-                                                                                                </div>div>
-                                                                            </div>div>
+                                                                                                                    </span>
+                                                                                                </div>
+                                                                            </div>
                                                                             <div className="space-y-4 text-muted-foreground">
                                                                                               <div className="bg-whatsapp-green/5 rounded-xl p-4">
-                                                                                                                  <p className="text-sm font-semibold text-foreground mb-1">Support Team</p>p>
-                                                                                                                  <p className="text-sm">TheChatFlow Support Team</p>p>
-                                                                                                                  <p className="text-xs text-muted-foreground mt-1">Urdu &amp; English support &nbsp;|&nbsp; Reply in minutes</p>p>
-                                                                                                </div>div>
+                                                                                                                  <p className="text-sm font-semibold text-foreground mb-1">Support Team</p>
+                                                                                                                  <p className="text-sm">TheChatFlow Support Team</p>
+                                                                                                                  <p className="text-xs text-muted-foreground mt-1">Urdu &amp; English support &nbsp;|&nbsp; Reply in minutes</p>
+                                                                                                </div>
                                                                                               <div className="flex items-start gap-3">
                                                                                                                   <MapPin className="h-5 w-5 text-whatsapp-green flex-shrink-0 mt-0.5" />
                                                                                                                   <div>
-                                                                                                                                        <p className="font-medium text-foreground text-sm">Location</p>p>
-                                                                                                                                        <p className="text-sm">Lahore, Pakistan</p>p>
-                                                                                                                    </div>div>
-                                                                                                </div>div>
+                                                                                                                                        <p className="font-medium text-foreground text-sm">Location</p>
+                                                                                                                                        <p className="text-sm">Lahore, Pakistan</p>
+                                                                                                                    </div>
+                                                                                                </div>
                                                                                               <div className="flex items-center gap-3">
                                                                                                                   <Phone className="h-5 w-5 text-whatsapp-green flex-shrink-0" />
                                                                                                                   <div>
-                                                                                                                                        <p className="font-medium text-foreground text-sm">Phone / WhatsApp</p>p>
-                                                                                                                                        <a href="https://wa.me/923171634191" target="_blank" rel="noopener noreferrer" className="text-sm text-whatsapp-dark hover:underline">+92 317 1634191</a>a>
-                                                                                                                    </div>div>
-                                                                                                </div>div>
+                                                                                                                                        <p className="font-medium text-foreground text-sm">Phone / WhatsApp</p>
+                                                                                                                                        <a href="https://wa.me/923171634191" target="_blank" rel="noopener noreferrer" className="text-sm text-whatsapp-dark hover:underline">+92 317 1634191</a>
+                                                                                                                    </div>
+                                                                                                </div>
                                                                                               <div className="flex items-center gap-3">
                                                                                                                   <Clock className="h-5 w-5 text-whatsapp-green flex-shrink-0" />
                                                                                                                   <div>
-                                                                                                                                        <p className="font-medium text-foreground text-sm">Support Hours</p>p>
-                                                                                                                                        <p className="text-sm">Mon–Sat: 9 AM – 6 PM PKT</p>p>
-                                                                                                                    </div>div>
-                                                                                                </div>div>
-                                                                            </div>div>
-                                                            </CardContent>CardContent>
-                                              </Card>Card>
-                                  </div>div>
-                        </div>div>
-                </section>section>
+                                                                                                                                        <p className="font-medium text-foreground text-sm">Support Hours</p>
+                                                                                                                                        <p className="text-sm">Mon–Sat: 9 AM – 6 PM PKT</p>
+                                                                                                                    </div>
+                                                                                                </div>
+                                                                            </div>
+                                                            </CardContent>
+                                              </Card>
+                                  </div>
+                        </div>
+                </section>
           
             {/* Contact Methods */}
                 <section className="py-20">
                         <div className="container-width">
                                   <div className="text-center mb-12 lg:mb-16">
-                                              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Multiple Ways to Connect</h2>h2>
+                                              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Multiple Ways to Connect</h2>
                                               <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
                                                             Choose the most convenient way to reach our team. We're here to help you succeed.
-                                              </p>p>
-                                  </div>div>
+                                              </p>
+                                  </div>
                         
                           {/* Office Hours */}
                                   <Card className="border-0 shadow-xl">
@@ -376,51 +376,51 @@ const ContactUs = () => {
                                                                                               <div className="flex items-center gap-3 mb-4 lg:mb-6">
                                                                                                                   <div className="p-2 lg:p-3 bg-whatsapp-green/10 rounded-2xl">
                                                                                                                                         <Clock className="h-5 w-5 lg:h-6 lg:w-6 text-whatsapp-green" />
-                                                                                                                    </div>div>
-                                                                                                                  <h3 className="text-xl lg:text-2xl font-bold text-foreground">Office Hours</h3>h3>
-                                                                                                </div>div>
+                                                                                                                    </div>
+                                                                                                                  <h3 className="text-xl lg:text-2xl font-bold text-foreground">Office Hours</h3>
+                                                                                                </div>
                                                                                               <div className="space-y-3 lg:space-y-4">
                                                                                                 {officeHours.map((schedule, index) => (
                                   <div key={index} className="flex justify-between items-center p-3 lg:p-4 bg-gray-50 rounded-xl">
-                                                          <span className="font-medium text-foreground text-sm lg:text-base">{schedule.day}</span>span>
-                                                          <span className="text-muted-foreground text-xs lg:text-sm">{schedule.hours}</span>span>
-                                  </div>div>
+                                                          <span className="font-medium text-foreground text-sm lg:text-base">{schedule.day}</span>
+                                                          <span className="text-muted-foreground text-xs lg:text-sm">{schedule.hours}</span>
+                                  </div>
                                 ))}
-                                                                                                </div>div>
-                                                                            </div>div>
+                                                                                                </div>
+                                                                            </div>
                                                                             <div>
                                                                                               <div className="flex items-center gap-3 mb-4 lg:mb-6">
                                                                                                                   <div className="p-2 lg:p-3 bg-blue-500/10 rounded-2xl">
                                                                                                                                         <Globe className="h-5 w-5 lg:h-6 lg:w-6 text-blue-500" />
-                                                                                                                    </div>div>
-                                                                                                                  <h3 className="text-xl lg:text-2xl font-bold text-foreground">Emergency Support</h3>h3>
-                                                                                                </div>div>
+                                                                                                                    </div>
+                                                                                                                  <h3 className="text-xl lg:text-2xl font-bold text-foreground">Emergency Support</h3>
+                                                                                                </div>
                                                                                               <div className="bg-blue-50 rounded-xl p-4 lg:p-6">
                                                                                                                   <p className="text-muted-foreground mb-4 text-sm lg:text-base">
                                                                                                                                         Need urgent assistance outside office hours? We provide 24/7 emergency support for critical issues.
-                                                                                                                    </p>p>
+                                                                                                                    </p>
                                                                                                                   <div className="flex items-center gap-2 text-blue-600">
                                                                                                                                         <CheckCircle className="h-4 w-4 lg:h-5 lg:w-5" />
-                                                                                                                                        <span className="font-medium text-sm lg:text-base">WhatsApp emergency line available</span>span>
-                                                                                                                    </div>div>
-                                                                                                </div>div>
-                                                                            </div>div>
-                                                            </div>div>
-                                              </CardContent>CardContent>
-                                  </Card>Card>
-                        </div>div>
-                </section>section>
+                                                                                                                                        <span className="font-medium text-sm lg:text-base">WhatsApp emergency line available</span>
+                                                                                                                    </div>
+                                                                                                </div>
+                                                                            </div>
+                                                            </div>
+                                              </CardContent>
+                                  </Card>
+                        </div>
+                </section>
           
             {/* Contact Form */}
                 <section className="py-20 bg-gray-50">
                         <div className="container-width">
                                   <div className="max-w-4xl mx-auto">
                                               <div className="text-center mb-12 lg:mb-16">
-                                                            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Book Your Free Demo</h2>h2>
+                                                            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Book Your Free Demo</h2>
                                                             <p className="text-lg lg:text-xl text-muted-foreground">
                                                                             Get a personalized demo of our WhatsApp automation solutions tailored to your business needs.
-                                                            </p>p>
-                                              </div>div>
+                                                            </p>
+                                              </div>
                                               <Card className="border-0 shadow-2xl">
                                                             <CardContent className="p-8 lg:p-12">
                                                                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 lg:space-y-8">
@@ -428,107 +428,107 @@ const ContactUs = () => {
                                                                                               <Input {...form.register("website")} type="text" className="hidden" tabIndex={-1} autoComplete="off" />
                                                                                               <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                                                                                                                   <div className="space-y-2">
-                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Full Name *</Label>Label>
+                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Full Name *</Label>
                                                                                                                                         <Input {...form.register("fullName")} placeholder="Your full name" className="h-12 lg:h-14 text-base lg:text-lg" disabled={isSubmitting} />
-                                                                                                                    {form.formState.errors.fullName && <p className="text-sm text-red-500">{form.formState.errors.fullName.message}</p>p>}
-                                                                                                                    </div>div>
+                                                                                                                    {form.formState.errors.fullName && <p className="text-sm text-red-500">{form.formState.errors.fullName.message}</p>}
+                                                                                                                    </div>
                                                                                                                   <div className="space-y-2">
-                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Business Name</Label>Label>
+                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Business Name</Label>
                                                                                                                                         <Input {...form.register("businessName")} placeholder="Your business/company name" className="h-12 lg:h-14 text-base lg:text-lg" disabled={isSubmitting} />
-                                                                                                                    </div>div>
-                                                                                                </div>div>
+                                                                                                                    </div>
+                                                                                                </div>
                                                                                               <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                                                                                                                   <div className="space-y-2">
-                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Email Address *</Label>Label>
+                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Email Address *</Label>
                                                                                                                                         <Input {...form.register("email")} type="email" placeholder="your.email@example.com" className="h-12 lg:h-14 text-base lg:text-lg" disabled={isSubmitting} />
-                                                                                                                    {form.formState.errors.email && <p className="text-sm text-red-500">{form.formState.errors.email.message}</p>p>}
-                                                                                                                    </div>div>
+                                                                                                                    {form.formState.errors.email && <p className="text-sm text-red-500">{form.formState.errors.email.message}</p>}
+                                                                                                                    </div>
                                                                                                                   <div className="space-y-2">
-                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">WhatsApp Number *</Label>Label>
+                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">WhatsApp Number *</Label>
                                                                                                                                         <Input {...form.register("whatsappNumber")} placeholder="+92 3XX XXXXXXX" className="h-12 lg:h-14 text-base lg:text-lg" disabled={isSubmitting} />
-                                                                                                                    {form.formState.errors.whatsappNumber && <p className="text-sm text-red-500">{form.formState.errors.whatsappNumber.message}</p>p>}
-                                                                                                                    </div>div>
-                                                                                                </div>div>
+                                                                                                                    {form.formState.errors.whatsappNumber && <p className="text-sm text-red-500">{form.formState.errors.whatsappNumber.message}</p>}
+                                                                                                                    </div>
+                                                                                                </div>
                                                                                               <div className="space-y-2">
-                                                                                                                  <Label className="text-sm lg:text-base font-semibold text-foreground">Industry/Business Type</Label>Label>
+                                                                                                                  <Label className="text-sm lg:text-base font-semibold text-foreground">Industry/Business Type</Label>
                                                                                                                   <Input {...form.register("industry")} placeholder="e.g., E-commerce, Solar, Real Estate, Education" className="h-12 lg:h-14 text-base lg:text-lg" disabled={isSubmitting} />
-                                                                                                </div>div>
+                                                                                                </div>
                                                                                               <div className="space-y-2">
-                                                                                                                  <Label className="text-sm lg:text-base font-semibold text-foreground">How can we help you? *</Label>Label>
+                                                                                                                  <Label className="text-sm lg:text-base font-semibold text-foreground">How can we help you? *</Label>
                                                                                                                   <Textarea {...form.register("message")} placeholder="Tell us about your business challenges and automation needs..." rows={4} className="text-base lg:text-lg resize-none min-h-[120px]" disabled={isSubmitting} />
-                                                                                                {form.formState.errors.message && <p className="text-sm text-red-500">{form.formState.errors.message.message}</p>p>}
-                                                                                                </div>div>
+                                                                                                {form.formState.errors.message && <p className="text-sm text-red-500">{form.formState.errors.message.message}</p>}
+                                                                                                </div>
                                                                                               <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                                                                                                                   <div className="space-y-2">
-                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Monthly WhatsApp Volume</Label>Label>
+                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Monthly WhatsApp Volume</Label>
                                                                                                                                         <Input {...form.register("monthlyVolume")} placeholder="e.g., 500-1000 messages/month" className="h-12 lg:h-14 text-base lg:text-lg" disabled={isSubmitting} />
-                                                                                                                    </div>div>
+                                                                                                                    </div>
                                                                                                                   <div className="space-y-2">
-                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Preferred Meeting Time</Label>Label>
+                                                                                                                                        <Label className="text-sm lg:text-base font-semibold text-foreground">Preferred Meeting Time</Label>
                                                                                                                                         <Input {...form.register("preferredMeetingTime")} placeholder="e.g., Weekdays 2-5 PM" className="h-12 lg:h-14 text-base lg:text-lg" disabled={isSubmitting} />
-                                                                                                                    </div>div>
-                                                                                                </div>div>
+                                                                                                                    </div>
+                                                                                                </div>
                                                                                               <div className="text-center pt-4">
                                                                                                                   <Button type="submit" variant="default" size="lg" className="w-full md:w-auto min-w-[200px] bg-whatsapp-green hover:bg-whatsapp-dark text-white px-6 lg:px-10 py-4 lg:py-5 text-lg lg:text-xl font-semibold shadow-xl hover-lift" disabled={isSubmitting}>
                                                                                                                                         <Calendar className="mr-2 lg:mr-3 h-5 w-5 lg:h-6 lg:w-6" />
                                                                                                                                         Book Free Demo
-                                                                                                                    </Button>Button>
-                                                                                                                  <p className="text-sm text-muted-foreground mt-3 text-center">Free 30-minute consultation • No commitment required</p>p>
-                                                                                                </div>div>
+                                                                                                                    </Button>
+                                                                                                                  <p className="text-sm text-muted-foreground mt-3 text-center">Free 30-minute consultation • No commitment required</p>
+                                                                                                </div>
                                                                               {Object.keys(form.formState.errors).length > 0 && (
                                 <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                                                      <p className="text-red-700 text-sm font-medium">Please fix the following errors:</p>p>
+                                                      <p className="text-red-700 text-sm font-medium">Please fix the following errors:</p>
                                                       <ul className="text-red-600 text-sm mt-2 space-y-1">
                                                         {Object.entries(form.formState.errors).map(([field, error]) => (
-                                                            <li key={field}>• {error?.message}</li>li>
+                                                            <li key={field}>• {error?.message}</li>
                                                           ))}
-                                                      </ul>ul>
-                                </div>div>
+                                                      </ul>
+                                </div>
                                                                                               )}
-                                                                            </form>form>
-                                                            </CardContent>CardContent>
-                                              </Card>Card>
-                                  </div>div>
-                        </div>div>
-                </section>section>
+                                                                            </form>
+                                                            </CardContent>
+                                              </Card>
+                                  </div>
+                        </div>
+                </section>
           
             {/* FAQ Section */}
                 <section className="py-20">
                         <div className="container-width">
                                   <div className="text-center mb-12 lg:mb-16">
-                                              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Common Questions</h2>h2>
+                                              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 lg:mb-6">Common Questions</h2>
                                               <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
                                                             Quick answers to frequently asked questions about our services and support.
-                                              </p>p>
-                                  </div>div>
+                                              </p>
+                                  </div>
                                   <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
                                               <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
                                                             <CardContent className="p-6 lg:p-8">
-                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">How quickly can you respond?</h3>h3>
-                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">We typically respond within 2 hours during business hours. Emergency support is available 24/7 for critical issues.</p>p>
-                                                            </CardContent>CardContent>
-                                              </Card>Card>
+                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">How quickly can you respond?</h3>
+                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">We typically respond within 2 hours during business hours. Emergency support is available 24/7 for critical issues.</p>
+                                                            </CardContent>
+                                              </Card>
                                               <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
                                                             <CardContent className="p-6 lg:p-8">
-                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">Do you offer free consultations?</h3>h3>
-                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">Yes! We offer free 30-minute consultations to understand your business needs and recommend the best automation solution.</p>p>
-                                                            </CardContent>CardContent>
-                                              </Card>Card>
+                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">Do you offer free consultations?</h3>
+                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">Yes! We offer free 30-minute consultations to understand your business needs and recommend the best automation solution.</p>
+                                                            </CardContent>
+                                              </Card>
                                               <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
                                                             <CardContent className="p-6 lg:p-8">
-                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">Can you help with setup and training?</h3>h3>
-                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">Absolutely! We provide complete setup, staff training in Urdu/English, and ongoing support to ensure your success.</p>p>
-                                                            </CardContent>CardContent>
-                                              </Card>Card>
+                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">Can you help with setup and training?</h3>
+                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">Absolutely! We provide complete setup, staff training in Urdu/English, and ongoing support to ensure your success.</p>
+                                                            </CardContent>
+                                              </Card>
                                               <Card className="border-0 shadow-lg hover:shadow-xl transition-all">
                                                             <CardContent className="p-6 lg:p-8">
-                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">What industries do you specialize in?</h3>h3>
-                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">We work with all industries but have deep expertise in Solar, Real Estate, Education, E-commerce, and Visa Consultancy.</p>p>
-                                                            </CardContent>CardContent>
-                                              </Card>Card>
-                                  </div>div>
-                        </div>div>
-                </section>section>
+                                                                            <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3 lg:mb-4">What industries do you specialize in?</h3>
+                                                                            <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">We work with all industries but have deep expertise in Solar, Real Estate, Education, E-commerce, and Visa Consultancy.</p>
+                                                            </CardContent>
+                                              </Card>
+                                  </div>
+                        </div>
+                </section>
           
                 <Footer />
           
