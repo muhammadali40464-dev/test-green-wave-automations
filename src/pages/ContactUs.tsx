@@ -548,8 +548,8 @@ const ContactUs = () => {
                           referenceId={submissionDetails.referenceId}
                           onClose={handleSuccessClose}
                         />
-          </>>
+          </>
         );
 };
 
-export default ContactUs;</>
+export default ContactUs;
