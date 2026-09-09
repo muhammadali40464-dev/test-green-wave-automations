@@ -26,7 +26,7 @@ const ChatbotAutomationGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Ultimate Chatbot Automation Guide for Pakistani Businesses 2025</title>
+        <title>Custom Chatbot Automation for Pakistani Businesses 2025</title>
         <meta name="description" content="Transform your Pakistani business with AI chatbot automation. Complete guide covering WhatsApp, Facebook, Instagram automation for maximum ROI." />
         <meta name="keywords" content="chatbot automation pakistan, ai customer service pakistan, whatsapp automation pakistan, business chatbot setup, automated customer support" />
         <link rel="canonical" href="https://thechatflow.com/blog/chatbot-automation-guide-pakistan" />
@@ -75,7 +75,7 @@ const ChatbotAutomationGuide = () => {
               </h1>
               
               <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Transform your Pakistani business with AI chatbot automation. Complete guide to automating customer service, lead generation, and sales across WhatsApp, Facebook, and Instagram.
+                What a custom chatbot actually automates, how a build is scoped, and where projects go wrong. A practical guide for Pakistani businesses deciding whether to commission one — and what our <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">custom chatbot development</Link> process looks like.
               </p>
               
               <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground mb-8">
