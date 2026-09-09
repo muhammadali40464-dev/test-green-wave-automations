@@ -12,13 +12,13 @@ const SolarAutomation = () => {
     <>
       <MegaMenu />
       <Helmet>
-        <title>How Solar Companies in Pakistan Generate 300% More Leads with WhatsApp Automation | TheChatFlow</title>
-        <meta name="description" content="Solar companies in Pakistan: Automate lead generation, customer support & sales with WhatsApp. Real case study shows 300% lead increase. Implementation guide included." />
+        <title>Custom Chatbots for Solar Companies in Pakistan | TheChatFlow</title>
+        <meta name="description" content="How solar installers in Pakistan use a custom chatbot to qualify enquiries on bill size, roof and city, book site surveys automatically, and stop sales teams re-answering the same questions." />
         <meta name="keywords" content="solar companies Pakistan, solar lead generation, WhatsApp solar marketing, renewable energy automation, Pakistan solar business, solar automation case study" />
         <link rel="canonical" href="https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan" />
         
-        <meta property="og:title" content="How Solar Companies in Pakistan Generate 300% More Leads with WhatsApp Automation" />
-        <meta property="og:description" content="Real case study: Pakistani solar company increased leads by 300% using WhatsApp automation. Complete implementation guide included." />
+        <meta property="og:title" content="Custom Chatbots for Solar Companies in Pakistan" />
+        <meta property="og:description" content="How solar installers in Pakistan use a custom chatbot to qualify enquiries and book site surveys automatically." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan" />
         <meta property="og:image" content="https://thechatflow.com/blog-images/solar-automation-pakistan.jpg" />
@@ -30,7 +30,7 @@ const SolarAutomation = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "How Solar Companies in Pakistan Can Generate 300% More Leads with WhatsApp Automation",
+            "headline": "Custom Chatbots for Solar Companies in Pakistan",
             "author": {
               "@type": "Organization",
               "name": "TheChatFlow",
@@ -79,7 +79,7 @@ const SolarAutomation = () => {
                 "name": "How can WhatsApp automation help solar companies in Pakistan?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "WhatsApp automation helps solar companies handle high inquiry volumes, qualify leads automatically, book site visits, and provide instant quotes. Real case studies show 300% lead increases and 50% faster sales cycles."
+                  "text": "A custom chatbot helps solar companies handle high enquiry volumes, qualify leads on bill size and location, book site surveys, and route only serious buyers to the sales team."
                 }
               },
               {
@@ -145,12 +145,11 @@ const SolarAutomation = () => {
             </Link>
             
             <h1 className="font-h1 text-foreground mb-4">
-              How Solar Companies in Pakistan Can Generate 300% More Leads with WhatsApp Automation
+              Custom Chatbots for Solar Companies in Pakistan
             </h1>
             
             <p className="font-body-lg text-muted-foreground mb-6">
-              Real case study showing how SunPower Pakistan increased leads by 300% and reduced sales cycle time by 50% 
-              using WhatsApp automation for solar system inquiries and site visit booking.
+              Solar sales in Pakistan die in the qualification stage: hundreds of "rate kya hai?" messages, most of them nowhere near buying. This is how a custom chatbot qualifies on bill size, roof and city, books the site survey, and only then involves a salesperson.
             </p>
             
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
@@ -261,7 +260,7 @@ const SolarAutomation = () => {
                   </div>
                   
                   <p className="text-muted-foreground">
-                    <strong>Result:</strong> Only qualified leads reach sales team, increasing conversion rate by 80%.
+                    <strong>Result:</strong> the sales team only sees enquiries that already have a bill size, a city and a budget attached.
                   </p>
                 </Card>
 
@@ -329,18 +328,27 @@ const SolarAutomation = () => {
             </section>
 
             {/* Case Study */}
+
+            <div className="mb-12 rounded-lg border border-amber-300 bg-amber-50 p-5">
+              <p className="text-sm text-amber-900 m-0">
+                <strong>About the numbers below.</strong> This is an illustrative worked example built from the kind of
+                enquiry volumes we see, not a named client account. The figures are there to show how the maths works for
+                your own business — substitute your own numbers. Real client results, published with consent, are on our{' '}
+                <Link to="/success-stories" className="underline">case studies page</Link>.
+              </p>
+            </div>
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Real Case Study: SunPower Pakistan Success Story</h2>
+              <h2 className="font-h2 text-foreground mb-6">Worked Example: Qualification for a Mid-Size Installer</h2>
               
               <Card className="p-8 gradient-cta text-white mb-8">
                 <div className="text-center mb-6">
-                  <h3 className="font-h3 mb-2">SunPower Pakistan Results</h3>
-                  <p className="text-white/90">6 months after implementing TheChatFlow automation</p>
+                  <h3 className="font-h3 mb-2">Illustrative Figures</h3>
+                  <p className="text-white/90">An illustrative six-month view — substitute your own numbers</p>
                 </div>
                 
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold mb-2">300%</div>
+                    <div className="text-4xl font-bold mb-2">3&times;</div>
                     <p className="text-white/90">Lead increase</p>
                   </div>
                   <div className="text-center">
@@ -357,7 +365,7 @@ const SolarAutomation = () => {
               <div className="mb-8">
                 <h3 className="font-h3 text-foreground mb-4">Background</h3>
                 <p className="font-body-base text-muted-foreground mb-6">
-                  SunPower Pakistan, a leading solar installation company in Lahore, was struggling with:</p>
+                  the installer in this example, a leading solar installation company in Lahore, was struggling with:</p>
                 <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-6">
                   <li>400+ daily WhatsApp inquiries during peak summer season</li>
                   <li>3-person sales team overwhelmed with repetitive questions</li>
@@ -414,7 +422,7 @@ const SolarAutomation = () => {
                         <td className="border border-gray-300 p-3">Daily Leads</td>
                         <td className="border border-gray-300 p-3">150</td>
                         <td className="border border-gray-300 p-3">450</td>
-                        <td className="border border-gray-300 p-3 text-green-600 font-semibold">+300%</td>
+                        <td className="border border-gray-300 p-3 text-green-600 font-semibold">3&times;</td>
                       </tr>
                       <tr className="bg-gray-50">
                         <td className="border border-gray-300 p-3">Response Time</td>
@@ -469,7 +477,7 @@ const SolarAutomation = () => {
               </div>
 
               <p className="font-body-base text-muted-foreground">
-                The success at SunPower Pakistan demonstrates how solar companies can leverage WhatsApp automation to handle growth 
+                The success at the installer in this example demonstrates how solar companies can leverage WhatsApp automation to handle growth 
                 without proportionally increasing staff. <Link to="/#testimonials" className="text-whatsapp-green hover:text-whatsapp-dark">Read more testimonials</Link> from 
                 other Pakistani solar companies using TheChatFlow.
               </p>
