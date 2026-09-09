@@ -468,7 +468,7 @@ const ChatbotGuideSmallBusiness = () => {
               <Card className="shadow-card hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="font-h4">
-                    <Link to="/blog/whatsapp-business-api-vs-regular-whatsapp" className="hover:text-whatsapp-green transition-colors">
+                    <Link to="/blog/whatsapp-api-vs-regular-whatsapp-business" className="hover:text-whatsapp-green transition-colors">
                       WhatsApp Business API vs Regular WhatsApp: Key Differences
                     </Link>
                   </CardTitle>
@@ -478,7 +478,7 @@ const ChatbotGuideSmallBusiness = () => {
                 </CardHeader>
                 <CardContent>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/blog/whatsapp-business-api-vs-regular-whatsapp">
+                    <Link to="/blog/whatsapp-api-vs-regular-whatsapp-business">
                       Read More <ArrowRight className="ml-2 h-3 w-3" />
                     </Link>
                   </Button>
@@ -488,7 +488,7 @@ const ChatbotGuideSmallBusiness = () => {
               <Card className="shadow-card hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="font-h4">
-                    <Link to="/blog/chatbot-implementation-guide-pakistani-companies" className="hover:text-whatsapp-green transition-colors">
+                    <Link to="/blog/chatbot-automation-guide-pakistan" className="hover:text-whatsapp-green transition-colors">
                       Chatbot Implementation Guide for Pakistani Companies
                     </Link>
                   </CardTitle>
@@ -498,7 +498,7 @@ const ChatbotGuideSmallBusiness = () => {
                 </CardHeader>
                 <CardContent>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/blog/chatbot-implementation-guide-pakistani-companies">
+                    <Link to="/blog/chatbot-automation-guide-pakistan">
                       Read Guide <ArrowRight className="ml-2 h-3 w-3" />
                     </Link>
                   </Button>
@@ -508,7 +508,7 @@ const ChatbotGuideSmallBusiness = () => {
               <Card className="shadow-card hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="font-h4">
-                    <Link to="/blog/ai-customer-service-benefits-local-businesses" className="hover:text-whatsapp-green transition-colors">
+                    <Link to="/blog/how-chatbots-work-small-businesses-pakistan" className="hover:text-whatsapp-green transition-colors">
                       AI Customer Service Benefits for Local Pakistani Businesses
                     </Link>
                   </CardTitle>
@@ -518,7 +518,7 @@ const ChatbotGuideSmallBusiness = () => {
                 </CardHeader>
                 <CardContent>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/blog/ai-customer-service-benefits-local-businesses">
+                    <Link to="/blog/how-chatbots-work-small-businesses-pakistan">
                       Learn More <ArrowRight className="ml-2 h-3 w-3" />
                     </Link>
                   </Button>
