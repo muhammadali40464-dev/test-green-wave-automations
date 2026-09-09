@@ -5,268 +5,236 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEO/SEOHead";
 import StructuredData from "@/components/SEO/StructuredData";
 import { getPageSEO } from "@/data/seoData";
-import { 
-  Zap, 
-  GraduationCap, 
-  TrendingUp, 
-  Users, 
-  MessageCircle, 
-  ArrowRight, 
-  Star,
+import { Link } from "react-router-dom";
+import {
+  Zap,
+  ShoppingBag,
+  GraduationCap,
+  CalendarCheck,
   CheckCircle,
-  Phone,
-  BarChart
+  ArrowRight,
+  MessageCircle,
+  Phone
 } from "lucide-react";
 
 const SuccessStories = () => {
   const seoData = getPageSEO("/success-stories");
-  
-  const successStories = [
-    {
-      company: "SunPower Pakistan",
-      industry: "Solar Energy",
-      location: "Lahore, Pakistan",
-      result: "300% Lead Increase",
-      previousLeads: "20 leads/month",
-      currentLeads: "80+ leads/month",
-      icon: Zap,
-      color: "bg-yellow-500",
-      description: "Automated lead qualification and site visit booking system that transformed their sales process.",
-      details: [
-        "24/7 WhatsApp automation for solar inquiries",
-        "Automated quote generation based on electricity bills", 
-        "Site visit booking with engineer assignment",
-        "Follow-up sequences for warm prospects"
-      ],
-      testimonial: "TheChatFlow ne hamare solar business ko revolutionize kar diya. Pehle hum manually har inquiry handle karte the, ab automation se 3x zyada leads aa rahe hain.",
-      clientName: "Ahmed Hassan",
-      clientPosition: "CEO, SunPower Pakistan"
-    },
-    {
-      company: "Global Visa Consultants", 
-      industry: "Education/Immigration",
-      location: "Karachi, Pakistan",
-      result: "500% Application Growth",
-      previousLeads: "15 applications/month",
-      currentLeads: "90+ applications/month", 
-      icon: GraduationCap,
-      color: "bg-blue-500",
-      description: "24/7 inquiry handling in Urdu and English with instant document verification.",
-      details: [
-        "Multi-language support (Urdu/English)",
-        "Document checklist automation",
-        "Appointment booking with counselors",
-        "University application tracking system"
-      ],
-      testimonial: "Humari visa consultancy ab 24/7 operate karti hai. Students ko instant replies milte hain aur humara workload 70% kam ho gaya hai.",
-      clientName: "Sarah Khan",
-      clientPosition: "Director, Global Visa Consultants"
-    },
-    {
-      company: "Prime Real Estate",
-      industry: "Real Estate",
-      location: "Islamabad, Pakistan", 
-      result: "10x More Property Leads",
-      previousLeads: "10 leads/month",
-      currentLeads: "100+ leads/month",
-      icon: TrendingUp,
-      color: "bg-green-500",
-      description: "Instagram integration and automated follow-ups that skyrocketed their property sales.",
-      details: [
-        "Instagram DM automation integration",
-        "Property matching based on budget/location",
-        "Site visit scheduling automation",
-        "Mortgage calculator integration"
-      ],
-      testimonial: "Real estate mein competition bohat hai. TheChatFlow ki waja se hum competitors se aage hain. Har inquiry ka instant response milta hai.",
-      clientName: "Muhammad Ali",
-      clientPosition: "Sales Director, Prime Real Estate"
-    }
-  ];
 
-  const metrics = [
-    { label: "Total Businesses Served", value: "500+", icon: Users },
-    { label: "Messages Automated Daily", value: "50,000+", icon: MessageCircle },
-    { label: "Average ROI Increase", value: "400%", icon: BarChart },
-    { label: "Customer Satisfaction", value: "95%", icon: Star }
+  const examples = [
+    {
+      sector: "Solar installers",
+      icon: Zap,
+      color: "bg-amber-500",
+      problem:
+        "Dozens of \"rate kya hai?\" messages a day, almost none of them ready to buy. Salespeople spend the morning re-typing the same three questions.",
+      steps: [
+        "Asks monthly electricity bill, city, roof type and whether the customer owns the property",
+        "Suggests an indicative system size and price band from your own rate sheet",
+        "Offers a site survey slot and writes it straight into the engineer&rsquo;s calendar",
+        "Hands over to a person the moment the enquiry looks serious or unusual"
+      ],
+      connects: "Google Calendar, Google Sheets, your CRM",
+      outcome:
+        "The sales team only opens conversations that already carry a bill size, a city and a budget."
+    },
+    {
+      sector: "Online stores",
+      icon: ShoppingBag,
+      color: "bg-emerald-600",
+      problem:
+        "&ldquo;Where is my order?&rdquo; on repeat, carts abandoned at checkout, and COD parcels refused at the door.",
+      steps: [
+        "Looks up a live order by number and explains exactly where it is",
+        "Confirms COD orders in chat before dispatch, so fewer parcels come back",
+        "Follows up on abandoned carts with the specific product left behind",
+        "Answers sizing, stock and returns questions from your own product data"
+      ],
+      connects: "Shopify, WooCommerce, Salla",
+      outcome:
+        "Routine order questions stop reaching a human, and refused deliveries drop because intent is confirmed first."
+    },
+    {
+      sector: "Visa &amp; education consultancies",
+      icon: GraduationCap,
+      color: "bg-sky-600",
+      problem:
+        "The same twenty questions &mdash; documents, eligibility, fees, timelines &mdash; asked in Urdu and English at every hour.",
+      steps: [
+        "Screens basic eligibility before anyone&rsquo;s time is spent",
+        "Returns the correct document checklist for the destination country",
+        "Answers fee and processing-time questions from your own written material",
+        "Books a consultant slot only once the applicant clears screening"
+      ],
+      connects: "Google Calendar, Google Sheets, your file store",
+      outcome:
+        "Consultants speak to screened applicants instead of answering checklists all day."
+    },
+    {
+      sector: "Clinics &amp; appointment businesses",
+      icon: CalendarCheck,
+      color: "bg-violet-600",
+      problem:
+        "Bookings arrive after hours when nobody is on the phone, and no-shows eat the schedule.",
+      steps: [
+        "Takes the service, preferred doctor and time, and checks real availability",
+        "Confirms the booking and writes it to the practice calendar",
+        "Sends a reminder before the appointment and offers one-tap rescheduling",
+        "Escalates anything clinical straight to a member of staff"
+      ],
+      connects: "Google Calendar, SMS and email",
+      outcome:
+        "After-hours enquiries turn into booked appointments instead of missed calls."
+    }
   ];
 
   return (
     <>
-      <SEOHead 
+      <SEOHead
         title={seoData.title}
         description={seoData.description}
         path="/success-stories"
         keywords={seoData.keywords}
         type="website"
       />
-      <StructuredData 
+      <StructuredData
         type="Organization"
         data={{
-          name: "TheChatFlow Success Stories",
-          description: "Real success stories from Pakistani businesses using WhatsApp automation",
+          name: "TheChatFlow",
+          description:
+            "Examples of custom chatbot builds for Pakistani businesses across solar, e-commerce, consultancy and appointment-based sectors.",
           url: "https://thechatflow.com/success-stories"
         }}
       />
       <MegaMenu />
-      
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-background via-background to-whatsapp-green/5">
+
+      {/* Hero */}
+      <section className="pt-24 pb-14 bg-gradient-to-br from-background via-background to-whatsapp-green/5">
         <div className="container-width">
-          <div className="text-center max-w-4xl mx-auto space-y-8">
-            <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-6 py-3 rounded-full text-lg font-semibold">
-              <Star className="h-5 w-5 text-whatsapp-green" />
-              Real Pakistani Business Success Stories
+          <div className="text-center max-w-3xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-5 py-2.5 rounded-full text-sm font-semibold">
+              <MessageCircle className="h-4 w-4 text-whatsapp-green" />
+              Example builds
             </div>
-            
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              From Struggling to 
+
+            <h1 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
+              What a custom chatbot
               <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent">
-                Scaling Success
+                actually does all day
               </span>
             </h1>
-            
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              See how Pakistani businesses transformed their operations with TheChatFlow's AI automation. 
-              Real results from real companies across Pakistan.
-            </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pt-8">
-              {metrics.map((metric, index) => (
-                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all hover-lift">
-                  <CardContent className="p-6 text-center">
-                    <div className="flex justify-center mb-4">
-                      <div className="p-3 bg-whatsapp-green/10 rounded-2xl">
-                        <metric.icon className="h-6 w-6 text-whatsapp-green" />
-                      </div>
-                    </div>
-                    <div className="text-2xl md:text-3xl font-bold text-foreground mb-2">{metric.value}</div>
-                    <p className="text-xs md:text-sm text-muted-foreground font-medium">{metric.label}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Four build patterns we are asked for most often in Pakistan &mdash; what the bot handles on its own,
+              what it connects to, and where a person still takes over. Use them to work out what yours would need to do.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto mt-10 rounded-xl border border-amber-300 bg-amber-50 p-5">
+            <p className="text-sm text-amber-900 m-0">
+              <strong>A note on what this page is.</strong> These are illustrative build patterns drawn from the kind of work
+              we do, not named client accounts, and they carry no invented performance figures. Named case studies will be
+              published here as clients agree to be quoted.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section className="py-20">
+      {/* Examples */}
+      <section className="py-16">
         <div className="container-width">
-          <div className="space-y-20">
-            {successStories.map((story, index) => (
-              <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all hover-lift">
-                <CardContent className="p-0">
-                  <div className={`grid lg:grid-cols-2 gap-6 lg:gap-12 ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}>
-                    {/* Content Side */}
-                    <div className={`p-6 md:p-8 lg:p-12 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                      <div className="space-y-6 lg:space-y-8">
-                        <div className="flex items-center gap-4">
-                          <div className={`w-16 h-16 ${story.color} rounded-2xl flex items-center justify-center`}>
-                            <story.icon className="h-8 w-8 text-white" />
-                          </div>
-                          <div>
-                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground">{story.company}</h3>
-                            <p className="text-sm md:text-base lg:text-lg text-muted-foreground">{story.industry} • {story.location}</p>
-                          </div>
-                        </div>
-
-                        <div className="bg-whatsapp-green/10 rounded-2xl p-6">
-                          <div className="text-center">
-                            <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-whatsapp-green mb-2">{story.result}</div>
-                            <div className="flex justify-between text-sm text-muted-foreground">
-                              <span>Before: {story.previousLeads}</span>
-                              <ArrowRight className="h-4 w-4 text-whatsapp-green" />
-                              <span>After: {story.currentLeads}</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <p className="text-base md:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                          {story.description}
-                        </p>
-
-                        <div className="space-y-4">
-                          <h4 className="text-lg md:text-xl font-semibold text-foreground">Key Implementation Features:</h4>
-                          <div className="grid gap-3">
-                            {story.details.map((detail, idx) => (
-                              <div key={idx} className="flex items-center gap-3">
-                                <CheckCircle className="h-5 w-5 text-whatsapp-green flex-shrink-0" />
-                                <span className="text-muted-foreground">{detail}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="bg-gray-50 rounded-2xl p-6">
-                          <div className="flex items-start gap-4">
-                            <div className="w-12 h-12 bg-whatsapp-green rounded-full flex items-center justify-center text-white font-bold text-lg">
-                              {story.clientName.charAt(0)}
-                            </div>
-                            <div className="flex-1">
-                              <p className="text-sm md:text-base lg:text-lg italic text-muted-foreground leading-relaxed mb-4">
-                                "{story.testimonial}"
-                              </p>
-                              <div>
-                                <p className="font-semibold text-foreground">{story.clientName}</p>
-                                <p className="text-sm text-muted-foreground">{story.clientPosition}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+          <div className="grid gap-8 lg:grid-cols-2">
+            {examples.map((ex, index) => (
+              <Card key={index} className="border shadow-lg hover:shadow-xl transition-all h-full">
+                <CardContent className="p-7 md:p-8 flex flex-col gap-6 h-full">
+                  <div className="flex items-center gap-4">
+                    <div className={`w-14 h-14 ${ex.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                      <ex.icon className="h-7 w-7 text-white" />
                     </div>
+                    <h2 className="text-xl md:text-2xl font-bold text-foreground">{ex.sector}</h2>
+                  </div>
 
-                    {/* Visual Side */}
-                    <div className={`bg-gradient-to-br from-whatsapp-green/5 to-whatsapp-dark/5 p-6 md:p-8 lg:p-12 flex items-center justify-center ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                      <div className="text-center space-y-8">
-                        <div className={`w-32 h-32 ${story.color} rounded-3xl flex items-center justify-center mx-auto`}>
-                          <story.icon className="h-16 w-16 text-white" />
+                  <div>
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                      The problem
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed m-0">{ex.problem}</p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                      What the bot handles
+                    </h3>
+                    <div className="grid gap-2.5">
+                      {ex.steps.map((step, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <CheckCircle className="h-5 w-5 text-whatsapp-green flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{step}</span>
                         </div>
-                        <div className="space-y-4">
-                          <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-whatsapp-green">{story.result.split(' ')[0]}</div>
-                          <p className="text-xl md:text-2xl font-semibold text-foreground">{story.result.split(' ').slice(1).join(' ')}</p>
-                          <p className="text-base md:text-lg text-muted-foreground">{story.industry} Success</p>
-                        </div>
-                      </div>
+                      ))}
                     </div>
+                  </div>
+
+                  <div className="rounded-xl bg-whatsapp-green/5 border border-whatsapp-green/20 p-4">
+                    <p className="text-sm text-muted-foreground m-0">
+                      <strong className="text-foreground">Connects to:</strong> {ex.connects}
+                    </p>
+                  </div>
+
+                  <div className="mt-auto pt-2 border-t">
+                    <p className="text-foreground font-medium leading-relaxed m-0">{ex.outcome}</p>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          <div className="max-w-3xl mx-auto text-center mt-14">
+            <p className="text-muted-foreground">
+              None of these is a template. Each one is scoped around how a specific business already works &mdash;
+              read how we approach a build on our{" "}
+              <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
+                custom chatbot development
+              </Link>{" "}
+              page.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal">
         <div className="container-width">
-          <div className="text-center max-w-4xl mx-auto space-y-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              Ready to Write Your Success Story?
+          <div className="text-center max-w-3xl mx-auto space-y-7">
+            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+              Tell us what you want automated
             </h2>
-            
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-8">
-              Join 500+ Pakistani businesses that have transformed their operations with TheChatFlow. 
-              Start your automation journey today.
+
+            <p className="text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Describe the messages your team answers over and over. We will tell you which parts a chatbot can take,
+              which parts it should not, and what building it would involve.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-white text-whatsapp-green hover:bg-white/90 hover:text-whatsapp-dark border-2 border-white transition-all duration-300 px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold shadow-xl hover:shadow-2xl hover:scale-105"
-                onClick={() => window.location.href = '/contact'}
-              >
-                <Phone className="mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5" />
-                Book Free Consultation
-              </Button>
-              <Button 
-                variant="outline" 
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+              <Button
                 size="lg"
-                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-whatsapp-green transition-all duration-300 px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-bold hover:scale-105 backdrop-blur-sm"
-                onClick={() => window.open('https://calendly.com/thechatflow', '_blank')}
+                className="bg-white text-whatsapp-green hover:bg-white/90 hover:text-whatsapp-dark border-2 border-white transition-all duration-300 px-10 py-4 text-base font-bold shadow-xl hover:shadow-2xl"
+                asChild
               >
-                Watch Live Demo
+                <Link to="/contact">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Talk to a developer
+                </Link>
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-whatsapp-green transition-all duration-300 px-10 py-4 text-base font-bold"
+                asChild
+              >
+                <Link to="/services/custom-chatbot-development">
+                  See how we build
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </div>
