@@ -17,19 +17,19 @@ export const seoData: Record<string, SEOPageData> = {
     type: "website"
   },
   "/services/custom-chatbot-development": {
-    title: "Custom Chatbot Development Services in Pakistan | TheChatFlow",
+    title: "Custom Chatbot Development Services in Pakistan",
     description: "Custom AI chatbot development for Pakistani businesses. We scope, build, train and maintain chatbots for sales, support, order tracking and bookings — with an engineering team behind them.",
     keywords: ["custom chatbot development", "chatbot development services in Pakistan", "AI chatbot services Pakistan", "chatbot developers Pakistan", "hire chatbot developer"],
     type: "website"
   },
   "/blog": {
-    title: "Chatbot & Automation Insights for Pakistani Businesses | TheChatFlow",
+    title: "Chatbot and Automation Insights for Pakistani Businesses",
     description: "Practical guides on custom chatbots, AI agents and business automation for companies in Pakistan — what to build, what it costs, and what actually works.",
     keywords: ["chatbot guides Pakistan", "AI automation blog", "custom chatbot insights", "business automation Pakistan"],
     type: "website"
   },
   "/contact": {
-    title: "Talk to a Chatbot Developer | TheChatFlow Pakistan",
+    title: "Talk to a Chatbot Developer in Pakistan",
     description: "Tell us what you want automated and we will tell you whether a custom chatbot is the right answer, what it would involve, and what it would cost. No obligation.",
     keywords: ["contact chatbot developer Pakistan", "chatbot consultation", "hire chatbot company Pakistan"],
     type: "website"
@@ -41,25 +41,25 @@ export const seoData: Record<string, SEOPageData> = {
     type: "website"
   },
   "/legal": {
-    title: "Legal Information | TheChatFlow",
+    title: "Legal Information",
     description: "Company and legal information for TheChatFlow, including the operating entity and registered business details.",
     keywords: ["TheChatFlow legal", "company information"],
     type: "website"
   },
   "/privacy-policy": {
-    title: "Privacy Policy | TheChatFlow Data Protection",
+    title: "Privacy Policy and Data Protection",
     description: "How TheChatFlow collects, uses and protects personal information, in line with applicable data protection regulations.",
     keywords: ["Privacy Policy", "Data Protection", "TheChatFlow"],
     type: "website"
   },
   "/terms-of-service": {
-    title: "Terms of Service | TheChatFlow",
+    title: "Terms of Service",
     description: "Terms and conditions for using TheChatFlow chatbot development and automation services.",
     keywords: ["Terms of Service", "Legal Agreement", "TheChatFlow"],
     type: "website"
   },
   "/cookie-policy": {
-    title: "Cookie Policy | TheChatFlow Website Cookies",
+    title: "Cookie Policy",
     description: "Information about cookies used on the TheChatFlow website and how to manage your cookie preferences.",
     keywords: ["Cookie Policy", "Website Cookies", "TheChatFlow"],
     type: "website"
