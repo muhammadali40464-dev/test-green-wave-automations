@@ -172,14 +172,14 @@ const ChatbotGuideSmallBusiness = () => {
               </div>
               
               <h1 className="font-h1 text-foreground mb-6">
-                How Chatbots Work for
+                How a Custom Chatbot Works for
                 <span className="block bg-gradient-to-r from-whatsapp-green to-whatsapp-dark bg-clip-text text-transparent">
-                  Small Businesses in Pakistan
+                  a Small Business in Pakistan
                 </span>
               </h1>
               
               <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Complete guide to transform your Pakistani small business with chatbots. Learn setup, benefits, costs, and real success stories.
+                What a chatbot can answer on its own, when it should hand over to a person, and what commissioning one actually involves — explained without the jargon. See also our <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">custom chatbot development service</Link>.
               </p>
               
               <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground mb-8">
