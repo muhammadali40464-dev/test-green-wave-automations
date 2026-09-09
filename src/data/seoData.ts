@@ -11,95 +11,114 @@ export interface SEOPageData {
 
 export const seoData: Record<string, SEOPageData> = {
   "/": {
-    title: "TheChatFlow - WhatsApp Business API Pakistan | #1 Chatbot Automation Services",
-    description: "Leading WhatsApp Business API and chatbot automation services in Pakistan. Boost your business with automated messaging solutions, customer support bots, and marketing automation. Get started today!",
-    keywords: ["WhatsApp Business API Pakistan", "Chatbot Automation", "WhatsApp Automation", "Business Messaging", "Customer Support Bot", "Marketing Automation", "TheChatFlow"],
+    title: "Custom Chatbot Development in Pakistan | TheChatFlow",
+    description: "We build custom AI chatbots for Pakistani businesses — sales, support and booking agents across WhatsApp, Instagram, Messenger and web chat, connected to the systems you already run.",
+    keywords: ["custom chatbot development Pakistan", "AI chatbot development services", "chatbot company Pakistan", "WhatsApp chatbot development", "business automation Pakistan"],
+    type: "website"
+  },
+  "/services/custom-chatbot-development": {
+    title: "Custom Chatbot Development Services in Pakistan | TheChatFlow",
+    description: "Custom AI chatbot development for Pakistani businesses. We scope, build, train and maintain chatbots for sales, support, order tracking and bookings — with an engineering team behind them.",
+    keywords: ["custom chatbot development", "chatbot development services in Pakistan", "AI chatbot services Pakistan", "chatbot developers Pakistan", "hire chatbot developer"],
     type: "website"
   },
   "/blog": {
-    title: "WhatsApp Business Blog Pakistan | Automation & API Guides",
-    description: "Latest insights on WhatsApp Business API, chatbot automation, and digital marketing strategies for Pakistani businesses. Expert guides, tutorials, and success stories.",
-    keywords: ["WhatsApp Business Blog", "Automation Guides", "API Tutorials", "Digital Marketing Pakistan", "Business Growth"],
+    title: "Chatbot & Automation Insights for Pakistani Businesses | TheChatFlow",
+    description: "Practical guides on custom chatbots, AI agents and business automation for companies in Pakistan — what to build, what it costs, and what actually works.",
+    keywords: ["chatbot guides Pakistan", "AI automation blog", "custom chatbot insights", "business automation Pakistan"],
     type: "website"
   },
   "/contact": {
-    title: "Contact TheChatFlow | WhatsApp Business API Consultation Pakistan",
-    description: "Get in touch with TheChatFlow for WhatsApp Business API setup, chatbot development, and automation consultation in Pakistan. Free consultation available.",
-    keywords: ["Contact TheChatFlow", "WhatsApp API Consultation", "Chatbot Development", "Pakistan", "Free Consultation"],
+    title: "Talk to a Chatbot Developer | TheChatFlow Pakistan",
+    description: "Tell us what you want automated and we will tell you whether a custom chatbot is the right answer, what it would involve, and what it would cost. No obligation.",
+    keywords: ["contact chatbot developer Pakistan", "chatbot consultation", "hire chatbot company Pakistan"],
     type: "website"
   },
   "/success-stories": {
-    title: "Success Stories | WhatsApp Automation Case Studies Pakistan",
-    description: "Real success stories from Pakistani businesses using TheChatFlow's WhatsApp automation solutions. See how companies increased efficiency and revenue.",
-    keywords: ["Success Stories", "Case Studies", "WhatsApp Automation Results", "Business Growth Pakistan", "ROI"],
+    title: "Custom Chatbot Case Studies | TheChatFlow Pakistan",
+    description: "How Pakistani businesses use custom chatbots built by TheChatFlow to qualify leads, answer support questions and take bookings across WhatsApp, Instagram and web chat.",
+    keywords: ["chatbot case studies Pakistan", "custom chatbot examples", "automation results Pakistan"],
+    type: "website"
+  },
+  "/legal": {
+    title: "Legal Information | TheChatFlow",
+    description: "Company and legal information for TheChatFlow, including the operating entity and registered business details.",
+    keywords: ["TheChatFlow legal", "company information"],
     type: "website"
   },
   "/privacy-policy": {
     title: "Privacy Policy | TheChatFlow Data Protection",
-    description: "TheChatFlow privacy policy outlining how we collect, use, and protect your personal information in compliance with data protection regulations.",
+    description: "How TheChatFlow collects, uses and protects personal information, in line with applicable data protection regulations.",
     keywords: ["Privacy Policy", "Data Protection", "TheChatFlow"],
     type: "website"
   },
   "/terms-of-service": {
-    title: "Terms of Service | TheChatFlow Legal Agreement",
-    description: "Terms and conditions for using TheChatFlow services including WhatsApp Business API and chatbot automation solutions.",
+    title: "Terms of Service | TheChatFlow",
+    description: "Terms and conditions for using TheChatFlow chatbot development and automation services.",
     keywords: ["Terms of Service", "Legal Agreement", "TheChatFlow"],
     type: "website"
   },
   "/cookie-policy": {
     title: "Cookie Policy | TheChatFlow Website Cookies",
-    description: "Information about cookies used on TheChatFlow website and how to manage your cookie preferences.",
+    description: "Information about cookies used on the TheChatFlow website and how to manage your cookie preferences.",
     keywords: ["Cookie Policy", "Website Cookies", "TheChatFlow"],
     type: "website"
   },
-  // Blog Posts
-  "/blog/whatsapp-business-api-pakistan-guide-2025": {
-    title: "WhatsApp Business API Pakistan Complete Guide 2025 | Setup, Pricing & Features",
-    description: "Complete guide to WhatsApp Business API in Pakistan. Learn setup process, pricing, features, and implementation for Pakistani businesses in 2025.",
-    keywords: ["WhatsApp Business API Pakistan", "Setup Guide 2025", "Pricing", "Features", "Implementation"],
-    type: "article",
-    author: "TheChatFlow Team",
-    publishedDate: "2025-01-09"
-  },
+
+  // Blog posts
   "/blog/chatbot-automation-guide-pakistan": {
-    title: "Chatbot Automation Guide Pakistan | Complete Implementation Strategy 2025",
-    description: "Master chatbot automation in Pakistan with our comprehensive guide. Learn implementation strategies, best practices, and ROI optimization for Pakistani businesses.",
-    keywords: ["Chatbot Automation Pakistan", "Implementation Guide", "Business Strategy", "ROI", "2025"],
+    title: "Custom Chatbot Automation in Pakistan: A Practical Guide",
+    description: "What a custom chatbot actually automates in a Pakistani business, how a build is scoped, where projects go wrong, and how to tell whether automation is worth it for you.",
+    keywords: ["custom chatbot automation Pakistan", "chatbot implementation guide", "business automation Pakistan", "AI agent for business"],
     type: "article",
     author: "TheChatFlow Team",
-    publishedDate: "2025-01-09"
-  },
-  "/blog/solar-companies-whatsapp-automation-pakistan": {
-    title: "Solar Companies WhatsApp Automation Pakistan | Industry-Specific Solutions",
-    description: "Discover how solar companies in Pakistan can leverage WhatsApp automation for lead generation, customer support, and sales conversion.",
-    keywords: ["Solar Companies Pakistan", "WhatsApp Automation", "Lead Generation", "Sales Automation", "Renewable Energy"],
-    type: "article",
-    author: "TheChatFlow Team",
-    publishedDate: "2025-01-09"
-  },
-  "/blog/visa-consultancy-whatsapp-automation-urdu": {
-    title: "Visa Consultancy WhatsApp Automation | ویزا کنسلٹنسی آٹومیشن پاکستان",
-    description: "Visa consultancy companies in Pakistan can streamline operations with WhatsApp automation. Learn implementation in Urdu for better client communication.",
-    keywords: ["Visa Consultancy Pakistan", "WhatsApp Automation Urdu", "Immigration Services", "Client Communication"],
-    type: "article",
-    author: "TheChatFlow Team",
-    publishedDate: "2025-01-09"
-  },
-  "/blog/whatsapp-api-vs-regular-whatsapp-business": {
-    title: "WhatsApp API vs Regular WhatsApp Business | Complete Comparison Pakistan",
-    description: "Detailed comparison between WhatsApp Business API and regular WhatsApp Business for Pakistani companies. Features, pricing, and recommendations.",
-    keywords: ["WhatsApp API vs WhatsApp Business", "Comparison", "Features", "Pricing Pakistan", "Business Communication"],
-    type: "article",
-    author: "TheChatFlow Team",
-    publishedDate: "2025-01-09"
+    publishedDate: "2025-01-09",
+    modifiedDate: "2026-09-09"
   },
   "/blog/how-chatbots-work-small-businesses-pakistan": {
-    title: "How Chatbots Work for Small Businesses Pakistan | Complete Guide 2025",
-    description: "Learn how chatbots can transform small businesses in Pakistan. Implementation guide, benefits, and real-world examples for SMEs.",
-    keywords: ["Chatbots Small Business Pakistan", "SME Automation", "Business Growth", "Customer Service", "2025"],
+    title: "How a Custom Chatbot Works for a Small Business in Pakistan",
+    description: "A plain explanation of how a custom chatbot handles enquiries for a small Pakistani business — what it can answer, when it hands over to a person, and what setting one up involves.",
+    keywords: ["chatbot for small business Pakistan", "how chatbots work", "small business automation Pakistan"],
     type: "article",
     author: "TheChatFlow Team",
-    publishedDate: "2025-01-09"
+    publishedDate: "2025-01-09",
+    modifiedDate: "2026-09-09"
+  },
+  "/blog/whatsapp-business-api-pakistan-guide-2025": {
+    title: "WhatsApp Business API in Pakistan: When You Actually Need It",
+    description: "What the WhatsApp Business API is, what it costs, and the specific situations where a Pakistani business needs it — plus when the free Business app is genuinely enough.",
+    keywords: ["WhatsApp Business API Pakistan", "WhatsApp API cost", "WhatsApp chatbot Pakistan", "when to use WhatsApp API"],
+    type: "article",
+    author: "TheChatFlow Team",
+    publishedDate: "2025-01-09",
+    modifiedDate: "2026-09-09"
+  },
+  "/blog/whatsapp-api-vs-regular-whatsapp-business": {
+    title: "WhatsApp Business App vs API: Which Does Your Business Need?",
+    description: "A straight comparison of the free WhatsApp Business app and the WhatsApp Business API for Pakistani businesses — limits, costs, and which one fits the way you actually work.",
+    keywords: ["WhatsApp Business app vs API", "WhatsApp API comparison Pakistan", "WhatsApp Business limits"],
+    type: "article",
+    author: "TheChatFlow Team",
+    publishedDate: "2025-01-09",
+    modifiedDate: "2026-09-09"
+  },
+  "/blog/solar-companies-whatsapp-automation-pakistan": {
+    title: "Custom Chatbots for Solar Companies in Pakistan",
+    description: "How a custom chatbot qualifies solar enquiries — roof size, unit consumption, budget and city — books site surveys, and stops sales teams re-answering the same questions.",
+    keywords: ["chatbot for solar companies Pakistan", "solar lead qualification", "solar sales automation Pakistan"],
+    type: "article",
+    author: "TheChatFlow Team",
+    publishedDate: "2025-01-12",
+    modifiedDate: "2026-09-09"
+  },
+  "/blog/visa-consultancy-whatsapp-automation-urdu": {
+    title: "Custom Chatbots for Visa Consultancies in Pakistan",
+    description: "How visa and immigration consultancies use a custom chatbot to answer document and eligibility questions in Urdu and English, and route only serious applicants to a consultant.",
+    keywords: ["chatbot for visa consultancy Pakistan", "immigration automation Urdu", "visa enquiry automation"],
+    type: "article",
+    author: "TheChatFlow Team",
+    publishedDate: "2025-01-10",
+    modifiedDate: "2026-09-09"
   }
 };
 
