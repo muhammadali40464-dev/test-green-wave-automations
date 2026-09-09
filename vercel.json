@@ -1,0 +1,40 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/Blog/:path*", "destination": "/blog/:path*", "permanent": true },
+    { "source": "/BLOG/:path*", "destination": "/blog/:path*", "permanent": true },
+    { "source": "/Contact/:path*", "destination": "/contact", "permanent": true },
+    { "source": "/Success-Stories/:path*", "destination": "/success-stories", "permanent": true },
+    { "source": "/blog/whatsapp-business-api-vs-regular-whatsapp", "destination": "/blog/whatsapp-api-vs-regular-whatsapp-business", "permanent": true },
+    { "source": "/blog/ecommerce-whatsapp-marketing-pakistan", "destination": "/blog", "permanent": false },
+    { "source": "/blog/ai-customer-service-benefits-local-businesses", "destination": "/blog", "permanent": false },
+    { "source": "/blog/chatbot-implementation-guide-pakistani-companies", "destination": "/blog", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(sitemap.xml|robots.txt)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+      ]
+    }
+  ]
+}
