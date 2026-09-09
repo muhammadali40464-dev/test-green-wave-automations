@@ -48,14 +48,14 @@ const Blog = () => {
             </div>
             
             <h1 className="font-h1 text-foreground mb-4">
-              Master WhatsApp Automation
+              Chatbot &amp; Automation Insights
               <span className="block bg-gradient-to-r from-whatsapp-green to-whatsapp-dark bg-clip-text text-transparent">
                 for Pakistani Businesses
               </span>
             </h1>
             
             <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Learn proven strategies, real case studies, and expert tips to grow your Pakistani business with WhatsApp automation
+              Practical guides on custom chatbots, AI agents and business automation — what to build, what it costs, and what actually works for a business in Pakistan.
             </p>
           </div>
         </section>
@@ -74,7 +74,7 @@ const Blog = () => {
                       January 15, 2025
                     </div>
                     <CardTitle className="font-h3 mb-2">
-                      How Chatbots Work for Small Businesses in Pakistan 2025
+                      How a Custom Chatbot Works for a Small Business in Pakistan 2025
                     </CardTitle>
                     <CardDescription className="font-body-base">
                       Transform your Pakistani small business with AI chatbots. Complete setup guide, benefits, costs, and real success stories from local businesses.
@@ -133,7 +133,7 @@ const Blog = () => {
                     January 15, 2025
                   </div>
                   <CardTitle className="font-h4 group-hover:text-whatsapp-green transition-colors">
-                    Ultimate Chatbot Automation Guide for Pakistani Businesses
+                    Custom Chatbot Automation for Pakistani Businesses
                   </CardTitle>
                   <CardDescription>
                     Complete guide to automating customer service, lead generation, and sales with AI chatbots across WhatsApp, Facebook, and Instagram.
@@ -163,7 +163,7 @@ const Blog = () => {
                     January 15, 2025
                   </div>
                   <CardTitle className="font-h4 group-hover:text-whatsapp-green transition-colors">
-                    How Chatbots Work for Small Businesses in Pakistan
+                    How a Custom Chatbot Works for a Small Business in Pakistan
                   </CardTitle>
                   <CardDescription>
                     Complete guide to understanding chatbots for Pakistani small businesses. Setup, benefits, costs, and real success stories.
