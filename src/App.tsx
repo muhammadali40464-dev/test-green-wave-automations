@@ -27,6 +27,7 @@ import ChatbotGuideSmallBusiness from "./pages/blog/ChatbotGuideSmallBusiness";
 import WhatsAppAPIvsRegular from "./pages/blog/WhatsAppAPIvsRegular";
 import WhatsAppAPIGuide from "./pages/blog/WhatsAppAPIGuide";
 import ChatbotAutomationGuide from "./pages/blog/ChatbotAutomationGuide";
+import CustomChatbotDevelopment from "./pages/services/CustomChatbotDevelopment";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
 
@@ -128,6 +129,7 @@ const App = () => {
             <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<ChatbotGuideSmallBusiness />} />
             <Route path="/blog/whatsapp-business-api-pakistan-guide-2025" element={<WhatsAppAPIGuide />} />
             <Route path="/blog/whatsapp-api-vs-regular-whatsapp-business" element={<WhatsAppAPIvsRegular />} />
+            <Route path="/services/custom-chatbot-development" element={<CustomChatbotDevelopment />} />
             <Route path="/legal" element={<Legal />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
