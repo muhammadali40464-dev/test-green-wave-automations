@@ -262,7 +262,7 @@ const Blog = () => {
                 
                 <CardFooter>
                   <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
-                    <Link to="/blog/ecommerce-whatsapp-marketing-pakistan">
+                    <Link to="/blog">
                       Read Case Studies <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
