@@ -35,9 +35,9 @@ export const seoData: Record<string, SEOPageData> = {
     type: "website"
   },
   "/success-stories": {
-    title: "Custom Chatbot Case Studies | TheChatFlow Pakistan",
-    description: "How Pakistani businesses use custom chatbots built by TheChatFlow to qualify leads, answer support questions and take bookings across WhatsApp, Instagram and web chat.",
-    keywords: ["chatbot case studies Pakistan", "custom chatbot examples", "automation results Pakistan"],
+    title: "Chatbot Examples: What a Custom Build Actually Does",
+    description: "Four real build patterns for Pakistani businesses — solar, e-commerce, visa consultancy and clinics. What the chatbot handles alone, what it connects to, and where a person takes over.",
+    keywords: ["chatbot examples", "ecommerce chatbot examples", "whatsapp automation examples", "whatsapp automation use cases", "lead generation chatbot example"],
     type: "website"
   },
   "/legal": {
