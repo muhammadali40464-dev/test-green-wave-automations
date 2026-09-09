@@ -53,7 +53,9 @@ const MegaMenu = () => {
               Home
             </Link>
 
-            <Link to="/blog" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">
+            <Link to="/services/custom-chatbot-development" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">Services</Link>
+            <Link to="/services/custom-chatbot-development" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">Services</Link>
+              <Link to="/blog" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">
               Blog
             </Link>
 
