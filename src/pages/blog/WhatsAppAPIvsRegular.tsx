@@ -68,14 +68,14 @@ const WhatsAppAPIvsRegular = () => {
               </div>
               
               <h1 className="font-h1 text-foreground mb-6">
-                WhatsApp Business API vs
+                WhatsApp Business App vs API:
                 <span className="block bg-gradient-to-r from-whatsapp-green to-whatsapp-dark bg-clip-text text-transparent">
-                  Regular WhatsApp
+                  Which Does Your Business Need?
                 </span>
               </h1>
               
               <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                Complete comparison guide to help Pakistani businesses choose the right WhatsApp solution. Features, pricing, and setup explained.
+                Most Pakistani businesses do not need the API. This is a straight comparison of the free Business app and the API — the real limits of each, what they cost, and how to tell which side of the line you are on. If you already know you need a bot built, see <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">custom chatbot development</Link>.
               </p>
               
               <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
