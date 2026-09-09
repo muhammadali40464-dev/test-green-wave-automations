@@ -75,12 +75,11 @@ const WhatsAppAPIGuide = () => {
             </Link>
             
             <h1 className="font-h1 text-foreground mb-4">
-              Complete Guide to WhatsApp Business API in Pakistan 2025
+              WhatsApp Business API in Pakistan: When You Actually Need It
             </h1>
             
             <p className="font-body-lg text-muted-foreground mb-6">
-              Master WhatsApp Business API setup, pricing, features & benefits for Pakistani businesses. 
-              Complete step-by-step implementation guide with real examples.
+              The API is not a product you buy and switch on — it is plumbing. This guide explains what it does, what it costs, and the specific situations where a Pakistani business needs it. If you already know you need a chatbot built on top of it, see our <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">custom chatbot development service</Link>.
             </p>
             
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
@@ -88,7 +87,7 @@ const WhatsAppAPIGuide = () => {
               <span>•</span>
               <span>15 min read</span>
               <span>•</span>
-              <span>Updated: January 15, 2025</span>
+              <span>Updated: September 2026</span>
             </div>
 
             <Card className="p-6 bg-whatsapp-green/5 border-whatsapp-green/20">
@@ -97,13 +96,12 @@ const WhatsAppAPIGuide = () => {
                   <CheckCircle className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">Ready to implement WhatsApp automation?</h3>
+                  <h3 className="font-semibold text-foreground mb-2">Not sure whether you need the API at all?</h3>
                   <p className="text-muted-foreground mb-4">
-                    TheChatFlow offers complete WhatsApp Business API setup with 24-48 hour implementation. 
-                    <Link to="/#pricing" className="text-whatsapp-green hover:text-whatsapp-dark font-medium"> View our pricing plans</Link>.
+                    Most businesses that ask us for the API actually need a chatbot that solves a specific problem. We will tell you which one you need before you spend anything — see <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">custom chatbot development</Link>.
                   </p>
                   <Button variant="hero" size="sm" asChild>
-                    <Link to="/#pricing">Start Your Automation Journey</Link>
+                    <Link to="/contact">Ask us what you need</Link>
                   </Button>
                 </div>
               </div>
@@ -117,12 +115,10 @@ const WhatsAppAPIGuide = () => {
             
             {/* Introduction */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Why WhatsApp Business API Matters for Pakistani Businesses</h2>
+              <h2 className="font-h2 text-foreground mb-6">What the WhatsApp Business API Actually Is</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
-                With over <strong>180 million WhatsApp users in Pakistan</strong>, businesses are rapidly shifting from traditional customer service 
-                to automated WhatsApp solutions. The official WhatsApp Business API has become the gold standard for Pakistani companies 
-                looking to scale their customer communication without hiring massive support teams.
+                Pakistan has around <strong>117 million internet users and 194 million mobile connections</strong> (<a href="https://datareportal.com/reports/digital-2026-pakistan" rel="nofollow noopener" target="_blank" className="text-whatsapp-green hover:text-whatsapp-dark">DataReportal, Digital 2026</a>), and messaging is where most customer conversations now start. But the WhatsApp Business API is not a chatbot, and it is not something you use directly — it is an interface that lets software send and receive messages on a business number. On its own it does nothing. The value comes from what you build on top of it.
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -505,12 +501,10 @@ const WhatsAppAPIGuide = () => {
 
             {/* Conclusion */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Ready to Transform Your Pakistani Business?</h2>
+              <h2 className="font-h2 text-foreground mb-6">So Do You Need the API?</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
-                WhatsApp Business API represents a massive opportunity for Pakistani businesses to scale customer communication, 
-                increase sales, and improve operational efficiency. With over 180 million WhatsApp users in Pakistan, 
-                businesses that implement automation early will have a significant competitive advantage.
+                You need the API if you have more enquiry volume than one person can answer, more than one agent replying, or a system you want the conversation connected to — a store, a CRM, a booking calendar. You do not need it just because you want automated replies; the free Business app does that. If you are past that line, the next question is not which API provider to use, it is what the bot should actually do. That is a build question, and it is the one we answer on our <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">custom chatbot development</Link> page.
               </p>
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -554,7 +548,7 @@ const WhatsAppAPIGuide = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" asChild>
-                    <Link to="/#pricing">Start Your Automation Journey</Link>
+                    <Link to="/contact">Ask us what you need</Link>
                   </Button>
                   <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-whatsapp-green" asChild>
                     <Link to="/blog">Read More Success Stories</Link>
