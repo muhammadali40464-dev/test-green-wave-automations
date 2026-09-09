@@ -28,12 +28,12 @@ const WhatsAppAPIvsRegular = () => {
         <title>WhatsApp Business API vs Regular WhatsApp: Complete Comparison Guide Pakistan 2025</title>
         <meta name="description" content="Detailed comparison of WhatsApp Business API vs Regular WhatsApp for Pakistani businesses. Features, pricing, setup guide, and which one to choose." />
         <meta name="keywords" content="whatsapp business api vs regular whatsapp differences, whatsapp business api pakistan, whatsapp api pricing pakistan, whatsapp business setup guide" />
-        <link rel="canonical" href="https://thechatflow.com/blog/whatsapp-business-api-vs-regular-whatsapp" />
+        <link rel="canonical" href="https://thechatflow.com/blog/whatsapp-api-vs-regular-whatsapp-business" />
         
         <meta property="og:title" content="WhatsApp Business API vs Regular WhatsApp: Complete Comparison" />
         <meta property="og:description" content="Choose the right WhatsApp solution for your Pakistani business. Detailed comparison guide with pricing, features, and setup instructions." />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thechatflow.com/blog/whatsapp-business-api-vs-regular-whatsapp" />
+        <meta property="og:url" content="https://thechatflow.com/blog/whatsapp-api-vs-regular-whatsapp-business" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -479,7 +479,7 @@ const WhatsAppAPIvsRegular = () => {
               <Card className="shadow-card hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <CardTitle className="font-h4">
-                    <Link to="/blog/chatbot-implementation-guide-pakistani-companies" className="hover:text-whatsapp-green transition-colors">
+                    <Link to="/blog/chatbot-automation-guide-pakistan" className="hover:text-whatsapp-green transition-colors">
                       Chatbot Implementation Guide for Pakistani Companies
                     </Link>
                   </CardTitle>
@@ -489,7 +489,7 @@ const WhatsAppAPIvsRegular = () => {
                 </CardHeader>
                 <CardContent>
                   <Button variant="outline" size="sm" asChild>
-                    <Link to="/blog/chatbot-implementation-guide-pakistani-companies">
+                    <Link to="/blog/chatbot-automation-guide-pakistan">
                       Learn More <ArrowRight className="ml-2 h-3 w-3" />
                     </Link>
                   </Button>
