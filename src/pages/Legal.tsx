@@ -14,7 +14,7 @@ const Legal = () => {
         title="Legal Information | Chatflow"
         description="Legal information for Chatflow, a product operated by Amazing Developers Pty Ltd. Learn about our legal entity, company information, and contact details."
         path="/legal"
-        keywords="Chatflow legal, Amazing Developers Pty Ltd, legal entity, company information"
+        keywords={["Chatflow legal", "Amazing Developers Pty Ltd", "legal entity", "company information"]}
         type="website"
       />
       <MegaMenu />
