@@ -18,7 +18,7 @@ const VisaConsultancy = () => {
         <link rel="canonical" href="https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu" />
         
         <meta property="og:title" content="Visa Consultancy Success: Handle 500+ Daily Inquiries with WhatsApp Automation" />
-        <meta property="og:description" content="Real case study: Pakistani visa consultancy increased applications by 500% using WhatsApp automation in Urdu and English" />
+        <meta property="og:description" content="How visa and immigration consultancies in Pakistan use a custom chatbot to answer document and eligibility questions in Urdu and English, and route only serious applicants to a consultant" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu" />
         <meta property="og:image" content="https://thechatflow.com/blog-images/visa-consultancy-automation.jpg" />
@@ -30,7 +30,7 @@ const VisaConsultancy = () => {
           {JSON.stringify({
             "@context": "https://schema.org", 
             "@type": "Article",
-            "headline": "Visa Consultancy Success: How to Handle 500+ Daily Inquiries with WhatsApp Automation",
+            "headline": "Custom Chatbots for Visa Consultancies in Pakistan",
             "author": {
               "@type": "Organization",
               "name": "TheChatFlow",
@@ -71,7 +71,7 @@ const VisaConsultancy = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Visa Consultancy Success: How to Handle 500+ Daily Inquiries with WhatsApp Automation",
+            "headline": "Custom Chatbots for Visa Consultancies in Pakistan",
             "author": {
               "@type": "Organization",
               "name": "TheChatFlow"
@@ -133,12 +133,11 @@ const VisaConsultancy = () => {
             </Link>
             
             <h1 className="font-h1 text-foreground mb-4">
-              Visa Consultancy Success: How to Handle 500+ Daily Inquiries with WhatsApp Automation
+              Custom Chatbots for Visa Consultancies in Pakistan
             </h1>
             
             <p className="font-body-lg text-muted-foreground mb-6">
-              Real case study showing how Global Visa Consultants increased application success rate by 500% and achieved 90% 
-              query resolution through automated WhatsApp support in Urdu and English.
+              Visa consultancies drown in the same twenty questions — document lists, eligibility, fees, timelines — asked in Urdu and English at all hours. This is how a custom chatbot answers them accurately and routes only serious applicants to a consultant.
             </p>
             
             <div className="flex items-center gap-4 text-sm text-muted-foreground mb-8">
@@ -380,18 +379,27 @@ const VisaConsultancy = () => {
             </section>
 
             {/* Case Study */}
+
+            <div className="mb-12 rounded-lg border border-amber-300 bg-amber-50 p-5">
+              <p className="text-sm text-amber-900 m-0">
+                <strong>About the numbers below.</strong> This is an illustrative worked example built from the kind of
+                enquiry volumes we see, not a named client account. The figures are there to show how the maths works for
+                your own business — substitute your own numbers. Real client results, published with consent, are on our{' '}
+                <Link to="/success-stories" className="underline">case studies page</Link>.
+              </p>
+            </div>
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Real Case Study: Global Visa Consultants Success Story</h2>
+              <h2 className="font-h2 text-foreground mb-6">Real Case Study: the consultancy in this example Success Story</h2>
               
               <Card className="p-8 gradient-cta text-white mb-8">
                 <div className="text-center mb-6">
-                  <h3 className="font-h3 mb-2">Global Visa Consultants Results</h3>
+                  <h3 className="font-h3 mb-2">the consultancy in this example Results</h3>
                   <p className="text-white/90">8 months after implementing TheChatFlow automation</p>
                 </div>
                 
                 <div className="grid md:grid-cols-4 gap-6">
                   <div className="text-center">
-                    <div className="text-4xl font-bold mb-2">500%</div>
+                    <div className="text-4xl font-bold mb-2">6&times;</div>
                     <p className="text-white/90">Application increase</p>
                   </div>
                   <div className="text-center">
@@ -412,7 +420,7 @@ const VisaConsultancy = () => {
               <div className="mb-8">
                 <h3 className="font-h3 text-foreground mb-4">Company Background</h3>
                 <p className="font-body-base text-muted-foreground mb-6">
-                  Global Visa Consultants, based in Islamabad with branches in Lahore and Karachi, specializes in student visa 
+                  the consultancy in this example, based in Islamabad with branches in Lahore and Karachi, specializes in student visa 
                   processing for Canada, Australia, and UK. Before automation, they faced:</p>
                 <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-6">
                   <li>600+ daily WhatsApp inquiries across all branches</li>
@@ -489,7 +497,7 @@ const VisaConsultancy = () => {
                         <td className="border border-gray-300 p-3">Monthly Applications</td>
                         <td className="border border-gray-300 p-3">250</td>
                         <td className="border border-gray-300 p-3">1,500</td>
-                        <td className="border border-gray-300 p-3 text-green-600 font-semibold">+500%</td>
+                        <td className="border border-gray-300 p-3 text-green-600 font-semibold">6&times;</td>
                       </tr>
                       <tr>
                         <td className="border border-gray-300 p-3">Customer Service Staff</td>
@@ -506,35 +514,10 @@ const VisaConsultancy = () => {
                     </tbody>
                   </table>
                 </div>
-
-                <Card className="p-6 bg-green-50 border-green-200">
-                  <h4 className="font-semibold text-green-800 mb-3">💰 Financial Impact Analysis</h4>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-sm text-green-700 mb-2"><strong>Monthly Costs Saved:</strong></p>
-                      <p className="text-sm text-green-700">Staff reduction: 5 × ₨40,000 = ₨2,00,000</p>
-                      <p className="text-sm text-green-700">TheChatFlow cost: ₨9,999</p>
-                      <p className="text-sm text-green-700"><strong>Net savings: ₨1,90,001</strong></p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-green-700 mb-2"><strong>Revenue Increase:</strong></p>
-                      <p className="text-sm text-green-700">Additional applications: 1,250</p>
-                      <p className="text-sm text-green-700">Average fee: ₨50,000</p>
-                      <p className="text-sm text-green-700"><strong>Additional revenue: ₨6,25,00,000</strong></p>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-4 p-4 bg-green-100 rounded text-center">
-                    <p className="text-green-800 font-bold text-lg">
-                      Total Monthly Impact: ₨6,26,90,001 | ROI: 62,669% 
-                    </p>
-                    <p className="text-green-700 mt-2">Payback period: 3 days</p>
-                  </div>
-                </Card>
               </div>
 
               <p className="font-body-base text-muted-foreground">
-                The transformation at Global Visa Consultants demonstrates the massive potential of WhatsApp automation for visa consultancies. 
+                The transformation at the consultancy in this example demonstrates the massive potential of WhatsApp automation for visa consultancies. 
                 <Link to="/#testimonials" className="text-whatsapp-green hover:text-whatsapp-dark">Read more testimonials</Link> from 
                 other Pakistani consultancies using TheChatFlow.
               </p>
