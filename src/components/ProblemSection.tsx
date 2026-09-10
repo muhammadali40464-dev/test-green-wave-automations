@@ -75,22 +75,22 @@ const ProblemSection = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 p-4 sm:p-6 bg-red-50 rounded-lg">
                   <span className="font-medium text-sm sm:text-base">Response Time &gt; 1 hour</span>
-                  <span className="font-bold text-red-600 text-lg sm:text-xl">-40% conversion</span>
+                  <span className="font-bold text-red-600 text-sm sm:text-base">Lost to faster replies</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 p-4 sm:p-6 bg-red-50 rounded-lg">
                   <span className="font-medium text-sm sm:text-base">No after-hours support</span>
-                  <span className="font-bold text-red-600 text-lg sm:text-xl">-60% night leads</span>
+                  <span className="font-bold text-red-600 text-sm sm:text-base">Answered next morning</span>
                 </div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 p-4 sm:p-6 bg-red-50 rounded-lg">
                   <span className="font-medium text-sm sm:text-base">Manual social media</span>
-                  <span className="font-bold text-red-600 text-lg sm:text-xl">-80% social leads</span>
+                  <span className="font-bold text-red-600 text-sm sm:text-base">Never followed up</span>
                 </div>
               </div>
               
               <div className="pt-4 border-t text-center">
                 <p className="font-small text-muted-foreground">
                   Average business loses 
-                  <span className="font-bold text-red-600 text-lg sm:text-xl"> 2-3 customers daily</span> 
+                  <span className="font-bold text-red-600 text-sm sm:text-base"> 2-3 customers daily</span> 
                   due to slow responses
                 </p>
               </div>
