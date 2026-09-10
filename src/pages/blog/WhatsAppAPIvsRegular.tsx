@@ -420,7 +420,7 @@ const WhatsAppAPIvsRegular = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90" asChild>
-                    <Link to="/#pricing">View Pricing Plans</Link>
+                    <Link to="/services/custom-chatbot-development">View Pricing Plans</Link>
                   </Button>
                   <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10" asChild>
                     <Link to="/contact">Book Free Consultation</Link>
