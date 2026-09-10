@@ -124,8 +124,8 @@ const WhatsAppAPIGuide = () => {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <Card className="text-center p-6">
                   <Users className="h-12 w-12 text-whatsapp-green mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">180M+ Users</h3>
-                  <p className="text-sm text-muted-foreground">Pakistan WhatsApp penetration</p>
+                  <h3 className="font-semibold mb-2">117M Online</h3>
+                  <p className="text-sm text-muted-foreground">Pakistani internet users (DataReportal, Digital 2026)</p>
                 </Card>
                 <Card className="text-center p-6">
                   <Zap className="h-12 w-12 text-whatsapp-green mx-auto mb-4" />
@@ -385,7 +385,7 @@ const WhatsAppAPIGuide = () => {
                   </div>
                   
                   <p className="text-muted-foreground mb-4">
-                    <strong>Results:</strong> 300% increase in qualified leads, 50% reduction in sales cycle time.
+                    <strong>What this changes:</strong> the sales team stops fielding rate enquiries and only sees leads that already carry a bill size, a city and a budget.
                   </p>
                   
                   <Link to="/blog/solar-companies-whatsapp-automation-pakistan" className="text-whatsapp-green hover:text-whatsapp-dark inline-flex items-center gap-2">
@@ -415,7 +415,7 @@ const WhatsAppAPIGuide = () => {
                   </div>
                   
                   <p className="text-muted-foreground mb-4">
-                    <strong>Results:</strong> 500% increase in consultation bookings, 90% query resolution without human intervention.
+                    <strong>What this changes:</strong> requirement questions get answered at 2 AM in the student's own language, and consultants spend their day on people who already qualify.
                   </p>
                   
                   <Link to="/blog/visa-consultancy-whatsapp-automation-urdu" className="text-whatsapp-green hover:text-whatsapp-dark inline-flex items-center gap-2">
@@ -444,7 +444,7 @@ const WhatsAppAPIGuide = () => {
                   </div>
                   
                   <p className="text-muted-foreground mb-4">
-                    <strong>Results:</strong> 400% increase in cart recovery, 60% reduction in customer service workload.
+                    <strong>What this changes:</strong> abandoned carts get a follow-up within the hour instead of never, and order-status questions stop reaching a human at all.
                   </p>
                   
                   <Button variant="outline" size="sm" asChild>
