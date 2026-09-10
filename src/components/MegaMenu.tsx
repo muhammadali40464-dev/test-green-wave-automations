@@ -53,9 +53,11 @@ const MegaMenu = () => {
               Home
             </Link>
 
-            <Link to="/services/custom-chatbot-development" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">Services</Link>
-            <Link to="/services/custom-chatbot-development" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">Services</Link>
-              <Link to="/blog" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">
+            <Link to="/services/custom-chatbot-development" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">
+              Services
+            </Link>
+
+            <Link to="/blog" className="text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold">
               Blog
             </Link>
 
@@ -93,6 +95,14 @@ const MegaMenu = () => {
                 onClick={closeAllDropdowns}
               >
                 Home
+              </Link>
+              
+              <Link 
+                to="/services/custom-chatbot-development" 
+                className="block py-3 text-lg text-muted-foreground hover:text-whatsapp-green transition-colors font-semibold"
+                onClick={closeAllDropdowns}
+              >
+                Services
               </Link>
               
               <Link 
