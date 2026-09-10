@@ -193,10 +193,10 @@ const Blog = () => {
                     January 12, 2025
                   </div>
                   <CardTitle className="font-h4 group-hover:text-whatsapp-green transition-colors">
-                    How Solar Companies in Pakistan Can 10X Leads with WhatsApp Automation
+                    Custom Chatbots for Solar Companies in Pakistan
                   </CardTitle>
                   <CardDescription>
-                    Real case study showing 300% lead increase for Pakistani solar companies using automated WhatsApp flows.
+                    How a custom chatbot qualifies solar enquiries on bill size, roof and city, then books the site survey.
                   </CardDescription>
                 </CardHeader>
                 
@@ -226,7 +226,7 @@ const Blog = () => {
                     Visa Consultancy Success: Automating Customer Support in Urdu
                   </CardTitle>
                   <CardDescription>
-                    How visa consultants handle 500+ daily inquiries with WhatsApp automation in Urdu and English.
+                    How visa consultancies answer document and eligibility questions in Urdu and English, and route only serious applicants to a consultant.
                   </CardDescription>
                 </CardHeader>
                 
@@ -321,7 +321,7 @@ const Blog = () => {
                     </div>
                     
                     <p className="text-xs text-white/60 mt-3">
-                      No spam. Unsubscribe anytime. Used by 500+ Pakistani businesses.
+                      No spam. Unsubscribe anytime.
                     </p>
                   </div>
                 </Card>
