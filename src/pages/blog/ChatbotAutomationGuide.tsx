@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
@@ -23,24 +25,27 @@ import {
 } from "lucide-react";
 
 const ChatbotAutomationGuide = () => {
+  const seo = getPageSEO("/blog/chatbot-automation-guide-pakistan");
+
   return (
     <>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path="/blog/chatbot-automation-guide-pakistan"
+        keywords={seo.keywords}
+        type="article"
+        author={seo.author}
+        publishedDate={seo.publishedDate}
+      />
+
       <Helmet>
-        <title>Custom Chatbot Automation for Pakistani Businesses 2025</title>
-        <meta name="description" content="Transform your Pakistani business with AI chatbot automation. Complete guide covering WhatsApp, Facebook, Instagram automation for maximum ROI." />
-        <meta name="keywords" content="chatbot automation pakistan, ai customer service pakistan, whatsapp automation pakistan, business chatbot setup, automated customer support" />
-        <link rel="canonical" href="https://thechatflow.com/blog/chatbot-automation-guide-pakistan" />
-        
-        <meta property="og:title" content="Ultimate Chatbot Automation Guide for Pakistani Businesses" />
-        <meta property="og:description" content="Master chatbot automation and transform your Pakistani business with AI-powered customer service across WhatsApp, Facebook, and Instagram." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thechatflow.com/blog/chatbot-automation-guide-pakistan" />
         
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Ultimate Chatbot Automation Guide for Pakistani Businesses 2025",
+            "headline": "Custom chatbot automation in Pakistan: a practical guide",
             "author": {
               "@type": "Organization",
               "name": "TheChatFlow"
@@ -68,7 +73,7 @@ const ChatbotAutomationGuide = () => {
               </div>
               
               <h1 className="font-h1 text-foreground mb-6">
-                Ultimate Chatbot Automation Guide for
+                Custom chatbot automation in
                 <span className="block bg-gradient-to-r from-whatsapp-green to-whatsapp-dark bg-clip-text text-transparent">
                   Pakistani Businesses
                 </span>
