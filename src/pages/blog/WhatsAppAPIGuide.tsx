@@ -165,9 +165,9 @@ const WhatsAppAPIGuide = () => {
                       <li>• Verified green tick badge</li>
                       <li>• Unlimited messaging capacity</li>
                       <li>• Full compliance with WhatsApp policies</li>
-                      <li>• 99.9% uptime guarantee</li>
+                      <li>• Runs on Meta&rsquo;s own messaging infrastructure</li>
                       <li>• Advanced automation features</li>
-                      <li>• Official Meta partnership support</li>
+                      <li>• Managed through an approved Business Solution Provider</li>
                     </ul>
                   </div>
                   <div>
