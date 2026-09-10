@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
@@ -8,23 +10,22 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, GraduationCap, Globe, Clock, Phone, ArrowRight, CheckCircle, Users, MessageCircle } from "lucide-react";
 
 const VisaConsultancy = () => {
+  const seo = getPageSEO("/blog/visa-consultancy-whatsapp-automation-urdu");
+
   return (
     <>
       <MegaMenu />
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path="/blog/visa-consultancy-whatsapp-automation-urdu"
+        keywords={seo.keywords}
+        type="article"
+        author={seo.author}
+        publishedDate={seo.publishedDate}
+      />
+
       <Helmet>
-        <title>Visa Consultancy Success: Handle 500+ Daily Inquiries with WhatsApp Automation in Urdu | TheChatFlow</title>
-        <meta name="description" content="Visa consultants in Pakistan: Automate customer support in Urdu/English. Handle student visa, work permit & immigration queries 24/7. Real success story included." />
-        <meta name="keywords" content="visa consultancy automation Pakistan, immigration support automation, student visa automation, WhatsApp consultation services, Pakistan visa services automation" />
-        <link rel="canonical" href="https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu" />
-        
-        <meta property="og:title" content="Visa Consultancy Success: Handle 500+ Daily Inquiries with WhatsApp Automation" />
-        <meta property="og:description" content="How visa and immigration consultancies in Pakistan use a custom chatbot to answer document and eligibility questions in Urdu and English, and route only serious applicants to a consultant" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thechatflow.com/blog/visa-consultancy-whatsapp-automation-urdu" />
-        <meta property="og:image" content="https://thechatflow.com/blog-images/visa-consultancy-automation.jpg" />
-        
-        <meta name="author" content="TheChatFlow Immigration Industry Team" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         
         <script type="application/ld+json">
           {JSON.stringify({
