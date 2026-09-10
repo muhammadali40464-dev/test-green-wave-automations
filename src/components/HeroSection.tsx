@@ -93,7 +93,7 @@ const HeroSection = () => {
           type: 'outgoing', 
           sender: 'TheChatFlow', 
           time: '3:23 PM', 
-          text: 'First: 15K (enrollment)\nSecond: 10K (after 1 month)\n\nJob guarantee nahi but:\n• 90% students get jobs\n• Free portfolio development\n• Interview preparation\n\nFree demo class book karein?',
+          text: 'First: 15K (enrollment)\nSecond: 10K (after 1 month)\n\nJob guarantee nahi but:\n• Portfolio review included\n• Free portfolio development\n• Interview preparation\n\nFree demo class book karein?',
           verified: true,
           status: 'read'
         },
@@ -305,19 +305,18 @@ const HeroSection = () => {
                 </div>
                 
                 <h1 className="font-hero text-foreground">
-                  Transform Every Chat Into
+                  Custom AI chatbots that
                   <span className="block bg-gradient-to-r from-whatsapp-green via-whatsapp-dark to-whatsapp-teal bg-clip-text text-transparent mt-2">
-                    Revenue
+                    do real work
                   </span>
                 </h1>
                 
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-whatsapp-green leading-tight">
-                  With AI Automation
+                  Built for Pakistani businesses
                 </h2>
                 
                 <p className="font-body-lg text-muted-foreground leading-relaxed">
-                  Watch authentic conversations flow automatically across WhatsApp, Instagram & Facebook. 
-                  Trusted by 500+ Pakistani businesses.
+                  Sales, support, order-tracking and booking agents across WhatsApp, Instagram, Messenger, Telegram and your website — connected to the systems you already run. We design, build and maintain them. You configure nothing.
                 </p>
               </div>
 
@@ -331,7 +330,7 @@ const HeroSection = () => {
               >
                 <Link to="/contact">
                   <CheckCircle className="mr-3 h-5 w-5 group-hover:scale-110 transition-transform" />
-                  Get Started Free
+                  Book a free scoping call
                 </Link>
               </Button>
               <Button 
@@ -340,9 +339,9 @@ const HeroSection = () => {
                 className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white px-8 py-6 text-lg sm:text-xl font-semibold hover-lift w-full sm:w-auto"
                 asChild
               >
-                <Link to="/#pricing">
+                <Link to="/services/custom-chatbot-development">
                   <Play className="mr-3 h-5 w-5" />
-                  Watch Demo
+                  See what we build
                 </Link>
               </Button>
               </div>
@@ -353,32 +352,32 @@ const HeroSection = () => {
                   <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
                     <Users className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
                   </div>
-                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">500+</div>
-                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Pakistani Businesses</p>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">24–48h</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">To go live</p>
                 </div>
                 
                 <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
                   <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
                     <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
                   </div>
-                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">10M+</div>
-                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Messages Automated</p>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">5</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Channels, one inbox</p>
                 </div>
                 
                 <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
                   <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
                     <Star className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
                   </div>
-                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">95%</div>
-                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Customer Satisfaction</p>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">Urdu</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">And English, incl. voice notes</p>
                 </div>
                 
                 <div className="text-center group p-4 bg-card rounded-2xl hover:shadow-lg transition-all">
                   <div className="p-3 bg-whatsapp-green/10 rounded-2xl group-hover:bg-whatsapp-green/20 transition-colors mb-3 w-fit mx-auto">
                     <CheckCircle className="h-6 w-6 sm:h-7 sm:w-7 text-whatsapp-green" />
                   </div>
-                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">Meta</div>
-                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Official Partner</p>
+                  <div className="font-bold text-2xl sm:text-3xl lg:text-4xl text-foreground">Rs. 49,999</div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">Fixed build price</p>
                 </div>
               </div>
             </div>
