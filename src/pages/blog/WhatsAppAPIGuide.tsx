@@ -541,7 +541,7 @@ const WhatsAppAPIGuide = () => {
               </div>
 
               <Card className="p-6 gradient-cta text-white text-center">
-                <h3 className="font-h3 mb-4">Ready to 10X Your Business Growth?</h3>
+                <h3 className="font-h3 mb-4">Want a fixed price for your build?</h3>
                 <p className="text-white/90 mb-6">
                   Tell us what you want automated and we will scope it free</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
