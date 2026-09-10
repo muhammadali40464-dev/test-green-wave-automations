@@ -96,7 +96,7 @@ const ChatbotAutomationGuide = () => {
 
             {/* CTA Card */}
             <Card className="max-w-2xl mx-auto p-8 gradient-cta text-white text-center">
-              <h3 className="font-h3 mb-4">Ready to Automate Your Business?</h3>
+              <h3 className="font-h3 mb-4">Thinking about automating this?</h3>
               <p className="text-white/80 mb-6">
                 Tell us what you want automated and we will tell you whether a custom chatbot is the right answer
               </p>
@@ -126,7 +126,7 @@ const ChatbotAutomationGuide = () => {
                 </p>
 
                 <div className="bg-gradient-to-r from-whatsapp-green/10 to-whatsapp-dark/10 rounded-2xl p-8 mb-8">
-                  <h3 className="font-h3 text-foreground mb-4">How TheChatFlow's Automation Works</h3>
+                  <h3 className="font-h3 text-foreground mb-4">How the automation works</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-whatsapp-green mt-1 flex-shrink-0" />
@@ -161,7 +161,7 @@ const ChatbotAutomationGuide = () => {
                       <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center">
                         <Clock className="h-6 w-6 text-green-600" />
                       </div>
-                      <h3 className="font-h3 text-foreground">24/7 Customer Service</h3>
+                      <h3 className="font-h3 text-foreground">Answers outside office hours</h3>
                     </div>
                     <p className="text-muted-foreground">
                       Never miss a customer inquiry again. Our AI chatbots work round the clock, handling customer questions during Ramadan, Eid holidays, and late-night hours when Pakistani customers are most active.
@@ -173,7 +173,7 @@ const ChatbotAutomationGuide = () => {
                       <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center">
                         <Users className="h-6 w-6 text-blue-600" />
                       </div>
-                      <h3 className="font-h3 text-foreground">300% More Leads</h3>
+                      <h3 className="font-h3 text-foreground">Better-qualified leads</h3>
                     </div>
                     <p className="text-muted-foreground">
                       Our Pakistani clients see an average 300% increase in qualified leads within 30 days. Automated lead capture and qualification means no potential customer slips through the cracks.
@@ -208,7 +208,15 @@ const ChatbotAutomationGuide = () => {
 
               {/* Real Success Stories */}
               <div className="mb-12">
-                <h2 className="font-h2 text-foreground mb-8">Real Pakistani Business Success Stories</h2>
+                <h2 className="font-h2 text-foreground mb-8">Two worked examples</h2>
+            <div className="mb-10 rounded-lg border border-amber-300 bg-amber-50 p-5">
+              <p className="text-sm text-amber-900 m-0">
+                <strong>About these examples.</strong> They are illustrative build patterns drawn from the kind of work we do,
+                not named client accounts, and they carry no invented performance figures. Named case studies will be published
+                once clients agree to be quoted.
+              </p>
+            </div>
+
 
                 <div className="space-y-8">
                   {/* Success Story 1 */}
@@ -218,7 +226,7 @@ const ChatbotAutomationGuide = () => {
                         S
                       </div>
                       <div>
-                        <h3 className="font-h3 text-foreground">Solar Solutions Karachi</h3>
+                        <h3 className="font-h3 text-foreground">A solar installer</h3>
                         <p className="text-muted-foreground text-sm">Solar Panel Installation Company</p>
                       </div>
                     </div>
@@ -228,27 +236,27 @@ const ChatbotAutomationGuide = () => {
                         <h4 className="font-semibold text-foreground mb-2">Before Automation</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
                           <li>• 5-10 leads per month</li>
-                          <li>• 60% missed customer calls</li>
+                          <li>• Calls missed while the team is on site visits</li>
                           <li>• Manual lead qualification</li>
-                          <li>• ₹8 lakh monthly revenue</li>
+                          <li>• Sales capacity capped by manual follow-up</li>
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-foreground mb-2">After TheChatFlow</h4>
+                        <h4 className="font-semibold text-foreground mb-2">After automation</h4>
                         <ul className="text-whatsapp-green space-y-1 text-sm font-medium">
-                          <li>• 80+ qualified leads monthly</li>
-                          <li>• 95% inquiry response rate</li>
+                          <li>• Enquiries arrive already qualified</li>
+                          <li>• Every enquiry answered, including overnight</li>
                           <li>• Automated lead scoring</li>
-                          <li>• ₹24 lakh monthly revenue</li>
+                          <li>• Sales team spends its time on site visits, not triage</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Key Results</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• 800% lead increase</li>
-                          <li>• 200% revenue growth</li>
-                          <li>• 4-hour response time saved</li>
-                          <li>• ROI achieved in 30 days</li>
+                          <li>• Fewer enquiries lost to slow replies</li>
+                          <li>• More of the pipeline reaches a quote</li>
+                          <li>• First reply is immediate rather than same-day</li>
+                          <li>• Payback depends on your deal size, so we model it with you</li>
                         </ul>
                       </div>
                     </div>
@@ -261,7 +269,7 @@ const ChatbotAutomationGuide = () => {
                         E
                       </div>
                       <div>
-                        <h3 className="font-h3 text-foreground">Elite Education Lahore</h3>
+                        <h3 className="font-h3 text-foreground">An education consultancy</h3>
                         <p className="text-muted-foreground text-sm">Online Tuition Academy</p>
                       </div>
                     </div>
@@ -301,7 +309,7 @@ const ChatbotAutomationGuide = () => {
 
               {/* Implementation Steps */}
               <div className="mb-12">
-                <h2 className="font-h2 text-foreground mb-8">5-Step Implementation with TheChatFlow</h2>
+                <h2 className="font-h2 text-foreground mb-8">How a build runs, step by step</h2>
 
                 <div className="space-y-6">
                   {[
@@ -356,7 +364,7 @@ const ChatbotAutomationGuide = () => {
 
               {/* CTA Section */}
               <Card className="p-8 gradient-cta text-white text-center mb-12">
-                <h3 className="font-h2 mb-4">Start Your Automation Journey Today</h3>
+                <h3 className="font-h2 mb-4">Tell us what you want automated</h3>
                 <p className="text-white/90 mb-6 text-lg">
                   Book a free scoping call and get a fixed price before you commit to anything
                 </p>
