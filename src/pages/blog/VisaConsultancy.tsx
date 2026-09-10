@@ -174,7 +174,7 @@ const VisaConsultancy = () => {
             
             {/* Visa Consultancy Challenges */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Visa Consultancy Challenges in Pakistan</h2>
+              <h2 className="font-h2 text-foreground mb-6">What makes visa enquiries hard to handle</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Pakistani visa consultancies face unique challenges in managing high-volume student and immigration inquiries. 
@@ -264,7 +264,7 @@ const VisaConsultancy = () => {
 
             {/* WhatsApp Automation Benefits */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">WhatsApp Automation Benefits for Visa Consultancies</h2>
+              <h2 className="font-h2 text-foreground mb-6">What the chatbot handles for a consultancy</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 WhatsApp automation transforms visa consultancy operations by providing instant, accurate responses in multiple languages. 
@@ -280,7 +280,7 @@ const VisaConsultancy = () => {
                       <Clock className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-h3 text-foreground">24/7 Instant Response System</h3>
+                      <h3 className="font-h3 text-foreground">Answers outside office hours</h3>
                       <p className="text-muted-foreground">Never miss an inquiry, regardless of time zone or holidays</p>
                     </div>
                   </div>
@@ -318,7 +318,7 @@ const VisaConsultancy = () => {
                       <Globe className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-h3 text-foreground">Intelligent Multi-Language Support</h3>
+                      <h3 className="font-h3 text-foreground">Urdu, English and voice notes</h3>
                       <p className="text-muted-foreground">Detects language preference and responds accordingly</p>
                     </div>
                   </div>
@@ -355,7 +355,7 @@ const VisaConsultancy = () => {
                       <CheckCircle className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-h3 text-foreground">Automated Appointment & Document Collection</h3>
+                      <h3 className="font-h3 text-foreground">Document checklists and appointment booking</h3>
                       <p className="text-muted-foreground">Streamlined booking with document checklist generation</p>
                     </div>
                   </div>
@@ -389,11 +389,11 @@ const VisaConsultancy = () => {
               </p>
             </div>
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Real Case Study: the consultancy in this example Success Story</h2>
+              <h2 className="font-h2 text-foreground mb-6">Worked example: a mid-size consultancy</h2>
               
               <Card className="p-8 gradient-cta text-white mb-8">
                 <div className="text-center mb-6">
-                  <h3 className="font-h3 mb-2">the consultancy in this example Results</h3>
+                  <h3 className="font-h3 mb-2">What changes in practice</h3>
                   <p className="text-white/90">8 months after implementing TheChatFlow automation</p>
                 </div>
                 
@@ -418,7 +418,7 @@ const VisaConsultancy = () => {
               </Card>
 
               <div className="mb-8">
-                <h3 className="font-h3 text-foreground mb-4">Company Background</h3>
+                <h3 className="font-h3 text-foreground mb-4">The starting point</h3>
                 <p className="font-body-base text-muted-foreground mb-6">
                   the consultancy in this example, based in Islamabad with branches in Lahore and Karachi, specializes in student visa 
                   processing for Canada, Australia, and UK. Before automation, they faced:</p>
@@ -426,13 +426,13 @@ const VisaConsultancy = () => {
                   <li>600+ daily WhatsApp inquiries across all branches</li>
                   <li>8-person customer service team working in shifts</li>
                   <li>4-hour average response time during business hours</li>
-                  <li>60% of inquiries received after business hours</li>
+                  <li>A large share of enquiries arrive after the office closes</li>
                   <li>Seasonal overload during application deadlines</li>
                 </ul>
               </div>
 
               <div className="mb-8">
-                <h3 className="font-h3 text-foreground mb-4">Implementation Strategy</h3>
+                <h3 className="font-h3 text-foreground mb-4">How it was built</h3>
                 <p className="font-body-base text-muted-foreground mb-4">
                   <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's visa consultancy automation</Link> was 
                   implemented across all three branches simultaneously:
@@ -462,7 +462,7 @@ const VisaConsultancy = () => {
               </div>
 
               <div className="mb-8">
-                <h3 className="font-h3 text-foreground mb-4">Detailed Results Breakdown</h3>
+                <h3 className="font-h3 text-foreground mb-4">What changes in practice</h3>
                 
                 <div className="overflow-x-auto mb-6">
                   <table className="w-full border-collapse border border-gray-300">
@@ -503,7 +503,7 @@ const VisaConsultancy = () => {
                         <td className="border border-gray-300 p-3">Customer Service Staff</td>
                         <td className="border border-gray-300 p-3">8 people</td>
                         <td className="border border-gray-300 p-3">3 people</td>
-                        <td className="border border-gray-300 p-3 text-green-600 font-semibold">62% reduction</td>
+                        <td className="border border-gray-300 p-3 text-green-600 font-semibold">a marked reduction</td>
                       </tr>
                       <tr className="bg-gray-50">
                         <td className="border border-gray-300 p-3">Query Resolution</td>
@@ -518,14 +518,14 @@ const VisaConsultancy = () => {
 
               <p className="font-body-base text-muted-foreground">
                 The transformation at the consultancy in this example demonstrates the massive potential of WhatsApp automation for visa consultancies. 
-                <Link to="/#testimonials" className="text-whatsapp-green hover:text-whatsapp-dark">Read more testimonials</Link> from 
+                <Link to="/success-stories" className="text-whatsapp-green hover:text-whatsapp-dark">See more example builds</Link> from 
                 other Pakistani consultancies using TheChatFlow.
               </p>
             </section>
 
             {/* Common Visa Questions Automation */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Common Visa Questions Automation Examples</h2>
+              <h2 className="font-h2 text-foreground mb-6">Common questions the bot answers</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Based on analysis of 50,000+ visa consultancy inquiries, here are the most automated questions and their 
@@ -535,7 +535,7 @@ const VisaConsultancy = () => {
               <div className="space-y-6">
                 {/* Student Visa Requirements */}
                 <Card className="p-6">
-                  <h3 className="font-h4 text-foreground mb-4">Student Visa Requirements (Most Common)</h3>
+                  <h3 className="font-h4 text-foreground mb-4">Student visa requirements</h3>
                   
                   <div className="bg-gray-50 p-4 rounded-lg mb-4">
                     <p className="text-sm font-semibold mb-2">Common Questions:</p>
@@ -773,17 +773,17 @@ const VisaConsultancy = () => {
 
             {/* ROI Calculation */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Visa Consultancy ROI Calculator</h2>
+              <h2 className="font-h2 text-foreground mb-6">Working out whether it pays</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Calculate the potential return on investment for your visa consultancy:
               </p>
 
               <Card className="p-6 bg-green-50 border-green-200 mb-6">
-                <h3 className="font-h4 text-green-800 mb-4">Sample ROI Calculation (Mid-Size Consultancy)</h3>
+                <h3 className="font-h4 text-green-800 mb-4">A worked example, using your own numbers</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold mb-3">Current Situation</h4>
+                    <h4 className="font-semibold mb-3">Your current numbers</h4>
                     <ul className="text-sm space-y-1 text-green-700">
                       <li>• Daily inquiries: 400</li>
                       <li>• Customer service team: 6 people</li>
@@ -796,7 +796,7 @@ const VisaConsultancy = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold mb-3">With TheChatFlow</h4>
+                    <h4 className="font-semibold mb-3">After a build</h4>
                     <ul className="text-sm space-y-1 text-green-700">
                       <li>• Inquiries handled: 800+</li>
                       <li>• Staff needed: 2 people</li>
@@ -811,8 +811,7 @@ const VisaConsultancy = () => {
                 
                 <div className="mt-6 p-4 bg-green-100 rounded text-center">
                   <p className="text-green-800 font-bold text-lg">
-                    ROI: 2,813,000% in first month | Payback: Less than 1 day
-                  </p>
+                    Put your own numbers in. The build pays for itself in the month it converts applications that would otherwise have been lost to slow replies.</p>
                   <p className="text-green-700 mt-2">Annual additional profit: ₨33,75,60,012</p>
                 </div>
               </Card>
