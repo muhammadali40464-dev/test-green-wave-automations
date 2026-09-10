@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
@@ -22,18 +24,21 @@ import {
 } from "lucide-react";
 
 const WhatsAppAPIvsRegular = () => {
+  const seo = getPageSEO("/blog/whatsapp-api-vs-regular-whatsapp-business");
+
   return (
     <>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path="/blog/whatsapp-api-vs-regular-whatsapp-business"
+        keywords={seo.keywords}
+        type="article"
+        author={seo.author}
+        publishedDate={seo.publishedDate}
+      />
+
       <Helmet>
-        <title>WhatsApp Business API vs Regular WhatsApp: Complete Comparison Guide Pakistan 2025</title>
-        <meta name="description" content="Detailed comparison of WhatsApp Business API vs Regular WhatsApp for Pakistani businesses. Features, pricing, setup guide, and which one to choose." />
-        <meta name="keywords" content="whatsapp business api vs regular whatsapp differences, whatsapp business api pakistan, whatsapp api pricing pakistan, whatsapp business setup guide" />
-        <link rel="canonical" href="https://thechatflow.com/blog/whatsapp-api-vs-regular-whatsapp-business" />
-        
-        <meta property="og:title" content="WhatsApp Business API vs Regular WhatsApp: Complete Comparison" />
-        <meta property="og:description" content="Choose the right WhatsApp solution for your Pakistani business. Detailed comparison guide with pricing, features, and setup instructions." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thechatflow.com/blog/whatsapp-api-vs-regular-whatsapp-business" />
         
         <script type="application/ld+json">
           {JSON.stringify({
