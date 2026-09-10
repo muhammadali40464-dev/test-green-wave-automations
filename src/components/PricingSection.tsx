@@ -34,14 +34,14 @@ const PricingSection = () => {
           </div>
           
           <h2 className="font-h1 text-foreground">
-            Choose Your
+            What it costs to
             <span className="block bg-gradient-to-r from-whatsapp-green to-whatsapp-dark bg-clip-text text-transparent">
-              Growth Plan
+              build and run
             </span>
           </h2>
           
           <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Transparent pricing with no hidden fees. Start growing your business today.
+            Two numbers, published, so you can decide before you talk to anyone. The build is one-time; the platform is monthly.
           </p>
         </div>
 
@@ -49,11 +49,11 @@ const PricingSection = () => {
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-16">
           {/* Monthly Plan */}
           <div className="relative gradient-card shadow-card rounded-3xl p-6 lg:p-8 hover-lift">
-            {/* Most Popular Badge */}
+            {/* Platform Badge */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <Badge className="gradient-cta text-white px-4 lg:px-6 py-2 font-semibold shadow-hero text-sm lg:text-base">
                 <Star className="h-3 w-3 lg:h-4 lg:w-4 mr-1" />
-                Most Popular
+                Platform
               </Badge>
             </div>
 
@@ -125,7 +125,7 @@ const PricingSection = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Check className="h-4 w-4 lg:h-5 lg:w-5 text-whatsapp-green flex-shrink-0" />
-                  <span className="font-body text-foreground text-left text-sm lg:text-base">White-label solution</span>
+                  <span className="font-body text-foreground text-left text-sm lg:text-base">Priority build and support queue</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Check className="h-4 w-4 lg:h-5 lg:w-5 text-whatsapp-green flex-shrink-0" />
@@ -148,7 +148,7 @@ const PricingSection = () => {
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl p-6 lg:p-8 mb-16">
           <div className="text-center space-y-4 lg:space-y-6">
             <div className="space-y-2">
-              <h3 className="font-h3 lg:font-h2 text-blue-800">⚙️ One Time Setup Cost</h3>
+              <h3 className="font-h3 lg:font-h2 text-blue-800">⚙️ One-time build cost</h3>
               <p className="text-blue-700 font-medium text-lg lg:text-xl">Rs. 49,999 (One-time payment)</p>
             </div>
             
@@ -167,17 +167,17 @@ const PricingSection = () => {
         <div className="gradient-cta rounded-3xl p-6 lg:p-8 text-center section-content-gap text-white">
           <div className="space-y-2 lg:space-y-4 mb-8">
             <h3 className="font-h3 lg:font-h2 text-white">
-              Ready to 10X Your Business Growth?
+              Not sure which of these you need?
             </h3>
             <p className="font-body lg:font-body-lg text-white/90">
-              Join 500+ Pakistani businesses already automating their success
+              Book a free scoping call and we will tell you what your build would involve, and what it would cost, before you commit to anything
             </p>
           </div>
           
           <a href="/contact">
             <Button variant="hero" size="xl" className="mx-auto bg-white text-whatsapp-green hover:bg-white/90 shadow-2xl mb-6">
               <Zap className="mr-2 h-5 w-5 lg:h-6 lg:w-6" />
-              Book Free Demo
+              Book a free scoping call
             </Button>
           </a>
           
