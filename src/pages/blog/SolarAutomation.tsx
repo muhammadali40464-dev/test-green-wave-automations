@@ -689,7 +689,7 @@ const SolarAutomation = () => {
                       <li>• Sales team: 5 people</li>
                       <li>• Average salary: ₨50,000</li>
                       <li>• Monthly staff cost: ₨2,50,000</li>
-                      <li>• Conversion rate: 15%</li>
+                      <li>• Conversion rate: your current figure</li>
                       <li>• Monthly installations: 20</li>
                     </ul>
                   </div>
@@ -697,11 +697,11 @@ const SolarAutomation = () => {
                   <div>
                     <h4 className="font-semibold mb-3">With TheChatFlow Automation</h4>
                     <ul className="text-sm space-y-1 text-green-700">
-                      <li>• Qualified leads: 80% automated</li>
+                      <li>• Qualification handled in chat before a salesperson sees it</li>
                       <li>• Sales team needed: 2 people</li>
                       <li>• Monthly staff saving: ₨1,50,000</li>
                       <li>• TheChatFlow cost: ₨9,999</li>
-                      <li>• Conversion rate: 28%</li>
+                      <li>• Conversion rate: after qualification improves</li>
                       <li>• Monthly installations: 45</li>
                     </ul>
                   </div>
@@ -711,7 +711,7 @@ const SolarAutomation = () => {
                   <p className="text-green-800 font-bold text-lg">
                     Net Monthly Savings: ₨1,40,001 + Additional Revenue: ₨18,75,000
                   </p>
-                  <p className="text-green-700 mt-2">ROI: 1,880% in first month</p>
+                  <p className="text-green-700 mt-2">Work the payback out on your own figures: extra systems won, times your profit per system.</p>
                 </div>
               </Card>
 
