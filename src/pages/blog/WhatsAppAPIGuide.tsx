@@ -277,7 +277,7 @@ const WhatsAppAPIGuide = () => {
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Understanding WhatsApp API pricing is crucial for Pakistani businesses. Here's a breakdown of costs and 
-                how <Link to="/#pricing" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's pricing compares</Link> to other providers:
+                how <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's pricing compares</Link> to other providers:
               </p>
 
               <div className="overflow-x-auto mb-8">
@@ -334,7 +334,7 @@ const WhatsAppAPIGuide = () => {
                   </div>
                 </div>
                 <Button variant="secondary" className="mt-4" asChild>
-                  <Link to="/#pricing">View Complete Pricing</Link>
+                  <Link to="/services/custom-chatbot-development">View Complete Pricing</Link>
                 </Button>
               </Card>
             </section>
@@ -543,9 +543,7 @@ const WhatsAppAPIGuide = () => {
               <Card className="p-6 gradient-cta text-white text-center">
                 <h3 className="font-h3 mb-4">Ready to 10X Your Business Growth?</h3>
                 <p className="text-white/90 mb-6">
-                  Join 500+ Pakistani businesses already automating their success with TheChatFlow. 
-                  Implementation starts in 24 hours with our done-for-you service.
-                </p>
+                  Tell us what you want automated and we will scope it free</p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" asChild>
                     <Link to="/contact">Ask us what you need</Link>
