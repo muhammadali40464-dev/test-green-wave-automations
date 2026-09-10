@@ -186,7 +186,7 @@ const SolarAutomation = () => {
             
             {/* Solar Industry Challenges */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Solar Industry Challenges in Pakistan</h2>
+              <h2 className="font-h2 text-foreground mb-6">What makes solar enquiries hard to handle</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Pakistan's solar industry is booming with increasing energy costs and frequent load shedding driving demand. 
@@ -228,7 +228,7 @@ const SolarAutomation = () => {
 
             {/* WhatsApp Automation Solutions */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">WhatsApp Automation Solutions for Solar Companies</h2>
+              <h2 className="font-h2 text-foreground mb-6">What the chatbot handles for an installer</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 WhatsApp automation transforms how solar companies handle customer interactions, from initial inquiry to system installation. 
@@ -369,13 +369,13 @@ const SolarAutomation = () => {
                 <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-6">
                   <li>400+ daily WhatsApp inquiries during peak summer season</li>
                   <li>3-person sales team overwhelmed with repetitive questions</li>
-                  <li>45% of leads lost due to delayed responses</li>
+                  <li>Leads lost because a competitor replied first</li>
                   <li>Average 21-day sales cycle from inquiry to installation</li>
                 </ul>
               </div>
 
               <div className="mb-8">
-                <h3 className="font-h3 text-foreground mb-4">Implementation Strategy</h3>
+                <h3 className="font-h3 text-foreground mb-4">How it was built</h3>
                 <p className="font-body-base text-muted-foreground mb-4">
                   <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's solar automation package</Link> was 
                   implemented in 48 hours with:
@@ -405,7 +405,7 @@ const SolarAutomation = () => {
               </div>
 
               <div className="mb-8">
-                <h3 className="font-h3 text-foreground mb-4">Detailed Results Analysis</h3>
+                <h3 className="font-h3 text-foreground mb-4">What changes in practice</h3>
                 
                 <div className="overflow-x-auto mb-6">
                   <table className="w-full border-collapse border border-gray-300">
@@ -453,7 +453,7 @@ const SolarAutomation = () => {
                 </div>
 
                 <Card className="p-6 bg-green-50 border-green-200">
-                  <h4 className="font-semibold text-green-800 mb-3">💰 ROI Calculation</h4>
+                  <h4 className="font-semibold text-green-800 mb-3">Working out the payback</h4>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="text-sm text-green-700 mb-2"><strong>Monthly Investment:</strong></p>
@@ -461,31 +461,30 @@ const SolarAutomation = () => {
                       <p className="text-sm text-green-700">Setup (one-time): ₨49,999</p>
                     </div>
                     <div>
-                      <p className="text-sm text-green-700 mb-2"><strong>Monthly Revenue Increase:</strong></p>
-                      <p className="text-sm text-green-700">Additional installations: 45</p>
-                      <p className="text-sm text-green-700">Average profit: ₨75,000 each</p>
-                      <p className="text-sm text-green-700 font-bold">Total: ₨33,75,000</p>
+                      <p className="text-sm text-green-700 mb-2"><strong>What it would need to earn back:</strong></p>
+                      <p className="text-sm text-green-700">Extra installations won: your number</p>
+                      <p className="text-sm text-green-700">Your average profit per system</p>
+                      <p className="text-sm text-green-700 font-bold">Multiply the two</p>
                     </div>
                   </div>
                   
                   <div className="mt-4 p-4 bg-green-100 rounded">
                     <p className="text-green-800 font-bold text-center">
-                      ROI: 3,375% in first month | Payback period: Less than 1 week
+                      Put your own numbers in this. For most installers the build pays for itself in the month it wins one or two systems that would otherwise have gone cold.
                     </p>
                   </div>
                 </Card>
               </div>
 
               <p className="font-body-base text-muted-foreground">
-                The success at the installer in this example demonstrates how solar companies can leverage WhatsApp automation to handle growth 
-                without proportionally increasing staff. <Link to="/#testimonials" className="text-whatsapp-green hover:text-whatsapp-dark">Read more testimonials</Link> from 
+                This pattern is how solar companies take more enquiries without adding headcount to answer them. <Link to="/success-stories" className="text-whatsapp-green hover:text-whatsapp-dark">See more example builds</Link> from 
                 other Pakistani solar companies using TheChatFlow.
               </p>
             </section>
 
             {/* Implementation Guide */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Solar WhatsApp Automation Implementation Guide</h2>
+              <h2 className="font-h2 text-foreground mb-6">How a solar build runs</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Ready to implement WhatsApp automation for your solar company? Here's the step-by-step process 
@@ -580,7 +579,7 @@ const SolarAutomation = () => {
               </div>
 
               <Card className="p-6 bg-orange-50 border-orange-200">
-                <h3 className="font-h4 text-orange-800 mb-4">Solar-Specific Template Library</h3>
+                <h3 className="font-h4 text-orange-800 mb-4">Template examples for solar</h3>
                 <p className="text-orange-700 mb-4">
                   TheChatFlow provides ready-to-use templates specifically designed for Pakistani solar companies:
                 </p>
@@ -674,7 +673,7 @@ const SolarAutomation = () => {
 
             {/* ROI Calculator */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Solar Company ROI Calculator</h2>
+              <h2 className="font-h2 text-foreground mb-6">Working out whether it pays</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Calculate the potential ROI for your solar company with WhatsApp automation:
