@@ -289,7 +289,7 @@ const VisaConsultancy = () => {
                     <p className="text-sm font-mono mb-2"><strong>Student (2 AM):</strong> "Canada student visa ke liye IELTS kitna chahiye?"</p>
                     <p className="text-sm font-mono mb-2"><strong>Bot:</strong> "Salam! Canada student visa ke liye:</p>
                     <p className="text-sm font-mono mb-2">📚 IELTS: 6.0 overall (minimum 5.5 each band)</p>
-                    <p className="text-sm font-mono mb-2">💰 Bank statement: 15-20 lakh PKR</p>
+                    <p className="text-sm font-mono mb-2">💰 Bank statement: the current threshold for your intake</p>
                     <p className="text-sm font-mono mb-2">🎓 Educational documents required</p>
                     <p className="text-sm font-mono"><strong>Student:</strong> "Consultation book karna hai"</p>
                     <p className="text-sm font-mono"><strong>Bot:</strong> "Perfect! Consultation booked for tomorrow 11 AM. Details SMS kar diye hain ✅"</p>
@@ -330,7 +330,7 @@ const VisaConsultancy = () => {
                         "Australia student visa ke liye ye documents chahiye:<br/>
                         📄 Passport<br/>
                         🎓 Educational certificates<br/>
-                        💳 Bank statements (25 lakh PKR)<br/>
+                        💳 Bank statements (current threshold)<br/>
                         📝 IELTS scorecard (6.5 overall)"
                       </p>
                     </div>
