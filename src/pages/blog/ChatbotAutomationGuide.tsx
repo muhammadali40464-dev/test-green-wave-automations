@@ -101,7 +101,7 @@ const ChatbotAutomationGuide = () => {
                 Tell us what you want automated and we will tell you whether a custom chatbot is the right answer
               </p>
               <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm border-0" asChild>
-                <Link to="/#pricing">
+                <Link to="/services/custom-chatbot-development">
                   Book Free Demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -362,7 +362,7 @@ const ChatbotAutomationGuide = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm border-0" asChild>
-                    <Link to="/#pricing">
+                    <Link to="/services/custom-chatbot-development">
                       <Phone className="mr-2 h-5 w-5" />
                       Book Free Demo
                     </Link>
