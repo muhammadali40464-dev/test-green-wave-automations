@@ -193,7 +193,7 @@ const ChatbotGuideSmallBusiness = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Users className="h-4 w-4" />
-                  2,500+ readers
+                  Updated September 2026
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@ const ChatbotGuideSmallBusiness = () => {
             <Card className="max-w-2xl mx-auto p-8 gradient-cta text-white text-center">
               <h3 className="font-h3 mb-4">Ready to Automate Your Business?</h3>
               <p className="text-white/80 mb-6">
-                Join 500+ Pakistani businesses using TheChatFlow chatbots to increase sales and save time
+                Find out what a custom chatbot would do for your business, and what it would cost
               </p>
               <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm" asChild>
                 <Link to="/#pricing">
@@ -444,12 +444,12 @@ const ChatbotGuideSmallBusiness = () => {
               <Card className="p-8 gradient-cta text-white text-center">
                 <h3 className="font-h3 mb-4">Start Your Chatbot Journey Today</h3>
                 <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-                  Join 500+ Pakistani businesses using TheChatFlow to automate customer support, increase sales, and grow faster. 
+                  Tell us the messages your team answers over and over and we will scope it for free. 
                   Setup takes just 15 minutes with our expert team.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90" asChild>
-                    <Link to="/#pricing">Start Free Trial</Link>
+                    <Link to="/contact">Book a free scoping call</Link>
                   </Button>
                   <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10" asChild>
                     <Link to="/contact">Book Free Consultation</Link>
