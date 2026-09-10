@@ -71,6 +71,15 @@ export const seoData: Record<string, SEOPageData> = {
     type: "website"
   },
 
+  "/blog/chatbot-price-pakistan": {
+    title: "How Much Does a Chatbot Cost in Pakistan in 2026?",
+    description: "Real rupee figures for a chatbot in Pakistan: subscription tools, freelancers and a built service compared, plus the Meta message fees almost nobody quotes you up front.",
+    keywords: ["chatbot price in Pakistan", "chatbot cost Pakistan", "WhatsApp chatbot price in Pakistan", "AI chatbot price in Pakistan", "chatbot development cost"],
+    type: "article",
+    author: "TheChatFlow Team",
+    publishedDate: "2026-09-10",
+    modifiedDate: "2026-09-10"
+  },
   // Blog posts
   "/blog/chatbot-automation-guide-pakistan": {
     title: "Custom Chatbot Automation in Pakistan: A Practical Guide",
