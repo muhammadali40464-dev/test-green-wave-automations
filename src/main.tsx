@@ -1,22 +1,26 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { usePerformance } from "@/hooks/usePerformance";
 import App from "./App.tsx";
 import "./index.css";
 
-// Performance monitoring component
 const PerformanceMonitor = () => {
   usePerformance();
   return null;
 };
 
-// Enhanced App with performance monitoring
-const EnhancedApp = () => {
-  return (
-    <>
-      <PerformanceMonitor />
-      <App />
-    </>
-  );
-};
+const EnhancedApp = () => (
+  <>
+    <PerformanceMonitor />
+    <App />
+  </>
+);
 
-createRoot(document.getElementById("root")!).render(<EnhancedApp />);
+const container = document.getElementById("root")!;
+
+// Pages are prerendered at build time, so the container already holds markup.
+// Hydrate that instead of throwing it away and re-rendering from scratch.
+if (container.hasChildNodes()) {
+  hydrateRoot(container, <EnhancedApp />);
+} else {
+  createRoot(container).render(<EnhancedApp />);
+}
