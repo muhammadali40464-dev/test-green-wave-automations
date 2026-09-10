@@ -588,7 +588,7 @@ const WhatsAppAPIGuide = () => {
                       Visa Consultancy Automation Guide
                     </Link>
                   </h3>
-                  <p className="text-sm text-muted-foreground">Handle 500+ daily inquiries automatically</p>
+                  <p className="text-sm text-muted-foreground">Answers the repeat questions without a person</p>
                 </Card>
                 
                 <Card className="p-4 hover:shadow-lg transition-shadow">
