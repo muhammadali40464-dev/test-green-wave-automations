@@ -12,7 +12,7 @@
     { "source": "/blog/chatbot-implementation-guide-pakistani-companies", "destination": "/blog", "permanent": false }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/404.html" }
   ],
   "headers": [
     {
