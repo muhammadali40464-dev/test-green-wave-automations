@@ -209,7 +209,12 @@ const CustomChatbotDevelopment = () => {
               <h2 className="font-h2 text-foreground mb-4">Six agents that do actual work</h2>
               <p className="font-body-base text-muted-foreground">
                 Not one chatbot trying to answer everything. Specialist agents, each with its own instructions and its
-                own knowledge, routed automatically and sharing what the customer has already told them.
+                own knowledge, routed automatically and sharing what the customer has already told them. Some of these
+                only answer and some can act inside your systems, which is{" "}
+                <Link to="/blog/ai-agent-vs-chatbot" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
+                  the real difference between an AI agent and a chatbot
+                </Link>{" "}
+                and the thing that decides what your build costs.
               </p>
             </div>
 
