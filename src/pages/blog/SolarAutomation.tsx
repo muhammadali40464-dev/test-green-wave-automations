@@ -169,10 +169,10 @@ const SolarAutomation = () => {
                   <h3 className="font-semibold text-orange-800 mb-2">Ready to scale your solar business?</h3>
                   <p className="text-orange-700 mb-4">
                     TheChatFlow helps solar companies automate lead qualification, site visit booking, and customer follow-ups. 
-                    <Link to="/#pricing" className="text-orange-600 hover:text-orange-800 font-medium"> See our solar automation solutions</Link>.
+                    <Link to="/services/custom-chatbot-development" className="text-orange-600 hover:text-orange-800 font-medium"> See our solar automation solutions</Link>.
                   </p>
                   <Button variant="hero" size="sm" asChild>
-                    <Link to="/#pricing">Get Solar Automation Package</Link>
+                    <Link to="/services/custom-chatbot-development">Get Solar Automation Package</Link>
                   </Button>
                 </div>
               </div>
@@ -377,7 +377,7 @@ const SolarAutomation = () => {
               <div className="mb-8">
                 <h3 className="font-h3 text-foreground mb-4">Implementation Strategy</h3>
                 <p className="font-body-base text-muted-foreground mb-4">
-                  <Link to="/#pricing" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's solar automation package</Link> was 
+                  <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's solar automation package</Link> was 
                   implemented in 48 hours with:
                 </p>
                 
@@ -489,7 +489,7 @@ const SolarAutomation = () => {
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Ready to implement WhatsApp automation for your solar company? Here's the step-by-step process 
-                <Link to="/#pricing" className="text-whatsapp-green hover:text-whatsapp-dark"> TheChatFlow follows for solar businesses</Link>:
+                <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark"> TheChatFlow follows for solar businesses</Link>:
               </p>
 
               <div className="space-y-6 mb-8">
@@ -732,7 +732,7 @@ const SolarAutomation = () => {
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Ready to transform your solar business with WhatsApp automation? 
-                <Link to="/#pricing" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's solar automation package</Link> 
+                <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's solar automation package</Link> 
                 includes everything you need to get started in 48 hours.
               </p>
 
@@ -782,7 +782,7 @@ const SolarAutomation = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" asChild>
-                    <Link to="/#pricing">Get Solar Automation Package</Link>
+                    <Link to="/services/custom-chatbot-development">Get Solar Automation Package</Link>
                   </Button>
                   <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-whatsapp-green" asChild>
                     <Link to="/#contact">
