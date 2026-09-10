@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "What does it cost to run after it is built?",
-    a: "Rs. 9,999 per month covers the platform, all channels, unlimited contacts and chats, the AI models, the shared inbox and support. WhatsApp itself charges Meta own per-conversation fee on top, which varies by conversation type and is billed by Meta, not by us."
+    a: "Rs. 9,999 per month covers the platform, all channels, unlimited contacts and chats, the AI models, the shared inbox and support. WhatsApp itself is billed separately by Meta. Since 1 July 2025 Meta charges per message delivered rather than per 24-hour conversation, at different rates for marketing, utility and authentication templates. We explain how that works on the WhatsApp chatbot development page."
   },
   {
     q: "Do you build for Instagram and Facebook too?",
@@ -390,7 +390,7 @@ const CustomChatbotDevelopment = () => {
                 ))}
               </div>
               <p className="text-sm text-muted-foreground mt-5 mb-0">
-                One cost that is not ours: WhatsApp charges Meta&rsquo;s own per-conversation fee, billed by Meta
+                One cost that is not ours: WhatsApp charges Meta&rsquo;s own per-message fee, billed by Meta
                 directly. We explain how that works in the{" "}
                 <Link to="/blog/whatsapp-business-api-pakistan-guide-2025" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
                   WhatsApp Business API guide
