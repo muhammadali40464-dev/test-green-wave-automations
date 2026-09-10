@@ -59,6 +59,7 @@ const redFlags = [
 
 const related = [
   { to: "/services/custom-chatbot-development", t: "Custom chatbot development — what we build and what it costs" },
+  { to: "/blog/ai-agent-vs-chatbot", t: "AI agent vs chatbot: which one do you actually need?" },
   { to: "/services/whatsapp-chatbot-development", t: "WhatsApp chatbot development in Pakistan" },
   { to: "/blog/whatsapp-business-api-pakistan-guide-2025", t: "WhatsApp Business API in Pakistan: when you actually need it" },
   { to: "/blog/whatsapp-api-vs-regular-whatsapp-business", t: "WhatsApp Business app vs API: which do you need?" },
@@ -243,6 +244,16 @@ const ChatbotPricePakistan = () => {
                   </div>
                 ))}
               </div>
+              <p className="font-body-base text-muted-foreground mt-6">
+                The biggest single swing is whether the bot only answers or also acts. A bot that reads live order
+                status or books a slot has to be connected to the system holding that data, and that integration work
+                is where an agent build costs more than a chatbot build. We wrote a separate piece on{" "}
+                <Link to="/blog/ai-agent-vs-chatbot" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
+                  the difference between an AI agent and a chatbot
+                </Link>{" "}
+                and how to work out which one your business needs, because paying for the wrong one is the most
+                common mistake we see.
+              </p>
             </section>
 
             <section className="mb-12">
