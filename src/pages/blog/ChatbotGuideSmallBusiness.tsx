@@ -404,7 +404,7 @@ const ChatbotGuideSmallBusiness = () => {
                     {
                       step: "2", 
                       title: "Choose Your Platform",
-                      description: "WhatsApp Business API is most popular in Pakistan with 180M+ users",
+                      description: "WhatsApp is where most Pakistani customer conversations start, so it is the usual first channel",
                       examples: ["WhatsApp Business API (recommended)", "Facebook Messenger", "Website chat widget"]
                     },
                     {
