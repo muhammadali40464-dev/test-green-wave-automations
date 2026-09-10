@@ -55,7 +55,7 @@ const Blog = () => {
             </h1>
             
             <p className="font-body-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Practical guides on custom chatbots, AI agents and business automation — what to build, what it costs, and what actually works for a business in Pakistan.
+              Practical guides on custom chatbots, AI agents and business automation — what to build, what it costs, and what actually works for a business in Pakistan. If you would rather skip to the service, see <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-semibold">custom chatbot development</Link>.
             </p>
           </div>
         </section>
