@@ -65,6 +65,7 @@ const steps = [
 ];
 
 const related = [
+  { to: "/blog/chatbot-price-pakistan", t: "How much does a chatbot cost in Pakistan in 2026?" },
   { to: "/services/whatsapp-chatbot-development", t: "WhatsApp chatbot development — the WhatsApp-specific build" },
   { to: "/blog/whatsapp-business-api-pakistan-guide-2025", t: "WhatsApp Business API in Pakistan: When You Actually Need It" },
   { to: "/blog/whatsapp-api-vs-regular-whatsapp-business", t: "WhatsApp Business App vs API: Which Does Your Business Need?" },
@@ -378,7 +379,7 @@ const CustomChatbotDevelopment = () => {
             <Card className="p-6 bg-muted/40">
               <h3 className="font-h4 text-foreground mb-3">What moves the build cost</h3>
               <p className="text-muted-foreground mb-4">
-                Rs. 49,999 covers a standard build. The number goes up when the work genuinely is bigger, and we tell
+                Rs. 49,999 covers a standard build, and we have written up <Link to="/blog/chatbot-price-pakistan" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">how our pricing compares to the alternatives in Pakistan</Link>. The number goes up when the work genuinely is bigger, and we tell
                 you which of these applies before you commit:
               </p>
               <div className="grid md:grid-cols-2 gap-3">
