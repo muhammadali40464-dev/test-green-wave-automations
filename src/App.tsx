@@ -27,6 +27,7 @@ import ChatbotGuideSmallBusiness from "./pages/blog/ChatbotGuideSmallBusiness";
 import WhatsAppAPIvsRegular from "./pages/blog/WhatsAppAPIvsRegular";
 import WhatsAppAPIGuide from "./pages/blog/WhatsAppAPIGuide";
 import ChatbotAutomationGuide from "./pages/blog/ChatbotAutomationGuide";
+import AiAgentVsChatbot from "./pages/blog/AiAgentVsChatbot";
 import ChatbotPricePakistan from "./pages/blog/ChatbotPricePakistan";
 import CustomChatbotDevelopment from "./pages/services/CustomChatbotDevelopment";
 import WhatsAppChatbotDevelopment from "./pages/services/WhatsAppChatbotDevelopment";
@@ -126,7 +127,8 @@ const App = () => {
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/blog/chatbot-automation-guide-pakistan" element={<ChatbotAutomationGuide />} />
-            <Route path="/blog/chatbot-price-pakistan" element={<ChatbotPricePakistan />} />
+            <Route path="/blog/ai-agent-vs-chatbot" element={<AiAgentVsChatbot />} />
+          <Route path="/blog/chatbot-price-pakistan" element={<ChatbotPricePakistan />} />
             <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<SolarAutomation />} />
             <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<VisaConsultancy />} />
             <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<ChatbotGuideSmallBusiness />} />
