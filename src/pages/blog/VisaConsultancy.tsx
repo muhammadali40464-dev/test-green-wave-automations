@@ -157,10 +157,10 @@ const VisaConsultancy = () => {
                   <h3 className="font-semibold text-blue-800 mb-2">Scale your visa consultancy business</h3>
                   <p className="text-blue-700 mb-4">
                     TheChatFlow helps visa consultants automate student inquiries, document collection, and appointment booking in multiple languages. 
-                    <Link to="/#pricing" className="text-blue-600 hover:text-blue-800 font-medium"> View our consultancy automation solutions</Link>.
+                    <Link to="/services/custom-chatbot-development" className="text-blue-600 hover:text-blue-800 font-medium"> View our consultancy automation solutions</Link>.
                   </p>
                   <Button variant="hero" size="sm" asChild>
-                    <Link to="/#pricing">Get Visa Consultancy Package</Link>
+                    <Link to="/services/custom-chatbot-development">Get Visa Consultancy Package</Link>
                   </Button>
                 </div>
               </div>
@@ -434,7 +434,7 @@ const VisaConsultancy = () => {
               <div className="mb-8">
                 <h3 className="font-h3 text-foreground mb-4">Implementation Strategy</h3>
                 <p className="font-body-base text-muted-foreground mb-4">
-                  <Link to="/#pricing" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's visa consultancy automation</Link> was 
+                  <Link to="/services/custom-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">TheChatFlow's visa consultancy automation</Link> was 
                   implemented across all three branches simultaneously:
                 </p>
                 
@@ -947,7 +947,7 @@ const VisaConsultancy = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" asChild>
-                    <Link to="/#pricing">Get Consultancy Automation</Link>
+                    <Link to="/services/custom-chatbot-development">Get Consultancy Automation</Link>
                   </Button>
                   <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-whatsapp-green" asChild>
                     <Link to="/#contact">
@@ -978,7 +978,7 @@ const VisaConsultancy = () => {
                       Solar Companies Automation Success
                     </Link>
                   </h3>
-                  <p className="text-sm text-muted-foreground">300% lead increase case study</p>
+                  <p className="text-sm text-muted-foreground">faster lead qualification case study</p>
                 </Card>
                 
                 <Card className="p-4 hover:shadow-lg transition-shadow">
