@@ -301,7 +301,7 @@ const HeroSection = () => {
               <div className="space-y-6 lg:space-y-8">
                 <div className="inline-flex items-center gap-2 bg-whatsapp-green/10 text-whatsapp-dark px-4 py-3 rounded-full text-sm sm:text-base font-medium">
                   <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-whatsapp-green" />
-                  Official Meta Business Partner
+                  Custom chatbot development, Pakistan
                 </div>
                 
                 <h1 className="font-hero text-foreground">
