@@ -205,7 +205,7 @@ const ChatbotGuideSmallBusiness = () => {
                 Find out what a custom chatbot would do for your business, and what it would cost
               </p>
               <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm" asChild>
-                <Link to="/#pricing">
+                <Link to="/services/custom-chatbot-development">
                   Book Free Demo <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
