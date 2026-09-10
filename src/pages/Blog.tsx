@@ -71,28 +71,28 @@ const Blog = () => {
                   <CardHeader className="p-0 mb-4">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                       <Calendar className="h-4 w-4" />
-                      January 15, 2025
+                      10 September 2026
                     </div>
                     <CardTitle className="font-h3 mb-2">
-                      How a Custom Chatbot Works for a Small Business in Pakistan 2025
+                      AI agent vs chatbot: which one does your business actually need?
                     </CardTitle>
                     <CardDescription className="font-body-base">
-                      Transform your Pakistani small business with AI chatbots. Complete setup guide, benefits, costs, and real success stories from local businesses.
+                      A chatbot talks. An AI agent talks and then does something in your systems. One question separates them, and picking the wrong one is the most expensive mistake in this market.
                     </CardDescription>
                   </CardHeader>
                   
                   <CardContent className="p-0 mb-6">
                     <p className="text-muted-foreground">
-                      With 180M+ WhatsApp users in Pakistan, small businesses are discovering the power of AI chatbots 
-                      to automate customer service, generate leads, and increase sales 24/7. Learn how chatbots work, 
-                      implementation benefits, and real success stories from Pakistani businesses...
+                      Almost every page explaining this difference is published by a company that sells agents, and they all
+                      reach the same conclusion. This one covers where an agent genuinely earns its cost, the five cases
+                      where it is the wrong buy, and what each option takes to build in Pakistan.
                     </p>
                   </CardContent>
                   
                   <CardFooter className="p-0">
                   <Button variant="hero" asChild>
-                    <Link to="/blog/how-chatbots-work-small-businesses-pakistan">
-                      Read Complete Guide <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link to="/blog/ai-agent-vs-chatbot">
+                      Read the comparison <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                   </CardFooter>
@@ -103,8 +103,8 @@ const Blog = () => {
                     <div className="w-20 h-20 bg-whatsapp-green rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <BookOpen className="h-10 w-10 text-white" />
                     </div>
-                    <p className="font-medium text-whatsapp-green">Complete Guide</p>
-                    <p className="text-sm text-muted-foreground">15 min read</p>
+                    <p className="font-medium text-whatsapp-green">Buyer's guide</p>
+                    <p className="text-sm text-muted-foreground">9 min read</p>
                   </div>
                 </div>
               </div>
@@ -119,6 +119,36 @@ const Blog = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
               
+              {/* Chatbot pricing in Pakistan */}
+              <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
+                <div className="bg-gradient-to-br from-whatsapp-green/20 to-whatsapp-dark/20 p-6">
+                  <div className="w-16 h-16 bg-whatsapp-green rounded-2xl flex items-center justify-center mb-4">
+                    <BookOpen className="h-8 w-8 text-white" />
+                  </div>
+                </div>
+
+                <CardHeader>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                    <Calendar className="h-4 w-4" />
+                    10 September 2026
+                  </div>
+                  <CardTitle className="font-h4 group-hover:text-whatsapp-green transition-colors">
+                    How much does a chatbot cost in Pakistan in 2026?
+                  </CardTitle>
+                  <CardDescription>
+                    Real rupee figures for subscription tools, freelancers and a built service, plus the Meta message fees nobody quotes up front.
+                  </CardDescription>
+                </CardHeader>
+
+                <CardFooter>
+                  <Button variant="outline" className="w-full border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
+                    <Link to="/blog/chatbot-price-pakistan">
+                      Read the pricing breakdown <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
+              </Card>
+
               {/* Featured Article - Chatbot Automation Guide */}
               <Card className="overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 group">
                 <div className="bg-gradient-to-br from-whatsapp-green/20 to-whatsapp-dark/20 p-6">
