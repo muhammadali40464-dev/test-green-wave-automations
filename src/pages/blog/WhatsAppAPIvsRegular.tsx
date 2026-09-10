@@ -96,7 +96,7 @@ const WhatsAppAPIvsRegular = () => {
         <section className="section-padding">
           <div className="container-width">
             <div className="max-w-6xl mx-auto mb-16">
-              <h2 className="font-h2 text-center text-foreground mb-8">Quick Comparison at a Glance</h2>
+              <h2 className="font-h2 text-center text-foreground mb-8">The short version</h2>
               
               <div className="overflow-x-auto">
                 <div className="grid md:grid-cols-3 gap-6 min-w-[800px]">
@@ -243,7 +243,7 @@ const WhatsAppAPIvsRegular = () => {
         <section className="section-padding bg-gray-50">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-h2 text-center text-foreground mb-12">Detailed Feature Comparison</h2>
+              <h2 className="font-h2 text-center text-foreground mb-12">The detailed comparison</h2>
 
               {/* Features Comparison */}
               <div className="space-y-8">
@@ -272,27 +272,27 @@ const WhatsAppAPIvsRegular = () => {
                           <td className="py-3 font-medium">Monthly Cost</td>
                           <td className="text-center py-3 text-green-600 font-semibold">Free</td>
                           <td className="text-center py-3 text-green-600 font-semibold">Free</td>
-                          <td className="text-center py-3">₨15,000-50,000/month*</td>
+                          <td className="text-center py-3">Rs. 9,999/month with us, plus Meta message fees*</td>
                         </tr>
                         <tr>
                           <td className="py-3 font-medium">Setup Cost</td>
                           <td className="text-center py-3 text-green-600">₨0</td>
                           <td className="text-center py-3 text-green-600">₨0</td>
-                          <td className="text-center py-3">₨25,000-75,000</td>
+                          <td className="text-center py-3">Rs. 49,999 one-time build</td>
                         </tr>
                         <tr>
                           <td className="py-3 font-medium">Message Costs</td>
                           <td className="text-center py-3 text-green-600">Free</td>
                           <td className="text-center py-3 text-green-600">Free</td>
-                          <td className="text-center py-3">₨2-8 per message**</td>
+                          <td className="text-center py-3">Charged per message by Meta**</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   
                   <div className="mt-4 text-sm text-muted-foreground">
-                    <p>* Depends on message volume and features</p>
-                    <p>** Business-initiated conversations only</p>
+                    <p>* Our platform fee. Meta bills its own message fees separately and directly to you.</p>
+                    <p>** Since 1 July 2025 Meta charges per message delivered, not per 24-hour conversation. Rates vary by template category and recipient country. Free-form replies inside an open 24-hour window are free until 1 October 2026.</p>
                   </div>
                 </Card>
 
@@ -372,7 +372,7 @@ const WhatsAppAPIvsRegular = () => {
 
                 {/* Use Cases */}
                 <Card className="p-8">
-                  <h3 className="font-h3 text-foreground mb-6">When to Choose Which Option?</h3>
+                  <h3 className="font-h3 text-foreground mb-6">Which one should you actually pick?</h3>
 
                   <div className="space-y-6">
                     <div className="border-l-4 border-l-gray-400 pl-6">
@@ -413,7 +413,7 @@ const WhatsAppAPIvsRegular = () => {
 
               {/* CTA Section */}
               <Card className="p-8 gradient-cta text-white text-center mt-12">
-                <h3 className="font-h3 mb-4">Ready to Upgrade to WhatsApp Business API?</h3>
+                <h3 className="font-h3 mb-4">So which side of the line are you on?</h3>
                 <p className="text-white/80 mb-6 max-w-2xl mx-auto">
                   TheChatFlow makes WhatsApp Business API setup simple for Pakistani businesses. 
                   Get started with full automation in just 24 hours.
@@ -431,10 +431,10 @@ const WhatsAppAPIvsRegular = () => {
           </div>
         </section>
 
-        {/* Related Articles */}
+        {/* Read next */}
         <section className="section-padding">
           <div className="container-width">
-            <h2 className="font-h2 text-center mb-12">Related Articles</h2>
+            <h2 className="font-h2 text-center mb-12">Read next</h2>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <Card className="shadow-card hover:shadow-lg transition-all duration-300">
                 <CardHeader>
