@@ -200,7 +200,7 @@ const ChatbotGuideSmallBusiness = () => {
 
             {/* CTA Card */}
             <Card className="max-w-2xl mx-auto p-8 gradient-cta text-white text-center">
-              <h3 className="font-h3 mb-4">Ready to Automate Your Business?</h3>
+              <h3 className="font-h3 mb-4">Thinking about automating this?</h3>
               <p className="text-white/80 mb-6">
                 Find out what a custom chatbot would do for your business, and what it would cost
               </p>
@@ -232,7 +232,7 @@ const ChatbotGuideSmallBusiness = () => {
                 </p>
 
                 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-8">
-                  <h3 className="font-h3 text-foreground mb-4">How Chatbots Understand Customer Messages</h3>
+                  <h3 className="font-h3 text-foreground mb-4">How a chatbot understands what was asked</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <CheckCircle className="h-5 w-5 text-whatsapp-green mt-1 flex-shrink-0" />
@@ -267,7 +267,7 @@ const ChatbotGuideSmallBusiness = () => {
                       <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center">
                         <Clock className="h-6 w-6 text-green-600" />
                       </div>
-                      <h3 className="font-h3 text-foreground">24/7 Customer Support</h3>
+                      <h3 className="font-h3 text-foreground">Answers outside office hours</h3>
                     </div>
                     <p className="text-muted-foreground">
                       Handle customer inquiries round the clock, even during Ramadan, Eid, or late-night hours when Pakistani customers are most active online.
@@ -279,7 +279,7 @@ const ChatbotGuideSmallBusiness = () => {
                       <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center">
                         <Users className="h-6 w-6 text-blue-600" />
                       </div>
-                      <h3 className="font-h3 text-foreground">Multilingual Support</h3>
+                      <h3 className="font-h3 text-foreground">Urdu, English and voice notes</h3>
                     </div>
                     <p className="text-muted-foreground">
                       Communicate fluently in Urdu, English, and Roman Urdu - understanding Pakistani customers' preferred communication style.
@@ -314,27 +314,35 @@ const ChatbotGuideSmallBusiness = () => {
 
               {/* Real Business Examples */}
               <div className="mb-12">
-                <h2 className="font-h2 text-foreground mb-8">Real Pakistani Business Examples</h2>
+                <h2 className="font-h2 text-foreground mb-8">Two worked examples</h2>
+            <div className="mb-10 rounded-lg border border-amber-300 bg-amber-50 p-5">
+              <p className="text-sm text-amber-900 m-0">
+                <strong>About these examples.</strong> They are illustrative build patterns drawn from the kind of work we do,
+                not named client accounts, and they carry no invented performance figures. Named case studies will be published
+                once clients agree to be quoted.
+              </p>
+            </div>
+
 
                 <div className="space-y-8">
                   {/* Example 1 */}
                   <Card className="p-8 border-l-4 border-l-whatsapp-green">
-                    <h3 className="font-h3 text-foreground mb-4">Karachi Restaurant Chain</h3>
+                    <h3 className="font-h3 text-foreground mb-4">A restaurant that takes delivery orders</h3>
                     <div className="grid md:grid-cols-3 gap-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Before Chatbot</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• 50+ missed calls daily</li>
-                          <li>• 30% order cancellations</li>
+                          <li>• Calls missed through the lunch and dinner rush</li>
+                          <li>• Orders abandoned while customers wait for a reply</li>
                           <li>• Staff overwhelmed during peak hours</li>
                         </ul>
                       </div>
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">After Chatbot</h4>
                         <ul className="text-whatsapp-green space-y-1 text-sm font-medium">
-                          <li>• 95% inquiries handled automatically</li>
-                          <li>• Order cancellations dropped to 8%</li>
-                          <li>• 40% increase in orders</li>
+                          <li>• Menu, timing and delivery-area questions answered without staff</li>
+                          <li>• Fewer abandoned orders, because the order is confirmed in chat</li>
+                          <li>• Orders still taken after the kitchen phone stops being answered</li>
                         </ul>
                       </div>
                       <div>
@@ -350,7 +358,7 @@ const ChatbotGuideSmallBusiness = () => {
 
                   {/* Example 2 */}
                   <Card className="p-8 border-l-4 border-l-blue-500">
-                    <h3 className="font-h3 text-foreground mb-4">Lahore Tuition Center</h3>
+                    <h3 className="font-h3 text-foreground mb-4">A tuition centre</h3>
                     <div className="grid md:grid-cols-3 gap-6">
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Challenge</h4>
@@ -371,8 +379,8 @@ const ChatbotGuideSmallBusiness = () => {
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Results</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• 60% reduction in calls</li>
-                          <li>• 25% more enrollments</li>
+                          <li>• Fee and timetable questions stop reaching the front desk</li>
+                          <li>• Enquiries from parents answered the same evening they arrive</li>
                           <li>• Higher parent satisfaction</li>
                         </ul>
                       </div>
@@ -383,7 +391,7 @@ const ChatbotGuideSmallBusiness = () => {
 
               {/* Implementation Guide */}
               <div className="mb-12">
-                <h2 className="font-h2 text-foreground mb-8">5-Step Implementation Guide for Pakistani Businesses</h2>
+                <h2 className="font-h2 text-foreground mb-8">How a build runs, step by step</h2>
 
                 <div className="space-y-6">
                   {[
@@ -442,7 +450,7 @@ const ChatbotGuideSmallBusiness = () => {
 
               {/* CTA Section */}
               <Card className="p-8 gradient-cta text-white text-center">
-                <h3 className="font-h3 mb-4">Start Your Chatbot Journey Today</h3>
+                <h3 className="font-h3 mb-4">Tell us what you want automated</h3>
                 <p className="text-white/80 mb-6 max-w-2xl mx-auto">
                   Tell us the messages your team answers over and over and we will scope it for free. 
                   Setup takes just 15 minutes with our expert team.
