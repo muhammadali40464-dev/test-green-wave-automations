@@ -176,7 +176,7 @@ const ChatbotAutomationGuide = () => {
                       <h3 className="font-h3 text-foreground">Better-qualified leads</h3>
                     </div>
                     <p className="text-muted-foreground">
-                      Our Pakistani clients see an average 300% increase in qualified leads within 30 days. Automated lead capture and qualification means no potential customer slips through the cracks.
+                      A bot that asks the qualifying questions up front means your team stops sorting enquiries and starts answering the ones worth answering. Nothing sits unanswered overnight, which is where most enquiries are lost in practice.
                     </p>
                   </Card>
 
@@ -296,10 +296,10 @@ const ChatbotAutomationGuide = () => {
                       <div>
                         <h4 className="font-semibold text-foreground mb-2">Results</h4>
                         <ul className="text-muted-foreground space-y-1 text-sm">
-                          <li>• 90% inquiry automation</li>
-                          <li>• 40% enrollment increase</li>
-                          <li>• ₹2 lakh monthly savings</li>
-                          <li>• 98% parent satisfaction</li>
+                          <li>• Fee and timetable questions answered without staff</li>
+                          <li>• Enrolment enquiries captured outside office hours</li>
+                          <li>• Admin time returned to the front desk</li>
+                          <li>• Parents get the same answer every time</li>
                         </ul>
                       </div>
                     </div>
