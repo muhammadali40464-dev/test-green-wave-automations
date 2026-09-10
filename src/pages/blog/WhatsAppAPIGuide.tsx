@@ -115,7 +115,7 @@ const WhatsAppAPIGuide = () => {
             
             {/* Introduction */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">What the WhatsApp Business API Actually Is</h2>
+              <h2 className="font-h2 text-foreground mb-6">What the WhatsApp Business API actually is</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Pakistan has around <strong>117 million internet users and 194 million mobile connections</strong> (<a href="https://datareportal.com/reports/digital-2026-pakistan" rel="nofollow noopener" target="_blank" className="text-whatsapp-green hover:text-whatsapp-dark">DataReportal, Digital 2026</a>), and messaging is where most customer conversations now start. But the WhatsApp Business API is not a chatbot, and it is not something you use directly — it is an interface that lets software send and receive messages on a business number. On its own it does nothing. The value comes from what you build on top of it.
@@ -152,18 +152,18 @@ const WhatsAppAPIGuide = () => {
               
               <p className="font-body-base text-muted-foreground mb-6">
                 WhatsApp Business API is the official solution for medium and large businesses to communicate with customers at scale. 
-                Unlike the free WhatsApp Business app (limited to 1 phone), the API allows unlimited messaging, automation, 
-                and integration with your existing business systems.
+                Unlike the free WhatsApp Business app (limited to 1 phone), the API lets software send and receive messages on your business number, connect that number to the
+                systems you already run, and let several agents work the same number from one inbox.
               </p>
 
               <div className="bg-gray-50 p-6 rounded-lg mb-6">
-                <h3 className="font-h3 text-foreground mb-4">Official vs Unofficial Solutions</h3>
+                <h3 className="font-h3 text-foreground mb-4">Official providers versus the unofficial ones</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-green-600 mb-3">✅ Official WhatsApp Business API</h4>
+                    <h4 className="font-semibold text-green-600 mb-3">Official WhatsApp Business API</h4>
                     <ul className="space-y-2 text-sm">
-                      <li>• Verified green tick badge</li>
-                      <li>• Unlimited messaging capacity</li>
+                      <li>• Eligible to apply for the official business account badge</li>
+                      <li>• No single-device limit; several agents on one number</li>
                       <li>• Full compliance with WhatsApp policies</li>
                       <li>• Runs on Meta&rsquo;s own messaging infrastructure</li>
                       <li>• Advanced automation features</li>
@@ -191,7 +191,7 @@ const WhatsAppAPIGuide = () => {
 
             {/* Setup Process */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">WhatsApp Business API Setup Process in Pakistan</h2>
+              <h2 className="font-h2 text-foreground mb-6">How setup actually works in Pakistan</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Setting up WhatsApp Business API in Pakistan requires specific documentation and verification steps. 
@@ -273,7 +273,7 @@ const WhatsAppAPIGuide = () => {
 
             {/* Pricing Section */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">WhatsApp Business API Pricing in Pakistan</h2>
+              <h2 className="font-h2 text-foreground mb-6">What it really costs in Pakistan</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 Understanding WhatsApp API pricing is crucial for Pakistani businesses. Here's a breakdown of costs and 
@@ -284,64 +284,78 @@ const WhatsAppAPIGuide = () => {
                 <table className="w-full border-collapse border border-gray-300">
                   <thead>
                     <tr className="bg-gray-50">
-                      <th className="border border-gray-300 p-3 text-left font-semibold">Cost Component</th>
-                      <th className="border border-gray-300 p-3 text-left font-semibold">Direct from Meta</th>
-                      <th className="border border-gray-300 p-3 text-left font-semibold">Other Providers</th>
-                      <th className="border border-gray-300 p-3 text-left font-semibold">TheChatFlow</th>
+                      <th className="border border-gray-300 p-3 text-left font-semibold">What you pay for</th>
+                      <th className="border border-gray-300 p-3 text-left font-semibold">What it covers</th>
+                      <th className="border border-gray-300 p-3 text-left font-semibold">Amount</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-300 p-3">Setup & Integration</td>
-                      <td className="border border-gray-300 p-3">DIY (Complex)</td>
-                      <td className="border border-gray-300 p-3">₨80,000-150,000</td>
-                      <td className="border border-gray-300 p-3 text-whatsapp-green font-semibold">₨49,999</td>
+                      <td className="border border-gray-300 p-3">One-time build, paid to us</td>
+                      <td className="border border-gray-300 p-3">Business verification, templates written and submitted, conversation flows designed and built, agents trained on your material, team training, 30 days of support</td>
+                      <td className="border border-gray-300 p-3 text-whatsapp-green font-semibold">Rs. 49,999</td>
                     </tr>
                     <tr className="bg-gray-50">
-                      <td className="border border-gray-300 p-3">Monthly Platform</td>
-                      <td className="border border-gray-300 p-3">Custom pricing</td>
-                      <td className="border border-gray-300 p-3">₨15,000-25,000</td>
-                      <td className="border border-gray-300 p-3 text-whatsapp-green font-semibold">₨9,999</td>
+                      <td className="border border-gray-300 p-3">Platform, paid to us monthly</td>
+                      <td className="border border-gray-300 p-3">Unlimited contacts and chats, AI models, shared team inbox, flow builder, analytics and webhooks, and the other channels at no extra cost</td>
+                      <td className="border border-gray-300 p-3 text-whatsapp-green font-semibold">Rs. 9,999/month</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 p-3">Message Costs</td>
-                      <td className="border border-gray-300 p-3">Per message billing</td>
-                      <td className="border border-gray-300 p-3">Per message billing</td>
-                      <td className="border border-gray-300 p-3 text-whatsapp-green font-semibold">Unlimited included</td>
-                    </tr>
-                    <tr className="bg-gray-50">
-                      <td className="border border-gray-300 p-3">Support</td>
-                      <td className="border border-gray-300 p-3">Limited</td>
-                      <td className="border border-gray-300 p-3">Business hours</td>
-                      <td className="border border-gray-300 p-3 text-whatsapp-green font-semibold">24/7 Pakistani team</td>
+                      <td className="border border-gray-300 p-3">Message fees, paid to Meta</td>
+                      <td className="border border-gray-300 p-3">Charged per message delivered. Rates depend on the template category and the recipient country. Nobody can bundle this into a flat fee, whatever they tell you</td>
+                      <td className="border border-gray-300 p-3 font-semibold">Billed by Meta directly</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
-              <Card className="p-6 gradient-cta text-white mb-6">
-                <h3 className="font-h3 mb-4">Total Cost to Start: ₨59,998</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-white/90 mb-3">✅ One-time setup: ₨49,999</p>
-                    <p className="text-white/90 mb-3">✅ First month: ₨9,999</p>
-                    <p className="text-white/90 mb-3">✅ Unlimited messaging included</p>
+              <Card className="p-6 border-2 border-amber-300 bg-amber-50 mb-6">
+                <h3 className="font-h3 text-amber-900 mb-3">The part most guides leave out: Meta charges you too</h3>
+                <p className="text-amber-900 mb-4">
+                  On <strong>1 July 2025</strong> Meta stopped charging per 24-hour conversation and started charging
+                  <strong> per message delivered</strong>. A lot of advice written for the Pakistani market still
+                  describes the old model, so budgets built on it come out wrong. There are four categories:
+                </p>
+                <div className="grid md:grid-cols-2 gap-3 mb-4">
+                  <div className="bg-white/70 rounded-xl p-4">
+                    <p className="font-semibold text-amber-900 m-0 mb-1">Marketing</p>
+                    <p className="text-sm text-amber-900/80 m-0">Promotions and re-engagement. The most expensive category.</p>
                   </div>
-                  <div>
-                    <p className="text-white/90 mb-3">✅ 24-48 hour implementation</p>
-                    <p className="text-white/90 mb-3">✅ Custom flow design</p>
-                    <p className="text-white/90 mb-3">✅ Team training included</p>
+                  <div className="bg-white/70 rounded-xl p-4">
+                    <p className="font-semibold text-amber-900 m-0 mb-1">Utility</p>
+                    <p className="text-sm text-amber-900/80 m-0">Order confirmations, delivery updates, reminders. Cheaper.</p>
+                  </div>
+                  <div className="bg-white/70 rounded-xl p-4">
+                    <p className="font-semibold text-amber-900 m-0 mb-1">Authentication</p>
+                    <p className="text-sm text-amber-900/80 m-0">One-time passcodes and login codes.</p>
+                  </div>
+                  <div className="bg-white/70 rounded-xl p-4">
+                    <p className="font-semibold text-amber-900 m-0 mb-1">Service</p>
+                    <p className="text-sm text-amber-900/80 m-0">Your free-form replies inside an open 24-hour window.</p>
                   </div>
                 </div>
-                <Button variant="secondary" className="mt-4" asChild>
-                  <Link to="/services/custom-chatbot-development">View Complete Pricing</Link>
-                </Button>
+                <p className="text-amber-900 mb-3">
+                  <strong>The 24-hour window decides your bill.</strong> When a customer messages you first, it opens a
+                  24-hour window in which you can reply in normal language. Once it closes you can only reopen the
+                  conversation with a pre-approved template, and that costs money. Designing around this window is most
+                  of the skill in a WhatsApp build.
+                </p>
+                <p className="text-amber-900 mb-3">
+                  <strong>There is a free way in.</strong> Click-to-WhatsApp ads and a WhatsApp button on your Facebook
+                  page open a <strong>72-hour free window</strong> where messages are not charged. If you already spend
+                  on Meta ads, sending them to WhatsApp instead of a landing page is usually the cheapest route to a
+                  conversation available to a Pakistani business.
+                </p>
+                <p className="text-amber-900 m-0">
+                  <strong>Plan for one change:</strong> from <strong>1 October 2026</strong> service messages stop being
+                  free. If your model leans on high volumes of free in-window replies, the economics shift.
+                </p>
               </Card>
             </section>
 
             {/* Pakistani Use Cases */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">WhatsApp Business API Use Cases for Pakistani Businesses</h2>
+              <h2 className="font-h2 text-foreground mb-6">What Pakistani businesses actually use it for</h2>
               
               <p className="font-body-base text-muted-foreground mb-8">
                 Pakistani businesses across industries are leveraging WhatsApp automation to scale operations and improve customer satisfaction. 
@@ -442,7 +456,7 @@ const WhatsAppAPIGuide = () => {
 
             {/* Best Practices */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">WhatsApp Business API Best Practices for Pakistan</h2>
+              <h2 className="font-h2 text-foreground mb-6">What works, and what gets accounts restricted</h2>
               
               <p className="font-body-base text-muted-foreground mb-6">
                 To maximize success with WhatsApp Business API in Pakistan, follow these proven best practices 
@@ -451,7 +465,7 @@ const WhatsAppAPIGuide = () => {
 
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <Card className="p-6">
-                  <h3 className="font-h4 text-foreground mb-4">✅ Do's</h3>
+                  <h3 className="font-h4 text-foreground mb-4">What works</h3>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>• Use Urdu/Roman Urdu for better engagement</li>
                     <li>• Include emojis appropriately (Pakistani users love them)</li>
@@ -464,7 +478,7 @@ const WhatsAppAPIGuide = () => {
                 </Card>
 
                 <Card className="p-6">
-                  <h3 className="font-h4 text-foreground mb-4">❌ Don'ts</h3>
+                  <h3 className="font-h4 text-foreground mb-4">What gets you restricted</h3>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>• Don't send promotional messages without consent</li>
                     <li>• Avoid complex English in mass market</li>
@@ -478,7 +492,7 @@ const WhatsAppAPIGuide = () => {
               </div>
 
               <Card className="p-6 bg-green-50 border-green-200 mb-6">
-                <h3 className="font-h4 text-green-800 mb-4">Pakistani-Specific Template Examples</h3>
+                <h3 className="font-h4 text-green-800 mb-4">Template examples in Urdu and English</h3>
                 <div className="space-y-4">
                   <div className="bg-white p-4 rounded border-l-4 border-green-500">
                     <p className="font-semibold text-green-800">Order Confirmation (Roman Urdu)</p>
@@ -509,7 +523,7 @@ const WhatsAppAPIGuide = () => {
 
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <Card className="p-6">
-                  <h3 className="font-h4 text-foreground mb-4">Why Choose TheChatFlow?</h3>
+                  <h3 className="font-h4 text-foreground mb-4">Why work with us</h3>
                   <ul className="space-y-2 text-muted-foreground">
                     <li>✅ We build it, you do not configure anything</li>
                     <li>✅ Fixed price agreed before we start</li>
@@ -522,7 +536,7 @@ const WhatsAppAPIGuide = () => {
                 </Card>
 
                 <Card className="p-6 bg-whatsapp-green/5 border-whatsapp-green/20">
-                  <h3 className="font-h4 text-whatsapp-green mb-4">Next Steps</h3>
+                  <h3 className="font-h4 text-whatsapp-green mb-4">Next steps</h3>
                   <div className="space-y-3">
                     <Button variant="hero" className="w-full" asChild>
                       <Link to="/services/custom-chatbot-development">See how we build</Link>
@@ -555,9 +569,9 @@ const WhatsAppAPIGuide = () => {
               </Card>
             </section>
 
-            {/* Related Articles */}
+            {/* Read next */}
             <section className="mb-12">
-              <h2 className="font-h2 text-foreground mb-6">Related Articles</h2>
+              <h2 className="font-h2 text-foreground mb-6">Read next</h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <Card className="p-4 hover:shadow-lg transition-shadow">
                   <h3 className="font-semibold mb-2 hover:text-whatsapp-green transition-colors">
