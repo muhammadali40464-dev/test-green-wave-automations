@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
@@ -8,23 +10,22 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Zap, TrendingUp, Calculator, Phone, ArrowRight, CheckCircle, Users } from "lucide-react";
 
 const SolarAutomation = () => {
+  const seo = getPageSEO("/blog/solar-companies-whatsapp-automation-pakistan");
+
   return (
     <>
       <MegaMenu />
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path="/blog/solar-companies-whatsapp-automation-pakistan"
+        keywords={seo.keywords}
+        type="article"
+        author={seo.author}
+        publishedDate={seo.publishedDate}
+      />
+
       <Helmet>
-        <title>Custom Chatbots for Solar Companies in Pakistan | TheChatFlow</title>
-        <meta name="description" content="How solar installers in Pakistan use a custom chatbot to qualify enquiries on bill size, roof and city, book site surveys automatically, and stop sales teams re-answering the same questions." />
-        <meta name="keywords" content="solar companies Pakistan, solar lead generation, WhatsApp solar marketing, renewable energy automation, Pakistan solar business, solar automation case study" />
-        <link rel="canonical" href="https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan" />
-        
-        <meta property="og:title" content="Custom Chatbots for Solar Companies in Pakistan" />
-        <meta property="og:description" content="How solar installers in Pakistan use a custom chatbot to qualify enquiries and book site surveys automatically." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thechatflow.com/blog/solar-companies-whatsapp-automation-pakistan" />
-        <meta property="og:image" content="https://thechatflow.com/blog-images/solar-automation-pakistan.jpg" />
-        
-        <meta name="author" content="TheChatFlow Solar Industry Experts" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -812,7 +813,7 @@ const SolarAutomation = () => {
                       Visa Consultancy Automation Success
                     </Link>
                   </h3>
-                  <p className="text-sm text-muted-foreground">Handle 500+ daily inquiries automatically</p>
+                  <p className="text-sm text-muted-foreground">Answers the repeat questions without a person</p>
                 </Card>
                 
                 <Card className="p-4 hover:shadow-lg transition-shadow">
