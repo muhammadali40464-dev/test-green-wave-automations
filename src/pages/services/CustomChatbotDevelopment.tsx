@@ -65,6 +65,7 @@ const steps = [
 ];
 
 const related = [
+  { to: "/services/whatsapp-chatbot-development", t: "WhatsApp chatbot development — the WhatsApp-specific build" },
   { to: "/blog/whatsapp-business-api-pakistan-guide-2025", t: "WhatsApp Business API in Pakistan: When You Actually Need It" },
   { to: "/blog/whatsapp-api-vs-regular-whatsapp-business", t: "WhatsApp Business App vs API: Which Does Your Business Need?" },
   { to: "/blog/chatbot-automation-guide-pakistan", t: "Custom Chatbot Automation for Pakistani Businesses" },
@@ -271,7 +272,7 @@ const CustomChatbotDevelopment = () => {
             <div className="max-w-2xl mb-10">
               <h2 className="font-h2 text-foreground mb-4">One system, every channel, connected to what you already run</h2>
               <p className="font-body-base text-muted-foreground">
-                Every channel feeds the same contact record and the same shared inbox, so a customer who asks on
+                Most of our work starts on WhatsApp — if that is the only channel you need, see <Link to="/services/whatsapp-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">WhatsApp chatbot development</Link>. Every channel feeds the same contact record and the same shared inbox, so a customer who asks on
                 Instagram and follows up on WhatsApp is one conversation, not two.
               </p>
             </div>
