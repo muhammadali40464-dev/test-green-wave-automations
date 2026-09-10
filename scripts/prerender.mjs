@@ -99,6 +99,21 @@ for (const route of routes) {
   }
 }
 
+// Unknown URLs are served by the SPA fallback with a 200 status, so that
+// fallback must be a page whose raw HTML already says noindex. Prerender the
+// NotFound route to dist/404.html and point the rewrite at it.
+try {
+  const { html, head } = render("/__not-found__");
+  const page = base
+    .replace("</head>", `  ${head}\n  </head>`)
+    .replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+  writeFileSync(join(dist, "404.html"), page);
+  console.log(`  ${"404.html".padEnd(52)} ${String(html.length).padStart(7)} chars  (noindex fallback)`);
+} catch (err) {
+  console.error("prerender: failed to build 404.html:", err.message);
+  process.exit(1);
+}
+
 console.log(`\nprerender: ${ok}/${routes.length} routes written`);
 if (failures.length) {
   console.error("prerender failures:\n  " + failures.join("\n  "));
