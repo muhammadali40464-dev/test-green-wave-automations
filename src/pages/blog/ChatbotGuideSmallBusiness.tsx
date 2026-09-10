@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet";
+import SEOHead from "@/components/SEO/SEOHead";
+import { getPageSEO } from "@/data/seoData";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Footer from "@/components/Footer";
@@ -21,23 +23,21 @@ import {
 } from "lucide-react";
 
 const ChatbotGuideSmallBusiness = () => {
+  const seo = getPageSEO("/blog/how-chatbots-work-small-businesses-pakistan");
+
   return (
     <>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        path="/blog/how-chatbots-work-small-businesses-pakistan"
+        keywords={seo.keywords}
+        type="article"
+        author={seo.author}
+        publishedDate={seo.publishedDate}
+      />
+
       <Helmet>
-        <title>How Chatbots Work for Small Businesses in Pakistan: Complete Guide 2025 | TheChatFlow</title>
-        <meta name="description" content="Complete guide: How chatbots transform Pakistani small businesses. Real case studies, setup process, ROI calculator & step-by-step implementation. Start automating today!" />
-        <meta name="keywords" content="how chatbots work for small businesses pakistan, chatbot benefits pakistan, small business automation, WhatsApp chatbot pakistan, business automation guide, pakistani business chatbot" />
-        <link rel="canonical" href="https://thechatflow.com/blog/how-chatbots-work-small-businesses-pakistan" />
-        
-        <meta property="og:title" content="How Chatbots Work for Small Businesses in Pakistan: Complete 2025 Guide" />
-        <meta property="og:description" content="Transform your small business with chatbots. Learn setup, benefits, and real success stories from Pakistani businesses." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://thechatflow.com/blog/how-chatbots-work-small-businesses-pakistan" />
-        <meta property="og:image" content="https://thechatflow.com/blog-images/chatbot-small-business-pakistan.jpg" />
-        
-        <meta name="author" content="TheChatFlow Team" />
-        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-        <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
         
         <script type="application/ld+json">
           {JSON.stringify({
