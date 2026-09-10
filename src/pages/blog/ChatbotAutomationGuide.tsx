@@ -98,7 +98,7 @@ const ChatbotAutomationGuide = () => {
             <Card className="max-w-2xl mx-auto p-8 gradient-cta text-white text-center">
               <h3 className="font-h3 mb-4">Ready to Automate Your Business?</h3>
               <p className="text-white/80 mb-6">
-                Join 500+ Pakistani businesses using TheChatFlow's AI chatbot automation to increase revenue by 300%
+                Tell us what you want automated and we will tell you whether a custom chatbot is the right answer
               </p>
               <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm border-0" asChild>
                 <Link to="/#pricing">
@@ -358,7 +358,7 @@ const ChatbotAutomationGuide = () => {
               <Card className="p-8 gradient-cta text-white text-center mb-12">
                 <h3 className="font-h2 mb-4">Start Your Automation Journey Today</h3>
                 <p className="text-white/90 mb-6 text-lg">
-                  Join 500+ successful Pakistani businesses already using TheChatFlow's AI automation
+                  Book a free scoping call and get a fixed price before you commit to anything
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="secondary" size="lg" className="bg-white text-whatsapp-green hover:bg-white/90 shadow-sm border-0" asChild>
@@ -401,11 +401,11 @@ const ChatbotAutomationGuide = () => {
                     <CardHeader className="p-0 mb-4">
                       <CardTitle className="font-h4">
                         <Link to="/blog/solar-companies-whatsapp-automation-pakistan" className="text-foreground hover:text-whatsapp-green transition-colors">
-                          Solar Companies 10X Leads with WhatsApp Automation
+                          Custom Chatbots for Solar Companies in Pakistan
                         </Link>
                       </CardTitle>
                       <CardDescription>
-                        Real case study: 300% lead increase for Pakistani solar companies
+                        How solar installers qualify enquiries and book site surveys automatically
                       </CardDescription>
                     </CardHeader>
                     <Button variant="outline" size="sm" className="border-whatsapp-green text-whatsapp-green hover:bg-whatsapp-green hover:text-white" asChild>
