@@ -22,6 +22,12 @@ export const seoData: Record<string, SEOPageData> = {
     keywords: ["custom chatbot development", "chatbot development services in Pakistan", "AI chatbot services Pakistan", "chatbot developers Pakistan", "hire chatbot developer"],
     type: "website"
   },
+  "/services/whatsapp-chatbot-development": {
+    title: "WhatsApp Chatbot Development in Pakistan",
+    description: "We design, build and maintain WhatsApp chatbots for Pakistani businesses on the WhatsApp Business API — lead qualification, order status, COD confirmation, bookings and support, with human handover. Rs. 49,999 fixed build price.",
+    keywords: ["WhatsApp chatbot development", "WhatsApp chatbot development Pakistan", "WhatsApp automation services Pakistan", "WhatsApp Business API Pakistan", "WhatsApp chatbot price in Pakistan"],
+    type: "website"
+  },
   "/blog": {
     title: "Chatbot and Automation Insights for Pakistani Businesses",
     description: "Practical guides on custom chatbots, AI agents and business automation for companies in Pakistan — what to build, what it costs, and what actually works.",
