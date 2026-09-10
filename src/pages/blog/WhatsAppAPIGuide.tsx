@@ -511,13 +511,13 @@ const WhatsAppAPIGuide = () => {
                 <Card className="p-6">
                   <h3 className="font-h4 text-foreground mb-4">Why Choose TheChatFlow?</h3>
                   <ul className="space-y-2 text-muted-foreground">
-                    <li>✅ Official Meta Business Partner</li>
-                    <li>✅ 500+ Pakistani businesses served</li>
+                    <li>✅ We build it, you do not configure anything</li>
+                    <li>✅ Fixed price agreed before we start</li>
                     <li>✅ Urdu/English support team</li>
-                    <li>✅ 24-48 hour implementation</li>
-                    <li>✅ Industry-specific templates</li>
-                    <li>✅ Unlimited messaging included</li>
-                    <li>✅ 30-day success guarantee</li>
+                    <li>✅ Live in 24 to 48 hours</li>
+                    <li>✅ Built around your business, not a template</li>
+                    <li>✅ Unlimited contacts and chats on the platform</li>
+                    <li>✅ 30 days of support after launch</li>
                   </ul>
                 </Card>
 
@@ -525,7 +525,7 @@ const WhatsAppAPIGuide = () => {
                   <h3 className="font-h4 text-whatsapp-green mb-4">Next Steps</h3>
                   <div className="space-y-3">
                     <Button variant="hero" className="w-full" asChild>
-                      <Link to="/#pricing">View Pricing & Get Started</Link>
+                      <Link to="/services/custom-chatbot-development">See how we build</Link>
                     </Button>
                     <Button variant="outline" className="w-full" asChild>
                       <Link to="/#contact">
