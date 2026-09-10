@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import WebsiteLoader from "@/components/WebsiteLoader";
 import PageTransitionLoader from "@/components/PageTransitionLoader";
 
 declare global {
@@ -97,52 +96,47 @@ const RouteTransitionManager = () => {
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  const [showLoader, setShowLoader] = useState(true);
-
-  // Global website loader - shows on initial load only
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLoader(false);
-    }, 2000); // Reduced from 2500ms to 2000ms
-
-    return () => clearTimeout(timer);
-  }, []);
-
+// Route tree shared by the browser entry and the build-time prerender.
+// Router is supplied by the caller: BrowserRouter in the browser, StaticRouter at build.
+export const AppRoutes = () => {
   return (
     <>
-      {showLoader && <WebsiteLoader />}
-      
-      <QueryClientProvider client={queryClient}>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <RouteTransitionManager />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/success-stories" element={<SuccessStories />} />
-            <Route path="/contact" element={<ContactUs />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/blog/chatbot-automation-guide-pakistan" element={<ChatbotAutomationGuide />} />
-            <Route path="/blog/ai-agent-vs-chatbot" element={<AiAgentVsChatbot />} />
-          <Route path="/blog/chatbot-price-pakistan" element={<ChatbotPricePakistan />} />
-            <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<SolarAutomation />} />
-            <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<VisaConsultancy />} />
-            <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<ChatbotGuideSmallBusiness />} />
-            <Route path="/blog/whatsapp-business-api-pakistan-guide-2025" element={<WhatsAppAPIGuide />} />
-            <Route path="/blog/whatsapp-api-vs-regular-whatsapp-business" element={<WhatsAppAPIvsRegular />} />
-            <Route path="/services/custom-chatbot-development" element={<CustomChatbotDevelopment />} />
-            <Route path="/services/whatsapp-chatbot-development" element={<WhatsAppChatbotDevelopment />} />
-            <Route path="/legal" element={<Legal />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </QueryClientProvider>
+      {/* Rendered inside the shared tree so the server HTML and the first
+          client render match exactly, otherwise hydration mismatches. */}
+      <Toaster />
+      <Sonner />
+      <RouteTransitionManager />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/success-stories" element={<SuccessStories />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/blog/chatbot-automation-guide-pakistan" element={<ChatbotAutomationGuide />} />
+        <Route path="/blog/ai-agent-vs-chatbot" element={<AiAgentVsChatbot />} />
+        <Route path="/blog/chatbot-price-pakistan" element={<ChatbotPricePakistan />} />
+        <Route path="/blog/solar-companies-whatsapp-automation-pakistan" element={<SolarAutomation />} />
+        <Route path="/blog/visa-consultancy-whatsapp-automation-urdu" element={<VisaConsultancy />} />
+        <Route path="/blog/how-chatbots-work-small-businesses-pakistan" element={<ChatbotGuideSmallBusiness />} />
+        <Route path="/blog/whatsapp-business-api-pakistan-guide-2025" element={<WhatsAppAPIGuide />} />
+        <Route path="/blog/whatsapp-api-vs-regular-whatsapp-business" element={<WhatsAppAPIvsRegular />} />
+        <Route path="/services/custom-chatbot-development" element={<CustomChatbotDevelopment />} />
+        <Route path="/services/whatsapp-chatbot-development" element={<WhatsAppChatbotDevelopment />} />
+        <Route path="/legal" element={<Legal />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 };
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  </QueryClientProvider>
+);
 
 export default App;
