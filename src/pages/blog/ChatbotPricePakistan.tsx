@@ -225,7 +225,12 @@ const ChatbotPricePakistan = () => {
                 </p>
                 <p className="text-amber-900 m-0">
                   One date to put in your calendar: from <strong>1 October 2026</strong> service messages stop being
-                  free. If your plan leans on high volumes of free in-window replies, redo the sums.
+                  free, past an allowance of 1,000 a month per phone number, and Pakistan&rsquo;s utility rate rises on
+                  the same day. We have written up{" "}
+                  <Link to="/blog/whatsapp-api-pricing-pakistan" className="underline font-medium">
+                    Meta&rsquo;s actual per-message rates for Pakistan and what October does to a real bill
+                  </Link>
+                  , with the arithmetic worked through.
                 </p>
               </Card>
             </section>
