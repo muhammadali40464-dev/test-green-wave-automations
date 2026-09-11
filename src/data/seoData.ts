@@ -71,6 +71,27 @@ export const seoData: Record<string, SEOPageData> = {
     type: "website"
   },
 
+  "/services/ai-agent-development": {
+    title: "AI Agent Development Company in Pakistan, With Prices",
+    description: "We build AI agents that check stock, book slots and confirm orders inside your systems. Fixed price, scoped before you pay, and we say when a chatbot would do.",
+    keywords: ["AI agent development Pakistan", "AI agent development company", "AI agent development services", "AI agent price in Pakistan", "custom AI agent build"],
+    type: "website",
+    author: "TheChatFlow"
+  },
+  "/services/ecommerce-chatbot-development": {
+    title: "E-commerce Chatbot Development for Pakistani Stores",
+    description: "Chatbots for Pakistani online stores: COD confirmation, live order status and cart follow-ups, connected to Shopify or WooCommerce. Meta fees explained.",
+    keywords: ["ecommerce chatbot Pakistan", "WhatsApp chatbot for ecommerce", "Shopify chatbot Pakistan", "COD confirmation chatbot", "order status chatbot"],
+    type: "website",
+    author: "TheChatFlow"
+  },
+  "/services/instagram-messenger-automation": {
+    title: "Instagram & Messenger Automation for Pakistani Brands",
+    description: "Comment-to-DM and what comes after: shared inbox, Urdu replies, real handover, and the Meta windows that shape every build. We say when a free tool is enough.",
+    keywords: ["Instagram automation Pakistan", "comment to DM automation", "Instagram DM automation", "Messenger chatbot Pakistan", "Instagram chatbot development"],
+    type: "website",
+    author: "TheChatFlow"
+  },
   "/blog/ai-agent-vs-chatbot": {
     title: "AI Agent vs Chatbot: Which One Does Your Business Need?",
     description: "The difference in one question, which one a Pakistani business actually needs, what each costs to build, and why most firms asking for an agent need a chatbot.",
