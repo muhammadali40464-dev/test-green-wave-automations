@@ -328,7 +328,11 @@ const WhatsAppChatbotDevelopment = () => {
                   <p className="text-amber-900 mb-4">
                     On <strong>1 July 2025</strong> Meta stopped charging per 24-hour conversation and moved to charging
                     <strong> per message delivered</strong>. A lot of published advice in Pakistan still describes the old
-                    model. Here is how it actually works now:
+                    model. Here is how it actually works now, and{" "}
+                    <Link to="/blog/whatsapp-api-pricing-pakistan" className="underline font-medium">
+                      Meta&rsquo;s current per-message rates for Pakistan
+                    </Link>{" "}
+                    are published if you want the figures themselves:
                   </p>
                   <div className="grid md:grid-cols-2 gap-3 mb-4">
                     {[
