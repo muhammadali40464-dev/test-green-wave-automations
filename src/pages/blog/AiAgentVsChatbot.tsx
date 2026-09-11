@@ -84,6 +84,7 @@ const faqs = [
 ];
 
 const related = [
+  { to: "/services/ai-agent-development", t: "AI agent development: what we connect and what it costs" },
   { to: "/services/custom-chatbot-development", t: "Custom chatbot development: what we build and what it costs" },
   { to: "/blog/chatbot-price-pakistan", t: "What a chatbot actually costs in Pakistan, in rupees" },
   { to: "/services/whatsapp-chatbot-development", t: "WhatsApp chatbot development in Pakistan" },
@@ -314,7 +315,12 @@ const AiAgentVsChatbot = () => {
                   <Link to="/blog/chatbot-price-pakistan" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
                     full breakdown of chatbot pricing in Pakistan
                   </Link>{" "}
-                  compares this against subscription tools and freelance builds.
+                  compares this against subscription tools and freelance builds. If you have already worked out that
+                  you need the agent, our{" "}
+                  <Link to="/services/ai-agent-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
+                    AI agent development service
+                  </Link>{" "}
+                  sets out what we connect and what we refuse to connect.
                 </p>
               </Card>
             </section>
