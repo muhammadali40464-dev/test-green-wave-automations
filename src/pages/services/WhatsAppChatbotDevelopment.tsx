@@ -42,6 +42,8 @@ const steps = [
 
 const related = [
   { to: "/services/custom-chatbot-development", t: "Custom chatbot development — the full service, every channel" },
+  { to: "/services/ecommerce-chatbot-development", t: "Chatbots for Pakistani online stores" },
+  { to: "/services/instagram-messenger-automation", t: "Instagram and Messenger automation" },
   { to: "/blog/whatsapp-business-api-pakistan-guide-2025", t: "WhatsApp Business API in Pakistan: When You Actually Need It" },
   { to: "/blog/whatsapp-api-vs-regular-whatsapp-business", t: "WhatsApp Business App vs API: Which Does Your Business Need?" },
   { to: "/blog/solar-companies-whatsapp-automation-pakistan", t: "Custom Chatbots for Solar Companies in Pakistan" },
