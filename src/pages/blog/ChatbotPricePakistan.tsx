@@ -252,7 +252,11 @@ const ChatbotPricePakistan = () => {
                   the difference between an AI agent and a chatbot
                 </Link>{" "}
                 and how to work out which one your business needs, because paying for the wrong one is the most
-                common mistake we see.
+                common mistake we see. For online stores the answer is usually the acting kind, which is why{" "}
+                <Link to="/services/ecommerce-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
+                  e-commerce builds
+                </Link>{" "}
+                sit at the upper end of the same price.
               </p>
             </section>
 
