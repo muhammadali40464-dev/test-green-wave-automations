@@ -463,6 +463,68 @@ const CustomChatbotDevelopment = () => {
           </div>
         </section>
 
+        <section className="section-padding">
+          <div className="container-width">
+            <div className="max-w-3xl mb-10">
+              <h2 className="font-h2 text-foreground mb-4">Which build is yours?</h2>
+              <p className="font-body-base text-muted-foreground">
+                Same platform, same price, same people. What changes is where the bot lives and what it has to reach
+                into, and that is what these four pages are for.
+              </p>
+            </div>
+
+            <div className="max-w-3xl divide-y border-y">
+              <div className="py-5">
+                <h3 className="font-h4 text-foreground mb-1">
+                  <Link to="/services/whatsapp-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">
+                    WhatsApp chatbot development
+                  </Link>
+                </h3>
+                <p className="text-muted-foreground m-0">
+                  The channel most Pakistani customers already message on. Covers Meta verification, the template
+                  categories and the per-message fees in full.
+                </p>
+              </div>
+
+              <div className="py-5">
+                <h3 className="font-h4 text-foreground mb-1">
+                  <Link to="/services/ai-agent-development" className="text-whatsapp-green hover:text-whatsapp-dark">
+                    AI agent development
+                  </Link>
+                </h3>
+                <p className="text-muted-foreground m-0">
+                  For when answering is only the start of the job and something has to change in your systems
+                  afterwards: stock checked, slot booked, record written back.
+                </p>
+              </div>
+
+              <div className="py-5">
+                <h3 className="font-h4 text-foreground mb-1">
+                  <Link to="/services/ecommerce-chatbot-development" className="text-whatsapp-green hover:text-whatsapp-dark">
+                    E-commerce chatbot development
+                  </Link>
+                </h3>
+                <p className="text-muted-foreground m-0">
+                  Built around the three questions that fill a Pakistani store&rsquo;s inbox, including the COD
+                  confirmation that decides whether a parcel comes back.
+                </p>
+              </div>
+
+              <div className="py-5">
+                <h3 className="font-h4 text-foreground mb-1">
+                  <Link to="/services/instagram-messenger-automation" className="text-whatsapp-green hover:text-whatsapp-dark">
+                    Instagram and Messenger automation
+                  </Link>
+                </h3>
+                <p className="text-muted-foreground m-0">
+                  Comment-to-DM and the part after it, with the 7-day and 24-hour windows Meta enforces designed in
+                  rather than discovered later.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="section-padding gradient-background">
           <div className="container-width">
             <h2 className="font-h3 text-foreground mb-6">Read next</h2>
