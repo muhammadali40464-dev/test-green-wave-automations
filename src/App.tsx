@@ -29,6 +29,9 @@ import ChatbotAutomationGuide from "./pages/blog/ChatbotAutomationGuide";
 import AiAgentVsChatbot from "./pages/blog/AiAgentVsChatbot";
 import ChatbotPricePakistan from "./pages/blog/ChatbotPricePakistan";
 import CustomChatbotDevelopment from "./pages/services/CustomChatbotDevelopment";
+import AiAgentDevelopment from "./pages/services/AiAgentDevelopment";
+import EcommerceChatbotDevelopment from "./pages/services/EcommerceChatbotDevelopment";
+import InstagramMessengerAutomation from "./pages/services/InstagramMessengerAutomation";
 import WhatsAppChatbotDevelopment from "./pages/services/WhatsAppChatbotDevelopment";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
@@ -124,6 +127,9 @@ export const AppRoutes = () => {
         <Route path="/blog/whatsapp-api-vs-regular-whatsapp-business" element={<WhatsAppAPIvsRegular />} />
         <Route path="/services/custom-chatbot-development" element={<CustomChatbotDevelopment />} />
         <Route path="/services/whatsapp-chatbot-development" element={<WhatsAppChatbotDevelopment />} />
+        <Route path="/services/ai-agent-development" element={<AiAgentDevelopment />} />
+        <Route path="/services/ecommerce-chatbot-development" element={<EcommerceChatbotDevelopment />} />
+        <Route path="/services/instagram-messenger-automation" element={<InstagramMessengerAutomation />} />
         <Route path="/legal" element={<Legal />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
