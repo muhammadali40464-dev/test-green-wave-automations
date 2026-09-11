@@ -110,6 +110,15 @@ export const seoData: Record<string, SEOPageData> = {
     publishedDate: "2026-09-10",
     modifiedDate: "2026-09-10"
   },
+  "/blog/whatsapp-api-pricing-pakistan": {
+    title: "WhatsApp API Pricing Pakistan: What Changes on 1 October",
+    description: "Meta's published per-message rates for Pakistan, the volume tiers nobody quotes, and the four things that change when service messages stop being free.",
+    keywords: ["WhatsApp API pricing Pakistan", "WhatsApp message cost Pakistan", "WhatsApp Business API charges", "WhatsApp template message price", "Meta WhatsApp pricing 2026"],
+    type: "article",
+    author: "TheChatFlow Team",
+    publishedDate: "2026-09-11",
+    modifiedDate: "2026-09-11"
+  },
   // Blog posts
   "/blog/chatbot-automation-guide-pakistan": {
     title: "Custom Chatbot Automation in Pakistan: A Practical Guide",
