@@ -6,13 +6,11 @@
     { "source": "/BLOG/:path*", "destination": "/blog/:path*", "permanent": true },
     { "source": "/Contact/:path*", "destination": "/contact", "permanent": true },
     { "source": "/Success-Stories/:path*", "destination": "/success-stories", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/blog/whatsapp-business-api-vs-regular-whatsapp", "destination": "/blog/whatsapp-api-vs-regular-whatsapp-business", "permanent": true },
     { "source": "/blog/ecommerce-whatsapp-marketing-pakistan", "destination": "/blog", "permanent": false },
     { "source": "/blog/ai-customer-service-benefits-local-businesses", "destination": "/blog", "permanent": false },
     { "source": "/blog/chatbot-implementation-guide-pakistani-companies", "destination": "/blog", "permanent": false }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/404.html" }
   ],
   "headers": [
     {
