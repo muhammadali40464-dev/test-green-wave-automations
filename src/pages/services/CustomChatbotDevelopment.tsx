@@ -469,7 +469,11 @@ const CustomChatbotDevelopment = () => {
               <h2 className="font-h2 text-foreground mb-4">Which build is yours?</h2>
               <p className="font-body-base text-muted-foreground">
                 Same platform, same price, same people. What changes is where the bot lives and what it has to reach
-                into, and that is what these four pages are for.
+                into, and that is what these four pages are for. Still comparing suppliers? Run{" "}
+                <Link to="/blog/choose-chatbot-development-company-pakistan" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
+                  these nine questions
+                </Link>{" "}
+                on us and on everyone else.
               </p>
             </div>
 
