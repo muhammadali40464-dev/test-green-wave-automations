@@ -110,6 +110,15 @@ export const seoData: Record<string, SEOPageData> = {
     publishedDate: "2026-09-10",
     modifiedDate: "2026-09-10"
   },
+  "/blog/choose-chatbot-development-company-pakistan": {
+    title: "How to Choose a Chatbot Development Company in Pakistan",
+    description: "The nine questions that separate a real build from resold platform access, the answers that should worry you, and when the honest advice is not yet.",
+    keywords: ["chatbot development company in Pakistan", "chatbot company Pakistan", "hire chatbot developer Pakistan", "chatbot agency Pakistan", "questions to ask chatbot developer"],
+    type: "article",
+    author: "TheChatFlow Team",
+    publishedDate: "2026-09-12",
+    modifiedDate: "2026-09-12"
+  },
   "/blog/whatsapp-api-pricing-pakistan": {
     title: "WhatsApp API Pricing Pakistan: What Changes on 1 October",
     description: "Meta's published per-message rates for Pakistan, the volume tiers nobody quotes, and the four things that change when service messages stop being free.",
