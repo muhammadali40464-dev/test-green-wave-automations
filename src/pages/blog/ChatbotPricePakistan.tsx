@@ -301,6 +301,14 @@ const ChatbotPricePakistan = () => {
                   </Card>
                 ))}
               </div>
+              <p className="font-body-base text-muted-foreground mt-6">
+                Price is only half of the judgement. The other half is who you are buying from, which we have written
+                up as{" "}
+                <Link to="/blog/choose-chatbot-development-company-pakistan" className="text-whatsapp-green hover:text-whatsapp-dark font-medium">
+                  nine questions to ask a chatbot development company
+                </Link>
+                , including the answers that should end the conversation.
+              </p>
             </section>
 
             <section className="mb-12">
